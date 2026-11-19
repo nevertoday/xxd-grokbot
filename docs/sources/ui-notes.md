@@ -6,10 +6,14 @@
 - **没有网页版。** 浏览器里登录后打开 https://cursor.com/bot/onboarding，页面只写「You're all set」，给一个「Download Grok Bot for macOS」按钮。
 - **登录用 Cursor 账号。** 欢迎页点 **Sign in**，在浏览器里完成。
 - **哪些套餐能用。** The X Subscription 的 Premium、Super、Ultra；Plus 不行。旧的 Cursor 付费个人套餐和自助 Teams 也能用。SuperGrok 系列和 X Premium+ 可以绑定（get-started、x-subscription-grok-bot）。
-- **界面语言。** 窗口里的主要界面是英文。菜单、通知、少数提示跟着系统语言走：系统是简体中文时，有「新 Bot」「Bot 详情」「新团队 Bot」「需要你的输入」「需要批准：」这类中文。写中文页时：
-  - 按钮和标签写英文原文，加粗，后面括号里给中文意思，比如 **New Bot**（新建 bot）。
-  - 不要自己编中文按钮名。菜单里要写中文时，只用上面这几个核对过的。
-- **核对过的英文标签**（在 app 里找得到，官方文档也这样写）：`Sign in`、`New Bot`（侧边栏顶部的 **+**，快捷键 `Cmd/Ctrl+N`）、`Create`、`Routines`、`When to run`、`Vault`、`Approve`、`Always allow`、`Allow once`。
-  - 没核对到的标签（比如 `Run history`、`Add routine`），照官方文档写，并在 MAINTAINING 的待核对清单里记一笔。
+- **界面语言。** 桌面版和手机版各有 38 种界面语言，默认「跟随系统」（Follow System），在 **设置**（Settings）→ **通用**（General）→ **外观**（Appearance）里的 **语言**（Language）改（官方 faq）。app 里带着简体中文的消息表，约 6100 条，按钮、菜单、设置页都有中文。
+  - 中文写法用 `node scripts/app-labels.mjs "<英文标签>"` 查：它算出英文原文对应的消息 id，在 app 的简体中文表里找。
+  - 举例（app 1.0.3）：New Bot → 新建 Bot，Create → 创建，Routines → 例行任务，When to run → 何时运行，Vault → 保险库，Always allow → 始终允许，Allow once → 允许一次，Ask first → 先询问，Approve → 批准，Deny → 拒绝，Sign in → 登录，Settings → 设置，Test → 测试，Paused → 已暂停，Teach a task → 教它做一项任务，Start voice input → 开始语音输入，Secure Form → 安全表单，Import Bot → 导入 Bot，Usage & Billing → 用量与账单。
+  - 查不到的（比如 Run history、Add to Grok Bot）：可能是文档的写法和 app 不完全一样。照官方文档写英文，括号里给中文意思，在下面的待核对里记一笔。
+- **更正（2026-11-19）。** 这份笔记最早写的是「窗口里主要是英文」。那是因为当时只搜了 app 里的 ASCII 字符串，漏掉了 UTF-8 的中文。已改正。
 - **第一个 bot。** 登录后有一小段介绍，app 自动建好第一个 bot，名字叫 **Grok Bot**，并打开和它的对话。
 - **改名。** 点对话顶部的 bot 名字打开详情，再点一次名字就能改。
+
+## 待核对
+
+官方文档里写了、但 app 1.0.3 的消息表里按原文查不到的标签：Run history、Add to Grok Bot、Settings → Vault 这条路径。写的时候照文档，以后 app 更新再查。

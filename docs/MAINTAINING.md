@@ -54,7 +54,8 @@ node scripts/check-i18n.mjs
 
 ```bash
 node scripts/sync-docs.mjs          # 重新抓官方文档，列出新增、删除、改动的页，更新 docs/sources/official.json
-node scripts/check-ui-labels.mjs    # 页面里加粗的英文界面名，到本机装的 Grok Bot 和官方文档里找
+node scripts/check-ui-labels.mjs    # 页面里加粗的界面名，到本机装的 Grok Bot 和官方文档里找
+node scripts/app-labels.mjs "New Bot"  # 查一个英文标签在 app 里的简体中文写法
 ```
 
 - `sync-docs` 列出的改动页，对照 `docs/sources/README.md` 的「和本站的对应」表，改掉本站用到的地方，再提交 `official.json`。只想看有没有变：加 `--check`（有变化时退出码 1）。
@@ -65,7 +66,9 @@ node scripts/check-ui-labels.mjs    # 页面里加粗的英文界面名，到本
 
 - 站在第一次用的人的角度：先说这一步做什么、为什么，再说怎么做，最后说应该看到什么。
 - 说人话：短句、具体、不堆术语；第一次出现的术语用 `Term` 包起来。
-- 界面上的按钮和菜单名照官方文档原样写（英文），第一次出现时括号里给中文意思。
+- **界面上的按钮和菜单名，照 app 屏幕上的字写。** Grok Bot 桌面版有 38 种界面语言，默认跟着系统走，所以中文系统的读者看到的是中文界面。
+  - 中文页：加粗写 app 的简体中文，第一次出现时括号里给英文原文，比如 **新建 Bot**（New Bot）。中文写法用 `node scripts/app-labels.mjs "New Bot"` 查，不要自己翻。查不到的，照官方文档写英文，括号里给中文意思。
+  - 英文页：照官方文档和 app 的英文写，加粗。
 - 作者 poteto 一律称「作者」或「poteto」，不用他 / 她。
 - MDX 正文里不能出现裸的 `<`、`{`、`}`：占位符写在代码里，比如 `` `<你的 bot 名>` ``。
 
@@ -135,7 +138,7 @@ node scripts/check-ui-labels.mjs    # 页面里加粗的英文界面名，到本
 - **数据和文字**在 `src/data/figs.js`：每张图一个 id，`type` 选画法（compare、term、folder、anatomy、stack、flow、night、ladder、fan、tree），`base` 放和语言无关的部分（图标、命令、哪一步要你开口），`zh` / `en` 放文字。现在一张都还没有；每种画法要哪些字段，看 `Fig.astro` 里对应的那段，或者 xxd-pstack 的 `src/data/figs.js`。
 - **画法**在 `src/components/Fig.astro`，样式在 `public/site.css` 的「图示」一节。全部是 HTML + CSS：颜色、圆角用令牌，跟着亮暗、直角圆角、主色走；字能换行，正文栏窄了自动竖排（容器查询）；从右到左的语言里横向箭头会翻过来，竖排的箭头不翻。
 - **动画**：进入视野后一步步亮起来，放两遍停在完整的样子，图下面出「再看一遍」。只动 opacity / transform；系统设了减少动效、或者没有脚本时直接显示完整的图。终端图的命令一个字一个字打出来，窗口标题写在 `base.app`。
-- **图里的字**：一格一件事，短；`/命令` 会自动排成等宽、不在连字符处断开。不抄正文整句，也不喊卖点。界面上的按钮名和输出照真实界面写（英文），说明文字才翻译。
+- **图里的字**：一格一件事，短；`/命令` 会自动排成等宽、不在连字符处断开。不抄正文整句，也不喊卖点。界面上的按钮名照真实界面写（中文图用 app 的中文，英文图用英文），说明文字才翻译。
 - **新加一张**：先在 `figs.js` 写数据，再在中文页、`/en/` 页同一位置放 `<Fig id="…" />` 并 `import Fig`；`npm run build` 后亮色、暗色、手机宽度各看一眼。
 
 ## 反馈入口
