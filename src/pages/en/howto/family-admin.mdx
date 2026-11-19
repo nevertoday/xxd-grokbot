@@ -3,88 +3,72 @@ layout: ../../../layouts/HowTo.astro
 slug: family-admin
 time: A few rounds of chat to set the process, then a list every evening
 for: School notices, bills, and party invitations land in your personal email, and some slip
-tldr: Your bot reads your personal email and calendar each day, lists what's due, and drafts replies for you to send.
-description: "Hand off family admin to Grok Bot: school forms, bills, and invitations to answer. Say the result you want and your rules, then let it list what's due every evening. Or start from the ready-made Tradbot."
+tldr: "Every evening, a list sorted by due date is waiting in the chat: school forms, bills, invitations to answer. Replies are drafts, and it pays nothing."
+description: "Hand off family admin to Grok Bot: school forms, bills, and invitations to answer. Say that what you want is for nothing to slip, explain your process and your rules, then let it list what's due every evening. Or start from the ready-made Tradbot."
 ---
 import Callout from "../../../components/Callout.astro";
 import Term from "../../../components/Term.astro";
 import Q from "../../../components/Q.astro";
 import Copy from "../../../components/Copy.astro";
 
-## Say what result you want
+School forms, bills to pay, and party invitations to answer all land in your personal email, mixed in with promotions, and too often you remember one after its due date. When you finish this page, your bot will post a list in the chat every evening at 8:00 PM of what's due from tomorrow through next week, sorted by due date, each item linked to its email. Any replies it writes are drafts that wait for you to send.
 
-Answering email is one step in the process. The result you want is that no school form, bill, or invitation slips.
+<mark>Remembering goes to the bot. Your calendar, your answers to invitations, and your payments stay your call.</mark>
 
-Make a new <Term k="bot" />, call it Potato, and send it the goal:
+It takes four steps: give it the goal, explain how you do it now, teach it how you decide, then let it start on its own.
 
-<Copy id="fa-goal" title="First message: the goal" code="Hi Potato. I want you to own this goal: nothing at home slips. School forms go in on time, bills are never late, and invitations get answered on time. This is your job from now on, so remember it. Based on the goal, choose a name and a picture for yourself." />
+## The goal isn't answered email
+
+Answering email is only one step in the process. What you actually want is that no school form, bill, or invitation slips. Make a new <Term k="bot" />, call it Potato, and give it that goal:
+
+<Copy id="fa-goal" title="First message: the goal" code="Hi Potato. There's a goal I'd like you to own. I want nothing at home to slip: school forms go in on time, bills are never late, and invitations get answered on time, so that I don't have to keep all of it in my head. This is your job from now on, so please remember it. Then, based on the goal, choose a name and a picture for yourself." />
 
 <Callout type="tip" title="Want a shortcut? Use a ready-made bot">
 The official bot marketplace has [Tradbot](https://x.ai/bot/marketplace/bots/tradbot-2) for exactly this. It watches your personal email and calendar, drafts replies, and catches pickup clashes. Its listing says it never sends without you. The rest of this page teaches your own bot from scratch.
 </Callout>
 
-## Tell it how you do it now
+## Tell it how you go through your personal email
 
-Tell it how you do this today. Change every line to fit your family:
+Now tell it how you do this today: which kinds of email you pick out, which calendar you check, and how you order the list. Here's an example. Swap in your own family's details:
 
-<Copy id="fa-process" title="Second message: your process" code={`Potato, this is how I usually do this myself:
-- Steps: every day I go through my personal email and pick out school, bills, and invitations. Then I check the family calendar for pickup clashes. Last, I make a list sorted by due date.
-- What I watch for: due dates, anything that needs a signature or a form, and pickup times.
-- Apps I use: Gmail and Google Calendar.
-- How I check it's right: every item on the list has a due date and a link to the original email.
-- Where the information comes from: my personal email, the shared family calendar, and the school website.
-- Where feedback comes from: my family tells me what I missed.
+<Copy id="fa-process" title="Second message: your process" code={`Potato, this is how I usually do this myself. Every day I go through my personal email and pick out school, bills, and invitations. Then I check the family calendar for pickup clashes, and last I make a list sorted by due date. I watch especially for due dates, anything that needs a signature or a form, and pickup times. I use Gmail and Google Calendar, and the information comes from my personal email, the shared family calendar, and the school website. It's right when every item on the list has a due date and a link to the original email. My family tells me what I missed, and I'll pass that on to you.
 
 Think about how you could take this over from me completely. Before you begin, restate my goal and process in simple words, so I can give you feedback and confirm it. Don't start doing the work yet. Let's get the process planned first.`} />
 
-If typing is slow, press `Cmd/Ctrl+D` and talk. Say things as they come to you. It restates what it heard first. Correct anything that's off, and go a few rounds.
+If typing is slow, press `Cmd/Ctrl+D` and just talk, saying things as they come to you. It restates what it heard first. Correct whatever's off and go a few rounds until it's right. When you're happy, tell it to go ahead. If it needs an app, it shows a **Connect** card in the chat. Open it and sign in.
 
-When you're happy, tell it to go ahead. If it needs an app, it shows a **Connect** card in the chat. Open it and sign in.
+## What it can do, and what stays your call
 
-## Teach it how you decide
+Some of this the bot can actually do. It can edit your calendar, and it can answer invitations. But family plans are yours to make, so spell out the rules first:
 
-You make some calls without thinking, and your bot can't know them. Here are three common ones for this job:
-
-<Copy id="fa-judge" title="Third message: how you decide" code={`Potato, here are a few rules I use to decide:
-1. Anything due within three days goes at the top. Sort the rest by date.
-2. If a pickup clashes with something, tell me first. Don't change the calendar for me, and don't answer anyone's invitation for me.
-3. Bills get a reminder, never a payment. I pay them myself.
+<Copy id="fa-judge" title="Third message: how you decide" code={`Potato, here are a few rules I use to decide. Anything due within three days goes at the top. Sort the rest by date. If a pickup clashes with something, tell me first. Don't change the calendar for me, and don't answer anyone's invitation for me. Bills get a reminder, never a payment. I pay them myself.
 
 Help me find what I haven't told you about this process yet. Ask me how I make decisions, where I get my information, how I check the work, and when you should ask me for help. Ask one question at a time. Then walk me through a few examples so I can give you feedback. Don't automate anything yet.`} />
 
-- **Rule 1.** What's due soon comes first, so a long list still doesn't hide anything.
-- **Rule 2.** It can edit your calendar and answer invitations. Family plans stay your call.
-- **Rule 3.** <mark>Bills get a reminder, never a payment.</mark> That rule lives in your prompt. To make sure it can't pay, don't save a card in <Term k="Vault" />. A saved card fills in at checkout without asking you.
+The first rule brings what's due soon to the top, so even a long list doesn't hide anything. The other two draw the line: it reminds, you decide. Keep in mind, though, that "bills get a reminder, never a payment" is only a rule in your prompt. To make sure it can't pay, don't save a card in <Term k="Vault" />, because a saved card fills in at checkout without asking you.
 
-Include an example or two that went wrong, like the permission slip that almost expired. See how it would handle them, then tell it what to fix.
+When it's done asking, try it on a real case or two that went wrong, like the permission slip that almost expired. See how it would handle them, then tell it what to fix.
 
-## Make it run on its own
+## A list every evening at 8
 
-Once this has gone well a few times, let it start on its own. Save the process as a <Term k="技能" /> first, then set up a <Term k="routine" />:
+Once this has gone well a few times, you can let it start on its own. First have it save the process as a <Term k="技能" />, written instructions it follows every time, then set up a <Term k="routine" /> that tells it when to start:
 
-<Copy id="fa-routine" title="Fourth message: let it start on its own" code={`Save the process we just used as a skill called "Family admin."
-Then set up a routine: every evening at 8:00 PM, use that skill to list what's due from tomorrow through next week, and post it in this chat.
-Write any replies as drafts for me to send.
-Don't pay for anything, and don't accept or decline any invitation for me.`} />
+<Copy id="fa-routine" title="Fourth message: let it start on its own" code={`Save the process we just used as a skill called "Family admin." Then set up a routine: every evening at 8:00 PM, use that skill to list what's due from tomorrow through next week, and post it in this chat. Write any replies as drafts for me to send. Don't pay for anything, and don't accept or decline any invitation for me.`} />
 
-After the first few runs, check these:
+After the first few runs, first check that no ads slipped in, since promotional email shouldn't count as a bill. Then pick two items and compare their dates with the original email. Last, make sure nothing was paid or answered, and the replies are still drafts.
 
-- **No ads slipped in.** Promotional email shouldn't count as a bill.
-- **The dates match.** Pick two items and compare them with the original email.
-- **Nothing was paid or answered.** Replies are still drafts.
+A new routine waits for its next scheduled time. If you'd rather not wait, open it and choose **Test**, but keep in mind that a test does real work. See [Create a routine](https://docs.x.ai/grok-bot/skills-routines-and-automations#create-a-routine) in the official docs. For what it stops to ask you about, see [Approvals and privacy](/en/howto/approvals-privacy/).
 
-A new routine waits for its next scheduled time. To try it now, open it and choose **Test**. A test does real work. See [Create a routine](https://docs.x.ai/grok-bot/skills-routines-and-automations#create-a-routine) in the official docs.
-
-To see what it asks you about first, read [Approvals and privacy](/en/howto/approvals-privacy/).
+Hand it the remembering, keep the deciding, and the family stuff stops slipping.
 
 ## Stuck?
 
 <Q q="It can't see other family members' calendars.">
-The Google Calendar app reads only the calendars your Google account can see. Ask your family to share their calendars with your account first.
+The Google Calendar app reads only the calendars your Google account can see, so ask your family to share their calendars with your account first.
 </Q>
 <Q q="It treated a promotional email as a bill.">
 Show it two real emails, one bill and one promotion. Explain how to tell them apart, then add "keep doing this from now on, remember it."
 </Q>
 <Q q="The school website wants a login.">
-Save the login in <Term k="Vault" />. The bot fills it in without seeing the password. If it isn't saved, the bot shows a Secure Form for you to fill in, and the values go straight into the page. Never paste a password into the chat.
+Save the login in <Term k="Vault" />, and the bot fills it in without seeing the password. If it isn't saved, the bot shows a Secure Form for you to fill in, and the values go straight into the page. Never paste a password into the chat.
 </Q>

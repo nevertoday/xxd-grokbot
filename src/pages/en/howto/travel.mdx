@@ -3,92 +3,74 @@ layout: ../../../layouts/HowTo.astro
 slug: travel
 time: A few rounds of chat to set the process, then it has options ready whenever a trip comes up
 for: Every trip means comparing flights and hotels across several websites
-tldr: Your bot compares flights and hotels and brings you two options. Booking and paying stay your call.
-description: "Plan and book trips with Grok Bot: say the result you want, explain how you pick flights and hotels, and get two options back. If it books, keep the payment step for your OK."
+tldr: Forward a trip notice to your bot, and it compares flights and hotels and brings you two options. Booking and paying stay your call.
+description: "Plan and book trips with Grok Bot: say that what you want is a trip sorted as soon as it's set, explain how you pick flights and hotels, and get two options back. If it books, keep the payment step for your OK."
 ---
 import Callout from "../../../components/Callout.astro";
 import Term from "../../../components/Term.astro";
 import Q from "../../../components/Q.astro";
 import Copy from "../../../components/Copy.astro";
 
-## Say what result you want
+As soon as a trip is set, you're bouncing between airline and hotel websites, comparing times and prices, and checking your calendar to see whether a connection leaves enough time. When you finish this page, you'll forward the trip notice to your bot's email address, and it will compare flights and hotels and post two options in the chat, each with links and a total price.
 
-Booking a flight is one step in the process. The result you want is that once a trip is set, tickets and a hotel are sorted fast, and all you do is choose.
+<mark>Searching and comparing go to the bot. Which option to take, and whether to pay, stay with you.</mark> The rules and the payment note below show where that line goes.
 
-The official docs call this a Travel coordinator. See [Use cases](https://docs.x.ai/grok-bot/use-cases#travel-coordinator).
+It takes four steps: give it the goal, explain how you do it now, teach it how you decide, then let it start on its own. The official docs call this a Travel coordinator. See [Use cases](https://docs.x.ai/grok-bot/use-cases#travel-coordinator).
 
-Make a new <Term k="bot" />, call it Potato, and send it the goal:
+## The goal isn't a plane ticket
 
-<Copy id="tr-goal" title="First message: the goal" code="Hi Potato. I want you to own this goal: for every trip, you compare flights and hotels, and all I do is choose. I don't want to search websites myself. This is your job from now on, so remember it. Based on the goal, choose a name and a picture for yourself." />
+Booking a flight is only one step in the process. What you actually want is that once a trip is set, tickets and a hotel are sorted fast, and all you do is choose. Make a new <Term k="bot" />, call it Potato, and give it that goal:
 
-## Tell it how you do it now
+<Copy id="tr-goal" title="First message: the goal" code="Hi Potato. There's a goal I'd like you to own. I want you to compare flights and hotels for every trip so that all I do is choose, and I don't have to search websites myself anymore. This is your job from now on, so please remember it. Then, based on the goal, choose a name and a picture for yourself." />
 
-Tell it how you do this today. Change every line to fit you:
+## Tell it how you pick flights and hotels
 
-<Copy id="tr-process" title="Second message: your process" code={`Potato, this is how I usually do this myself:
-- Steps: I check my calendar for the meeting I'm traveling to, look up flights, and compare times and prices. Then I find a hotel near where the meeting is. Give me two options. I book only after I choose, and then it goes on my calendar.
-- What I watch for: no red-eyes, at least 2 hours for a connection, and free changes or cancellation when possible.
-- Apps I use: Google Calendar and Gmail. For airline and hotel websites, use your own browser.
-- How I check it's right: each option has links and a total price, and I see the same price when I open them.
-- Where the information comes from: meetings on my calendar and invitations in my email.
-- Where feedback comes from: which option I picked, and why I didn't pick the other.
+Now tell it how you plan a trip today: what you look at first, what you compare, and what you won't accept. Here's an example. Swap in your own habits:
+
+<Copy id="tr-process" title="Second message: your process" code={`Potato, this is how I usually do this myself. I check my calendar for the meeting I'm traveling to, look up flights, and compare times and prices. Then I find a hotel near where the meeting is. Give me two options. I book only after I choose, and then it goes on my calendar. No red-eyes, at least 2 hours for a connection, and free changes or cancellation when possible. The meetings are in Google Calendar and the invitations are in Gmail. For airline and hotel websites, use your own browser. It's right when each option has links and a total price, and I see the same price when I open them. I'll tell you which option I picked, and why I didn't pick the other.
 
 Think about how you could take this over from me completely. Before you begin, restate my goal and process in simple words, so I can give you feedback and confirm it. Don't start doing the work yet. Let's get the process planned first.`} />
 
-If typing is slow, press `Cmd/Ctrl+D` and talk. Say things as they come to you. It restates what it heard first. Correct anything that's off, and go a few rounds.
+If typing is slow, press `Cmd/Ctrl+D` and just talk, saying things as they come to you. It restates what it heard first. Correct whatever's off and go a few rounds until it's right. When you're happy, tell it to go ahead. If it needs an app, it shows a **Connect** card in the chat. Open it and sign in.
 
-When you're happy, tell it to go ahead. If it needs an app, it shows a **Connect** card in the chat. Open it and sign in.
+## When cheap and fast pull apart
 
-## Teach it how you decide
+When you book, you keep a running tally in your head: how much extra a nonstop is worth, which to trust when an email and your calendar disagree, and when a booking is really done. The bot knows none of this, so tell it:
 
-You make some calls without thinking, and your bot can't know them. Here are three common ones for this job:
-
-<Copy id="tr-judge" title="Third message: how you decide" code={`Potato, here are a few rules I use to decide:
-1. If a nonstop costs less than $75 more than a connection, take the nonstop.
-2. My calendar is right about meeting times. If an email says something different, ask me first.
-3. Booking isn't done when you pay. It's done when the confirmation email is in and the trip is on my calendar.
+<Copy id="tr-judge" title="Third message: how you decide" code={`Potato, here are a few rules I use to decide. If a nonstop costs less than $75 more than a connection, take the nonstop. My calendar is right about meeting times. If an email says something different, ask me first. Booking isn't done when you pay. It's done when the confirmation email is in and the trip is on my calendar.
 
 Help me find what I haven't told you about this process yet. Ask me how I make decisions, where I get my information, how I check the work, and when you should ask me for help. Ask one question at a time. Then walk me through a few examples so I can give you feedback. Don't automate anything yet.`} />
 
-- **Rule 1.** When cheap and fast pull apart, it knows your trade-off.
-- **Rule 2.** When the two disagree, it knows which one to trust.
-- **Rule 3.** With the confirmation and the calendar entry in place, you can stop thinking about the trip.
+The first rule tells it how you trade money against time, and the second tells it which source to trust when the two disagree. The third puts "done" at the moment the confirmation and the calendar entry are both in place, because that's when you can really stop thinking about the trip.
 
-Include an example or two that went wrong, like the connection you missed. See how it would handle them, then tell it what to fix.
+When it's done asking, try it on a real trip or two that went wrong, like the connection you missed. See how it would handle them, then tell it what to fix.
 
 <Callout type="warn" title="The payment step">
-A card saved in <Term k="Vault" /> fills in at checkout without asking you each time. <mark>To approve every payment yourself, don't save the card.</mark> It asks for the card with a Secure Form, which fills the page without showing the bot what you typed. In that form, leave **Securely save to Bot's vault** unchecked. <u>A form without that checkbox saves the card straight to Vault, so don't submit it.</u> See [Logins and cards go in Vault](/en/howto/vault-logins/).
+A card saved in <Term k="Vault" /> fills in at checkout without asking you each time. So if you want to approve every payment yourself, don't save the card. When it needs a card, it asks with a Secure Form, which fills the page without showing the bot what you typed. In that form, leave **Securely save to Bot's vault** unchecked. <u>A form without that checkbox saves the card straight to Vault, so don't submit it.</u> See [Logins and cards go in Vault](/en/howto/vault-logins/).
 </Callout>
 
-## Make it run on its own
+## Forward a trip notice, and it gets to work
 
-Once this has gone well a few times, let it start on its own. Save the process as a <Term k="技能" /> first, then set up a <Term k="routine" />.
+Once this has gone well a few times, you can let it start on its own. As before, have it save the process as a <Term k="技能" />, then set up a <Term k="routine" />. This one doesn't run on a clock, though. It waits for an email: you forward a trip notice to the bot's address, and it starts looking.
 
-This job starts when an email arrives. You forward a trip notice to the bot's email address, and it starts looking. If it doesn't have an address yet, tell it "Get yourself an email address." It asks what name you want, and nothing is claimed until you approve. On a Cursor team, an admin has to turn this on first. <u>You get one address per account, and you can't rename or delete it.</u>
+If it doesn't have an address yet, tell it "Get yourself an email address." It asks what name you want, and nothing is claimed until you approve. On a Cursor team, an admin has to turn this on first. <u>You get one address per account, and you can't rename or delete it</u>, so settle on the name before you approve.
 
-<Copy id="tr-routine" title="Fourth message: let it start on its own" code={`Save the process we just used as a skill called "Trip planning."
-Then set up a routine: when an email I forward from my own address arrives in your inbox, use that skill to find two options and post them in this chat.
-Don't book anything, and don't pay for anything.
-If nothing fits, tell me. Don't loosen my rules.`} />
+<Copy id="tr-routine" title="Fourth message: let it start on its own" code={`Save the process we just used as a skill called "Trip planning." Then set up a routine: when an email I forward from my own address arrives in your inbox, use that skill to find two options and post them in this chat. Don't book anything, and don't pay for anything. If nothing fits, tell me. Don't loosen my rules.`} />
 
-After the first few runs, check these:
+After the first few runs, first make sure it didn't book: the options are in the chat, and there's no booking confirmation in your email. Then open the links and check the totals. Last, check that your rules held, with no red-eyes and enough time for every connection.
 
-- **It didn't book.** The options are in the chat, and there's no booking confirmation in your email.
-- **The prices match.** Open the links and check the totals.
-- **Your rules held.** No red-eyes, and connections have enough time.
+To try it now, forward an old trip notice to it. See [Trigger work from an event](https://docs.x.ai/grok-bot/skills-routines-and-automations#trigger-work-from-an-event) in the official docs. For what it stops to ask you about, see [Approvals and privacy](/en/howto/approvals-privacy/).
 
-To try it now, forward an old trip notice to it. See [Trigger work from an event](https://docs.x.ai/grok-bot/skills-routines-and-automations#trigger-work-from-an-event) in the official docs.
-
-To see what it asks you about first, read [Approvals and privacy](/en/howto/approvals-privacy/).
+From here on, the bot does the website hopping. You read two options and pick one.
 
 ## Stuck?
 
 <Q q="A website wants me to sign in or enter a code.">
-For a login, it tries Vault first, then a connected 1Password, then a Secure Form for you to fill in. It can read a code a site emails you from a connected Gmail. When none of that works, like a QR code, it hands you the computer. Choose **Take over**, finish that step, and choose **I'm done**. Then tell it to continue. Never paste a password or a code into the chat.
+For a login, it tries Vault first, then a connected 1Password, then a Secure Form for you to fill in. It can read a code a site emails you from a connected Gmail. Only when none of that works, like with a QR code, does it hand you the computer. Choose **Take over**, finish that step, and choose **I'm done**. Then tell it to continue. Never paste a password or a code into the chat.
 </Q>
 <Q q="One website never loads.">
-Some sites drop connections from the bot's computer. Open **Settings → Computer**, and under **Your computer** turn on **Route traffic through this computer**. While the desktop app is open, the site sees your own network.
+Some sites drop connections from the bot's computer. Open **Settings → Computer**, and under **Your computer** turn on **Route traffic through this computer**. Then, while the desktop app is open, the site sees your own network.
 </Q>
 <Q q="An email arrived, but it didn't start.">
-It counts only new email. Mail from before the routine existed doesn't start a run. Also check the sender in the routine. It should be the address you forward from.
+It counts only new email, so mail from before the routine existed doesn't start a run. Also check the sender in the routine. It should be the address you forward from.
 </Q>
