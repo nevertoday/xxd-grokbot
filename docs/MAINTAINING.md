@@ -55,6 +55,8 @@ node scripts/check-i18n.mjs
 ```bash
 node scripts/sync-docs.mjs          # 重新抓官方文档，列出新增、删除、改动的页，更新 docs/sources/official.json
 node scripts/check-ui-labels.mjs    # 页面里加粗的界面名，到本机装的 Grok Bot 和官方文档里找
+node scripts/zh-labels.mjs          # 中文页里漏写成英文的按钮名，换成 app 的中文（--dry 先看）
+npm run check                       # 构建以后：多语言检查 + 整站检查（<mark>、站内链接和锚点、示意标题、占位字）
 node scripts/app-labels.mjs "New Bot"  # 查一个英文标签在 app 里的简体中文写法
 ```
 

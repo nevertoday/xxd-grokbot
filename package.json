@@ -9,7 +9,8 @@
     "build": "astro build && node scripts/search-sections.mjs && node scripts/base-links.mjs",
     "preview": "astro preview --port 4430",
     "sync-xxd": "node scripts/sync-xxd.mjs",
-    "release": "npm run build && wrangler deploy"
+    "release": "npm run build && npm run check && wrangler deploy",
+    "check": "node scripts/check-i18n.mjs && node scripts/check-site.mjs"
   },
   "dependencies": {
     "@astrojs/mdx": "7.0.3",
