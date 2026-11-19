@@ -42,23 +42,23 @@ export const ARTICLE = "https://x.com/poteto/status/2123159537016533493";
 
 // 新手入门：给第一次用 Grok Bot 的人。三课，一条路走到底；做完这三课就够用了。
 export const LESSONS = [
-  { n: 1, slug: "1-goal", title: "先想清楚你要它做成什么", minutes: "待定", sum: "挑一件你常做的事，说出最后要的结果", en: { title: "Decide what you want done", minutes: "TBD", sum: "Pick something you do often and name the result you want" } },
-  { n: 2, slug: "2-first-bot", title: "建你的第一个 bot", minutes: "待定", sum: "新建一个 bot，给它起个名字", en: { title: "Make your first bot", minutes: "TBD", sum: "Make a new bot and give it a name" } },
-  { n: 3, slug: "3-hand-over", title: "把一件事交给它", minutes: "待定", sum: "把这件事讲给它，看它做一遍", en: { title: "Hand it one job", minutes: "TBD", sum: "Explain the job and watch it do it once" } },
+  { n: 1, slug: "1-goal", title: "先想清楚你要它做成什么", minutes: "10 分钟", sum: "挑一件你常做的事，说出最后要的结果", en: { title: "Decide what you want done", minutes: "10 minutes", sum: "Pick something you do often and name the result you want" } },
+  { n: 2, slug: "2-first-bot", title: "建你的第一个 bot", minutes: "15 分钟", sum: "新建一个 bot，给它起个名字", en: { title: "Make your first bot", minutes: "15 minutes", sum: "Make a new bot and give it a name" } },
+  { n: 3, slug: "3-hand-over", title: "把一件事交给它", minutes: "30 分钟", sum: "把这件事讲给它，看它做一遍", en: { title: "Hand it one job", minutes: "30 minutes", sum: "Explain the job and watch it do it once" } },
 ];
 // 以后加的语言：新手入门标题、时间、简介在 src/i18n/<语言>.js 的 lessons 里，按顺序叠到这里
 for (const [code, d] of Object.entries(EXTRA)) (d.lessons || []).forEach((l, i) => { if (LESSONS[i]) LESSONS[i][code] = l; });
 export const lessonHref = (s, lang = "zh") => link(`/start/${s.slug}/`, lang);
 
 export const STEPS = [
-  { n: 0, slug: "0-what", title: "Grok Bot 是什么", minutes: "待定", ready: false, sum: "一个带电脑的 AI 帮手：它能做什么，要准备什么", en: { title: "What Grok Bot is", minutes: "TBD", sum: "An AI teammate with its own computer: what it can do, what you need" } },
-  { n: 1, slug: "1-goal", title: "先定目标，别把步骤当目标", minutes: "待定", ready: false, sum: "先想清楚这件事最后是为了什么，再列步骤", en: { title: "Start with the goal", minutes: "TBD", sum: "Know what the work is for before you list the steps" } },
-  { n: 2, slug: "2-process", title: "把你的做法讲给它", minutes: "待定", ready: false, sum: "说说你平时怎么做，和它一起理出步骤", en: { title: "Tell it your process", minutes: "TBD", sum: "Walk it through how you do it now and work out the steps together" } },
-  { n: 3, slug: "3-how-you-think", title: "教它你怎么判断", minutes: "待定", ready: false, sum: "把你拿主意的标准告诉它", en: { title: "Teach it how you think", minutes: "TBD", sum: "Tell it the rules you use to decide" } },
-  { n: 4, slug: "4-apps", title: "连上你的应用和电脑", minutes: "待定", ready: false, sum: "连上常用的应用，认识它的云端电脑", en: { title: "Connect your apps and computer", minutes: "TBD", sum: "Connect the apps you use and meet its cloud computer" } },
-  { n: 5, slug: "5-improve", title: "让它自己变好", minutes: "待定", ready: false, sum: "做顺了的方法存成技能，下次照着做", en: { title: "Let it improve itself", minutes: "TBD", sum: "Save what works as a skill so it does it the same way next time" } },
-  { n: 6, slug: "6-routines", title: "让它自己按时开工", minutes: "待定", ready: false, sum: "用 routine 按时间或者等某件事发生再开工", en: { title: "Make it run on its own", minutes: "TBD", sum: "Use routines to start work on a schedule or when something happens" } },
-  { n: 7, slug: "7-team", title: "一队 bot 和 Dr Eggbot", minutes: "待定", ready: false, sum: "一个 bot 管一份活，让 Dr Eggbot 帮你搭一队", en: { title: "A team of bots, and Dr Eggbot", minutes: "TBD", sum: "One job per bot; let Dr Eggbot set up the team" } },
+  { n: 0, slug: "0-what", title: "Grok Bot 是什么", minutes: "读 8 分钟", ready: true, sum: "一个带电脑的 AI 帮手：它能做什么，要准备什么", en: { title: "What Grok Bot is", minutes: "8-minute read", sum: "An AI teammate with its own computer: what it can do, what you need" } },
+  { n: 1, slug: "1-goal", title: "先定目标，别把步骤当目标", minutes: "10 分钟", ready: true, sum: "先想清楚这件事最后是为了什么，再列步骤", en: { title: "Start with the goal", minutes: "10 minutes", sum: "Know what the work is for before you list the steps" } },
+  { n: 2, slug: "2-process", title: "把你的做法讲给它", minutes: "15 分钟", ready: true, sum: "说说你平时怎么做，和它一起理出步骤", en: { title: "Tell it your process", minutes: "15 minutes", sum: "Walk it through how you do it now and work out the steps together" } },
+  { n: 3, slug: "3-how-you-think", title: "教它你怎么判断", minutes: "15 分钟", ready: true, sum: "把你拿主意的标准告诉它", en: { title: "Teach it how you think", minutes: "15 minutes", sum: "Tell it the rules you use to decide" } },
+  { n: 4, slug: "4-apps", title: "连上你的应用和电脑", minutes: "15 分钟", ready: true, sum: "连上常用的应用，认识它的云端电脑", en: { title: "Connect your apps and computer", minutes: "15 minutes", sum: "Connect the apps you use and meet its cloud computer" } },
+  { n: 5, slug: "5-improve", title: "让它自己变好", minutes: "10 分钟", ready: true, sum: "让它自己拿到反馈，找出哪里能改", en: { title: "Let it improve itself", minutes: "10 minutes", sum: "Let it get its own feedback and find what to improve" } },
+  { n: 6, slug: "6-routines", title: "让它自己按时开工", minutes: "15 分钟", ready: true, sum: "用 routine 按时间或者等某件事发生再开工", en: { title: "Make it run on its own", minutes: "15 minutes", sum: "Use routines to start work on a schedule or when something happens" } },
+  { n: 7, slug: "7-team", title: "一队 bot 和 Dr Eggbot", minutes: "10 分钟", ready: true, sum: "一个 bot 管一份活，让 Dr Eggbot 帮你搭一队", en: { title: "A team of bots, and Dr Eggbot", minutes: "10 minutes", sum: "One job per bot; let Dr Eggbot set up the team" } },
 ];
 export const stepHref = (s, lang = "zh") => link(`/guide/${s.slug}/`, lang);
 

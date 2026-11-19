@@ -90,9 +90,9 @@ export default {
 
   // 新手入门三课在导航、首页路线图里的标题、时间、简介（顺序：1 先想清楚、2 建第一个 bot、3 交给它一件事）
   lessons: [
-    { title: "Decide what you want done", minutes: "TBD", sum: "Pick something you do often and name the result you want" },
-    { title: "Make your first bot", minutes: "TBD", sum: "Make a new bot and give it a name" },
-    { title: "Hand it one job", minutes: "TBD", sum: "Explain the job and watch it do it once" },
+    { title: "Decide what you want done", minutes: "10 minutes", sum: "Pick something you do often and name the result you want" },
+    { title: "Make your first bot", minutes: "15 minutes", sum: "Make a new bot and give it a name" },
+    { title: "Hand it one job", minutes: "30 minutes", sum: "Explain the job and watch it do it once" },
   ],
 
   // 一课的页面框架
