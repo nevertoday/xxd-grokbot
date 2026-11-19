@@ -4,7 +4,7 @@ slug: approvals-privacy
 time: 5 minutes to read, 5 to set up
 for: You want to control what a bot can do, and where it stops to ask you
 step: 4
-tldr: Say in the request where it stops. Put Ask first on anything you can't undo. Clean up logins and files you're done with.
+tldr: Say in the request where it stops, put Ask first on anything you can't undo, and clean up logins and files you're done with.
 description: Set boundaries in a request; choose the right button on an approval card; use Custom Rules so sending, paying and deleting ask you first; control access to your own computer; the shared computer; data and privacy; taking access back.
 ---
 import Callout from "../../../components/Callout.astro";
@@ -12,28 +12,30 @@ import Term from "../../../components/Term.astro";
 import Q from "../../../components/Q.astro";
 import Copy from "../../../components/Copy.astro";
 
-This page covers the settings. For how approvals, apps and the computer fit together, see [Full guide step 4](/en/guide/4-apps/). The official page is [Approvals, security, and privacy](https://docs.x.ai/grok-bot/approvals-security-and-privacy).
+When you hand work to a bot, what you really need to control are the things that can't be taken back once they're done: a message that's been sent, money that's been paid, data that's been overwritten. An approval only decides whether one action runs. It can't undo work that's done. <mark>So anything you can't undo, like sending, paying or deleting, gets an Ask first rule.</mark>
+
+This page covers the settings. First you set a boundary in the request, then you read the approval card, then you add an Ask first rule, and last come your own computer, the shared computer, privacy, and taking access back. For how approvals, apps and the computer fit together, see [Full guide step 4](/en/guide/4-apps/). The official page is [Approvals, security, and privacy](https://docs.x.ai/grok-bot/approvals-security-and-privacy).
 
 ## Say in the request where it stops
 
-When you hand over a job, say how far it may go and where it waits for you:
+The simplest boundary goes right into the request: how far it may go, and where it waits for you. For example:
 
 <Copy id="ap-boundary" code="Go through next week's bookings, list the customers whose times need to change, and draft a text to each one. Don't send the texts or change the booking system. For each change, show the current time, the proposed time and why, and wait for my OK." />
 
 It hands back a draft for you to decide on. These kinds of actions always deserve a stated boundary:
 
-- **Sending messages or invitations**
-- **Publishing content**
-- **Purchases and transfers**
-- **Deleting or overwriting data**
-- **Changing permissions or production systems**
-- **Accepting legal terms**
+- Sending messages or invitations
+- Publishing content
+- Purchases and transfers
+- Deleting or overwriting data
+- Changing permissions or production systems
+- Accepting legal terms
 
 For a boundary that should last, ask it to remember:
 
 <Copy id="ap-remember" code="From now on, ask me before you send a message to anyone. Remember this." />
 
-Memory is only the first layer. For boundaries that matter, also add a rule as shown below.
+Memory is only the first layer, though. For boundaries that matter, also add a rule as shown below.
 
 ## Read the card before you choose
 
@@ -45,34 +47,32 @@ When an action needs you, an <Term k="审批" text="approval" /> card shows what
 | **Always allow** | It runs now; similar ones run on their own |
 | **Deny** | It doesn't run; no more asking until you write |
 
-Some cards carry a warning, such as **This can't be undone**.
+Some cards also carry a warning, such as **This can't be undone**.
 
 <Callout type="warn" title="If you can't tell, don't approve yet">
-If you can't say what the card targets or does, ask the bot to explain it in plain words. Or ask for a draft first.
+If you can't say what the card targets or does, ask the bot to explain it in plain words, or ask for a draft first.
 </Callout>
 
-In a chat you started, the card waits for you. Cards from background work, like a routine or a message from another bot, expire after about 30 minutes. Then the action doesn't run. For bots that run routines, turn on **Notifications** so you don't miss them.
+Whether a card waits for you depends on where the work came from. In a chat you started, the card waits. Cards from background work, like a routine or a message from another bot, expire after about 30 minutes, and then the action doesn't run. So for bots that run routines, turn on **Notifications** so you don't miss them.
 
 ## Put Ask first on anything you can't undo
 
-<mark>Anything you can't undo, like sending, paying or deleting, gets an Ask first rule.</mark> An approval only decides whether one action runs. It can't undo work that's done.
-
-Custom Rules only work while **Auto-review** is on. It's on by default; the switch is under **Bot** in **Settings → General**. With it off, the bot runs actions without checking them first, and your rules are hidden and unused but kept. Turn it back on to use them again. See the official [Configure Auto Review](https://docs.x.ai/grok-bot/approvals-security-and-privacy#configure-auto-review).
+In the settings, that opening sentence becomes an **Ask first** rule. One thing to know first: Custom Rules only work while **Auto-review** is on. It's on by default, and the switch is under **Bot** in **Settings → General**. If you turn it off, the bot runs actions without checking them first, and your rules are hidden and unused but kept. Turn it back on to use them again. See the official [Configure Auto Review](https://docs.x.ai/grok-bot/approvals-security-and-privacy#configure-auto-review).
 
 1. Open **Settings → General** and find **Custom Rules** under **Bot**. On the phone, it's in the **Bot** group of **Settings**.
 2. Under **When Grok Bot wants to:**, describe one action in plain words.
 3. Under **It should:**, choose **Ask first**, then **Add Rule**.
 
-One rule per action, as narrow as you can make it:
+One rule per action, as narrow as you can make it. For example:
 
 - Ask me before emailing anyone outside the company.
 - Ask me before changing a live dashboard.
 
-The docs advise against broad rules like "allow everything in the browser," since websites and tools change. When both kinds of rule match, **Ask first** wins.
+The docs advise against broad rules like "allow everything in the browser," because websites and tools change. When an action matches both kinds of rule, **Ask first** wins.
 
 ## Control access to your own computer
 
-Bots normally work on the <Term k="云端电脑" text="cloud computer" />. The computer in front of you needs its own permission. Open **Settings → Computer → Your computer**, find **Execution on this computer**, and pick one:
+Bots normally work on the <Term k="云端电脑" text="cloud computer" />, and the computer in front of you needs its own permission. Open **Settings → Computer → Your computer**, find **Execution on this computer**, and pick one of three:
 
 - **Ask every time**: the default.
 - **Always allow**: no more asking.
@@ -82,22 +82,18 @@ These settings only cover your own computer. Bots can still use the cloud comput
 
 ## Remember: all your bots share one computer
 
-Sites one bot signed in to, files it left, and command-line credentials are open to all your other bots. So:
+There's one more thing to keep in mind. All your bots share the same cloud computer, so sites one bot signed in to, files it left, and command-line credentials are open to all your other bots. So:
 
-- **Bots can't be walled off from each other.** Separate bots are not a security measure.
-- **Sign out when you're done.** When a site shouldn't be used anymore, sign out of it.
-- **Delete sensitive files after the job.** Clear out anything sensitive you put there for a task.
-- **Clean up before you share.** When you share a bot template, remove keys, customer data and internal URLs.
+- Bots can't be walled off from each other, and separate bots are not a security measure.
+- When a site shouldn't be used anymore, sign out of it.
+- Delete sensitive files you put there for a task once the job is done.
+- Before you share a bot template, clean it up by removing keys, customer data and internal URLs.
 
 A <Term k="team bot" text="Team Bot" /> is different again: the apps, secrets and files you add work in every teammate's chat.
 
 ## Your data and privacy
 
-Grok Bot uses your Cursor account and that account's data settings.
-
-- **It needs cloud storage.** Legacy Privacy Mode isn't supported.
-- **Training opt-out** follows your Cursor account's privacy settings.
-- **For contract details**, see the [Cursor Privacy Policy](https://cursor.com/privacy) and [security information](https://cursor.com/security).
+Grok Bot uses your Cursor account and follows that account's data settings. It needs cloud storage, and Legacy Privacy Mode isn't supported. Training opt-out follows your Cursor account's privacy settings. For contract details, see the [Cursor Privacy Policy](https://cursor.com/privacy) and [security information](https://cursor.com/security).
 
 ## When you're done, take access back
 
@@ -110,13 +106,13 @@ When a project or a login should no longer be available to your bots, work throu
 5. Hide or delete bots you no longer use.
 
 <Callout type="warn" title="Deleting a bot doesn't clean the computer">
-Deleting a bot removes its profile, chats, memory and routines. Files and sign-ins on the shared computer stay, so clean them up with the steps above.
+Deleting a bot removes only its profile, chats, memory and routines. Files and sign-ins on the shared computer stay, so clean them up with the steps above.
 </Callout>
 
 ## Stuck?
 
 <Q q="The same action asks for approval every time.">
-Look in **Custom Rules** for a matching **Ask first** rule, including rules your team admin requires. **Ask first** wins over **Allow automatically**. For an action you trust, choose **Always allow** on the next card.
+First look in **Custom Rules** for a matching **Ask first** rule, including rules your team admin requires. **Ask first** wins over **Allow automatically**. If it's an action you trust, choose **Always allow** on the next card.
 </Q>
 <Q q="The card says Expired, and nothing happened.">
 A card from background work expires if nobody answers, and the action doesn't run. Ask the bot to try again. If the card offers **Always allow next time**, choosing it saves a rule.

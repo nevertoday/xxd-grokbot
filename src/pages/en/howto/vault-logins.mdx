@@ -11,7 +11,9 @@ import Callout from "../../../components/Callout.astro";
 import Term from "../../../components/Term.astro";
 import Q from "../../../components/Q.astro";
 
-Never send passwords, one-time codes or API keys in chat. Put logins and cards in <Term k="Vault" />, where bots can use them without seeing the password. The official page is [Vault and secure sign-in](https://docs.x.ai/grok-bot/vault).
+When you want a bot to sign in, fill in details or check out for you, the quickest move seems to be sending it your password. Don't. <mark>Never send passwords, one-time codes or API keys in chat. Put logins and cards in <Term k="Vault" />, where bots can use them without seeing the password.</mark> The official page is [Vault and secure sign-in](https://docs.x.ai/grok-bot/vault).
+
+Below, you'll save the logins you use often, then see where a bot looks when it signs in and how you take over for the step it can't do, and last come API keys and payments.
 
 ## Save the logins you use often
 
@@ -19,13 +21,13 @@ Never send passwords, one-time codes or API keys in chat. Put logins and cards i
 2. Pick **Login**, **Card** or **Contact info**.
 3. Fill it in and save. A login needs the **Website**, **Username or email** and **Password**, then **Save login**. For a card, **Scan with camera** or **Upload a photo** fills it in for you.
 
-Under **Hints**, write when to use an entry, like "Use for work purchases." The bot follows it when choosing between entries.
+Under **Hints**, write when to use an entry, like "Use for work purchases." When there's more than one to choose from, the bot follows the hint.
 
 <Callout type="ok">
 After saving, passwords stay hidden and cards show only their last four digits. Saved values are never shown to you again.
 </Callout>
 
-Everything you save is available to every bot on your account, and you can't limit it to one. Bots never see passwords. They can see which logins you saved, and your contact info. In chats in the Grok Bot app, a bot can also see a card's number and security code. It types them at checkout.
+Everything you save is available to every bot on your account, and you can't limit it to one. Bots never see passwords, but they can see which logins you saved, and your contact info. In chats in the Grok Bot app, a bot can also see a card's number and security code, so it can type them at checkout.
 
 ## Bring logins over from another password manager
 
@@ -34,11 +36,11 @@ On desktop you can import them in one go:
 1. Export a CSV file from 1Password, Chrome or Edge, Safari or Apple Passwords, Firefox, Bitwarden or LastPass.
 2. In **Settings → Vault**, choose **New item**, then **Import from CSV…**.
 3. Choose **Choose CSV file** and pick the export. It's read on your computer, never uploaded, and must be under 5 MB.
-4. Review the list, then choose the import button. Items you already have are skipped. Rows missing a password, or with a site that isn't https, aren't imported.
+4. Review the list, then choose the import button. Items you already have are skipped, and rows missing a password, or with a site that isn't https, aren't imported.
 
 <u>The export holds your passwords unencrypted, so delete it as soon as the import finishes.</u>
 
-You can also connect 1Password: open **1Password** in **Connect apps** and choose **Connect 1Password**. After that, you approve each login in 1Password. This integration is rolling out gradually and needs 1Password 8.12.42 or later.
+You can also connect 1Password directly: open **1Password** in **Connect apps** and choose **Connect 1Password**. After that, you approve each login in 1Password. This integration is still rolling out gradually and needs 1Password 8.12.42 or later.
 
 ## When it signs in, it looks in this order
 
@@ -48,11 +50,11 @@ You can also connect 1Password: open **1Password** in **Connect apps** and choos
 
 The form names the site it fills. What you type goes straight into the page, and the bot never sees it. To skip it next time, check **Securely save to Bot's vault**. Leave it unchecked, and the value is used in that chat only and expires on its own.
 
-When a site emails a one-time code, the bot can read it. It looks in a connected Gmail or Outlook account, or its own inbox.
+When a site emails a one-time code, the bot can read it from a connected Gmail or Outlook account, or from its own inbox.
 
 ## For the step it can't do, you take over
 
-Some steps need you, so it hands you the computer. That includes single sign-on, a passkey and a CAPTCHA it can't get past. It also includes an approval on another device, a QR code and a bank card check:
+Some steps only you can do, and then it hands you the computer. That includes single sign-on, a passkey and a CAPTCHA it can't get past, as well as an approval on another device, a QR code and a bank card check:
 
 1. Choose **Take over** on the request in the chat, or open the computer and choose **Take control**.
 2. Do only the step that's blocked.
@@ -61,18 +63,18 @@ Some steps need you, so it hands you the computer. That includes single sign-on,
 The signed-in session stays on the computer for next time, and all your bots can use it.
 
 <Callout type="warn" title="Fingerprint and face sign-in don't work on its computer">
-Fingerprint, Face ID, Windows Hello and passkeys saved on your laptop or phone don't work on the bot's computer. For a work app with single sign-on, take over and use another method your company allows. A password with a code is one. On Mac and Windows, you can also use a hardware security key: check that **Use hardware security keys** is on under **Security Key** in **Settings → General**. It is on by default on Mac and Windows, isn't supported on Linux yet, and every use asks you to approve it first.
+Fingerprint, Face ID, Windows Hello and passkeys saved on your laptop or phone don't work on the bot's computer. For a work app with single sign-on, take over and use another method your company allows, such as a password with a code. On Mac and Windows, you can also use a hardware security key: check that **Use hardware security keys** is on under **Security Key** in **Settings → General**. It is on by default on Mac and Windows, isn't supported on Linux yet, and every use asks you to approve it first.
 </Callout>
 
 ## API keys go in the secure secret card
 
-For an API key or a similar secret, wait for the bot to send a **secure secret card**. The field is masked. Choose **Save securely**, and the card shows **Saved**. The value never appears in the chat, and the bot never sees it.
+For an API key or a similar secret, wait for the bot to send a **secure secret card**. The field is masked, and after you choose **Save securely**, the card shows **Saved**. The value never appears in the chat, and the bot never sees it.
 
 Also keep passwords, codes and API keys out of commands and files on the computer. When you use **Teach a task**, don't type secrets during the demonstration.
 
 ## Payments: to approve each one, don't save the card
 
-<mark>A card saved in Vault fills in at checkout without asking you each time.</mark> No setting requires your approval for each use of the card. (The official Vault page also says that when a bot buys through an order card, it types the card in after you tap the pay button.) To approve every payment yourself:
+A card saved in Vault fills in at checkout without asking you each time, and no setting requires your approval for each use of the card. (The official Vault page also says that when a bot buys through an order card, it types the card in after you tap the pay button.) So to approve every payment yourself:
 
 - **Don't save the card.** When the bot asks for a card with a Secure Form, leave **Securely save to Bot's vault** unchecked. The card is used in that chat only, and the bot asks you to approve the exact total there.
 - **Remove a card you already saved.** In **Settings → Vault**, select it and choose **Remove**.
@@ -90,11 +92,11 @@ You can't. Saved values are write-only: passwords stay hidden and cards show the
 Take over the computer, sign in yourself, and finish any two-factor step or CAPTCHA. Wait for the signed-in page to load, then hand back and tell the bot to continue from there. Some sites expire sessions quickly, and that can't always be avoided.
 </Q>
 <Q q="The form says Could not fill into the page.">
-The page may have moved before the form could fill it. Your values still weren't shown to the bot. If it asks again, submit a new form.
+The page may have moved before the form could fill it, but your values still weren't shown to the bot. If it asks again, submit a new form.
 </Q>
 <Q q="A Team Bot can't use my saved logins.">
-That's by design: your Vault isn't available to Team Bots. The owner or a Manager can give it logins of its own. Choose the wrench, then **Manage**, and find **Bot's accounts** under **General**. API keys go under **Secrets**.
+That's by design, since your Vault isn't available to Team Bots. The owner or a Manager can give it logins of its own: choose the wrench, then **Manage**, and find **Bot's accounts** under **General**. API keys go under **Secrets**.
 </Q>
 <Q q="Did a computer update delete my secrets?">
-Updates, **Recover** and **Reset** remove apps and packages installed on the computer. A secret you typed into a file or a shell profile can disappear with them. Secrets saved with the secure card, under **Secrets**, or in Vault are not affected.
+Updates, **Recover** and **Reset** remove apps and packages installed on the computer, so a secret you typed into a file or a shell profile can disappear with them. Secrets saved with the secure card, under **Secrets**, or in Vault are not affected.
 </Q>

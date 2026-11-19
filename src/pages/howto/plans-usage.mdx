@@ -12,7 +12,9 @@ import Term from "../../components/Term.astro";
 import Q from "../../components/Q.astro";
 import Copy from "../../components/Copy.astro";
 
-套餐和额度会变，以官方的 [套餐说明](https://docs.x.ai/x-subscription/grok-bot) 和 [FAQ](https://docs.x.ai/grok-bot/faq) 为准。这一页不写价格。
+Grok Bot 不用单独订阅，它跟着你的套餐走。真正要留心的是额度：它按周算，每周重置，而花得最快的，就是跑得勤的 routine。<mark>每小时跑一次、或者盯着热闹 Slack 频道的 routine，一天就可能用掉一周的额度。</mark>
+
+套餐和额度会变，以官方的 [套餐说明](https://docs.x.ai/x-subscription/grok-bot) 和 [FAQ](https://docs.x.ai/grok-bot/faq) 为准，这一页不写价格。下面先看你的套餐能不能用，再讲额度怎么用掉、在哪看、怎么省，最后是用完了怎么办、怎么设上限。
 
 ## 先看你的套餐能不能用
 
@@ -24,69 +26,65 @@ import Copy from "../../components/Copy.astro";
 
 ## 额度是怎么用掉的
 
-额度按周算，每周重置。在 The X Subscription 上，Grok Bot 和 Cursor、Grok app 共用这一份。用得快慢，看你交给它的活是什么、每件要费多大劲。
+额度按周算，每周重置。在 The X Subscription 上，Grok Bot 和 Cursor、Grok app 共用这一份。用得快慢，要看你交给它的是什么活、每件要费多大劲。下面这几处最容易花得多：
 
-这几处最容易花得多：
-
-- **跑得勤的 <Term k="routine" />。** 每跑一次都花用量。<mark>每小时跑一次、或者盯着热闹 Slack 频道的 routine，一天就可能用掉一周的额度。</mark>
+- **跑得勤的 <Term k="routine" />。** 每跑一次都花用量，开头说的就是它。
 - **bot 之间的消息。** 群聊里的回复、bot 之间的每条消息，都算用量。
 - **Test。** 测试 routine 也是真干活，一样花用量。从来没跑过的 routine 不花。
 
 ## 在哪看用了多少
 
-打开 **设置 → 用量与账单**（Settings → Usage & Billing）：
+打开 **设置 → 用量与账单**（Settings → Usage & Billing），看这几块：
 
 - **用量限额**（Usage limits）：这周用了多少，什么时候重置。
 - **Grok Bot 用量**（Grok Bot usage）：可以按 bot 看，也可以按来源看。
 - **额外用量**（Additional usage）：超出每周额度以后的部分。
 
-账号菜单里也能看到 **每周用量**（Weekly usage）。也可以在和 bot 的私聊里直接问：
+账号菜单里也能看到 **每周用量**（Weekly usage）。或者更省事，在和 bot 的私聊里直接问它：
 
-<Copy id="pu-ask" code="看看我这周的 Grok Bot 用量：用了多少，额度从哪来，什么时候重置。" />
+<Copy id="pu-ask" code="帮我看看这周的 Grok Bot 用量：用了多少，额度从哪来，什么时候重置。" />
 
-只有 bot 的主人能问，而且只能在私聊里问。
+不过只有 bot 的主人能问，而且只能在私聊里问。
 
 ## 用得省一点
 
-官方的建议是：先管住 routine，再考虑换大套餐或提高上限。
+官方的建议是先管住 routine，再考虑换大套餐或提高上限。
 
-- **暂停用不着的 routine。** 在 bot 详情的 **详情**（Details）标签页里，用每一行的开关暂停。
-- **放宽时间、收窄触发条件。** 让 bot 帮你过一遍：
+先暂停用不着的 routine：在 bot 详情的 **详情**（Details）标签页里，用每一行的开关就能暂停。留下来的，可以放宽时间、收窄触发条件，这件事让 bot 自己帮你过一遍：
 
-<Copy id="pu-routines" code="列出你现在所有的 routine，写上每个多久跑一次、由什么触发。哪些跑得太勤、触发条件太宽，给我改的建议。先别改。" />
+<Copy id="pu-routines" code="把你现在所有的 routine 列出来，写上每个多久跑一次、由什么触发。哪些跑得太勤、触发条件太宽，给我提改的建议，先别动手改。" />
 
-- **群里少拉几个 bot。** bot 越少，回复越少。
-- **费劲的大活先从小范围做。** 每件活费的劲越大，用得越多。
+另外，群里少拉几个 bot，bot 越少，回复就越少。费劲的大活先从小范围做起，因为每件活费的劲越大，用得越多。
 
 ## 额度用完了怎么办
 
-bot 停下不回，说你到了用量上限，这是这周的额度用完了，它没坏。每周会重置。想马上接着用：
+bot 停下不回，说你到了用量上限，这是这周的额度用完了，它没坏。额度每周会重置。想马上接着用，可以这样：
 
 - **The X Subscription：** 买预付额度。
 - **旧的 Cursor 套餐：** 打开按需用量（on-demand）。
 - **哪种都行：** 换一个大一点的套餐。
 
-你要是有用量重置，到 **用量与账单**（Usage & Billing）的 **重置**（Resets）里点 **使用重置**（Use reset），再点 **确认**（Confirm）。这周的用量会马上归零。用过一次，要等一阵才能再用。
+你要是有用量重置，到 **用量与账单**（Usage & Billing）的 **重置**（Resets）里点 **使用重置**（Use reset），再点 **确认**（Confirm），这周的用量会马上归零。用过一次，要等一阵才能再用。
 
 ## 设个上限，别一直扣钱
 
-- **The X Subscription：** 到 [grok.com/dashboard/billing](https://grok.com/dashboard/billing) 的 **额外用量额度**（Additional usage credits）里关掉 **自动充值**（Auto top-up）。也可以设一个每月额外用量的上限。
+- **The X Subscription：** 到 [grok.com/dashboard/billing](https://grok.com/dashboard/billing) 的 **额外用量额度**（Additional usage credits）里关掉 **自动充值**（Auto top-up），也可以设一个每月额外用量的上限。
 - **旧的 Cursor 套餐：** 在 Grok Bot 里打开 **设置 → 用量与账单 → 按需每月限额**（Settings → Usage & Billing → On-demand monthly limit）。
 
 <Callout type="warn" title="上限挡不住正在跑的活">
-到了上限，正在干活的 bot 不会被半路叫停，可能会稍微超出一点。按需用量关着的话，额度用完 bot 就停，等每周重置后再接着干。
+到了上限，正在干活的 bot 不会被半路叫停，可能会稍微超出一点。按需用量关着的话，额度用完 bot 就停，等每周重置以后再接着干。
 </Callout>
 
 ## 卡住了？
 
 <Q q="有免费试用吗？">
-有的账号能先试：访问页面上出现 **开始试用**（Start Trial）就点它。试用是一笔用量额度，另有 7 天期限，不会自动变成付费套餐。额度按 bot 干了多少活来扣，不按消息条数，一件大任务就可能用完。手机 App Store 里的免费试用是另一回事，到期前不取消会转成付费订阅。
+有的账号能先试：访问页面上出现 **开始试用**（Start Trial），就点它。试用是一笔用量额度，另有 7 天期限，不会自动变成付费套餐。额度按 bot 干了多少活来扣，不按消息条数，一件大任务就可能用完。手机 App Store 里的免费试用是另一回事，到期前不取消，会转成付费订阅。
 </Q>
 <Q q="Cursor 套餐和 SuperGrok 能叠加吗？">
 不能。旧的 Cursor 账号上，Grok Bot 用两者里每周额度更大的那个。两份订阅各自照常扣费，买了一个不会取消另一个。
 </Q>
 <Q q="Grok app 说我的 SuperGrok 额度用完了。">
-如果你的 Grok Bot 是靠绑定 SuperGrok 用的，Grok app 的上限管不到 Grok Bot，这是两个产品、两套计量。Grok Bot 的用量记在你的 Cursor 账号上，要在 Grok Bot 的 **设置 → 用量与账单** 里看。
+如果你的 Grok Bot 是靠绑定 SuperGrok 用的，Grok app 的上限管不到 Grok Bot，因为这是两个产品、两套计量。Grok Bot 的用量记在你的 Cursor 账号上，要在 Grok Bot 的 **设置 → 用量与账单** 里看。
 </Q>
 <Q q="它用的是哪个模型？能换吗？">
 不能选，也看不到。Grok Bot 每件事自己挑模型，用量里只记成 Grok Bot 用量。官方举例说，换成别的模型处理，不会改变你每个 token 的价钱。
