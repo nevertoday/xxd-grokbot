@@ -3,7 +3,7 @@
 //   node scripts/check-ui-labels.mjs
 //
 // 英文页：加粗的英文短语（**New Bot**）当作按钮或菜单名，到本机装的 Grok Bot 和官方文档副本里找。
-//   以句号、冒号结尾的加粗是列表的小标题，不查。
+//   以句号、冒号结尾的加粗是列表的小标题，不查；中文页没当按钮写过的加粗也不查。
 // 中文页：
 //   **新建 Bot**（New Bot）这种写法，查 app 的简体中文是不是就是「新建 Bot」。
 //   **New Bot**（新建 bot）这种旧写法，app 里有中文的，提示改成 app 的中文。
@@ -64,9 +64,12 @@ for (const file of walk(join(ROOT, "src/pages"))) {
   }
 }
 
+// 英文页的加粗也用来当列表小标题（**The goal**）。中文页没把它当按钮写过的，就不算界面名。
+const onZh = new Set([...en].filter(([, files]) => [...files].some((f) => !f.startsWith("src/pages/en/"))).map(([l]) => l));
 const rows = { app: [], docs: [], none: [] };
 for (const [label, files] of [...en].sort()) {
-  const bucket = inApp(label) || zhOf(catalog, label) ? "app" : inDocs(label) ? "docs" : "none";
+  const bucket = inApp(label) || zhOf(catalog, label) ? "app" : inDocs(label) ? "docs" : onZh.has(label) ? "none" : null;
+  if (!bucket) continue;
   rows[bucket].push(`${label}  ← ${where(files)}`);
 }
 console.log(`✓ app 里有（${rows.app.length}）`);
