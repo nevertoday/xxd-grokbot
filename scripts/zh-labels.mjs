@@ -1,4 +1,6 @@
 // 把中文页里加粗的英文按钮名换成 app 的简体中文：第一次出现写成 **新建 Bot**（New Bot），之后只写 **新建 Bot**。
+// 中文的数据文件（wiki.js、faq.js）也改：每个 Wiki 条目、每条问答各算一页，各自从「第一次出现」算起。
+// 菜单路径 **Settings → General** 逐段翻：**设置 → 通用**（Settings → General）。
 // 旧写法 **New Bot**（新建 bot）括号里的自译会被换掉。app 里查不到中文的标签不动。重复跑结果一样。
 //
 //   node scripts/zh-labels.mjs          改文件
@@ -22,18 +24,19 @@ const walk = (dir) => readdirSync(dir).flatMap((f) => {
   return p.endsWith(".mdx") ? [p] : [];
 });
 
-const EN = "[A-Za-z][A-Za-z0-9 &'’,+/…-]{0,40}?";
+const EN = "[A-Za-z][A-Za-z0-9 &'’,+/…→-]{0,60}?";
+const zhLabel = (label) => {
+  const parts = label.split(/\s*→\s*/);
+  const zh = parts.map((p) => zhOf(catalog, p));
+  return zh.every(Boolean) ? zh.join(" → ") : null;
+};
 const BOLD = new RegExp(`\\*\\*(${EN})\\*\\*(（[^）\\n]{1,24}）)?`, "g");
 
-let total = 0;
-for (const file of walk(join(ROOT, "src/pages"))) {
-  const src = readFileSync(file, "utf8");
-  const parts = src.split(/(```[\s\S]*?```)/);
+const fixUnit = (unit, changes) => {
   const seen = new Set();
-  for (const m of src.matchAll(new RegExp(`\\*\\*([^*\\n]{1,24}?)\\*\\*（(${EN})）`, "g"))) if (zhOf(catalog, m[2]) === m[1]) seen.add(m[2]);
-  const changes = [];
-  const out = parts.map((part, i) => i % 2 ? part : part.replace(BOLD, (all, label, paren) => {
-    const zh = zhOf(catalog, label);
+  for (const m of unit.matchAll(new RegExp(`\\*\\*([^*\\n]{1,40}?)\\*\\*（(${EN})）`, "g"))) if (zhLabel(m[2]) === m[1]) seen.add(m[2]);
+  return unit.split(/(```[\s\S]*?```)/).map((part, i) => i % 2 ? part : part.replace(BOLD, (all, label, paren) => {
+    const zh = zhLabel(label);
     if (!zh || zh === label) return all;
     const first = !seen.has(label);
     seen.add(label);
@@ -41,6 +44,15 @@ for (const file of walk(join(ROOT, "src/pages"))) {
     if (next !== all) changes.push(`${all} → ${next}`);
     return next;
   })).join("");
+};
+
+const DATA = { "src/data/wiki.js": /(?=\n  \{\n)/, "src/data/faq.js": /(?=\n)/ };
+const targets = [...walk(join(ROOT, "src/pages")).map((p) => [p, null]), ...Object.entries(DATA).map(([p, re]) => [join(ROOT, p), re])];
+let total = 0;
+for (const [file, unitRe] of targets) {
+  const src = readFileSync(file, "utf8");
+  const changes = [];
+  const out = unitRe ? src.split(unitRe).map((u) => fixUnit(u, changes)).join("") : fixUnit(src, changes);
   if (!changes.length) continue;
   total += changes.length;
   console.log(`${relative(ROOT, file)}（${changes.length}）\n  ${changes.join("\n  ")}`);

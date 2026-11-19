@@ -41,40 +41,40 @@ import Copy from "../../components/Copy.astro";
 
 | 按钮 | 会怎样 |
 | --- | --- |
-| **Allow once**（这次允许） | 这次做，不留规则 |
-| **Always allow**（以后都允许） | 这次做，以后类似的直接做 |
-| **Deny**（拒绝） | 不做，你再发消息前不再问 |
+| **允许一次**（Allow once） | 这次做，不留规则 |
+| **始终允许**（Always allow） | 这次做，以后类似的直接做 |
+| **拒绝**（Deny） | 不做，你再发消息前不再问 |
 
-有的卡片会带警告，比如 **This can't be undone**（这一步撤不回）。
+有的卡片会带警告，比如 **此操作无法撤销**（This can't be undone）。
 
 <Callout type="warn" title="看不懂就先别批">
 卡片上的对象或后果你说不清，就让它用大白话解释一遍。也可以让它先出一份草稿。
 </Callout>
 
-你在聊的对话里，卡片会一直等你。routine、别的 bot 发来的消息这类后台的活，卡片大约 30 分钟后过期，动作不会做。常跑 routine 的 bot，打开它的 **Notifications**（通知），免得错过。
+你在聊的对话里，卡片会一直等你。routine、别的 bot 发来的消息这类后台的活，卡片大约 30 分钟后过期，动作不会做。常跑 routine 的 bot，打开它的 **通知**（Notifications），免得错过。
 
 ## 撤不回的事，设成 Ask first
 
 <mark>发消息、付款、删数据这类撤不回的事，一律设成 Ask first。</mark>审批只管这一步做不做，做完的事撤不回来。
 
-1. 打开 **Settings → General**（设置 → 通用），在 **Bot** 下面找到 **Custom Rules**（自定义规则）。手机上在 **Settings** 的 **Bot** 一组里。
+1. 打开 **设置 → 通用**（Settings → General），在 **Bot** 下面找到 **自定义规则**（Custom Rules）。手机上在 **设置**（Settings） 的 **Bot** 一组里。
 2. 在 **When Grok Bot wants to:**（当 Grok Bot 想要）下面，用大白话写一个动作。
-3. 在 **It should:**（它应该）下面选 **Ask first**（先问我），点 **Add Rule**（添加规则）。
+3. 在 **It should:**（它应该）下面选 **先询问**（Ask first），点 **添加规则**（Add Rule）。
 
 一条规则只管一件事，写得越窄越好：
 
 - 给公司以外的人发邮件之前，先问我。
 - 改线上的数据看板之前，先问我。
 
-「浏览器里什么都允许」这种宽泛的规则，官方不推荐。网站和工具都会变。两种规则撞上时，**Ask first** 说了算。
+「浏览器里什么都允许」这种宽泛的规则，官方不推荐。网站和工具都会变。两种规则撞上时，**先询问** 说了算。
 
 ## 管住它碰你自己的电脑
 
-bot 平时在<Term k="云端电脑" />上干活。你面前这台电脑要单独允许。打开 **Settings → Computer → Your computer**，找到 **Execution on this computer**，三选一：
+bot 平时在<Term k="云端电脑" />上干活。你面前这台电脑要单独允许。打开 **设置 → 电脑 → 你的电脑**（Settings → Computer → Your computer），找到 **在这台电脑上执行**（Execution on this computer），三选一：
 
-- **Ask every time**（每次都问）：默认就是这个。
-- **Always allow**（总是允许）：不再问。
-- **Never allow**（从不允许）：没有特别的理由碰你本地的文件，官方建议选这个。
+- **每次询问**（Ask every time）：默认就是这个。
+- **始终允许**：不再问。
+- **从不允许**（Never allow）：没有特别的理由碰你本地的文件，官方建议选这个。
 
 这几项只管你自己的电脑，它照样能用云端电脑。
 
@@ -114,14 +114,14 @@ Grok Bot 用你的 Cursor 账号，也用这个账号的数据设置。
 ## 卡住了？
 
 <Q q="同一个动作，每次都要我批。">
-到 **Custom Rules** 里找有没有匹配的 **Ask first** 规则，包括团队管理员要求的。**Ask first** 比 **Allow automatically**（自动允许）优先。信得过的动作，下次在卡片上点 **Always allow**。
+到 **自定义规则** 里找有没有匹配的 **先询问** 规则，包括团队管理员要求的。**先询问** 比 **自动允许**（Allow automatically）优先。信得过的动作，下次在卡片上点 **始终允许**。
 </Q>
 <Q q="卡片显示 Expired，事情没做。">
-后台的活发来的卡片，过一阵没人回就过期了，动作没有做。直接让它再试一次。卡片上有 **Always allow next time**（下次总是允许）的话，点了会存一条规则。
+后台的活发来的卡片，过一阵没人回就过期了，动作没有做。直接让它再试一次。卡片上有 **下次起始终允许**（Always allow next time）的话，点了会存一条规则。
 </Q>
 <Q q="Auto Review 的开关关不掉。">
 开关下面写着 **Required by your admin**，说明是团队管理员要求开着的。团队的规则一直对你生效，你自己的规则只能更严。
 </Q>
 <Q q="它说本地工具被关了，可我明明允许了。">
-它说的是「Local tools are turned off」，而你的设置是 **Always allow** 或 **Ask every time**。官方说这是 Cursor 那边的已知问题。你的设置没错，重启、重装或改设置都清不掉这条提示。
+它说的是「Local tools are turned off」，而你的设置是 **始终允许** 或 **每次询问**。官方说这是 Cursor 那边的已知问题。你的设置没错，重启、重装或改设置都清不掉这条提示。
 </Q>

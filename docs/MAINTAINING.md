@@ -30,7 +30,7 @@ node scripts/check-i18n.mjs
 - **新手入门**每一课是 `src/pages/start/<n>-<slug>.mdx`，开头写 `layout: ../../layouts/Lesson.astro` 和 `lesson: n`。
 - **主线教程**每一步是 `src/pages/guide/<n>-<slug>.mdx`，开头写 `layout: ../../layouts/Guide.astro` 和 `step: n`。
 - **How-to** 是 `src/pages/howto/<slug>.mdx`（`layout: ../../layouts/HowTo.astro`，`slug` 要和 `HOWTO` 里一致，`step` 是相关的主线步骤）。
-- **Wiki** 和 **常见问题** 只改数据：`src/data/wiki.js`、`src/data/faq.js`。Wiki 条目可以带一张 `list` 表。现在 Wiki 只有 `bot`、`routine` 两条占位，`GLOSSARY` 的 `wiki:` 都先指向这两条；写了新条目，把对应术语的 `wiki:` 改过去。
+- **Wiki** 和 **常见问题** 只改数据：`src/data/wiki.js`、`src/data/faq.js`。Wiki 条目可以带一张 `list` 表。`GLOSSARY` 的每个术语用 `wiki:` 指向一条 Wiki 条目；加了新条目，记得把对应术语指过去。
 - **教程组件**（在 MDX 里 import）：`Callout`（`ok` / `warn` / `no` / `tip`）、`Term`（术语，`k` 对应 `GLOSSARY`）、`Checkpoint`（可打勾的检查点）、`Q`（「卡住了？」里的一条）、`Tabs`（按设备或路线切换）、`Copy`（带复制按钮的提示词）、`Cmd`（正文里一点就复制的命令）、`Reply`（示意 bot 的回复）、`Shot`（配图）、`Fig`（图示）。
 - **搜索**（⌘K）自动收录新手入门每一课、主线每一步、每篇 How-to、每个 Wiki 条目和每条常见问题，正文按小节做全文搜索。
 - **UI Kit 升级**：在 xxd-ui-kit 里 `pnpm xxd sync <本目录>`，不要手改 `public/xxd/`。改完界面跑 `pnpm xxd doctor <本目录>`。
