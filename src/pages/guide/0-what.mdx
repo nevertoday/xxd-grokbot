@@ -1,6 +1,117 @@
 ---
 layout: ../../layouts/Guide.astro
 step: 0
+need: 什么都不用，先读
+tldr: 知道一个 bot 能做什么、会记住什么、在哪找它，以及哪些套餐能用。
+description: Grok Bot 是什么：自动化的两部分，bot 和它的云端电脑，主 bot 和各管一件事的 bot，它记住什么，在哪和它说话，哪些套餐能用。
 ---
+import Callout from "../../components/Callout.astro";
+import Checkpoint from "../../components/Checkpoint.astro";
+import Copy from "../../components/Copy.astro";
+import Term from "../../components/Term.astro";
+import Q from "../../components/Q.astro";
 
-这一页还在写。
+<Callout type="tip" title="还没用过 Grok Bot？">
+先做[新手入门的三课](/start/1-goal/)：建第一个 bot，交给它一件事。这套完整教程接着往深里讲，不再重复点哪个按钮。
+</Callout>
+
+## 先分清目标和过程
+
+作者 poteto 在[文章](https://x.com/poteto/status/2123159537016533493)里把自动化拆成两部分：
+
+- **目标**：最后要得到什么。比如一个烤好的苹果派。
+- **过程**：怎么得到它。买料、做馅、烤、放凉。
+
+<mark><strong>自动化，就是把过程交出去，不用每次都亲手做一遍。</strong></mark>
+
+以前交出去，要靠机器或者自己写代码。用 Grok Bot，你用平常说话的方式讲清楚目标，然后和它一起把过程理出来。要写代码的地方，它自己写。
+
+这套教程就按这个顺序走：第 1 步定目标，第 2、3 步讲过程。
+
+## 一个 bot，带着一台电脑
+
+<Term k="bot" /> 是替你干活的 AI 帮手。它有名字、有一份工作、有自己的对话。
+
+它手边有一台放在云上的电脑（<Term k="云端电脑" />），上面有浏览器、文件和命令行。你在电脑上能做的事，它大多也能做：
+
+- **上网**：用自己的浏览器，自己动鼠标点网页。
+- **在应用里干活**：连上 Gmail 这类<Term k="连接的应用" />，它直接在里面操作，比点网页稳。
+- **开会记笔记**：替你进会议，做记录。
+
+活在云上跑，你合上笔记本，它照样干。见官方的 [How Grok Bot works](https://docs.x.ai/grok-bot/how-grok-bot-works)。
+
+## 你的 bot 共用这一台电脑
+
+一个账号只有一台云端电脑，你所有的 bot 都在上面干活。
+
+- **每个 bot 有自己的屏幕。** 几个 bot 能同时干活，你随时能看任何一个的屏幕。
+- **文件和登录是共用的。** 一个 bot 登录了某个网站，别的 bot 也就登录了。
+
+<Callout type="warn" title="别拿不同的 bot 当隔离">
+电脑上的东西，你所有的 bot 都拿得到。哪个服务不再需要，就退出登录。敏感文件用完就删。见官方 FAQ 的 [Do my Bots share one computer?](https://docs.x.ai/grok-bot/faq#do-my-bots-share-one-computer)
+</Callout>
+
+## 一个主 bot，加几个各管一件事的 bot
+
+<Term k="主 bot" /> 是你主要找的那个。它会主动来问你，也会把活分给别的 bot。
+
+新的事先交给主 bot。有一类事反复出现，又有自己的资料、规则或时间表？那就单独给它一个 bot。也可以让主 bot 帮你建。
+
+一个 bot 只管一件事，就会越来越懂这件事，你只用讲一遍。第 1 步就从建这样一个 bot 开始。见官方的 [Your primary Bot and Bots with one job](https://docs.x.ai/grok-bot/how-grok-bot-works#your-primary-bot-and-bots-with-one-job)。
+
+## 它会记住什么
+
+每个 bot 有自己的记忆，会记下：
+
+- **你的习惯**：比如早上的简报要短。
+- **你要它守的规则**：比如「发邮件前先问我」。
+- **工作记录**：做过什么，带日期。
+
+你的名字、时区这几样，所有 bot 共用。告诉一个，别的都知道。
+
+它自己决定记什么，不会先问你。想让它一定记住，就直说「记住……」。想看、改、删，也直接在对话里说：
+
+<Copy id="memory" title="看、改、删它的记忆" code={`你记得我哪些事？
+这条过时了，我已经搬到杭州了。
+忘掉「我在发布组」这件事。`} />
+
+这两样放在别处：
+
+- **会变的数字**：比如价格。让它每次重新查。
+- **登录和银行卡**：放进 <Term k="Vault" />。
+
+见官方的 [What a Bot remembers](https://docs.x.ai/grok-bot/bots#what-a-bot-remembers)。
+
+## 在哪和它说话
+
+- **桌面版**：macOS、Windows、Linux 都有。没有网页版。
+- **手机版**：iPhone 和 Android，和桌面版是同一批 bot、同一批对话。
+- **X Chat**：在 X 的聊天里和你的 bot 说话，正在逐步开放。
+- **在 X 上 @bot**：在帖子里 @bot，把这条帖子交给它。
+- **Slack 和 Microsoft Teams**：把 <Term k="team bot" /> 加进去，团队在里面找它。
+
+除了打字，也能说话：语音输入，或者直接和它语音通话。见官方 FAQ 的 [Where do I talk to Grok Bot?](https://docs.x.ai/grok-bot/faq#where-do-i-talk-to-grok-bot)
+
+## 哪些套餐能用
+
+- **The X Subscription**：Premium、Super、Ultra 包含 Grok Bot，Plus 不包含。
+- **以前的 Cursor 套餐**：付费的个人套餐和自助开通的 Cursor Teams 都包含。
+- **绑定 Grok 账号**：SuperGrok 系列或 X Premium+，绑定以后也能用。
+
+登录用的是 Cursor 账号。在 The X Subscription 下，Grok Bot 和 Grok、Cursor 共用每周的用量。
+
+套餐会变，以官方的 [Grok Bot on The X Subscription](https://docs.x.ai/x-subscription/grok-bot) 为准。更多见 How-to 的[套餐和用量](/howto/plans-usage/)。
+
+## 卡住了？
+
+<Q q="Grok 应用里说我的额度用完了。">
+<p>Grok（聊天应用）和 Grok Bot 是两个应用。Grok 里的付费提示或 <strong>Weekly SuperGrok Limit</strong>，和 Grok Bot 没有关系。</p>
+</Q>
+<Q q="能让两个 bot 互相看不到文件吗？">
+<p>不能。电脑按人分配，你名下的 bot 共用一台。放在上面的东西，就当所有 bot 都看得到。</p>
+</Q>
+<Q q="它会动我自己的电脑吗？">
+<p>它在自己的云端电脑上干活。要在你的电脑上执行命令，得你允许，默认每次都会问你。设置在 <strong>Settings → Computer → Your computer</strong>（设置 → 电脑 → 你的电脑）。</p>
+</Q>
+
+<Checkpoint id="s0" items={["我能说出自动化的两部分：目标和过程", "我知道我的 bot 共用一台云端电脑，文件和登录都是共用的", "我知道新的事先找主 bot，反复出现的事单独给一个 bot"]} />
