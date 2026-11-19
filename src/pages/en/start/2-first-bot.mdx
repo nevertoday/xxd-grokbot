@@ -1,6 +1,6 @@
 ---
 layout: ../../../layouts/Lesson.astro
-tldr: "Install Grok Bot, make a bot called Potato, and hand it the goal from lesson 1."
+tldr: "One bot, one job. In this lesson you install Grok Bot, make a bot called Potato and hand it the sentence you wrote in lesson 1."
 lesson: 2
 ---
 import Callout from "../../../components/Callout.astro";
@@ -9,7 +9,11 @@ import Copy from "../../../components/Copy.astro";
 import Reply from "../../../components/Reply.astro";
 import Q from "../../../components/Q.astro";
 
-You do this lesson on a computer, in five steps. At the end you have a <Term k="bot" /> called Potato that remembers the goal you wrote in lesson 1.
+You already have the sentence you wrote in lesson 1. In this lesson you hand it over: you install Grok Bot, make a <Term k="bot" /> just for this job, and send it that sentence.
+
+Why a bot just for this job? Think about how you'd brief a new colleague. You wouldn't say "from now on, everything's yours." You'd say: this job is yours, and here's what it's for. A bot works the same way. When it looks after one job, everything it remembers is about that job, and you only have to explain it once. So this whole lesson comes down to one thing:
+
+<mark><strong>Make a bot just for this job, and tell it the goal in your very first message.</strong></mark>
 
 <Callout type="tip" title="Write to it in your own language">
 Button names below are written exactly as they appear in the app. When you talk to your bot, use whatever language you like. If you write to it in a language, it answers in that language.
@@ -17,34 +21,27 @@ Button names below are written exactly as they appear in the app. When you talk 
 
 ## Step 1: Download and open Grok Bot
 
-1. In your browser, open [x.ai/bot](https://x.ai/bot) and download the version for your computer.
-2. Install it and open it.
-
-<Callout type="ok">
-The Grok Bot welcome screen, with **Sign in** on it.
-</Callout>
+In your browser, open [x.ai/bot](https://x.ai/bot), download the version for your computer, install it and open it. You'll see the Grok Bot welcome screen, with **Sign in** on it.
 
 ## Step 2: Sign in
 
-1. Choose **Sign in**. A sign-in page opens in your browser.
-2. Follow the steps on that page. It may show the Grok or xAI logo. That's expected.
-3. When you're signed in, go back to Grok Bot. If it doesn't come back to the front by itself, switch to it yourself.
-
-Grok Bot has no account of its own. It uses your Cursor account. If you have more than one account, pick the one with a plan that includes Grok Bot.
+Choose **Sign in**. A sign-in page opens in your browser, and you just follow the steps there. It may show the Grok or xAI logo, and that's expected. Grok Bot has no account of its own. It uses your Cursor account, so if you have more than one, pick the one with a plan that includes Grok Bot.
 
 <Callout type="ok">
 The browser says you're signed in.
 </Callout>
 
+Now go back to Grok Bot. If it doesn't come back to the front by itself, switch to it yourself.
+
 ## Step 3: Wait while it gets ready
 
-The first time you sign in, it sets up the <Term k="云端电脑" /> that your bots share. This can take a few minutes. Keep the window open until it's done.
+The first time you sign in, it has to set up the <Term k="云端电脑" /> that your bots share, which can take a few minutes. Keep the window open and let it finish.
 
 <Callout type="ok">
-First you see `Setting up your Grok Bot…`. Then a short intro. Then a bot called **Grok Bot** appears in the sidebar, with a chat with it open.
+First `Setting up your Grok Bot…`, then a short intro. Then a bot called **Grok Bot** appears in the sidebar, with a chat with it open.
 </Callout>
 
-Leave the bot called Grok Bot alone for now. In the next step you make a bot just for your job. A bot with one job keeps everything it learns about that job, so you only explain it once.
+The app made that bot called Grok Bot for you. Leave it alone for now. In the next step you make a separate bot for your job.
 
 ## Step 4: Make a bot called Potato
 
@@ -53,45 +50,37 @@ Leave the bot called Grok Bot alone for now. In the next step you make a bot jus
 3. Pick any shape and color for its picture.
 4. Choose **Create**.
 
-Why Potato? The author says that if you can't think of a name, call it Potato and let it name itself later.
-
 <Callout type="ok">
 **Potato** is now in the sidebar, with a chat with it open.
 </Callout>
 
+Why Potato? Because the author says that if you can't think of a name, call it Potato, and once it has heard the goal, let it name itself after it. That's what the next step does.
+
 ## Step 5: Hand it your goal
 
-Copy the message below and paste it into the message box. Replace the part in square brackets with the sentence you wrote in lesson 1, then send it.
+Copy the message below and paste it into the message box. Replace the "I want …, so that …" line with the sentence you wrote in lesson 1, then send it.
 
-<Copy id="goal" title="Copy, replace the brackets with your goal, then send" code={`Hi Potato, here's the goal I want you to be responsible for. Please remember it:
-[The result I want: … It's for: …]
+<Copy id="goal" title="Copy, replace the middle line with your goal, then send" code={`Hi Potato, here's the goal I want you to be responsible for. Please remember it:
+I want …, so that …
 Based on this goal, choose a name and a picture for yourself.`} />
 
-<Reply title="Illustration: roughly what its reply looks like" code={`Got it. The goal I'm responsible for:
-before Monday's meeting, everyone has slides that show this week's progress,
-so the meeting is spent on decisions.
+<Reply title="Illustration: roughly what its reply looks like" code={`Got it. The goal I'm responsible for: before Monday's meeting,
+everyone has slides that show this week's progress,
+so that you spend less of the meeting reading numbers aloud
+and more of it making decisions.
 
 I'd like to be called "Monday," since Monday's meeting is mine to prepare.
 For my picture, I'd pick an open slide deck.`} />
 
-Look at just two things in its reply:
+Read its reply. First check that the goal it wrote down matches yours, and if it doesn't, just type a correction, like "Not Monday, Wednesday." Then look at the name it picked. If you like it, keep it. If the sidebar still says Potato, change it yourself as shown under "If something's off" below.
 
-- **Is the goal it wrote down the same as yours?** If not, type a correction, like "Not Monday, Wednesday."
-- **Do you like the name it picked?** If so, keep it. If the sidebar still says Potato, change it yourself as shown under "If something's off."
-
-<Callout type="ok">
-It answered with a message that repeats the goal it wrote down and gives itself a name.
-</Callout>
-
-<Callout type="tip" title="That's this lesson done">
-You have a bot that does only this job, and it remembers the goal. In the next lesson, you tell it how you usually do the job.
-</Callout>
+You now have a bot that does only this job, and it remembers what the job is for. In the next lesson, you tell it how you usually do it.
 
 ## If something's off
 
 <Q id="interview" q="I couldn't write a goal in lesson 1.">
 
-Send this to Potato. It interviews you, one question at a time:
+Then let Potato help. Send it this, and it interviews you, one question at a time:
 
 <Copy id="interview-me" code={`Hi Potato, I want you to be responsible for a goal, but I'm not sure how to put it into words. Could you interview me, one question at a time, until we have a goal I'm happy with?`} />
 
@@ -100,33 +89,29 @@ Once the goal is settled, send the message from step 5.
 </Q>
 <Q q="I signed in in the browser, but Grok Bot is still on the welcome screen.">
 
-1. Check that the browser says you're signed in.
-2. Switch back to the Grok Bot window yourself.
-3. If it's still on the welcome screen, choose **Sign in** again.
-
-If that doesn't work, see the official [sign-in troubleshooting](https://docs.x.ai/grok-bot/troubleshooting#sign-in-does-not-complete).
+Check that the browser says you're signed in, then switch back to the Grok Bot window yourself. If it's still on the welcome screen, choose **Sign in** again. If that doesn't work, see the official [sign-in troubleshooting](https://docs.x.ai/grok-bot/troubleshooting#sign-in-does-not-complete).
 
 </Q>
 <Q q="After signing in, it says I don't have access, or asks me to subscribe.">
 
-Your account doesn't have a plan that includes Grok Bot yet. You need Premium, Super or Ultra on The X Subscription. Plus doesn't include it.
+That means your account doesn't have a plan that includes Grok Bot yet. You need Premium, Super or Ultra on The X Subscription. Plus doesn't include it.
 
 Some accounts see **Start Trial** here. The trial is a usage credit with a 7-day window, and it never turns into a paid plan.
 
 </Q>
 <Q q="It's been on Setting up your Grok Bot… for several minutes.">
 
-The first setup takes a few minutes. If the progress is still changing, keep the window open and wait. If it stops changing or shows an error, see the official [computer cannot be reached](https://docs.x.ai/grok-bot/troubleshooting#the-computer-cannot-be-reached).
+The first setup does take a few minutes. If the progress is still changing, keep the window open and keep waiting. If it stops changing or shows an error, see the official [computer cannot be reached](https://docs.x.ai/grok-bot/troubleshooting#the-computer-cannot-be-reached).
 
 </Q>
 <Q q="Choosing + opens a menu.">
 
-You're on a team, so **+** opens a menu first. Choose **Create a Bot**. The rest is the same.
+That means you're on a team, so **+** opens a menu first. Choose **Create a Bot**, and the rest is the same.
 
 </Q>
 <Q q="It picked a new name, but the sidebar still says Potato.">
 
-Change it yourself:
+Then change it yourself:
 
 1. Click the bot's name at the top of the chat to open its details.
 2. Click the name again, type the new name and press Enter.

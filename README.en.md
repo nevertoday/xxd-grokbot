@@ -4,9 +4,9 @@
 
 [中文](./README.md) · **English**
 
-### Grok Bot can do almost anything. The hard part is handing a job over.
+### Getting the most out of Grok Bot starts with how you think.
 
-A free, unofficial guide to handing the work you keep repeating to [Grok Bot](https://x.ai/bot), in plain words.<br>It follows poteto's article [Automate Anything with Grok Bot](https://x.com/poteto/status/2123159537016533493), and every fact is checked against the official docs.
+A free, unofficial guide to handing the work you keep repeating to [Grok Bot](https://x.ai/bot), in plain words.<br>It follows the article [Automate Anything with Grok Bot](https://x.com/poteto/status/2123159537016533493) by poteto, who builds Grok Bot at SpaceX, and every fact is checked against the official docs.
 
 **[New to it: 3 beginner lessons →](https://grokbot.xiaoxiaodong.ai/en/start/1-goal/)**　·　**[Already using it: the 8-step guide →](https://grokbot.xiaoxiaodong.ai/en/guide/0-what/)**
 
@@ -26,13 +26,13 @@ A free, unofficial guide to handing the work you keep repeating to [Grok Bot](ht
 
 ## 😵 Why learn this
 
-Grok Bot has its own computer. It can browse, click, connect to the apps you use, and start work on a schedule.
+A bot in Grok Bot has a computer in the cloud. It can browse, click, connect to the apps you use, and start work on a schedule. So the hard part usually isn't whether it can do the job. It's whether you can explain the job well enough to hand it over.
 
-poteto thinks many people don't use it to its full potential, because automating things is a hard skill to learn. The bot can do the work. What's missing is knowing how to explain a job well enough to hand it over.
+The author, poteto, opens the article by saying automation can be surprisingly hard to get right, even for people who do it every day. And yet it's really a way of thinking that anyone can learn. You get clear on the goal first, then work out the process. This guide turns that way of thinking into steps you can follow.
 
 ## ✨ How this guide helps
 
-- **Plain words.** You do something first, then learn why.
+- **Plain words.** It talks you through things the way a friend who knows the app would, and explains new words as they come up.
 - **One path to the end.** After the three beginner lessons, you have a bot doing a job for you on a schedule.
 - **Sourced.** Every fact comes from the author's article or the [official docs](https://docs.x.ai/grok-bot), linked on the page.
 - **Button names match the app.** English pages use the English interface; Chinese pages use the app's own Chinese labels.
@@ -41,7 +41,7 @@ poteto thinks many people don't use it to its full potential, because automating
 
 The author breaks automation into four steps. The guide follows them in order:
 
-1. **Start with the goal.** Say what the work is for. Filling in a form or sending an email is a step, not the goal.
+1. **Start with the goal.** Get clear on what the work is for. Filling in a form or sending an email is a step, not the goal.
 2. **Tell it your process.** Talk through how you do it now. Have it restate what it heard before it starts.
 3. **Teach it how you judge.** The calls you make without thinking, like which source to trust or what "done" means.
 4. **Let it run on its own.** Once the result is right, make it a routine that runs on a schedule or when something happens.
@@ -50,11 +50,11 @@ The author breaks automation into four steps. The guide follows them in order:
 
 1. Download Grok Bot from [x.ai/bot](https://x.ai/bot), open it, and choose **Sign in**. You need a plan that includes Grok Bot, such as Premium, Super or Ultra on The X Subscription.
 2. Choose **+** (**New Bot**) at the top of the sidebar, name it `Potato`, and choose **Create**.
-3. Send it:
+3. Send it the message below, with the middle line replaced by your own goal, like "I want everyone to have slides that show this week's progress before Monday's meeting, so that we spend less of the meeting reading numbers aloud and more of it making decisions":
 
 ```text
 Hi Potato, here's the goal I want you to be responsible for. Please remember it:
-[The result I want: … It's for: …]
+I want …, so that …
 Based on this goal, choose a name and a picture for yourself.
 ```
 

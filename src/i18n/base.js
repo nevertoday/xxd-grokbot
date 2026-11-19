@@ -49,11 +49,11 @@ export default {
   },
 
   home: {
-    h1: "Hand a job you keep repeating to Grok Bot, in plain words",
+    h1: "Getting the most out of Grok Bot starts with how you think",
     // lead：前半句、荧光笔那一句、后半句
-    lead: ["Tell it the result you want and how you do the job now, and a bot does it for you. Once it gets it right, it can start on its own, on time. You don't need to code. ", "This is an unofficial guide", ". The main path follows poteto's article “Automate Anything with Grok Bot”, and the official docs are the source of truth for features."],
+    lead: ["Automation is really a way of thinking, and anyone can learn it, says poteto, who builds Grok Bot at SpaceX. Get clear on the result you want, tell the bot how you do the job now, and once it gets it right, let it start on its own, on time. You don't need to code. ", "This is an unofficial guide", " that follows the author's article “Automate Anything with Grok Bot” step by step. For features, the official docs are the source of truth."],
     cta: ["Start here if you're new", "Used it already? The full guide (English)"],
-    ctaNote: "The beginner track is three lessons: decide on the goal, make a bot, hand it one job.",
+    ctaNote: "The beginner track is three lessons: get clear on the goal, make a bot, then hand it one job.",
     painH: "Has this happened to you?",
     PAIN: [
       "Every week you lose an afternoon doing the same few steps again.",
@@ -68,19 +68,19 @@ export default {
       ["Laptop closed", "The work stops", "It keeps going in the cloud"],
     ],
     lessonsH: "Beginners need just three lessons",
-    lessonsP: "Read them in order. After these three you can use it. Everything else on the site is for looking up later.",
+    lessonsP: "Just read them in order. After these three you can put it to work, and everything else on the site is there to look up when you need it.",
     lessonsLabel: "Beginner track: 3 lessons",
     fitH: "Is it for you?", yesH: "Yes, if", noH: "Not yet, if",
-    YES: ["You have a job you repeat on a computer and want to hand off", "You have Premium, Super or Ultra on The X Subscription", "You can explain out loud how you do the job"],
-    NO: ["You're on Plus: it doesn't include Grok Bot", "You don't have a computer: you install the desktop app first", "You only want to ask a question: a regular AI chat is enough"],
+    YES: ["You have a job you repeat on a computer and want to hand off", "You have Premium, Super or Ultra on The X Subscription", "You can explain in plain words how you do the job"],
+    NO: ["You're on Plus, which doesn't include Grok Bot", "You don't have a computer, since you install the desktop app on one first", "You only want to ask a question, and a regular AI chat is enough for that"],
     devH: "Once you're comfortable",
-    devP: "The full guide follows poteto's article. Its four ideas, one line each:",
+    devP: "The full guide goes deeper, following poteto's article. Here are its four ideas, one line each:",
     // 完整教程目前只有英文和中文
     devNote: "The full guide is in English (and Chinese) for now.",
     // FLOW：每个是 [标题, 说明]，图标和顺序固定
     FLOW: [
-      ["Start with the goal", "Know the result you want. Filling in a form or sending an email is only one step."],
-      ["Explain your process", "Say how you do it now, all in one go. It restates it first, and you correct it a few times."],
+      ["Start with the goal", "Know the result you want. Filling in a form or sending an email is only one step on the way."],
+      ["Explain your process", "Say how you do it now, all in one go. It restates it first, and you correct it a few times before it starts."],
       ["Teach it how you decide", "Walk it through real examples of the calls you make without thinking."],
       ["Let it start on its own", "A routine sets when it works: on a schedule, or when an email arrives."],
     ],
