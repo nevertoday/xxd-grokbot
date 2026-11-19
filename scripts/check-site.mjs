@@ -1,4 +1,4 @@
-// 构建以后查整站：每页最多一处 <mark>；站内链接和锚点都在；示意的 bot 回复都标了「示意 / Illustration」；没留下占位字。
+// 构建以后查整站：每页最多一处 <mark>；站内链接和锚点都在；示意的 bot 回复都标了「示意 / Illustration」；没留下占位字；没有漏渲染的 **。
 //
 //   npm run build && node scripts/check-site.mjs
 import { readFileSync, readdirSync, statSync, existsSync } from "node:fs";
@@ -41,6 +41,8 @@ for (const file of pages) {
     if (hash && hash !== "main" && !read(target).includes(`id="${hash}"`)) fail(file, `锚点不存在：${path}#${hash}`);
   }
   if (/待写|待定稿|TBD:|还在写|still being written/.test(body)) fail(file, "留着占位字");
+  const visible = body.replace(/<(pre|code|script|style)[\s\S]*?<\/\1>/g, "").replace(/<[^>]+>/g, "");
+  if (visible.includes("**")) fail(file, "有没渲染出来的 **（加粗的结尾紧挨着中文标点或文字时会这样，在 ** 后加空格或改用 <strong>）");
 }
 
 const uniq = [...new Set(problems)];
