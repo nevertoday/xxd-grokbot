@@ -1,6 +1,93 @@
 ---
 layout: ../../../layouts/HowTo.astro
 slug: plans-usage
+time: 5 minutes to read
+for: You want to know which plan you need and how to make usage last
+step: 6
+tldr: Grok Bot comes with Premium and up. Usage is weekly, and routines that run often use it up fastest.
+description: Which plans include Grok Bot; how weekly usage gets used; where to see it; how to use less; what to do when it runs out; setting a limit so charges stop; trials, SuperGrok and models.
 ---
+import Callout from "../../../components/Callout.astro";
+import Term from "../../../components/Term.astro";
+import Q from "../../../components/Q.astro";
+import Copy from "../../../components/Copy.astro";
 
-This page is still being written.
+Plans and allowances change, so the official [plan page](https://docs.x.ai/x-subscription/grok-bot) and [FAQ](https://docs.x.ai/grok-bot/faq) are the source of truth. This page leaves prices out.
+
+## Check whether your plan includes it
+
+- **The X Subscription:** **Premium**, **Super** and **Ultra** include Grok Bot, for individuals and team seats. **Plus** and Free don't. Super and Ultra have larger weekly allowances.
+- **Legacy Cursor plans:** every paid individual plan and self-serve Cursor Teams include it. You can also link an individual SuperGrok, SuperGrok Plus, SuperGrok Heavy or X Premium+.
+- **Enterprise:** ask your account team.
+
+There's no separate Grok Bot subscription. Sign in on your phone with the same account and your access carries over. Don't buy a second subscription through the App Store or Google Play.
+
+## How usage gets used
+
+Usage is a weekly allowance that resets each week. On The X Subscription, Grok Bot shares it with Cursor and the Grok apps. How fast it goes depends on the work you give it and how much effort each task takes.
+
+These are the places it goes fastest:
+
+- **<Term k="routine" text="Routines" /> that run often.** Every run uses usage. <mark>A routine that runs hourly, or watches a busy Slack channel, can use a week's allowance in a day.</mark>
+- **Messages between bots.** Replies in group chats and every message between bots count.
+- **Test.** Testing a routine does real work, so it uses usage too. A routine that never runs uses nothing.
+
+## Where to see what you've used
+
+Open **Settings → Usage & Billing**:
+
+- **Usage limits**: how much you've used this week, and when it resets.
+- **Grok Bot usage**: a chart you can view by bot or by source.
+- **Additional usage**: what you use past the weekly allowance.
+
+The account menu can also show **Weekly usage**. Or ask in your private chat with a bot:
+
+<Copy id="pu-ask" code="Check my Grok Bot usage this week: how much I've used, where my allowance comes from, and when it resets." />
+
+Only the bot's owner can ask, and only in a private chat.
+
+## Use less
+
+The docs' advice: rein in routines before moving to a bigger plan or raising a limit.
+
+- **Pause routines you don't need.** In the bot's details, on the **Details** tab, use the switch on each row.
+- **Widen schedules and narrow triggers.** Have the bot go through them:
+
+<Copy id="pu-routines" code="List all your routines, with how often each runs and what starts it. Suggest changes for any that run too often or have triggers that are too broad. Don't change anything yet." />
+
+- **Put fewer bots in a group.** Fewer bots means fewer replies.
+- **Start big jobs small.** The more effort a task takes, the more it uses.
+
+## When usage runs out
+
+If a bot stops replying and says you hit your usage limit, it isn't broken. This week's allowance is used up, and it resets each week. To keep going now:
+
+- **The X Subscription:** buy prepaid credit.
+- **Legacy Cursor plans:** turn on on-demand usage.
+- **Either one:** move to a bigger plan.
+
+If you have a usage reset, go to **Resets** in **Usage & Billing**, choose **Use reset**, then **Confirm**. This week's usage goes back to zero right away. After using one, you have to wait before you can use another.
+
+## Set a limit so charges stop
+
+- **The X Subscription:** at [grok.com/dashboard/billing](https://grok.com/dashboard/billing), find **Additional usage credits**. Leave **Auto top-up** off, or set a monthly additional usage limit.
+- **Legacy Cursor plans:** in Grok Bot, open **Settings → Usage & Billing → On-demand monthly limit**.
+
+<Callout type="warn" title="A limit doesn't stop work already running">
+A bot in the middle of a task isn't stopped at the limit, so it can go a little past. With on-demand usage off, bots stop when the allowance runs out and continue after the weekly reset.
+</Callout>
+
+## Stuck?
+
+<Q q="Is there a free trial?">
+Some accounts can try it first: if the access screen offers **Start Trial**, choose it. The trial is a usage credit with a 7-day window, and it never turns into a paid plan. It's drawn down by how much work the bots do, not by message count. One big task can use it all. An App Store free trial on the phone is different: it turns into a paid subscription unless you cancel first.
+</Q>
+<Q q="Do a Cursor plan and SuperGrok add together?">
+No. On a legacy Cursor account, Grok Bot uses whichever one gives more weekly usage. Both subscriptions keep billing on their own, and buying one doesn't cancel the other.
+</Q>
+<Q q="The Grok app says my SuperGrok limit is used up.">
+The Grok app's limit doesn't apply to Grok Bot: they are two products with two meters. Grok Bot usage lives on your Cursor account, under **Settings → Usage & Billing** in Grok Bot.
+</Q>
+<Q q="Which model does it use? Can I change it?">
+You can't pick it or see it. Grok Bot chooses a model for each task, and usage is recorded as Grok Bot usage. Whichever model it uses, your cost per token stays the same.
+</Q>

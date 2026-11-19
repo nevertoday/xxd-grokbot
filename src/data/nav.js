@@ -94,19 +94,26 @@ export const HOWTO_FLAT = HOWTO.flatMap((g) => g.items.map((i) => ({ ...i, group
 
 export const wikiHref = (slug, lang = "zh") => link(`/wiki/${slug}/`, lang);
 
-// 正文里虚线标出的术语：悬停看一句话解释（Term 组件）。wiki: 对应的 Wiki 条目。
-// 依据官方文档（docs.x.ai/grok-bot）。Wiki 现在只有 bot、routine 两条占位，写了新条目再把 wiki 改过去。
+// 正文里虚线标出的术语：悬停看一句话解释（Term 组件）。wiki: 对应的 Wiki 条目（src/data/wiki.js 的 slug）。
+// 依据 poteto 的文章和官方文档（docs.x.ai/grok-bot）。加了 Wiki 条目，在这里加一个对应的术语。
 export const GLOSSARY = {
   bot: { tip: "替你干活的 AI 帮手，每个 bot 有自己的记忆。", wiki: "bot", en: { label: "bot", tip: "An AI helper that works for you and keeps its own memory." } },
-  "主 bot": { tip: "你主要找的那个 bot：它会主动来问你，也会把活分给别的 bot。", wiki: "bot", en: { label: "primary bot", tip: "Your main bot: it checks in with you on its own and hands work to your other bots." } },
+  "主 bot": { tip: "你主要找的那个 bot：它会主动来问你，也会把活分给别的 bot。", wiki: "primary-bot", en: { label: "primary bot", tip: "Your main bot: it checks in with you on its own and hands work to your other bots." } },
+  目标和过程: { tip: "目标是最后要得到什么，过程是怎么得到它。", wiki: "goal-and-process", en: { label: "goal and process", tip: "The goal is what you want at the end; the process is how you get there." } },
+  记忆: { tip: "bot 记住的你的习惯、规矩和它做过的事，每个 bot 各记各的。", wiki: "memory", en: { label: "memory", tip: "What a bot keeps about your habits, your rules and its past work. Each bot has its own." } },
   routine: { tip: "告诉一个 bot 什么时候自动开工：按时间，或者等某件事发生。", wiki: "routine", en: { label: "routine", tip: "Tells a bot when to start a job by itself: on a schedule, or when something happens." } },
-  触发条件: { tip: "让 routine 开工的那件事，比如 bot 收到一封邮件。", wiki: "routine", en: { label: "trigger", tip: "The event that starts a routine, like an email arriving for your bot." } },
-  技能: { tip: "一份写给 bot 的做法说明：怎么做、交回什么、哪一步要先问你。", wiki: "bot", en: { label: "skill", tip: "Instructions for one task: the steps, what to hand back, and what needs your OK first." } },
-  云端电脑: { tip: "放在云上、你的 bot 共用的一台电脑，你合上笔记本它们也照样干活。", wiki: "bot", en: { label: "cloud computer", tip: "A computer in the cloud that your bots share, so they keep working after you close your laptop." } },
-  连接的应用: { tip: "你连给 bot 的 Gmail 这类应用，它直接在应用里干活，不用去点网页。", wiki: "bot", en: { label: "connected app", tip: "An app like Gmail that you connect, so your bot works in it directly instead of clicking through the website." } },
-  Vault: { tip: "存登录和银行卡的地方，bot 用它填网页，自己看不到内容。", wiki: "bot", en: { label: "Vault", tip: "Where you save logins and cards; bots fill them into pages without seeing them." } },
-  审批: { tip: "要你点头的事，bot 会发一张卡片，停下来等你。", wiki: "bot", en: { label: "approval", tip: "When an action needs your OK, the bot shows you a card and waits." } },
-  "team bot": { tip: "分享给整个团队用的 bot，要 Team 或 Enterprise 套餐。", wiki: "bot", en: { label: "Team Bot", tip: "A bot shared with your whole team; it needs a Team or Enterprise plan." } },
-  "Dr Eggbot": { tip: "一个现成的 bot：问你几个问题，再帮你建好一组各管一份活的 bot。", wiki: "bot", en: { label: "Dr Eggbot", tip: "A ready-made bot that asks you a few questions, then sets up bots for you, one job each." } },
-  webhook: { tip: "一个专用网址，别的程序往这里发一条消息，routine 就开工。", wiki: "routine", en: { label: "webhook", tip: "A special web address; when another program sends a message to it, the routine starts." } },
+  触发条件: { tip: "让 routine 开工的那件事，比如 bot 收到一封邮件。", wiki: "trigger", en: { label: "trigger", tip: "The event that starts a routine, like an email arriving for your bot." } },
+  webhook: { tip: "一个专用网址，别的程序往这里发一条消息，routine 就开工。", wiki: "trigger", en: { label: "webhook", tip: "A special web address; when another program sends a message to it, the routine starts." } },
+  主动做事: { tip: "主 bot 自己找能替你做的事，先问你要不要做。", wiki: "initiative", en: { label: "initiative", tip: "Your primary bot spots work it can take on, and asks before doing it." } },
+  技能: { tip: "一份写给 bot 的做法说明：怎么做、交回什么、哪一步要先问你。", wiki: "skill", en: { label: "skill", tip: "Instructions for one task: the steps, what to hand back, and what needs your OK first." } },
+  云端电脑: { tip: "放在云上、你的 bot 共用的一台电脑，你合上笔记本它们也照样干活。", wiki: "cloud-computer", en: { label: "cloud computer", tip: "A computer in the cloud that your bots share, so they keep working after you close your laptop." } },
+  连接的应用: { tip: "你连给 bot 的 Gmail 这类应用，它直接在应用里干活，不用去点网页。", wiki: "connected-apps", en: { label: "connected app", tip: "An app like Gmail that you connect, so your bot works in it directly instead of clicking through the website." } },
+  "统一的 ID": { tip: "认出同一样东西的号码或文字，比如订单号。各个应用都用它，数据才对得上。", wiki: "ids", en: { label: "consistent IDs", tip: "A number or unique text, like an order number, that every app uses for the same thing." } },
+  审批: { tip: "要你点头的事，bot 会发一张卡片，停下来等你。", wiki: "approval", en: { label: "approval", tip: "When an action needs your OK, the bot shows you a card and waits." } },
+  "Auto Review": { tip: "bot 动手前先检查每个动作：多数直接放行，要紧的停下来问你。", wiki: "approval", en: { label: "Auto Review", tip: "Checks each action before the bot takes it: most run on their own, and some stop to ask you." } },
+  Vault: { tip: "存登录、银行卡和联系信息的地方。bot 用它登录、结账，看不到你的密码。", wiki: "vault", en: { label: "Vault", tip: "Where you save logins, cards and contact info. Bots use it to sign in and check out without seeing your passwords." } },
+  "team bot": { tip: "分享给整个团队用的 bot，要 Team 或 Enterprise 套餐。", wiki: "team-bot", en: { label: "Team Bot", tip: "A bot shared with your whole team; it needs a Team or Enterprise plan." } },
+  交接: { tip: "一个 bot 给另一个 bot 发消息，把活交过去。", wiki: "handoff", en: { label: "handoff", tip: "One bot messages another to pass along work." } },
+  "Dr Eggbot": { tip: "一个现成的 bot：问你几个问题，再帮你建好一组各管一份活的 bot。", wiki: "dr-eggbot", en: { label: "Dr Eggbot", tip: "A ready-made bot that asks you a few questions, then sets up bots for you, one job each." } },
+  "现成的 bot": { tip: "别人已经为一份活设好的 bot，加一份副本就能用。", wiki: "marketplace", en: { label: "prebuilt bot", tip: "A bot someone already set up for a job; add a copy and use it." } },
 };
