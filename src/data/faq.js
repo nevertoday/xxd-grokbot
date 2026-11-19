@@ -21,7 +21,7 @@ export const FAQ = [
   { id: "trust", title: "放心吗", items: [
     ["它会不经我同意花钱、发消息吗？", "会不会先问你，取决于 Auto Review 和你定的规则。动手前 Auto Review 会先检查，要你点头的会发一张审批卡片等你。给撤不回的事加一条 **先询问**（Ask first）规则，匹配的动作它一定先问。存在 Vault 里的卡结账时会直接填，==想每笔都自己批，就别存卡==。见 [哪些事要先问你](/howto/approvals-privacy/)。"],
     ["我的数据会去哪？", "放在云上，按你 Cursor 账号的数据设置来管。Grok Bot 需要云端存储，所以不支持旧版隐私模式（Legacy Privacy Mode）。要不要用来训练，也跟着 Cursor 账号的隐私设置走。云端电脑在美国，每个用户单独一台，你自己的 bot 共用它。细节见 [Cursor 隐私政策](https://cursor.com/privacy)。"],
-    ["它会用我自己的电脑吗？", "只有你允许时才会。bot 平时在云端电脑上干活。在你面前这台电脑上跑命令，由 **在这台电脑上执行**（Execution on this computer） 这一项管。它在 **设置 → 电脑 → 你的电脑**（Settings → Computer → Your computer） 里，默认是 **每次询问**（Ask every time）。用不着的话，官方建议选 **从不允许**（Never allow）。"],
+    ["它会用我自己的电脑吗？", "只有你允许时才会。bot 平时在云端电脑上干活。在你面前这台电脑上跑命令，由 **在这台电脑上执行**（Execution on this computer）这一项管。它在 **设置 → 电脑 → 你的电脑**（Settings → Computer → Your computer）里，默认是 **每次询问**（Ask every time）。用不着的话，官方建议选 **从不允许**（Never allow）。"],
   ]},
   { id: "stuck", title: "卡住了", items: [
     ["登录一直完成不了，怎么办？", "先让 app 开着，在浏览器里把登录走完，再自己切回 app。没反应就再点一次 **登录**（Sign in），并确认你的账号有 Grok Bot。还不行，就更新 app，清掉 cursor.com 和 x.ai 的缓存和 Cookie，用无痕窗口再登。刚出现的错误，等 30 到 60 分钟再试；重装 app 一般没用。"],

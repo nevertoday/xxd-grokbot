@@ -42,7 +42,7 @@ import Q from "../../components/Q.astro";
 
 ## 它要登录时，按这个顺序找
 
-1. **保险库**（Vault） 里存好的登录。
+1. **保险库**（Vault）里存好的登录。
 2. 你连的密码管理器，比如 1Password。
 3. 都没有，就发一张 **安全表单**（Secure Form）问你。
 
@@ -61,7 +61,7 @@ import Q from "../../components/Q.astro";
 登录好的状态会留在电脑上，下次接着用，你所有的 bot 都能用。
 
 <Callout type="warn" title="指纹和面容在它的电脑上用不了">
-你笔记本或手机上的指纹、面容 ID、Windows Hello 和通行密钥，在它的电脑上用不了。公司应用用单点登录的，接管后换一种公司允许的方式。比如密码加验证码。在 Mac 和 Windows 上，也可以用硬件安全密钥：到 **设置 → 通用**（Settings → General） 的 **安全密钥**（Security Key） 下，确认 **使用硬件安全密钥**（Use hardware security keys） 开着。这项在 Mac 和 Windows 上默认开着，Linux 暂不支持，每次用都要你先批准。
+你笔记本或手机上的指纹、面容 ID、Windows Hello 和通行密钥，在它的电脑上用不了。公司应用用单点登录的，接管后换一种公司允许的方式。比如密码加验证码。在 Mac 和 Windows 上，也可以用硬件安全密钥：到 **设置 → 通用**（Settings → General）的 **安全密钥**（Security Key）下，确认 **使用硬件安全密钥**（Use hardware security keys）开着。这项在 Mac 和 Windows 上默认开着，Linux 暂不支持，每次用都要你先批准。
 </Callout>
 
 ## API 密钥用安全卡片
@@ -93,7 +93,7 @@ API 密钥这类东西，等 bot 发来 **secure secret card**（安全密钥卡
 填之前，网页可能已经跳走了。你填的内容照样没给 bot 看到。它再要的话，重新填一张新表单。
 </Q>
 <Q q="team bot 用不了我存的登录。">
-本来就是这样，你的 Vault 不给 team bot 用。team bot 的拥有者或管理员可以给它加专用的登录。点扳手图标里的 **管理**（Manage），到 **通用**（General） 下找 **Bot's accounts**。API 密钥加在 **密钥**（Secrets） 里。
+本来就是这样，你的 Vault 不给 team bot 用。team bot 的拥有者或管理员可以给它加专用的登录。点扳手图标里的 **管理**（Manage），到 **通用**（General）下找 **Bot's accounts**。API 密钥加在 **密钥**（Secrets）里。
 </Q>
 <Q q="电脑更新以后，我的密钥没了？">
 更新、**Recover**（恢复）和 **重置**（Reset）会删掉装在电脑上的应用和软件包。你写进文件或命令行配置里的密钥，可能跟着没了。用安全卡片、**密钥** 或 Vault 存的，不受影响。

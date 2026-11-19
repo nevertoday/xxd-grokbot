@@ -50,7 +50,7 @@ import Q from "../../components/Q.astro";
 
 云端电脑和你面前的 Mac、Windows 电脑是两台。bot 要在你自己的电脑上执行命令，得你允许。
 
-设置在 **设置 → 电脑 → 你的电脑**（Settings → Computer → Your computer） 里的 **在这台电脑上执行**（Execution on this computer），有三档：
+设置在 **设置 → 电脑 → 你的电脑**（Settings → Computer → Your computer）里的 **在这台电脑上执行**（Execution on this computer），有三档：
 
 - **每次询问**（Ask every time）：默认就是这一档。
 - **始终允许**（Always allow）：不再问。
@@ -60,11 +60,11 @@ import Q from "../../components/Q.astro";
 
 ## 登录交给 Vault，别在聊天里贴密码
 
-<Term k="Vault" /> 存你的登录、银行卡和联系信息，在 **设置 → 保险库**（Settings → Vault） 里管理。
+<Term k="Vault" /> 存你的登录、银行卡和联系信息，在 **设置 → 保险库**（Settings → Vault）里管理。
 
 bot 要登录网站时，按这个顺序找：
 
-1. **保险库**（Vault） 里存的登录。
+1. **保险库**（Vault）里存的登录。
 2. 连上的密码管理器，比如 1Password。
 3. 都没有，就发一张 **安全表单**（Secure Form）问你。
 
@@ -92,7 +92,7 @@ Vault 里的密码和表单里填的值，直接填进网页，bot 看不到。
 
 这些情况它会停下来问你：
 
-- **你写过「先问我」的规则。** 规则在 **设置 → 通用**（Settings → General） 的 **自定义规则**（Custom Rules）里，选 **先询问**（Ask first）。两种规则都对上时，「先问」优先。
+- **你写过「先问我」的规则。** 规则在 **设置 → 通用**（Settings → General）的 **自定义规则**（Custom Rules）里，选 **先询问**（Ask first）。两种规则都对上时，「先问」优先。
 - **从它自己的邮箱发信，又不是你在聊天里要它发的。** 比如 routine 写的信，会存成草稿，等你点 **发送**（Send）。
 - **在你自己的电脑上跑命令**，默认每次问，按上一节的设置。
 
@@ -109,7 +109,7 @@ Vault 里的密码和表单里填的值，直接填进网页，bot 看不到。
 ## 卡住了？
 
 <Q q="它说某个应用没连上。">
-<p>应用显示 <strong>已添加</strong>（Added）只说明装上了，不代表登录了。到 <strong>连接应用</strong> 打开它，显示 <strong>需要认证</strong>（Needs auth） 或 <strong>已断开连接</strong>（Disconnected） 的话，点 <strong>身份验证</strong>。</p>
+<p>应用显示 <strong>已添加</strong>（Added）只说明装上了，不代表登录了。到 <strong>连接应用</strong> 打开它，显示 <strong>需要认证</strong>（Needs auth）或 <strong>已断开连接</strong>（Disconnected）的话，点 <strong>身份验证</strong>。</p>
 </Q>
 <Q q="登录页面关掉了，没登完。">
 <p>在应用上点 <strong>重新连接</strong>（Reconnect），或在聊天卡片上点 <strong>重新打开</strong>（Reopen），登录页会重新打开。大约 10 分钟内要登完，过了就从卡片重新来。</p>
