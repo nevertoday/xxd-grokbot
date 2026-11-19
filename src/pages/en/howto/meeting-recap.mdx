@@ -11,86 +11,64 @@ import Term from "../../../components/Term.astro";
 import Q from "../../../components/Q.astro";
 import Copy from "../../../components/Copy.astro";
 
-## Say what result you want
+By the end of this page you'll have a bot that wraps up your meetings. When the day's calls are over, it drafts a list of who has to finish what by when, and nothing goes to the team until you've read it and said yes.
 
-Writing a recap is one step in the process. The result you want is that after every meeting, each person knows what they have to finish and by when.
+You've probably sat through this one. The meeting is lively, everyone nods, and an hour later nobody can say who took which job, while the recap waits for someone to write it. But the recap was never really what you wanted. It's one step in the process. What you want is for everyone to walk out knowing what they have to finish and by when. <mark>So the goal you hand your bot is that everything the meeting decides has an owner and a date.</mark>
 
-Make a new <Term k="bot" />, call it Potato, and send it the goal:
+## Hand it the result, not the recap
 
-<Copy id="mr-goal" title="First message: the goal" code="Hi Potato. I want you to own this goal: after every meeting, each person knows what they have to finish and by when. This is your job from now on, so remember it. Based on the goal, choose a name and a picture for yourself." />
+Make a new <Term k="bot" /> and give it any name. If nothing comes to mind, call it Potato and let it rename itself later. Then send it the goal:
+
+<Copy id="mr-goal" title="First message: the goal" code="Hi Potato. I want everyone to leave every meeting knowing what they have to finish and by when, so that nothing we agree on gets dropped just because nobody remembered it. This is your job from now on, so remember it. Based on the goal, choose a name and a picture for yourself." />
 
 <Callout type="warn" title="Joining meetings depends on your plan">
-A bot can join meetings on Team, Enterprise, Ultra, and Super plans. See [Meetings](https://docs.x.ai/grok-bot/meetings) in the official docs. Without one, paste or upload your meeting notes instead, and the rest of this page still works.
+A bot can join meetings on Team, Enterprise, Ultra, and Super plans. See [Meetings](https://docs.x.ai/grok-bot/meetings) in the official docs. If your plan doesn't have it, that's fine. Paste or upload your meeting notes instead, and the rest of this page still works.
 </Callout>
 
-## Tell it how you do it now
+## Tell it how you wrap up a meeting
 
-Tell it how you do this today. Change every line to fit you:
+With the goal set, tell it how you do this yourself today. The easiest way is to press `Cmd/Ctrl+D` and talk, saying things as they come to you without tidying them first. Here's an example. Swap in your own apps and habits:
 
-<Copy id="mr-process" title="Second message: your process" code={`Potato, this is how I usually do this myself:
-- Steps: I take notes in the meeting. Afterward I write down what we decided, who does what, and by when, and send it to everyone who attended. Before the next meeting I check in on progress.
-- What I watch for: every action item has an owner and a date. I only write down what was actually said.
-- Apps I use: Google Calendar for meetings and attendees, Slack to send it to the team, and Notion to keep the recaps.
-- How I check it's right: every action item can be traced back to the meeting record.
-- Where the information comes from: the meeting itself (I'll give you the link), attendees on the calendar invite, and my notes.
-- Where feedback comes from: teammates tell me what the recap got wrong.
+<Copy id="mr-process" title="Second message: your process" code={`Potato, here's how I usually do this myself. I take notes during the meeting, and afterward I write down what we decided, who's doing what, and by when, and send it to everyone who came. Before the next meeting I check in with each person on progress. Two things matter most to me: every action item has an owner and a date, and the recap only says what was actually said. I use Google Calendar to see the meetings and who's attending, Slack to send things to the team, and Notion to keep the recaps. The information comes from the meeting itself (I'll give you the link), the attendees on the calendar invite, and my own notes. How do I know it's right? Every action item can be traced back to the meeting record. When something's wrong, my teammates tell me.
 
 Think about how you could take this over from me completely. Before you begin, restate my goal and process in simple words, so I can give you feedback and confirm it. Don't start doing the work yet. Let's get the process planned first.`} />
 
-If typing is slow, press `Cmd/Ctrl+D` and talk. Say things as they come to you. It restates what it heard first. Correct anything that's off, and go a few rounds.
+It restates what it heard first. Getting it wrong the first time is normal, so correct whatever's off and go a few rounds until you're happy, then tell it to go ahead. If it needs an app, it shows a **Connect** card in the chat. Open it and sign in.
 
-When you're happy, tell it to go ahead. If it needs an app, it shows a **Connect** card in the chat. Open it and sign in.
+## Where it shouldn't decide for you
 
-## Teach it how you decide
+Some calls you make without thinking, like who gets the item nobody claimed in the meeting. You just know. Your bot doesn't, so it would have to guess, and one wrong owner is enough to make people stop trusting the recap. So tell it your rules too:
 
-You make some calls without thinking, and your bot can't know them. Here are three common ones for this job:
+<Copy id="mr-judge" title="Third message: how you decide" code={`Potato, here are a few rules I use to decide. If nobody clearly owns an action item, mark it "owner TBD" and ask me. Don't assign it to anyone yourself. Write only what was said in the meeting, and never make up a quote. For meetings with just our own people, draft the recap as a post for the team channel. If a customer was there, send it only to me.
 
-<Copy id="mr-judge" title="Third message: how you decide" code={`Potato, here are a few rules I use to decide:
-1. If nobody clearly owns an action item, mark it "owner TBD" and ask me. Don't assign it yourself.
-2. Write only what was said in the meeting. Never make up a quote.
-3. For internal meetings, draft the recap as a post for the team channel. If a customer was there, send it only to me.
+Then help me find what I haven't told you about this process yet. Ask me how I make decisions, where I get my information, how I check the work, and when you should come to me. Ask one question at a time. Then walk me through a few examples so I can give you feedback. Don't automate anything yet.`} />
 
-Help me find what I haven't told you about this process yet. Ask me how I make decisions, where I get my information, how I check the work, and when you should ask me for help. Ask one question at a time. Then walk me through a few examples so I can give you feedback. Don't automate anything yet.`} />
+When you pick examples, include one or two that went wrong, like the action item with the wrong owner. See how it would handle them, then tell it what to fix.
 
-- **Rule 1.** <mark>Items nobody claimed come to you, so it never decides for your teammates.</mark>
-- **Rule 2.** Every line matches the record, so your team can trust the recap.
-- **Rule 3.** Who gets it depends on who was in the room. Outside guests mean a second look.
+## Let it wrap up every day on its own
 
-Include an example or two that went wrong, like the action item with the wrong owner. See how it would handle them, then tell it what to fix.
+Once this has gone well a few times, it can start on its own. First save the process as a <Term k="技能" />, then set up a <Term k="routine" />, which is a job it starts by itself on a schedule.
 
-## Make it run on its own
+A recurring meeting doesn't actually need a routine. Paste the meeting link and say "join every meeting in this series and take notes," and it schedules that itself. The routine is for the daily wrap-up:
 
-Once this has gone well a few times, let it start on its own. Save the process as a <Term k="技能" /> first, then set up a <Term k="routine" />.
+<Copy id="mr-routine" title="Fourth message: let it start on its own" code={`Save the process we just worked out as a skill called "Meeting recap." Then set up a routine: every weekday at 6:00 PM, use that skill to list today's action items from all my meetings, and draft one Slack post for #team. Don't send it until I approve. If a meeting has no record, name it. Don't fill it in from memory.`} />
 
-A recurring meeting doesn't need a routine. Paste the meeting link and say "join every meeting in this series and take notes," and it schedules that itself. Use a routine to wrap up each day:
+When it needs your approval, a card shows up in the chat. Approve it. Once the meeting starts, the host lets it in, and its name ends in "transcribing." When the call ends, it posts a summary and action items in its chat.
 
-<Copy id="mr-routine" title="Fourth message: let it start on its own" code={`Save the process we just used as a skill called "Meeting recap."
-Then set up a routine: every weekday at 6:00 PM, use that skill to list today's action items from all my meetings, and draft one Slack post for #team.
-Don't send it until I approve.
-If a meeting has no record, name it. Don't fill it in from memory.`} />
+After the first few runs, look over what it made. Every item should have an owner and a date, and any without an owner should say "owner TBD." Pick one item and ask it to show you that part of the meeting record, to make sure no quote was made up. Then glance at Slack to check that the draft isn't there yet.
 
-When it asks for your approval, a card shows in the chat. Approve it. Once the meeting starts, the host lets it in. Its name ends in "transcribing." When the call ends, it posts a summary and action items in its chat.
+A new routine waits for its next scheduled time. To try it now, open it and choose **Test**, but know that a test does real work. See [Create a routine](https://docs.x.ai/grok-bot/skills-routines-and-automations#create-a-routine) in the official docs.
 
-After the first few runs, check these:
-
-- **Every item has an owner and a date.** Any without one says "owner TBD."
-- **No made-up quotes.** Pick one item and ask it to show you that part of the meeting record.
-- **The draft wasn't sent.** The post isn't in Slack yet.
-
-A new routine waits for its next scheduled time. To try it now, open it and choose **Test**. A test does real work. See [Create a routine](https://docs.x.ai/grok-bot/skills-routines-and-automations#create-a-routine) in the official docs.
-
-It helps before meetings too. Ask for a one-page brief on who's attending, where you left off last time, and what's still open. See [Meeting prep](https://docs.x.ai/grok-bot/use-cases#meeting-prep) in the official docs.
-
-To see what it asks you about first, read [Approvals and privacy](/en/howto/approvals-privacy/).
+It helps before meetings too. Ask for a one-page brief on who's attending, where you left off last time, and what's still open. See [Meeting prep](https://docs.x.ai/grok-bot/use-cases#meeting-prep) in the official docs. To see what it stops to ask you about first, read [Approvals and privacy](/en/howto/approvals-privacy/).
 
 ## Stuck?
 
 <Q q="The bot can't get into the meeting.">
-First check the chat for a card waiting on your approval. Then check that the host let it in. It shows up as "Bot name (your first name's Bot) - transcribing."
+First check the chat for a card waiting on your approval, then check that the host let it in. It shows up as "Bot name (your first name's Bot) - transcribing."
 </Q>
 <Q q="I don't want it to talk in the meeting.">
-Open the bot's details, find the meeting under **Upcoming**, open its menu, and choose **Disable Interactivity**. It still listens and takes notes, and the row shows **Muted**.
+Open the bot's details, find the meeting under **Upcoming**, open its menu, and choose **Disable Interactivity**. It still listens and takes notes, it just doesn't answer in the meeting, and the row shows **Muted**.
 </Q>
 <Q q="My plan doesn't include meetings.">
-Paste your meeting notes into the chat or upload them as a file. If you've connected Granola, it can read your Granola notes too. The official marketplace has [Meeting Recap Deck](https://x.ai/bot/marketplace/bots/echo), which turns notes into a recap deck in your slide template and never invents a quote.
+Then paste your meeting notes into the chat, or upload them as a file. If you've connected Granola, it can read your Granola notes too. The official marketplace also has [Meeting Recap Deck](https://x.ai/bot/marketplace/bots/echo), which turns notes into a recap deck in your slide template and never invents a quote.
 </Q>
