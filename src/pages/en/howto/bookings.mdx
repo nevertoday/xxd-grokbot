@@ -3,87 +3,71 @@ layout: ../../../layouts/HowTo.astro
 slug: bookings
 time: A few rounds of chat to set the process, then it handles new bookings on a schedule
 for: You run a small shop or a home service, and bookings come in one email at a time
-tldr: Your bot books the way you do. A booking counts only once it's in the system and confirmed.
-description: "Take and change bookings with Grok Bot: say the result you want, explain how you book and decide, then let it handle new requests on a schedule. Follows the booking example in poteto's article."
+tldr: During opening hours, your bot handles new booking requests every 2 hours. It finds a slot, saves the booking, and drafts the confirmation for you to send.
+description: "Take and change bookings with Grok Bot: say that what you want is every customer booked, explain how you book and decide, then let it handle new requests on a schedule. Follows the booking example in poteto's article."
 ---
 import Term from "../../../components/Term.astro";
 import Q from "../../../components/Q.astro";
 import Copy from "../../../components/Copy.astro";
 
-The author, poteto, uses booking customers as the running example in the [article](https://x.com/poteto/status/2123159537016533493). This page walks through it.
+If you run a small shop or a home service, bookings come in one email at a time. Someone asks when you're free, someone else wants to move their time. You check who's available, create the booking in your system, and email back a confirmation, over and over through the day. When you finish this page, your bot will handle new booking requests every 2 hours during opening hours: it finds a slot, creates the booking in your system, and drafts the customer's confirmation for you to send.
 
-## Say what result you want
+The author, poteto, uses booking customers as the running example in the [article](https://x.com/poteto/status/2123159537016533493), and this page follows it. The author's sharpest point is about when a booking counts. <mark>An email alone isn't a booking. It counts once it's saved in the system and the customer has a confirmation.</mark>
 
-Replying to an email is one step in the process. The result you want is that every customer who wants to come in gets a good time slot soon, and no request slips.
+It takes four steps: give it the goal, explain how you do it now, teach it how you decide, then let it start on its own.
 
-Make a new <Term k="bot" />, call it Potato, and send it the goal:
+## The goal isn't a reply, it's a booked customer
 
-<Copy id="bk-goal" title="First message: the goal" code="Hi Potato. I want you to own this goal: every customer who wants to come in gets a good time slot soon and a confirmation, and no request slips. This is your job from now on, so remember it. Based on the goal, choose a name and a picture for yourself." />
+Replying to an email is only one step in the process. What you actually want is that every customer who wants to come in gets a good time slot soon, and no request slips. Make a new <Term k="bot" />, call it Potato, and give it that goal:
 
-## Tell it how you do it now
+<Copy id="bk-goal" title="First message: the goal" code="Hi Potato. There's a goal I'd like you to own. I want every customer who wants to come in to get a good time slot soon and a confirmation, so that no booking ever slips through. This is your job from now on, so please remember it. Then, based on the goal, choose a name and a picture for yourself." />
 
-Tell it how you do this today. Change every line to fit your shop:
+## Tell it how you book an appointment
 
-<Copy id="bk-process" title="Second message: your process" code={`Potato, this is how I usually do this myself:
-- Steps: when a booking request comes in, I check who's free that day, create the booking in our booking system, then confirm with the customer. If a customer changes their time, I edit the existing booking.
-- What I watch for: how long each service takes, who can do which job, and how much gap to leave between appointments.
-- Apps I use: Gmail, Google Calendar, and our booking system (the address is ...).
-- How I check it's right: the booking is in the system and the customer got a confirmation.
-- Where the information comes from: customer emails and the shop calendar.
-- Where feedback comes from: customer reviews and our no-show records.
+Now tell it how you take a booking today: what you check first, where you create it, and how you reply. Here's an example. Swap in your own shop's details:
+
+<Copy id="bk-process" title="Second message: your process" code={`Potato, this is how I usually do this myself. When a booking request comes in, I check who's free that day, create the booking in our booking system, then confirm with the customer. If a customer changes their time, I edit the existing booking. I keep an eye on how long each service takes, who can do which job, and how much gap to leave between appointments. I use Gmail, Google Calendar, and our booking system (the address is ...), and the information comes from customer emails and the shop calendar. It's right when the booking is in the system and the customer got a confirmation. Customer reviews and our no-show records tell us what we got wrong.
 
 Think about how you could take this over from me completely. Before you begin, restate my goal and process in simple words, so I can give you feedback and confirm it. Don't start doing the work yet. Let's get the process planned first.`} />
 
-If typing is slow, press `Cmd/Ctrl+D` and talk. Say things as they come to you. It restates what it heard first. Correct anything that's off, and go a few rounds.
+If typing is slow, press `Cmd/Ctrl+D` and just talk, saying things as they come to you. It restates what it heard first. Correct whatever's off and go a few rounds until it's right. When you're happy, tell it to go ahead. If it needs an app, it shows a **Connect** card in the chat. Open it and sign in.
 
-When you're happy, tell it to go ahead. If it needs an app, it shows a **Connect** card in the chat. Open it and sign in.
+## When the email and the system disagree
 
-## Teach it how you decide
+The author points out that the easiest thing to forget when you explain a process is the calls you make without thinking. The article gives three booking situations, and they make three good rules:
 
-You make some calls without thinking, and your bot can't know them. These three follow the article's examples:
-
-<Copy id="bk-judge" title="Third message: how you decide" code={`Potato, here are a few rules I use to decide:
-1. If an email and the booking system show different times, trust the booking system, then email the customer to check.
-2. Sending an email doesn't finish a booking. It's done when the booking is saved in the system and the customer has a confirmation.
-3. If we're still waiting on details from a customer, keep track of it and pick it back up later. Don't create a second booking.
+<Copy id="bk-judge" title="Third message: how you decide" code={`Potato, here are a few rules I use to decide. If an email and the booking system show different times, trust the booking system, then email the customer to check. Sending an email doesn't finish a booking. It's done when the booking is saved in the system and the customer has a confirmation. If we're still waiting on details from a customer, keep track of it and pick it back up later. Don't create a second booking.
 
 Help me find what I haven't told you about this process yet. Ask me how I make decisions, where I get my information, how I check the work, and when you should ask me for help. Ask one question at a time. Then walk me through a few examples so I can give you feedback. Don't automate anything yet.`} />
 
-- **Rule 1.** When the two disagree, it knows which one to trust.
-- **Rule 2.** <mark>An email alone isn't a booking. It counts once it's saved and the customer is confirmed.</mark>
-- **Rule 3.** It keeps a list of bookings waiting on a reply, so it picks them up later without booking twice.
+The first rule tells it which one to trust when the two disagree. The second is the line from the top of this page, which puts "booked" at the point where both the system and the customer have it. The third guards against booking twice. When a customer is slow to reply and the bot comes back to the request, a glance at its notes shows the booking is already there.
 
-Include an example or two that went wrong, like the customer who moved their time twice. See how it would handle them, then tell it what to fix.
+The author also says you don't have to cover every situation up front. Take a few real examples, including ones that went wrong, like the customer who moved their time twice. Ask how it would handle them, then give it feedback.
 
-## Make it run on its own
+## Every 2 hours during opening hours
 
-Once this has gone well a few times, let it start on its own. Save the process as a <Term k="技能" /> first, then set up a <Term k="routine" />:
+Once this has gone well a few times, you can let it start on its own. First have it save the process as a <Term k="技能" />, written instructions it follows every time, then set up a <Term k="routine" /> that tells it when to start:
 
-<Copy id="bk-routine" title="Fourth message: let it start on its own" code={`Save the process we just used as a skill called "New bookings."
-Then set up a routine: during opening hours, every 2 hours, use that skill to handle new booking requests.
-Write customer confirmations as drafts and wait for me to send them.
-If the booking system won't open, tell me in this chat. Don't book from old data.`} />
+<Copy id="bk-routine" title="Fourth message: let it start on its own" code={`Save the process we just used as a skill called "New bookings." Then set up a routine: during opening hours, every 2 hours, use that skill to handle new booking requests. Write customer confirmations as drafts and wait for me to send them. If the booking system won't open, tell me in this chat. Don't book from old data.`} />
 
-After the first few runs, check these:
+After the first few runs, open the routine and check that **When to run** says the time you meant. Each confirmation should stop at a draft card that waits for you to choose **Send**. Then look through the booking system, where each customer should have just one booking.
 
-- **The time is right.** Open the routine and read **When to run**. It should say the time you meant.
-- **It stopped at a draft.** Each confirmation is a draft card that waits for you to choose **Send**.
-- **No duplicates.** Each customer has one booking.
-
-A new routine waits for its next scheduled time. To try it now, open it and choose **Test**. A test does real work, so use a fake booking request. See [Create a routine](https://docs.x.ai/grok-bot/skills-routines-and-automations#create-a-routine) in the official docs.
+A new routine waits for its next scheduled time. If you'd rather not wait, open it and choose **Test**. A test does real work, so use a fake booking request. See [Create a routine](https://docs.x.ai/grok-bot/skills-routines-and-automations#create-a-routine) in the official docs.
 
 The more often it runs, the more usage it spends. If every 2 hours is enough, don't make it tighter.
 
-Anything that goes to a customer or takes money, write into the prompt as a stop. To see what it asks you about first, read [Approvals and privacy](/en/howto/approvals-privacy/).
+Anything that goes to a customer or takes money, write into the prompt as a stop. For what it stops to ask you about, see [Approvals and privacy](/en/howto/approvals-privacy/).
+
+Once "booked" has a clear meaning, it won't mistake one email for a finished booking.
 
 ## Stuck?
 
 <Q q="One customer got booked twice.">
-Add a rule: before creating a booking, look the customer up in the booking system by email or phone. The article says to use one shared ID across your apps, like an email address or an order number. That lets the bot connect the records.
+Add a rule: before creating a booking, look the customer up in the booking system by email or phone. The article says to use one shared ID across your apps, like an email address or an order number, so the bot can connect the records.
 </Q>
 <Q q="Confirmation emails never went out.">
-Emails it writes are drafts by default, and they go out only when you choose **Send**. An <Term k="审批" /> card raised by a routine expires after about 30 minutes, and then the action doesn't happen. Tell it in chat to turn its notifications on, so you see these in time.
+Emails it writes are drafts by default, and they go out only when you choose **Send**. Also, an <Term k="审批" /> card raised by a routine expires after about 30 minutes, and then the action doesn't happen. Tell it in chat to turn its notifications on, so you see these in time.
 </Q>
 <Q q="The booking system wants a login or a verification code.">
-Save the login in <Term k="Vault" />. The bot fills it in without seeing the password. For a code, a QR scan, or anything else it can't do, it hands you the computer. Choose **Take over**, finish that step, choose **I'm done**, then tell it to continue. Never paste a password into the chat.
+Save the login in <Term k="Vault" />, and the bot fills it in without seeing the password. For a code, a QR scan, or anything else it can't do, it hands you the computer. Choose **Take over**, finish that step, choose **I'm done**, then tell it to continue. Never paste a password into the chat.
 </Q>
