@@ -2,72 +2,74 @@
 layout: ../../../layouts/Guide.astro
 step: 2
 need: "The bot you gave a goal in step 1"
-tldr: "Tell it how you do the work in one go, have it restate it, correct it a few times, then let it start."
-description: "Explain your process: say it all out loud with dictation, cover six things, have the bot restate it before it starts, correct it over a few rounds, then let it start and ask it to look for a better way."
+tldr: "Don't tidy it up first. Tell it how you do the work in one go, have it restate the plan before it starts, correct it over a few rounds, and let it start once you're happy."
+description: "Explain your process: think about how you'd do it yourself, say it all out loud with dictation, cover the author's six things, have the bot restate the plan before it starts, correct it over a few rounds, then let it start and ask it to look for a better way."
 ---
 import Checkpoint from "../../../components/Checkpoint.astro";
 import Copy from "../../../components/Copy.astro";
 import Term from "../../../components/Term.astro";
 import Q from "../../../components/Q.astro";
 
-## Say it all out loud first
+The goal is handed over, so now it's time to explain how you do the work. A lot of people stall here, because they feel they have to sort every step into a neat manual before a bot can use it. You don't.
 
-Think about it: if you did this work yourself, how would you do it?
+<mark><strong>Say it as it comes, have the bot restate it back to you, fill in what's wrong, and after a few rounds it's right.</strong></mark>
 
-The best way to tell the bot is out loud. In the composer, choose **Start voice input** or press `Cmd/Ctrl+D`, then talk for a while. Say things as they come to you. You don't need to organize them first. On your phone, use **Start dictation**.
+## Say it all in one go
 
-When you stop, your words sit in the composer as text. Read them, fix what you want, and send. See [Dictate a message](https://docs.x.ai/grok-bot/chat-and-collaboration#dictate-a-message) in the official docs.
+Start by thinking about how you'd do the work yourself. For bookings, it might come out something like this:
 
-## Cover these six things
+> New customers usually email to book. I check which day they want and what for, then find an open slot in the booking system, put them in, and email them back to say they're booked. Oh, and before I reply, I take another look at the system to make sure the booking actually saved. After they've been in, some of them leave a review online, so I read those too…
 
-In [the article](https://x.com/poteto/status/2123159537016533493), poteto lists what to tell it:
+That's enough, and it's fine if it's messy. In [the article](https://x.com/poteto/status/2123159537016533493), poteto says the best way to do this is out loud. Talk for a while, dump everything the bot needs to know for the job, and don't worry about organizing your thoughts first.
 
-- **The steps you usually take.** What you do first, and what comes next.
-- **What you watch out for.** Where things go wrong, and what you keep an eye on.
-- **The apps and tools you use.** Your email, a spreadsheet, a booking system.
-- **How you check the work.** How you make sure it was done right.
-- **Where the information comes from.** Email, Slack or Teams, a ticket, an app, or a website.
-- **Where the feedback comes from.** Customer reviews, or what colleagues tell you.
+In the desktop app, choose **Start voice input** in the composer or press `Cmd/Ctrl+D`. On your phone, use **Start dictation**. When you stop, your words sit in the composer as text, so read them, fix what you want, and send. See [Dictate a message](https://docs.x.ai/grok-bot/chat-and-collaboration#dictate-a-message) in the official docs.
+
+## Try to cover these six things
+
+The author lists six things to tell the bot. The example above already touches several of them:
+
+- The steps you usually take, what comes first and what comes next
+- What you watch out for, like where things tend to go wrong
+- The apps and tools you use, like your email, a spreadsheet, or a booking system
+- How you check that the work was done right
+- Where the information comes from, like email, Slack or Teams, a ticket, an app, or a website
+- Where the feedback comes from, like customer reviews or what colleagues tell you
+
+If you miss one or two, don't worry. When the bot restates the plan, you'll see right away what's missing.
 
 ## Have it restate the plan before it starts
 
-Put what you said into this message and send it:
+Put everything you said into this message and send it:
 
-<Copy id="process" title="Swap in your own process" code={`Potato, this is how I usually do this myself: <your process>
+<Copy id="process" title="Put everything you said in here" code={`Potato, this is how I usually do this myself: <your process>
 
-Think about how you could take this over from me completely. Before you begin, restate my goal and process in simple words, so I can give you feedback and confirm it. Don't start doing the work yet. Let's get the process planned first.`} />
+I want you to think about how you could take this over from me completely. Before you begin, restate my goal and process in simple words, so I can give you feedback and confirm it. Don't start doing the work yet. Let's get the process planned first.`} />
 
-The last part matters most. Asking it to restate shows you what it understood. Telling it not to start yet keeps it planning instead of acting.
+The second half is the part that matters most. Asking it to restate shows you what it actually understood, and telling it not to start yet keeps this round to planning.
 
-If you want it to follow your process exactly, say so too. For example, "Do it exactly my way, in this order."
+If you'd rather it follow your process exactly, put that in too. For example, "Do it exactly my way, in this order."
 
-## Read its restatement and correct it
+## Read its restatement and correct it, round by round
 
-<mark><strong>You don't have to get it right the first time. Read its restatement, fill in what's wrong, and go a few rounds.</strong></mark>
+It's normal not to get it right the first time, and the author says not to worry about that. When the bot restates the plan, fill in whatever's wrong. If your note is about one particular reply, reply to that message and say it there. If something should hold every time, tell it "from now on, always do it this way." A few rounds of this and you'll have a process you're happy with.
 
-- **Fix one thing at a time.** If your note is about one reply, reply to that message and say it there.
-- **Name the lasting ones.** If something should hold every time, tell it "from now on, always do it this way."
-
-Once you're happy with it, tell it to start:
+Once you are, let it get started:
 
 <Copy id="proceed" code="That looks right. Go ahead with this plan. Start by connecting the apps and tools this job needs." />
 
 When an action needs your OK, it shows you an <Term k="审批" /> card and waits. [Step 4](/en/guide/4-apps/) covers connecting apps and signing in to sites.
 
-## Step in while it works
+## You can step in while it works
 
-- **Changed your mind?** Send a new message. Your message takes priority and can redirect the work in progress.
-- **Need it to stop?** Send "Stop now." Actions it already finished are not undone.
+If you change your mind, just send a new message. Your message takes priority and can redirect the work in progress. If you need it to stop right away, send "Stop now," though actions it already finished are not undone. See [Redirect work in progress](https://docs.x.ai/grok-bot/chat-and-collaboration#redirect-work-in-progress).
 
-See [Redirect work in progress](https://docs.x.ai/grok-bot/chat-and-collaboration#redirect-work-in-progress).
+## Last, have it check the process against the goal
 
-## Have it check the process against the goal
+Once the process is set, you can go one step further. Ask the bot to look back at your original goal and see whether there's a better or simpler way.
 
-Once the process is set, ask it to look back for a better way:
+<Copy id="review" code="Check the process we settled on against my original goal. If you see a way to make it better or simpler, tell me." />
 
-<Copy id="review" code="Check our process against my original goal. If you see a way to make it better or simpler, tell me." />
-
-This is what [step 1](/en/guide/1-goal/) meant: the process can change, the goal stays.
+This is what [step 1](/en/guide/1-goal/) meant. Your current process is only one route, and the goal is where you're headed. Next, you'll teach the bot the calls you make from experience.
 
 ## Stuck?
 
@@ -75,7 +77,7 @@ This is what [step 1](/en/guide/1-goal/) meant: the process can change, the goal
 <p>On desktop, click into the composer, then press <code>Cmd/Ctrl+D</code>. You can also hold the keys while you talk. On your phone, use <strong>Start dictation</strong>. If it says microphone access was denied, allow it in your system settings.</p>
 </Q>
 <Q q="I'd rather just call it.">
-<p>With the composer empty, choose <strong>Start voice chat</strong>, the waveform button. After you hang up, the chat has a card for the call. Open it to read the full transcript.</p>
+<p>With the composer empty, choose <strong>Start voice chat</strong>, the waveform button. After you hang up, the chat has a card for the call, and you can open it to read the full transcript.</p>
 </Q>
 <Q q="It started without waiting for me.">
 <p>Send "Stop now." Then send the prompt above again, and check that it still says not to start the work yet.</p>
@@ -84,4 +86,4 @@ This is what [step 1](/en/guide/1-goal/) meant: the process can change, the goal
 <p>Correct one thing per round. You can also ask it to restate the six things above one at a time.</p>
 </Q>
 
-<Checkpoint id="s2" items={["I told it how I do the work and covered all six things", "It restated the goal and process before doing anything", "I corrected it at least once and let it start only when I was happy"]} />
+<Checkpoint id="s2" items={["I told it how I do the work and covered most of the six things", "It restated the goal and process before doing anything", "I corrected it at least once and let it start only when I was happy"]} />

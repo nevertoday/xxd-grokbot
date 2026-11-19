@@ -2,8 +2,8 @@
 layout: ../../../layouts/Guide.astro
 step: 0
 need: "Nothing yet, just read"
-tldr: "Know what a bot can do, what it remembers, where to reach it, and which plans include it."
-description: "What Grok Bot is: the two parts of automation, a bot and its cloud computer, a primary bot plus bots with one job, what a bot remembers, where you talk to it, and which plans include it."
+tldr: "Automation means handing the process over. That used to take machines or code. Now, if you can say what you want, a bot with its own computer can take the process."
+description: "What Grok Bot is: automation as a way of thinking anyone can learn, with a goal and a process; a bot and the cloud computer your bots share; a primary bot plus bots with one job; what a bot remembers, where you talk to it, and which plans include it."
 ---
 import Callout from "../../../components/Callout.astro";
 import Checkpoint from "../../../components/Checkpoint.astro";
@@ -11,107 +11,86 @@ import Copy from "../../../components/Copy.astro";
 import Term from "../../../components/Term.astro";
 import Q from "../../../components/Q.astro";
 
-<Callout type="tip" title="Never used Grok Bot?">
-Start with [the three beginner lessons](/en/start/1-goal/): make your first bot and hand it one job. This full guide goes deeper from there and skips the click-by-click steps.
-</Callout>
+When people hear "automation," a lot of them think, "So I'd have to write code?" A year or two ago, that was true. You had to know how to build machines or how to write code. In [the article](https://x.com/poteto/status/2123159537016533493), poteto says that with Grok Bot, people who aren't technical can do it too.
 
-## Tell the goal from the process
+<mark><strong>You don't need to write code. Say what you want in everyday words, work out the steps with your bot, and it can take the process from there.</strong></mark>
 
-In [the article](https://x.com/poteto/status/2123159537016533493), poteto splits automation into two parts:
+This full guide is about doing exactly that. It's for people who've finished the beginner lessons or already use Grok Bot, so it skips the click-by-click steps. If you've never used Grok Bot, do [the three beginner lessons](/en/start/1-goal/) first, make your first bot, and come back.
 
-- **The goal** is what you want at the end. A baked apple pie, say.
-- **The process** is how you get there. Buy the ingredients, make the filling, bake, let it cool.
+## Automation is a machine that bakes the pie for you
 
-<mark><strong>Automation means handing the process over, so you don't do it by hand every time.</strong></mark>
+The beginner lessons started with an apple pie. The pie is the goal, and buying ingredients, making the dough, baking it and letting it cool are the process. A flat tire works the same way. A car you can drive again is the goal, and jacking it up, taking the old tire off, putting the new one on and putting everything back are the process. The author uses these two examples to make a bigger point. Automation is really a way of thinking that anyone can learn. You keep the goal in mind and break the work into small steps.
 
-Handing it over used to take a machine or code you wrote yourself. With Grok Bot, you describe the goal in everyday words and work out the process with the bot. Where the work needs code, the bot writes it.
+So what does automation add to baking a pie at home? A machine that does the process for you. At home, you make each pie by hand. A bakery that bakes lots of apple pies hands that work to machines. Software engineers writing code are doing the same thing, handing the process to a computer. The hard part used to be that you had to build the machine yourself.
 
-This guide follows that order. Step 1 sets the goal. Steps 2 and 3 cover the process.
+## Why anyone can do it now
+
+Because every bot comes with a computer of its own. Where the job needs code, the bot writes it, and most things you can do on a computer, it can do too. The author asks readers who aren't technical to set their doubts aside for a moment, because computers can do far more than you'd expect. So much of work and life runs on computers now that more and more of it can go to a bot, which frees you up for other things.
+
+That's why this guide goes goal first, process second. Step 1 sets the goal. Steps 2 and 3 teach the bot how you do the work and how you make decisions. Before that, here's what Grok Bot itself looks like.
 
 ## A bot comes with a computer
 
-A <Term k="bot" /> is an AI helper that works for you. It has a name, a job, and its own conversation.
+A <Term k="bot" /> is an AI helper that works for you. It has a name, a job, and its own conversation. What sets it apart from an AI that only answers questions is that it has a real computer. That computer lives in the cloud (a <Term k="云端电脑" />) and has a browser, files, and a command line.
 
-It has a real computer in the cloud (a <Term k="云端电脑" />) with a browser, files, and a command line. Most things you can do on a computer, it can do too:
+So it can browse the web in its own browser and move its own mouse to click through pages. Connect an app like Gmail (a <Term k="连接的应用" />), and it works inside the app directly, which is more reliable than clicking through the website. It can also join a meeting and take notes for you. All of this runs in the cloud, so it keeps going after you close your laptop. See [How Grok Bot works](https://docs.x.ai/grok-bot/how-grok-bot-works) in the official docs.
 
-- **Browse the web.** It uses its own browser and moves its own mouse.
-- **Work inside apps.** Connect an app like Gmail or Slack (a <Term k="连接的应用" />), and it works in the app directly. That is more reliable than clicking through the website.
-- **Take meeting notes.** It can join a meeting and take notes for you.
+## All your bots share that one computer
 
-The work runs in the cloud, so it keeps going after you close your laptop. See [How Grok Bot works](https://docs.x.ai/grok-bot/how-grok-bot-works) in the official docs.
-
-## Your bots share that one computer
-
-Your account has one cloud computer, and all your bots work on it.
-
-- **Each bot gets its own screen.** Several bots can work at once, and you can watch any screen live.
-- **Files and sign-ins are shared.** When one bot signs in to a site, your other bots are signed in too.
+Your account has one cloud computer, and all your bots work on it. Each bot gets its own screen, so several can work at once, and you can watch any screen live. Files and sign-ins are shared, though, so the bots can hand work off. That means when one bot signs in to a site, your other bots are signed in too.
 
 <Callout type="warn" title="Separate bots are not a wall">
-Anything on the computer is available to all your bots. Sign out of a service once no bot needs it. Delete sensitive files when the work is done. See [Do my Bots share one computer?](https://docs.x.ai/grok-bot/faq#do-my-bots-share-one-computer) in the official FAQ.
+Anything on the computer is available to all your bots. Sign out of a service once no bot needs it, and delete sensitive files when the work is done. See [Do my Bots share one computer?](https://docs.x.ai/grok-bot/faq#do-my-bots-share-one-computer) in the official FAQ.
 </Callout>
 
 ## One primary bot, plus bots with one job each
 
-Your <Term k="主 bot" /> is your main point of contact. It checks in with you on its own and hands work to your other bots.
+Your <Term k="主 bot" /> is the one you talk to most. It checks in with you on its own and hands work to your other bots, so new work can simply start there.
 
-Start new work with your primary bot. Some requests keep coming back with their own sources, rules, or schedule. Give that kind of work a bot of its own. You can also ask your primary bot to create one.
-
-A bot with one job keeps learning that job, so you only explain it once. Step 1 starts by making a bot like that. See [Your primary Bot and Bots with one job](https://docs.x.ai/grok-bot/how-grok-bot-works#your-primary-bot-and-bots-with-one-job).
+When the same kind of request keeps coming back with its own sources, rules, or schedule, give it a bot of its own, or ask your primary bot to make one. A bot that has one job remembers what it learns about that job, so you explain things once. Step 1 starts by making a bot like that. See [Your primary Bot and Bots with one job](https://docs.x.ai/grok-bot/how-grok-bot-works#your-primary-bot-and-bots-with-one-job).
 
 ## What a bot remembers
 
-Each bot has its own memory. It keeps:
+The official docs have a good example. Say you have a bot for travel and expenses, and you tell it, "Sign me up for the same conference as last year and expense it." You never said which conference, which pass, or which card. It knows anyway. Its work log has last year's 2-day pass, and you once gave it a rule to use the work card for conferences.
 
-- **How you like to work.** For example, short morning briefs.
-- **Rules you give it.** For example, "Ask me before you send an email."
-- **A work log.** What it did, with dates.
+Each bot has its own memory, and that's what it keeps: how you like to work (short morning briefs, say), the rules you give it ("Ask me before you send an email"), and a dated log of its work. Only a few facts, like your name and time zone, are shared by all your bots. Tell one, and the others know.
 
-A few facts, like your name and time zone, are shared by all your bots. Tell one, and the others know.
-
-A bot decides on its own what to keep and doesn't ask first. To make sure it keeps something, say "Remember ...". To see, fix, or remove a memory, ask in the chat:
+A bot decides on its own what to keep, and it doesn't ask first. To make sure it keeps something, say "Remember ...". Your own bots don't have a memory screen, so to see, fix, or remove a memory, just ask in the chat:
 
 <Copy id="memory" title="See, fix, or remove a memory" code={`What do you remember about me?
 That's out of date. I moved to Denver.
 Forget that I'm on the launch team.`} />
 
-Keep these two somewhere else:
-
-- **Numbers that change.** Prices, for example. Ask it to look them up each time.
-- **Logins and cards.** These go in <Term k="Vault" />.
-
-See [What a Bot remembers](https://docs.x.ai/grok-bot/bots#what-a-bot-remembers).
+Two things don't belong in memory. Numbers that change, like prices, go stale there, so ask the bot to look them up each time. Logins and cards go in <Term k="Vault" />. See [What a Bot remembers](https://docs.x.ai/grok-bot/bots#what-a-bot-remembers).
 
 ## Where you talk to it
 
-- **Desktop app.** For macOS, Windows, and Linux.
-- **Phone app.** For iPhone and Android, with the same bots and conversations as desktop.
-- **X Chat.** Chat with your bots in X Chat, which is still rolling out.
-- **@bot on X.** Tag @bot in a post to hand that post to your bot.
-- **Slack and Microsoft Teams.** Add a <Term k="team bot" />, and your team can reach it there.
+Mostly in the desktop app, which runs on macOS, Windows, and Linux. There's also a phone app for iPhone and Android. Sign in with the same account, and it's the same bots and the same conversations.
 
-You can also talk instead of typing. Dictate a message, or start a voice chat with the bot. See [Where do I talk to Grok Bot?](https://docs.x.ai/grok-bot/faq#where-do-i-talk-to-grok-bot) in the official FAQ.
+There are a few other places too. You can chat with your bots in X Chat, which is still rolling out. Tag @bot in a post on X to hand that post to your bot. And if your team works in Slack or Microsoft Teams, you can add a <Term k="team bot" /> there so your team can reach it.
+
+You don't have to type, either. Dictate a message, or start a voice chat with the bot. See [Where do I talk to Grok Bot?](https://docs.x.ai/grok-bot/faq#where-do-i-talk-to-grok-bot) in the official FAQ.
 
 ## Which plans include it
 
-- **The X Subscription.** Premium, Super, and Ultra include Grok Bot. Plus doesn't.
-- **Legacy Cursor plans.** Every paid individual plan and self-serve Cursor Teams include it.
-- **A linked Grok account.** A SuperGrok plan or X Premium+ works once you link it.
+New customers start on The X Subscription, where Premium, Super, and Ultra include Grok Bot and Plus doesn't. Legacy Cursor plans include it too, on every paid individual plan and self-serve Cursor Teams, and those accounts can also link a personal SuperGrok plan or X Premium+.
 
-You sign in with a Cursor account. On The X Subscription, Grok Bot shares a weekly usage pool with Grok and Cursor.
+You sign in to Grok Bot with a Cursor account. On The X Subscription, Grok Bot shares a weekly usage pool with Grok and Cursor.
 
 Plans change, so check [Grok Bot on The X Subscription](https://docs.x.ai/x-subscription/grok-bot) in the official docs. For more, see the how-to [Plans and usage](/en/howto/plans-usage/).
+
+That's the whole page in two ideas. Automation means knowing your goal and handing over the process. Grok Bot is a set of bots that share one cloud computer and each keep their own memory. Next, start with the goal.
 
 ## Stuck?
 
 <Q q="The Grok app says I've hit my limit.">
-<p>Grok (the chat app) and Grok Bot are two different apps. A paywall or a <strong>Weekly SuperGrok Limit</strong> in the Grok app is not about Grok Bot.</p>
+<p>Grok (the chat app) and Grok Bot are two different apps. A paywall or a <strong>Weekly SuperGrok Limit</strong> in the Grok app is about Grok, not Grok Bot.</p>
 </Q>
 <Q q="Can I keep two bots from seeing each other's files?">
-<p>No. The computer belongs to you, and all your bots share it. Treat anything on it as visible to every bot.</p>
+<p>No. The computer belongs to you, not to a bot, and all your bots share it. Treat anything on it as visible to every bot.</p>
 </Q>
 <Q q="Will it touch my own computer?">
 <p>It works on its own cloud computer. It runs a command on your computer only if you allow it, and by default it asks each time. The setting is under <strong>Settings → Computer → Your computer</strong>.</p>
 </Q>
 
-<Checkpoint id="s0" items={["I can name the two parts of automation: the goal and the process", "I know my bots share one cloud computer, including its files and sign-ins", "I know new work starts with my primary bot, and repeat work gets its own bot"]} />
+<Checkpoint id="s0" items={["I can explain goal and process with the apple pie, and I know automation means handing the process over", "I know my bots share one cloud computer, including its files and sign-ins", "I know new work starts with my primary bot, and repeat work gets its own bot"]} />
