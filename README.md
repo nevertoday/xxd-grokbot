@@ -10,7 +10,7 @@
 
 **[从第 1 课开始 →](https://grokbot.xiaoxiaodong.ai/start/1-goal/)**　·　**[已经在用了，看完整教程 →](https://grokbot.xiaoxiaodong.ai/guide/0-what/)**
 
-<sub>非官方 · 免费 · 开源 · 中文和英文</sub>
+<sub>非官方 · 免费 · 开源 · 10 种语言</sub>
 
 </div>
 
@@ -70,7 +70,7 @@ poteto 在文章开头说，自动化其实是一种思考方式，谁都学得�
 
 ## 这个教程从哪来
 
-主线来自 [poteto](https://x.com/poteto) 的文章 [Automate Anything with Grok Bot](https://x.com/poteto/status/2123159537016533493)。作者在 SpaceX 做 Grok Bot，之前在 Cursor，也是 React Compiler 核心团队的成员。功能、按钮和套餐，每一条都对照过 [Grok Bot 官方文档](https://docs.x.ai/grok-bot)；中文页上的按钮名，照的是 Grok Bot 中文界面上的字。
+主线来自 [poteto](https://x.com/poteto) 的文章 [Automate Anything with Grok Bot](https://x.com/poteto/status/2123159537016533493)。作者在 SpaceX 做 Grok Bot，之前在 Cursor，也是 React Compiler 核心团队的成员。功能、按钮和套餐，每一条都对照过 [Grok Bot 官方文档](https://docs.x.ai/grok-bot)；每种语言的页面上，按钮名都照 Grok Bot 在那种语言界面里的写法。
 
 这是一个非官方的学习站，和 xAI、SpaceX、Cursor 都没有关系，也不代表他们的说法。Grok Bot 是其所有者的商标。功能和套餐会变，以官方文档为准。
 

@@ -1,76 +1,76 @@
 ---
 layout: ../../../layouts/Lesson.astro
-tldr: "Automating isn't the hard part. Knowing what you actually want is. This lesson does one thing: it puts that into one sentence."
+tldr: "자동화 자체는 어렵지 않아요. 어려운 건 내가 정말 원하는 게 뭔지 아는 거예요. 이 레슨에서는 딱 하나, 그걸 한 문장으로 적어 봐요."
 lesson: 1
 ---
 import Callout from "../../../components/Callout.astro";
 import Term from "../../../components/Term.astro";
 import Q from "../../../components/Q.astro";
 
-The first time a lot of people open Grok Bot, they start with "send this email for me" or "fill in this form for me." It will, of course. But once it's done, next time you have to ask again and keep an eye on it again. Used like that, it's just an errand runner.
+Grok Bot을 처음 열면 많은 사람이 “이 메일 좀 보내 줘”, “이 양식 좀 채워 줘”로 시작해요. 물론 해 줘요. 그런데 끝나고 나면 다음번에도 또 부탁하고, 또 지켜봐야 해요. 이렇게 쓰면 bot은 그냥 심부름꾼이에요.
 
-The author, poteto, builds Grok Bot at SpaceX. At the start of a [long article](https://x.com/poteto/status/2123159537016533493), the author makes a plain point: automation is really a way of thinking, and anyone can learn it. It has just two parts, a goal and a process.
+작성자 poteto는 SpaceX에서 Grok Bot을 만들어요. [긴 글](https://x.com/poteto/status/2123159537016533493)의 첫머리에서 작성자는 아주 소박한 이야기를 해요. 자동화는 사실 하나의 사고방식이고, 누구나 배울 수 있다는 거예요. 그리고 그건 딱 두 부분, 목표와 과정으로 이루어져 있어요.
 
-## An apple pie says it all
+## 사과파이 하나면 다 설명돼요
 
-Think about baking an apple pie. What you want is the pie, and that's the goal. Buying apples, making the dough, putting it together, baking it and letting it cool are the process. Changing a flat tire works the same way. What you want is a wheel you can drive on again. Jacking up the car, taking the old tire off and putting the new one on are only the process.
+사과파이를 굽는다고 생각해 보세요. 원하는 건 파이고, 그게 목표예요. 사과를 사고, 반죽을 만들고, 파이를 빚고, 굽고, 식히는 건 과정이에요. 펑크 난 타이어를 가는 것도 똑같아요. 원하는 건 다시 달릴 수 있는 바퀴예요. 차를 잭으로 들어 올리고, 헌 타이어를 빼고, 새 타이어를 끼우는 건 모두 과정일 뿐이에요.
 
-The goal is what you want at the end, and the process is how you get there. Automation means handing the process to a machine, so all you ask for is the result.
+목표는 마지막에 갖고 싶은 것이고, 과정은 거기까지 가는 방법이에요. 자동화란 과정을 기계에 맡기고, 나는 결과만 요청하는 거예요.
 
-Grok Bot can take a lot of process off your hands, because a <Term k="bot" /> there has a computer in the cloud. It can click around, open apps and look things up online, so most of what you can do on a computer, it can do too. That leaves you just one thing to think through:
+Grok Bot은 그 과정의 많은 부분을 대신 맡아 줄 수 있어요. Grok Bot의 <Term k="bot" text="bot" />에게는 클라우드에 있는 컴퓨터가 한 대 있기 때문이에요. 클릭도 하고, 앱도 열고, 인터넷에서 찾아보기도 해서, 내가 컴퓨터로 할 수 있는 일은 대부분 bot도 할 수 있어요. 그러니 내가 곰곰이 생각할 건 하나만 남아요.
 
-<mark><strong>Before you hand anything to a bot, get clear on the result you want.</strong></mark>
+<mark><strong>bot에게 맡기기 전에, 원하는 결과가 뭔지부터 분명히 해 두세요.</strong></mark>
 
-## Why "send an email" isn't enough
+## “메일 보내 줘”로는 왜 부족할까요
 
-Because sending an email is only one step in the process. The author says the most common mistake is taking the process for the goal.
+메일을 보내는 건 과정 속의 한 단계일 뿐이기 때문이에요. 작성자는 가장 흔한 실수가 과정을 목표로 착각하는 거라고 해요.
 
-If all you say is "send an email," all the bot does is send an email. But tell it what the email is actually for, say, getting every new customer's booking scheduled, and it can work from that goal: where the information comes from, what counts as done, which steps it could skip. The author also says not to get too attached to the way you do it now. The bot may find an easier way.
+“메일 보내 줘”라고만 하면 bot은 메일만 보내요. 하지만 그 메일이 사실 무엇을 위한 건지, 예를 들어 새 손님의 예약을 빠짐없이 잡기 위한 거라고 알려 주면, bot은 그 목표에서부터 생각할 수 있어요. 정보는 어디서 오는지, 어떻게 되면 다 된 건지, 사실 건너뛰어도 되는 단계는 없는지 말이에요. 작성자는 지금 하는 방식에 너무 매달리지 말라고도 해요. bot이 더 쉬운 길을 찾아낼지도 모르니까요.
 
-## Now write your sentence
+## 이제 내 문장을 써 봐요
 
-Get a sheet of paper, or open the notes app on your phone. Think of something you do on a computer every few days. In one sentence, write the result you really want, then add the other half: what it's for.
+종이 한 장을 꺼내거나, 휴대폰 메모 앱을 열어 보세요. 며칠에 한 번씩 컴퓨터로 하는 일을 하나 떠올리고, 내가 정말 원하는 결과를 한 문장으로 써요. 그리고 나머지 반쪽을 덧붙여요. 그게 무엇을 위한 건지요.
 
-For the weekly meeting slides, you could write:
+매주 회의 슬라이드라면 이렇게 쓸 수 있어요.
 
-> I want everyone to have slides that show this week's progress before Monday's meeting, so that we spend less of the meeting reading numbers aloud and more of it making decisions.
+> 월요일 회의 전에 모두가 이번 주 진행 상황을 보여 주는 슬라이드를 받아 볼 수 있게 하고 싶어요. 그래야 회의 때 숫자를 소리 내어 읽는 시간은 줄이고, 결정하는 데 더 많은 시간을 쓸 수 있어요.
 
-Read it back. If your sentence is about an action like fill in, send, copy or click, it's still just a step. Ask yourself what doing that is for, and put the answer in. If you can't think of the second half, think about what the job does for your work, whether it brings in money or saves money. Or just ask a colleague.
+다 썼으면 다시 읽어 보세요. 문장이 채우기, 보내기, 복사하기, 클릭하기 같은 동작에 관한 거라면, 아직은 한 단계일 뿐이에요. “이걸 하는 건 뭘 위해서지?” 하고 스스로 물어보고, 그 답을 문장에 넣어요. 뒤쪽 반이 떠오르지 않으면, 그 일이 내 일에 어떤 도움이 되는지, 돈을 벌어 주는지 아니면 아껴 주는지 생각해 보세요. 그냥 동료에게 물어봐도 돼요.
 
-If no job comes to mind, the author gives these examples in the article. Pick the one most like yours: saving toward a car or a house, booking customers for a small business, giving customers an experience good enough that they leave good reviews, hiring for a small business, collecting feedback on a product, preparing slides for a weekly meeting, building new features for a product.
+떠오르는 일이 없다면, 작성자가 글에서 든 예시 중 내 상황과 가장 비슷한 걸 고르면 돼요. 차나 집을 사려고 돈 모으기, 작은 가게의 손님 예약 잡기, 손님이 좋은 리뷰를 남길 만큼 만족스러운 경험 주기, 작은 가게 직원 뽑기, 제품에 대한 의견 모으기, 주간 회의 슬라이드 준비하기, 제품의 새 기능 만들기.
 
-## Two things you'll need for the next lesson
+## 다음 레슨에 필요한 두 가지
 
-A computer. Mac, Windows and Linux all work, and you install the Grok Bot desktop app on it first. And a plan that includes Grok Bot. On The X Subscription, Premium, Super and Ultra include it, and Plus doesn't. For details, see the official [Grok Bot on The X Subscription](https://docs.x.ai/x-subscription/grok-bot).
+먼저 컴퓨터 한 대. Mac, Windows, Linux 모두 되고, 여기에 Grok Bot 데스크톱 앱부터 설치해요. 그리고 Grok Bot이 포함된 요금제. The X Subscription에서는 Premium, Super, Ultra에 포함되고, Plus에는 포함되지 않아요. 자세한 건 공식 문서 [Grok Bot on The X Subscription](https://docs.x.ai/x-subscription/grok-bot)을 보세요.
 
-<Callout type="tip" title="Three lessons are enough">
-Once you have this sentence, the rest follows. In lesson 2 you install Grok Bot, make a bot and hand it this sentence. In lesson 3 you tell it how you usually do the job and let it do it once, and when it gets it right, you have it do the job on a schedule by itself. After these three lessons you can put it to work. Everything else on the site is there to look up when you need it.
+<Callout type="tip" title="레슨 세 개면 충분해요">
+이 문장만 있으면 나머지는 자연스럽게 따라와요. 레슨 2에서는 Grok Bot을 설치하고 bot을 만들어서 이 문장을 건네요. 레슨 3에서는 평소에 그 일을 어떻게 하는지 들려주고 한 번 해 보게 한 다음, 제대로 하면 정해진 시간에 알아서 하게 해요. 이 세 레슨을 마치면 바로 일을 맡길 수 있어요. 사이트의 다른 내용은 필요할 때 찾아보면 돼요.
 </Callout>
 
-## If something's off
+## 잘 안 될 때
 
-<Q q="I've thought about it, and I can't come up with a goal.">
+<Q q="생각해 봤는데, 목표가 떠오르지 않아요.">
 
-Then leave it blank for now and go straight to lesson 2. Once your bot exists, you can have it interview you, one question at a time, until the goal is clear. The message for that is in lesson 2, under "[If something's off](/ko/start/2-first-bot/#interview)."
-
-</Q>
-<Q q="I have several jobs I want to hand off.">
-
-Pick one first. A bot looks after one job, so everything it remembers is about that job, and you only explain it once. Give each of the other jobs its own bot later.
+그럼 일단 비워 두고 바로 레슨 2로 가세요. bot을 만들고 나면, 목표가 분명해질 때까지 한 번에 하나씩 질문하며 인터뷰해 달라고 할 수 있어요. 그때 보낼 메시지는 레슨 2의 “[잘 안 될 때](/ko/start/2-first-bot/#interview)”에 있어요.
 
 </Q>
-<Q q="I have Grok on my phone. Is that it?">
+<Q q="맡기고 싶은 일이 여러 개예요.">
 
-No. Grok is an app for chatting. Grok Bot is a different app that you install separately, and lesson 2 walks you through it.
-
-</Q>
-<Q q="I'm not sure my plan includes it.">
-
-On The X Subscription, Premium, Super and Ultra do, and Plus doesn't. Older paid Cursor individual plans and self-serve Cursor Teams include it too, and on one of those older Cursor accounts you can link a SuperGrok or X Premium+ subscription. If you're still unsure, see the official [pricing answer](https://docs.x.ai/grok-bot/faq#how-much-does-grok-bot-cost).
+먼저 하나만 골라요. bot 하나는 일 하나를 맡기 때문에, 기억하는 것도 모두 그 일에 관한 것이 되고, 설명도 한 번만 하면 돼요. 다른 일들은 나중에 각각 bot을 하나씩 만들어 맡기세요.
 
 </Q>
-<Q q="I only have a phone, no computer.">
+<Q q="휴대폰에 Grok이 있는데, 그게 이건가요?">
 
-These three lessons use the desktop app on a computer. The phone app (iPhone or Android) goes alongside it. Sign in there with the same account, and you can keep chatting with the same bots and approve what they want to do.
+아니에요. Grok은 대화하는 앱이에요. Grok Bot은 따로 설치하는 다른 앱이고, 레슨 2에서 같이 설치해요.
+
+</Q>
+<Q q="내 요금제에 포함되어 있는지 모르겠어요.">
+
+The X Subscription에서는 Premium, Super, Ultra에 포함되고, Plus에는 포함되지 않아요. 예전 Cursor 유료 개인 요금제와 직접 가입한 Cursor Teams에도 포함되어 있고, 이런 예전 Cursor 계정에는 SuperGrok이나 X Premium+ 구독을 연결할 수도 있어요. 그래도 잘 모르겠다면 공식 [요금 안내](https://docs.x.ai/grok-bot/faq#how-much-does-grok-bot-cost)를 보세요.
+
+</Q>
+<Q q="휴대폰만 있고 컴퓨터가 없어요.">
+
+이 세 레슨은 컴퓨터의 데스크톱 앱을 써요. 휴대폰 앱(iPhone 또는 Android)은 그 옆에서 함께 쓰는 거예요. 같은 계정으로 로그인하면, 같은 bot들과 계속 대화하고 bot이 하려는 일을 승인할 수 있어요.
 
 </Q>
