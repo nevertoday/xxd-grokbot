@@ -12,7 +12,7 @@
 
 **[ابدأ بالدرس 1 ←](https://grokbot.xiaoxiaodong.ai/ar/start/1-goal/)**　·　**[تستخدمه من قبل؟ الدليل الكامل (بالإنجليزية) ←](https://grokbot.xiaoxiaodong.ai/en/guide/0-what/)**
 
-<sub>غير رسمي · مجاني · مفتوح المصدر · دروس بالعربية</sub>
+<sub>غير رسمي · مجاني · مفتوح المصدر · 10 لغات</sub>
 
 </div>
 
@@ -72,7 +72,7 @@
 
 ## من أين يأتي هذا
 
-يتبع الدليل مقال [poteto](https://x.com/poteto) بعنوان [Automate Anything with Grok Bot](https://x.com/poteto/status/2123159537016533493). وpoteto من الفريق الذي يصنع Grok Bot في SpaceX، ومن فريق React Compiler الأساسي، وسبق لـ poteto العمل في Cursor. كل ميزة وزر وباقة روجعت على [التوثيق الرسمي لـ Grok Bot](https://docs.x.ai/grok-bot)، وأسماء الأزرار في الصفحات العربية مطابقة لواجهة التطبيق العربية.
+يتبع الدليل مقال [poteto](https://x.com/poteto) بعنوان [Automate Anything with Grok Bot](https://x.com/poteto/status/2123159537016533493). وpoteto من الفريق الذي يصنع Grok Bot في SpaceX، ومن فريق React Compiler الأساسي، وسبق لـ poteto العمل في Cursor. كل ميزة وزر وباقة روجعت على [التوثيق الرسمي لـ Grok Bot](https://docs.x.ai/grok-bot)، وأسماء الأزرار في صفحات كل لغة مطابقة لواجهة التطبيق بتلك اللغة.
 
 هذا دليل غير رسمي، لا صلة له بـ xAI ولا SpaceX ولا Cursor، ولا يتحدث باسمها. وGrok Bot علامة تجارية لمالكها. الميزات والباقات تتغيّر، فالمرجع هو التوثيق الرسمي.
 
