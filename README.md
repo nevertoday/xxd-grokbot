@@ -21,7 +21,7 @@
 </div>
 
 <p align="center">
-  <img src="assets/social.png" width="100%" alt="Grok Bot 新手教程：把一件事交给 bot。先定目标、讲清做法、教它判断、让它按时开工">
+  <img src="assets/social.png" width="100%" alt="不写代码，也能自动化一切。poteto 的 Grok Bot 自动化方法 · 中文精读">
 </p>
 
 ## 😵 为什么要学

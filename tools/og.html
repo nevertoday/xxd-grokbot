@@ -4,129 +4,50 @@
 <meta charset="utf-8">
 <title>og</title>
 <style>
-  :root {
-    --paper: #f3ede3;
-    --paper-2: #ebe3d6;
-    --ink: #141311;
-    --muted: #6b665e;
-    --line: #d9d0c1;
-    --card: #fffdf9;
-    --hot: #ff5b2e;
-    --sky: #c9dcff;
-    --leaf: #cfe8c4;
-    --sun: #ffd65c;
-    --font: "Avenir Next", "PingFang SC", "Hiragino Sans GB", sans-serif;
-    --mono: "SF Mono", ui-monospace, Menlo, "PingFang SC", monospace;
-  }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html, body { width: 1280px; height: 640px; overflow: hidden; }
-  body {
-    font-family: var(--font);
-    color: var(--ink);
-    background:
-      radial-gradient(circle at 1px 1px, rgba(20,19,17,.13) 1px, transparent 1.4px) 0 0 / 22px 22px,
-      var(--paper);
-    position: relative;
-  }
-  .frame { position: absolute; inset: 0; padding: 56px 64px 0 68px; display: grid; grid-template-columns: 1fr 470px; gap: 40px; }
-
-  .left { position: relative; padding-top: 6px; }
-  .brand { display: flex; align-items: center; gap: 14px; font-size: 22px; font-weight: 600; letter-spacing: .01em; }
-  .mark { width: 40px; height: 40px; background: var(--ink); position: relative; }
-  .mark i { position: absolute; background: var(--card); }
-  .mark .e1 { left: 10px; top: 12px; width: 6px; height: 6px; }
-  .mark .e2 { left: 24px; top: 12px; width: 6px; height: 6px; }
-  .mark .m { left: 10px; top: 25px; width: 20px; height: 4px; opacity: .62; }
-  .brand small { font-size: 18px; font-weight: 500; color: var(--muted); margin-left: 6px; }
-
-  h1 { margin-top: 44px; font-weight: 800; letter-spacing: -.02em; line-height: 1.02; }
-  h1 .l1, h1 .l2 { display: block; }
-  h1 .hl { position: relative; display: inline-block; z-index: 0; }
-  h1 .hl::after { content: ""; position: absolute; left: -6px; right: -8px; bottom: .06em; height: .34em; background: var(--hot); z-index: -1; transform: skewX(-8deg); }
-  .sub { margin-top: 26px; font-size: 25px; line-height: 1.5; color: #2c2a26; max-width: 600px; }
-  .sub b { font-weight: 700; }
-
-  .sticker { position: absolute; left: -30px; top: 404px; z-index: 4; transform: rotate(-6deg); background: var(--sun); border: 2.5px solid var(--ink); box-shadow: 5px 5px 0 var(--ink); padding: 9px 16px 8px; font-size: 18px; font-weight: 700; letter-spacing: .04em; }
-
-  /* right: Potato + chat */
-  .right { position: relative; }
-  .bot { position: absolute; right: 18px; top: -6px; width: 150px; height: 150px; background: var(--ink); transform: rotate(-5deg); box-shadow: 8px 8px 0 var(--hot); z-index: 2; }
-  .bot i { position: absolute; background: var(--card); }
-  .bot .e1 { left: 34px; top: 46px; width: 22px; height: 22px; }
-  .bot .e2 { left: 94px; top: 46px; width: 22px; height: 22px; }
-  .bot .m { left: 34px; top: 94px; width: 82px; height: 12px; opacity: .62; }
-  .bot .ant { left: 69px; top: -26px; width: 12px; height: 26px; background: var(--ink); }
-  .bot .ant::after { content: ""; position: absolute; left: -7px; top: -14px; width: 26px; height: 16px; background: var(--hot); }
-  .tag { position: absolute; right: 186px; top: 30px; font-family: var(--mono); font-size: 16px; background: var(--card); border: 2px solid var(--ink); padding: 6px 12px; z-index: 3; }
-  .tag::after { content: ""; position: absolute; right: -12px; top: 12px; border: 6px solid transparent; border-left-color: var(--ink); }
-
-  .chat { position: absolute; left: 0; right: 0; top: 128px; background: var(--card); border: 2.5px solid var(--ink); box-shadow: 10px 10px 0 var(--ink); }
-  .chat-head { display: flex; align-items: center; gap: 8px; padding: 12px 16px; border-bottom: 2px solid var(--ink); font-size: 16px; font-weight: 600; }
-  .dot { width: 11px; height: 11px; border: 2px solid var(--ink); }
-  .dot:nth-child(1) { background: var(--hot); } .dot:nth-child(2) { background: var(--sun); } .dot:nth-child(3) { background: var(--leaf); }
-  .chat-head span { margin-left: 8px; }
-  .msgs { padding: 18px 18px 20px; display: grid; gap: 14px; }
-  .me { justify-self: end; max-width: 92%; background: var(--sky); border: 2px solid var(--ink); padding: 12px 14px; font-size: 18px; line-height: 1.5; }
-  .me em { font-style: normal; font-family: var(--mono); font-size: 16px; background: var(--card); padding: 1px 6px; border: 1.5px dashed var(--ink); }
-  .it { max-width: 92%; background: var(--paper-2); border: 2px solid var(--ink); padding: 12px 14px; font-size: 18px; line-height: 1.5; }
-  .it .who { font-size: 14px; font-weight: 700; color: var(--muted); letter-spacing: .04em; margin-bottom: 2px; }
-
-  /* bottom timeline */
-  .steps { position: absolute; left: 68px; right: 64px; bottom: 40px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
-  .steps::before { content: ""; position: absolute; left: 22px; right: 120px; top: 21px; height: 3px; background: var(--ink); }
-  .step { position: relative; display: flex; align-items: center; gap: 12px; }
-  .num { width: 44px; height: 44px; border: 2.5px solid var(--ink); background: var(--card); display: grid; place-items: center; font-family: var(--mono); font-size: 18px; font-weight: 700; position: relative; z-index: 1; flex: none; }
-  .step:last-child .num { background: var(--hot); color: var(--card); }
-  .step b { font-size: 21px; font-weight: 700; background: var(--paper); padding-right: 10px; position: relative; z-index: 1; white-space: nowrap; }
-  .url { position: absolute; right: 64px; top: 64px; font-family: var(--mono); font-size: 16px; color: var(--muted); }
+  body { background: #171612; color: #f3f0ea; font-family: "PingFang SC", "Avenir Next", sans-serif; position: relative; }
+  .copy { position: absolute; left: 88px; top: 50%; transform: translateY(-54%); }
+  h1 { font-weight: 600; line-height: 1.12; letter-spacing: -.01em; white-space: nowrap; display: inline-block; }
+  h1 em { font-style: normal; color: #ff7a4d; }
+  .sub { margin-top: 30px; font-size: 38px; font-weight: 500; color: #a7a194; }
+  .bot { position: absolute; right: 96px; top: 170px; width: 300px; height: 300px; border: 14px solid #f3f0ea; }
+  .bot i { position: absolute; background: #f3f0ea; }
+  .bot .e1, .bot .e2 { width: 44px; height: 44px; top: 80px; }
+  .bot .e1 { left: 58px; } .bot .e2 { right: 58px; }
+  .bot .m { left: 58px; right: 58px; top: 178px; height: 24px; background: #ff7a4d; }
+  .brand { position: absolute; left: 88px; bottom: 56px; font-size: 26px; font-weight: 600; display: flex; align-items: center; gap: 12px; }
+  .brand b { width: 30px; height: 30px; background: #f3f0ea; position: relative; }
+  .brand b::before, .brand b::after { content: ""; position: absolute; top: 9px; width: 5px; height: 5px; background: #171612; }
+  .brand b::before { left: 7px; } .brand b::after { right: 7px; }
 </style>
 </head>
 <body>
-<div class="frame">
-  <div class="left">
-    <div class="brand"><span class="mark"><i class="e1"></i><i class="e2"></i><i class="m"></i></span><span id="brand"></span></div>
-    <h1 id="h1"></h1>
-    <p class="sub" id="sub"></p>
-  </div>
-  <div class="right">
-    <div class="tag" id="tag"></div>
-    <div class="sticker" id="sticker"></div>
-    <div class="bot"><i class="ant"></i><i class="e1"></i><i class="e2"></i><i class="m"></i></div>
-    <div class="chat">
-      <div class="chat-head"><i class="dot"></i><i class="dot"></i><i class="dot"></i><span>Potato</span></div>
-      <div class="msgs">
-        <div class="me" id="me"></div>
-        <div class="it"><div class="who" id="who"></div><div id="it"></div></div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="steps" id="steps"></div>
+<div class="copy"><h1 id="h1"></h1><p class="sub" id="sub"></p></div>
+<div class="bot"><i class="e1"></i><i class="e2"></i><i class="m"></i></div>
+<div class="brand"><b></b><span id="brand"></span></div>
 <script>
-  const T = {
-    zh: {
-      brand: "Grok Bot 新手教程", sticker: "非官方 · 免费 · 开源", tag: "我叫 Potato",
-      h1: '<span class="l1">把一件事</span><span class="l2"><span class="hl">交给 bot</span></span>', h1size: 96,
-      sub: "用大白话讲清<b>要什么</b>、<b>怎么做</b>，<br>它复述对了才开工，以后按时自己做。",
-      me: "这是交给你负责的目标：<br><em>最后要得到：……</em> <em>这是为了：……</em>",
-      who: "POTATO · 示意", it: "我先复述一遍，你看对不对。<br>我还没有开始做。",
-      steps: ["先定目标", "讲清做法", "教它判断", "让它按时开工"],
-    },
-    en: {
-      brand: "Grok Bot for beginners", sticker: "UNOFFICIAL · FREE · OPEN SOURCE", tag: "I'm Potato",
-      h1: '<span class="l1">Hand the job</span><span class="l2">to a <span class="hl">bot</span></span>', h1size: 88,
-      sub: "Say <b>what you want</b> and <b>how you do it</b>.<br>It restates first, then runs on its own.",
-      me: "Here's the goal you're responsible for:<br><em>The result I want: …</em> <em>It's for: …</em>",
-      who: "POTATO · ILLUSTRATION", it: "Let me restate it so you can check.<br>I haven't started yet.",
-      steps: ["Start with the goal", "Tell it your process", "Teach how you judge", "Let it run on its own"],
-    },
+  const SUB = { zh: "poteto 的 Grok Bot 自动化方法 · 中文精读", en: "poteto's method for automating with Grok Bot" };
+  const BRAND = { zh: "Grok Bot 新手教程", en: "Grok Bot for beginners" };
+  // 定稿（2026-11-19）：文章说不会写代码也能自动化，标题 Automate Anything
+  const COPY = {
+    zh: "不写代码，<br>也能<em>自动化一切</em>",
+    en: "No code.<br><em>Automate anything.</em>",
   };
-  const t = T[new URLSearchParams(location.search).get("lang") === "en" ? "en" : "zh"];
-  document.documentElement.lang = t === T.en ? "en" : "zh-CN";
-  for (const k of ["brand", "sticker", "tag", "who"]) document.getElementById(k).textContent = t[k];
-  for (const k of ["h1", "sub", "me", "it"]) document.getElementById(k).innerHTML = t[k];
-  document.getElementById("h1").style.fontSize = t.h1size + "px";
-  document.getElementById("steps").innerHTML = t.steps.map((s, i) => `<div class="step"><span class="num">0${i + 1}</span><b>${s}</b></div>`).join("");
+  const q = new URLSearchParams(location.search);
+  const lang = q.get("lang") === "en" ? "en" : "zh";
+  const h1 = document.getElementById("h1");
+  h1.innerHTML = COPY[lang];
+  if (lang === "en") { h1.style.fontFamily = '"Avenir Next", sans-serif'; h1.style.fontWeight = "800"; }
+  document.getElementById("sub").textContent = SUB[lang];
+  document.getElementById("brand").textContent = BRAND[lang];
+  let size = 128;
+  h1.style.fontSize = size + "px";
+  while (h1.getBoundingClientRect().width > 740 && size > 60) h1.style.fontSize = (size -= 2) + "px";
+  const sub = document.getElementById("sub");
+  sub.style.whiteSpace = "nowrap"; sub.style.display = "inline-block";
+  let ss = 34; sub.style.fontSize = ss + "px";
+  while (sub.getBoundingClientRect().width > 740 && ss > 22) sub.style.fontSize = (ss -= 1) + "px";
 </script>
 </body>
 </html>

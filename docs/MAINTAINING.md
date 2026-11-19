@@ -154,7 +154,7 @@ Cloudflare Workers 静态资源，配置在 `wrangler.jsonc`。更新：`npm run
 
 ## README 插画和分享大图
 
-分享大图和 README 头图：样子和文字都在 `tools/og.html`（一张 HTML 海报，`?lang=zh` / `?lang=en`）。`python3 tools/build_og.py` 用 Chrome 截图，2 倍清晰度（2560×1280），写出 `public/og.png`（中文页分享用）、`public/og-en.png`（英文页分享用）、`assets/social.png` 和 `assets/en/social.png`（README 头图）。改完两张都看一眼：贴纸、气泡、标题有没有互相压住，字有没有顶到边。GitHub 仓库的 Social preview 用英文那张，要在仓库 Settings → General 手动上传。
+分享大图和 README 头图：样子和文字都在 `tools/og.html`（一张 HTML 海报，`?lang=zh` / `?lang=en`）：深色底、一句大标题、一行出处、一个 bot。只放这三样，缩略图大小也要一眼看清；标题从文章里来，不喊空口号。`python3 tools/build_og.py` 用 Chrome 截图，2 倍清晰度（2560×1280），写出 `public/og.png`（中文页分享用）、`public/og-en.png`（英文页分享用）、`assets/social.png` 和 `assets/en/social.png`（README 头图）。改完两张都看一眼：贴纸、气泡、标题有没有互相压住，字有没有顶到边。GitHub 仓库的 Social preview 用英文那张，要在仓库 Settings → General 手动上传。
 
 本站标志（`Site.astro` 里的 `site-mark` 和 `public/favicon.svg`）是一张极简的 bot 脸：两只方眼睛、一道嘴。故意不像 Grok Bot 官方的图标，本站是非官方的。
 
