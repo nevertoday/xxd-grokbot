@@ -2,7 +2,7 @@
 
 # Grok Bot 新手教程
 
-**中文** · [English](./README.en.md)
+**中文** · [English](./README.en.md) · [日本語](./README.ja.md) · [한국어](./README.ko.md) · [Español](./README.es.md) · [Português](./README.pt.md) · [Français](./README.fr.md) · [Deutsch](./README.de.md) · [Русский](./README.ru.md) · [العربية](./README.ar.md)
 
 ### 如何爽用 Grok Bot：思路决定出路
 

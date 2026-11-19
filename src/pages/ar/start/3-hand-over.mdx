@@ -1,0 +1,176 @@
+---
+layout: ../../../layouts/Lesson.astro
+tldr: "Tell Potato how you do the job. When it restates it right, let it do the job once, and when that's right too, have it run on a schedule."
+lesson: 3
+---
+import Callout from "../../../components/Callout.astro";
+import Term from "../../../components/Term.astro";
+import Copy from "../../../components/Copy.astro";
+import Reply from "../../../components/Reply.astro";
+import Q from "../../../components/Q.astro";
+
+You've done this job many times. The steps live in your head, so familiar you don't think about them. But Potato doesn't know them. In lesson 1, the apple pie was the goal, and buying apples, making the dough and baking it were the process. This lesson is about telling Potato your recipe.
+
+You don't have to get it right the first time. The author's approach is to have it restate things first: you talk, it says the goal and the process back to you in its own words, and you fix what's off, a few rounds back and forth. Only when the restatement is right does it start. So this lesson goes in this order:
+
+<mark><strong>First get it to restate your process right, then let it do the job once, and when that's right, have it run on a schedule by itself.</strong></mark>
+
+This whole lesson happens in your chat with Potato, in five steps. The first three are only about the process, and it doesn't start work yet.
+
+## Step 1: Think through how you do it now
+
+Don't start typing yet. Picture yourself doing the job. The author lists these things, and you can talk about all of them:
+
+- The steps you usually take, what comes first and what comes next
+- What you watch out for, where mistakes happen and what you always double-check
+- The apps and tools you use, like your email, the team chat, a spreadsheet or a website
+- How you check it was done right, what you look at before you hand it over
+- Where the information comes from, like email, the team chat, a ticket, an app or a website
+- Where feedback comes from, like customer reviews or comments from colleagues
+
+You don't need to write anything down. In the next step you just talk. For the meeting slides, you might say something like:
+
+> Every Friday afternoon I go through this week's email and the team chat and find each team's progress. Then I copy last week's slides, change the date, and give each team one slide. I copy the numbers from the project spreadsheet and check them again. Anything not decided yet, I mark "TBD." I put the slides in the shared folder. At Monday's meeting, my manager says which slides were hard to follow.
+
+## Step 2: Say it all in one go
+
+Talking is faster than typing, and the author suggests voice input too. Say whatever comes to mind, in any order.
+
+1. Copy the message below and paste it into the message box. Don't send it yet.
+2. Delete the part in square brackets and leave the cursor there.
+3. Hold `Cmd+D` (`Ctrl+D` on Windows and Linux) while you talk, and let go when you're done. That shortcut is **Start voice input** in the message box.
+4. Read the text it typed, fix any words it misheard, then send.
+
+<Copy id="process" title="Copy, paste, and replace the brackets with what you say" code={`Potato, this is how I usually do this job myself:
+[Say your process out loud]
+Think about how you could take this over from me completely.
+Before you begin, restate my goal and my process in simple words so I can give you feedback and confirm it.
+Don't start doing anything yet. Let's get the process settled first.`} />
+
+## Step 3: Read its restatement and correct it a few times
+
+<Reply title="Illustration: roughly what its reply looks like" code={`Let me restate it so you can check. I haven't started anything.
+
+Goal
+You want everyone to have slides that show this week's progress before Monday's meeting,
+so that you spend less of the meeting reading numbers aloud and more of it making decisions.
+
+Process
+1. Every Friday afternoon, go through this week's email and team chat and find each team's progress.
+2. Copy last week's slides, change the date, one slide per team.
+3. Take the numbers from the project spreadsheet and check them against it.
+4. Mark anything not decided yet as "TBD."
+5. Put the slides in the shared folder and show you first. Send them to no one.
+
+A question: if I can't find a team's progress, should I ask that team's lead?`} />
+
+First look at the goal. Does it match the "I want …, so that …" sentence you wrote in lesson 1? Then look at the steps. If something is missing or wrong, just type it in, like "In step 3, also compare the numbers with last week's." And answer its questions the way things really are.
+
+The first pass doesn't have to be perfect. See how it restates things, fill in what it doesn't know yet, and go back and forth a few times, until you read it and think "yes, that's how I do it." At this point it should still be waiting for your OK, and the chat should show no sign of it opening websites or using apps.
+
+## Step 4: Let it do the job once
+
+When the restatement is right, send this:
+
+<Copy id="go" title="Send this once the restatement is right" code={`Yes, use this process and do this week's first.
+Connect whatever apps you need.
+When you're done, show me first. Don't send it to anyone.`} />
+
+Once it starts, it stops now and then to ask you something. Two kinds of card are the most common:
+
+- One asks you to sign in to an app. When it needs an app, like your email, it asks you to sign in. Follow the card and finish signing in in your browser. When you see **Authorize** or **Authenticate**, choose it. An app you connect this way is a <Term k="连接的应用" />.
+- One asks for your OK. The card says what it wants to do, and this is an <Term k="审批" />. If you understand it, choose **Allow once**.
+
+When it needs a website password, it shows a **Secure Form**. Type the password there, where the bot never sees it. <u>Never type a password into the chat.</u>
+
+<Callout type="ok">
+Cards appear in the chat, and after you answer, it carries on. At the end it sends you a message saying what it made and where it put it.
+</Callout>
+
+Open what it made and look it over yourself. If anything is wrong, tell it, and let it fix it.
+
+## Step 5: Once it's right, have it run on a schedule
+
+First tell it what to fix and what to keep, like the format of the slides. When the result is right, send this:
+
+<Copy id="routine" title="Change the time to the one you want, then send" code={`You got it right this time. From now on, every Friday at 4:00 PM, use the same process to make this week's slides. Put them in the same place, then tell me here.
+Don't send them to anyone. If you can't find a team's progress, tell me here instead of reusing last week's.`} />
+
+It sets this up as a <Term k="routine" />, which means that when the time comes, it starts by itself, without you asking. It runs even with your laptop closed, because it works on the computer in the cloud.
+
+Check that it's set up:
+
+1. Click the bot's name at the top of the chat to open its details.
+2. On the **Details** tab, find the routine and open it.
+3. Check that **When to run** shows the right time.
+
+<Callout type="ok">
+**Details** has a row with the routine's name and when it runs. Inside the routine, **When to run** describes the time you chose in words.
+</Callout>
+
+A new routine doesn't run right away. It waits for its next scheduled time. To try it now, choose **Test** in the routine, though some routines don't show it. A test run really does the work.
+
+<Callout type="warn" title="Every run uses some of your plan">
+Each time a routine runs, it uses some of your plan's usage. So start with something like once a week. An hourly schedule can use a week of usage in one day.
+</Callout>
+
+## You know how now
+
+Every job you hand off from now on goes the same way. Write the goal as "I want …, so that …," make a bot just for it and hand it that sentence, tell it how you do the job and have it restate it first, then let it get the job right once before you have it run on a schedule.
+
+<Callout type="tip" title="That's all you need">
+These three lessons are all a beginner needs. Look up everything else on the site when it comes up:
+
+- To teach it how you make decisions and help it get better: see the [full guide](/en/guide/0-what/).
+- For ready-made prompts: see [Copy-paste prompts](/en/howto/prompts/).
+- For other questions: see the [FAQ](/en/faq/).
+</Callout>
+
+## If something's off
+
+<Q q="It started working before I confirmed.">
+
+Send "Stop now." Then tell it again: "First restate the goal and process as you understand them. Start only after I confirm."
+
+</Q>
+<Q q="I held Cmd+D and talked, but no text appeared.">
+
+If your computer asks whether Grok Bot can use the microphone, allow it. If Grok Bot says microphone access was denied, allow it in your system settings. If talking still doesn't work for you, that's fine. Just type.
+
+</Q>
+<Q q="I don't know what I've left out.">
+
+Let it ask you:
+
+<Copy id="ask-me" code={`Help me find what I haven't told you about this job yet. Ask me how I make decisions, where my information comes from, how I check the work, and when you should come to me. Ask one question at a time. Then walk me through a few examples so I can give you feedback.`} />
+
+</Q>
+<Q q="I don't understand a card, and I'm not sure whether to approve it.">
+
+Reply first: "Explain in plain words what you want to do, or make me a draft first." If you're still unsure, choose **Deny**, and it won't do it.
+
+</Q>
+<Q q="It asks me about the same kind of card every time.">
+
+If you trust that action, choose **Always allow**, and from then on it does similar actions on its own without the card. Actions that match an **Ask first** rule you set still get a card, though.
+
+</Q>
+<Q q="It seems stuck, and nothing has happened for a while.">
+
+Scroll up in the chat and look for a question, a card or a sign-in waiting for you. If there's none, send a message telling it what to do next. To make it stop, send "Stop now."
+
+</Q>
+<Q q="The time came, and it didn't start by itself.">
+
+Open the routine and check three things:
+
+- It doesn't say **Paused**.
+- **When to run** shows the right time. The time zone is in **Settings**, under **Bot**, labeled **Timezone**.
+- A new routine waits for its next time. To try it now, choose **Test**.
+
+</Q>
+<Q q="It says I've used up my usage.">
+
+It isn't broken. Your usage for this week is used up, and it resets every week. To keep going now, see the official [usage limit is reached](https://docs.x.ai/grok-bot/troubleshooting#your-usage-limit-is-reached).
+
+</Q>
