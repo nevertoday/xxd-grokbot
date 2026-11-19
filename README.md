@@ -21,7 +21,7 @@
 </div>
 
 <p align="center">
-  <img src="assets/social.png" width="100%" alt="不写代码，也能自动化一切。poteto 的 Grok Bot 自动化方法 · 中文精读">
+  <img src="assets/hero.svg" width="100%" alt="演示：把目标交给 Potato，它先复述、还没开工；你补一条规则；它设好每周五的例行任务，再交回做好的幻灯片。左边四步跟着亮起：先定目标、讲清做法、教它判断、让它按时开工">
 </p>
 
 ## 😵 为什么要学

@@ -21,7 +21,7 @@ A free, unofficial guide to handing the work you keep repeating to [Grok Bot](ht
 </div>
 
 <p align="center">
-  <img src="assets/en/social.png" width="100%" alt="No code. Automate anything. poteto's method for automating with Grok Bot">
+  <img src="assets/en/hero.svg" width="100%" alt="Demo: you hand Potato a goal, it restates it before starting, you add one rule, it sets a Friday routine and hands back the finished slides. The four steps light up on the left: start with the goal, tell it your process, teach how you judge, let it run on its own">
 </p>
 
 ## 😵 Why learn this

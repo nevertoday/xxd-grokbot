@@ -154,7 +154,9 @@ Cloudflare Workers 静态资源，配置在 `wrangler.jsonc`。更新：`npm run
 
 ## README 插画和分享大图
 
-分享大图和 README 头图：样子和文字都在 `tools/og.html`（一张 HTML 海报，`?lang=zh` / `?lang=en`）：深色底、一句大标题、一行出处、一个 bot。只放这三样，缩略图大小也要一眼看清；标题从文章里来，不喊空口号。`python3 tools/build_og.py` 用 Chrome 截图，2 倍清晰度（2560×1280），写出 `public/og.png`（中文页分享用）、`public/og-en.png`（英文页分享用）、`assets/social.png` 和 `assets/en/social.png`（README 头图）。改完两张都看一眼：贴纸、气泡、标题有没有互相压住，字有没有顶到边。GitHub 仓库的 Social preview 用英文那张，要在仓库 Settings → General 手动上传。
+README 头图是一段 SVG 动画：`python3 tools/build_hero.py` 写出 `assets/hero.svg` 和 `assets/en/hero.svg`。左边标题和四步，右边是和 Potato 的一段对话，四步跟着对话亮起，播完淡出重来；系统设了减少动效就直接显示最后的样子。改字改 `TEXT`，改节奏改 `T_*` 常量。看效果：把 SVG 内嵌进一个 HTML，用 `document.getAnimations()` 暂停在某一秒再截图（放在 `<img>` 里的动画，无头 Chrome 不会往前走）。
+
+分享大图：样子和文字都在 `tools/og.html`（一张 HTML 海报，`?lang=zh` / `?lang=en`）：深色底、一句大标题、一行出处、一个 bot。只放这三样，缩略图大小也要一眼看清；标题从文章里来，不喊空口号。`python3 tools/build_og.py` 用 Chrome 截图，2 倍清晰度（2560×1280），写出 `public/og.png`（中文页分享用）、`public/og-en.png`（英文页分享用）。改完两张都看一眼：贴纸、气泡、标题有没有互相压住，字有没有顶到边。GitHub 仓库的 Social preview 用英文那张，要在仓库 Settings → General 手动上传。
 
 本站标志（`Site.astro` 里的 `site-mark` 和 `public/favicon.svg`）是一张极简的 bot 脸：两只方眼睛、一道嘴。故意不像 Grok Bot 官方的图标，本站是非官方的。
 
