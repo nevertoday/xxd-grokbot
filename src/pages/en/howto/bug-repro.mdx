@@ -1,6 +1,96 @@
 ---
 layout: ../../../layouts/HowTo.astro
 slug: bug-repro
+time: A few rounds of chat to set the process, then it starts whenever someone asks in Slack
+for: Users report bugs vaguely, and developers spend ages trying to see them
+tldr: Your bot makes the bug happen again in staging with a test account, and brings back the steps and screenshots.
+description: "Reproduce bugs users report with Grok Bot: say the result you want, explain which environment and account to use and what to bring back, then let it start whenever someone writes needs repro in Slack."
 ---
+import Term from "../../../components/Term.astro";
+import Q from "../../../components/Q.astro";
+import Copy from "../../../components/Copy.astro";
 
-This page is still being written.
+## Say what result you want
+
+To reproduce a bug means to make it happen again. Replying to the user is one step in the process. The result you want is that every bug reaches a developer with steps they can follow to see it.
+
+The official docs call this Bug reproduction. See [Use cases](https://docs.x.ai/grok-bot/use-cases#bug-reproduction).
+
+Make a new <Term k="bot" />, call it Potato, and send it the goal:
+
+<Copy id="br-goal" title="First message: the goal" code="Hi Potato. I want you to own this goal: every bug users report reaches a developer with steps they can follow to see it. This is your job from now on, so remember it. Based on the goal, choose a name and a picture for yourself." />
+
+## Tell it how you do it now
+
+Tell it how you do this today. Change every line to fit your team:
+
+<Copy id="br-process" title="Second message: your process" code={`Potato, this is how I usually do this myself:
+- Steps: I read the user's report and follow it in staging with a fresh test account until the bug happens again. I write down every step, take screenshots, and note the browser and version. If it won't happen, I write down everything I tried.
+- What I watch for: never use real customer data. Never change any production setting.
+- Apps I use: tickets in Linear and feedback in Slack. Open staging in your own browser.
+- How I check it's right: someone else can follow the steps and see the same bug.
+- Where the information comes from: the ticket, the feedback channel in Slack, and screenshots from the user.
+- Where feedback comes from: developers tell you whether the steps worked.
+
+Think about how you could take this over from me completely. Before you begin, restate my goal and process in simple words, so I can give you feedback and confirm it. Don't start doing the work yet. Let's get the process planned first.`} />
+
+If typing is slow, press `Cmd/Ctrl+D` and talk. Say things as they come to you. It restates what it heard first. Correct anything that's off, and go a few rounds.
+
+When you're happy, tell it to go ahead. If it needs an app, it shows a **Connect** card in the chat. Open it and sign in.
+
+## Teach it how you decide
+
+You make some calls without thinking, and your bot can't know them. Here are three common ones for this job:
+
+<Copy id="br-judge" title="Third message: how you decide" code={`Potato, here are a few rules I use to decide:
+1. Even if it won't happen, bring something back: the environment, the account, and every approach you tried.
+2. If the user's description and their screenshot disagree, put both in the report. Don't pick one.
+3. If a step involves paying, deleting data, or changing permissions, stop and ask me before you do it.
+
+Help me find what I haven't told you about this process yet. Ask me how I make decisions, where I get my information, how I check the work, and when you should ask me for help. Ask one question at a time. Then walk me through a few examples so I can give you feedback. Don't automate anything yet.`} />
+
+- **Rule 1.** <mark>A failed repro still helps, because developers don't repeat what was already tried.</mark>
+- **Rule 2.** Both accounts stay in the report, and the developer decides.
+- **Rule 3.** Staging can still touch real things, so those steps go to you.
+
+Include an example or two that went wrong, like the bug that only showed up in one browser. See how it would handle them, then tell it what to fix.
+
+## Make it run on its own
+
+Once this has gone well a few times, let it start on its own. Save the process as a <Term k="技能" /> first, then set up a <Term k="routine" />.
+
+This job starts on a Slack message. When someone writes "needs repro" in the channel, it starts.
+
+<Copy id="br-routine" title="Fourth message: let it start on its own" code={`Save the process we just used as a skill called "Bug repro."
+Then set up a routine: when a message in #bug-reports has a ticket link and says "needs repro," open the ticket, use that skill to reproduce it in staging, and post the steps, screenshots, and browser details in this chat.
+Never post back to Slack without my approval.`} />
+
+Keep the <Term k="触发条件" /> narrow: one channel and one phrase. Watching every message is noisy and spends a lot of usage. A Slack trigger needs Slack connected on the Cursor account that owns the bot. See [Slack triggers](https://docs.x.ai/grok-bot/skills-routines-and-automations#slack-triggers) in the official docs.
+
+After the first few runs, check these:
+
+- **The steps work.** Follow them yourself and see the bug.
+- **The screenshots show it.** They capture the moment it goes wrong.
+- **No real data, no Slack replies.** It used a test account, and Slack has nothing from it.
+
+To try it now, post a message with a ticket link and "needs repro" in that channel.
+
+To see what it asks you about first, read [Approvals and privacy](/en/howto/approvals-privacy/).
+
+## Stuck?
+
+<Q q="It's asking for the test account password.">
+Save it in <Term k="Vault" />, or enter it in a Secure Form when the bot shows one. Either way, the bot never sees the password. Never paste a password into the chat.
+</Q>
+<Q q="Someone wrote needs repro, and nothing happened.">
+Check three things:
+
+- The message is newer than the routine.
+- It's in the channel the routine watches, and it has the phrase.
+- Slack is connected on the account that owns the bot.
+
+Open the routine, and **When to run** spells out the channel and phrase it watches.
+</Q>
+<Q q="Staging won't load.">
+Some sites drop connections from the bot's computer. Open **Settings → Computer**, and under **Your computer** turn on **Route traffic through this computer**. If staging is on your company's private network, this setting won't reach it. An admin has to install a networking client for the bot, and only the Enterprise plan offers that. See [Connect to private networks](https://docs.x.ai/grok-bot/private-networks) in the official docs.
+</Q>

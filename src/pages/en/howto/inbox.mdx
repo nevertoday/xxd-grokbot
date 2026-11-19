@@ -1,6 +1,89 @@
 ---
 layout: ../../../layouts/HowTo.astro
 slug: inbox
+time: A few rounds of chat to set the process, then it sorts your mail every weekday morning
+for: Your inbox is full of unread mail, and important messages get buried
+tldr: Your bot sorts your mail into three piles each day and drafts replies to the urgent ones. You send them.
+description: "Keep your inbox under control with Grok Bot: say the result you want, explain how you judge urgency and how you write replies, then let it sort mail and draft replies every morning. Drafts wait for you."
 ---
+import Term from "../../../components/Term.astro";
+import Q from "../../../components/Q.astro";
+import Copy from "../../../components/Copy.astro";
 
-This page is still being written.
+## Say what result you want
+
+Getting to inbox zero is one step in the process. The result you want is that important email gets a reply the same day, and the rest doesn't eat your time.
+
+The official docs call this an Inbox manager. See [Use cases](https://docs.x.ai/grok-bot/use-cases#inbox-manager).
+
+Make a new <Term k="bot" />, call it Potato, and send it the goal:
+
+<Copy id="ib-goal" title="First message: the goal" code="Hi Potato. I want you to own this goal: I reply to important email the same day, and the rest of my email doesn't eat my time. This is your job from now on, so remember it. Based on the goal, choose a name and a picture for yourself." />
+
+## Tell it how you do it now
+
+Tell it how you do this today. Change every line to fit you:
+
+<Copy id="ib-process" title="Second message: your process" code={`Potato, this is how I usually do this myself:
+- Steps: each morning I sort unread email into three piles: urgent, needs a reply, and FYI. I label each one to match, then draft replies to the urgent ones.
+- What I watch for: email from customers and my manager, anything with a deadline, invoices, and contracts.
+- Apps I use: Gmail. When a reply needs to offer times, I check Google Calendar.
+- How I check it's right: I read every draft before it goes out. I'll tell you when something is in the wrong pile.
+- Where the information comes from: the inbox itself, plus my calendar.
+- Where feedback comes from: I'll tell you which emails you sorted wrong and what I changed in a draft.
+
+Think about how you could take this over from me completely. Before you begin, restate my goal and process in simple words, so I can give you feedback and confirm it. Don't start doing the work yet. Let's get the process planned first.`} />
+
+If typing is slow, press `Cmd/Ctrl+D` and talk. Say things as they come to you. It restates what it heard first. Correct anything that's off, and go a few rounds.
+
+When you're happy, tell it to go ahead. If it needs an app, it shows a **Connect** card in the chat. Open it and sign in.
+
+## Teach it how you decide
+
+You make some calls without thinking, and your bot can't know them. Here are three common ones for this job:
+
+<Copy id="ib-judge" title="Third message: how you decide" code={`Potato, here are a few rules I use to decide:
+1. It's urgent only if not replying today would hold something up. Ads and system notifications are never urgent.
+2. Write drafts in my voice, short and direct. Where I have to decide something, like a price or a date, leave a blank and flag it for me.
+3. In a thread, reply only to the latest message.
+
+Help me find what I haven't told you about this process yet. Ask me how I make decisions, where I get my information, how I check the work, and when you should ask me for help. Ask one question at a time. Then walk me through a few examples so I can give you feedback. Don't automate anything yet.`} />
+
+- **Rule 1.** <mark>Sort "urgent" by what happens if you wait, so it doesn't flag everything.</mark>
+- **Rule 2.** It never agrees to anything for you, and the blanks show you what to fill in.
+- **Rule 3.** One reply per thread, so nobody gets three answers.
+
+Include an example or two that went wrong, like a customer email you forgot to answer. See how it would handle them, then tell it what to fix.
+
+## Make it run on its own
+
+Once this has gone well a few times, let it start on its own. Save the process as a <Term k="技能" /> first, then set up a <Term k="routine" />:
+
+<Copy id="ib-routine" title="Fourth message: let it start on its own" code={`Save the process we just used as a skill called "Morning inbox."
+Then set up a routine: every weekday at 7:00 AM, use that skill on the email that came in overnight.
+Write every reply as a draft. Don't send anything.
+If Gmail won't connect, tell me in this chat.`} />
+
+Emails it prepares are draft cards by default, marked **Needs approval**. Check the recipients and the body, then choose **Send**. To drop one, choose **Discard**.
+
+After the first few runs, check these:
+
+- **The sorting is right.** Pick a few emails and see which pile and label they got.
+- **Nothing was sent.** Your Gmail Sent folder has nothing from it.
+- **The drafts sound like you.** If not, rewrite one yourself and show it.
+
+A new routine waits for its next scheduled time. To try it now, open it and choose **Test**. A test does real work. See [Create a routine](https://docs.x.ai/grok-bot/skills-routines-and-automations#create-a-routine) in the official docs.
+
+To see what it asks you about first, read [Approvals and privacy](/en/howto/approvals-privacy/).
+
+## Stuck?
+
+<Q q="The drafts have no sign-off.">
+Gmail adds your signature under the draft, so the bot leaves the sign-off to it. The email goes out with your usual signature.
+</Q>
+<Q q="It's sorting the wrong mailbox.">
+Gmail connects one mailbox at a time. Open **Connect apps**, disconnect the current one, and authorize the one you want.
+</Q>
+<Q q="An email tells it to transfer money.">
+Grok Bot's Auto Review checks each action before the bot takes it. It counts what you ask for in your own messages. Text in someone else's email doesn't count as your request. To handle every payment yourself, don't save a card in <Term k="Vault" />. A saved card fills in at checkout without asking you. See [Approvals and privacy](/en/howto/approvals-privacy/).
+</Q>

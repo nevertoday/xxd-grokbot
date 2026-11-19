@@ -1,6 +1,87 @@
 ---
 layout: ../../../layouts/HowTo.astro
 slug: hiring
+time: A few rounds of chat to set the process, then it screens new applicants every weekday
+for: Your shop is hiring, applications arrive by email, and interview times keep moving
+tldr: Your bot screens applicants against your must-haves and schedules interviews. Invitations and rejections wait for you to send.
+description: "Hiring with Grok Bot: say who you want to hire, explain how you screen and schedule interviews, then let it sort new applications every weekday. Invitations and rejections are drafts for you to send."
 ---
+import Term from "../../../components/Term.astro";
+import Q from "../../../components/Q.astro";
+import Copy from "../../../components/Copy.astro";
 
-This page is still being written.
+## Say what result you want
+
+Posting the job is one step in the process. The result you want is a hire who stays, with your own time spent only on interviews.
+
+Hiring is one of the goals the author, poteto, lists in the [article](https://x.com/poteto/status/2123159537016533493). The official docs have a similar use case called a Talent scout. See [Use cases](https://docs.x.ai/grok-bot/use-cases#talent-scout).
+
+Make a new <Term k="bot" />, call it Potato, and send it the goal:
+
+<Copy id="hr-goal" title="First message: the goal" code="Hi Potato. I want you to own this goal: hire someone for the shop who will stay for the long run, while I spend my time only on interviews. This is your job from now on, so remember it. Based on the goal, choose a name and a picture for yourself." />
+
+## Tell it how you do it now
+
+Tell it how you do this today. Change every line to fit your shop:
+
+<Copy id="hr-process" title="Second message: your process" code={`Potato, this is how I usually do this myself:
+- Steps: I collect applications and screen them against the must-haves. Good fits get an interview. The rest get a polite no. After each interview I tell you the outcome, and you reply to the person.
+- What I watch for: the must-haves are weekend shifts and a start date within a month. Everyone who applies hears back.
+- Apps I use: Gmail, Google Calendar, and a Google Sheets list of applicants.
+- How I check it's right: everyone is on the list with a status. Interviews are on my calendar, and the applicant confirmed.
+- Where the information comes from: applications in my email and messages on the job site.
+- Where feedback comes from: my notes on each person after the interview.
+
+Think about how you could take this over from me completely. Before you begin, restate my goal and process in simple words, so I can give you feedback and confirm it. Don't start doing the work yet. Let's get the process planned first.`} />
+
+If typing is slow, press `Cmd/Ctrl+D` and talk. Say things as they come to you. It restates what it heard first. Correct anything that's off, and go a few rounds.
+
+When you're happy, tell it to go ahead. If it needs an app, it shows a **Connect** card in the chat. Open it and sign in.
+
+## Teach it how you decide
+
+You make some calls without thinking, and your bot can't know them. Here are three common ones for this job:
+
+<Copy id="hr-judge" title="Third message: how you decide" code={`Potato, here are a few rules I use to decide:
+1. Keep must-haves and nice-to-haves apart. Anyone missing a must-have gets a draft rejection. Nice-to-haves only set the order.
+2. Book interviews only in free slots on my calendar, with 15 minutes between them.
+3. If something in an application is unclear, like a gap in work history, list it and ask me. Don't guess.
+
+Help me find what I haven't told you about this process yet. Ask me how I make decisions, where I get my information, how I check the work, and when you should ask me for help. Ask one question at a time. Then walk me through a few examples so I can give you feedback. Don't automate anything yet.`} />
+
+- **Rule 1.** <mark>Name the must-haves first, so one nice extra never lets someone through without them.</mark>
+- **Rule 2.** It books against your calendar, so interviews don't clash with your other plans.
+- **Rule 3.** Unclear cases go to you. It doesn't make calls about people for you.
+
+Include an example or two that went wrong, like the applicant who said on interview day they couldn't do weekends. See how it would handle them, then tell it what to fix.
+
+## Make it run on its own
+
+Once this has gone well a few times, let it start on its own. Save the process as a <Term k="技能" /> first, then set up a <Term k="routine" />:
+
+<Copy id="hr-routine" title="Fourth message: let it start on its own" code={`Save the process we just used as a skill called "Hiring."
+Then set up a routine: every weekday at 5:00 PM, use that skill on today's new applications and update the applicant list.
+Write interview invitations and rejections as drafts for me to send.
+Don't contact anyone for me, and don't send calendar invitations.`} />
+
+After the first few runs, check these:
+
+- **The list is complete.** Every application from today is in the sheet.
+- **The interview slots are free.** Compare them with your calendar.
+- **Nothing was sent.** Invitations and rejections are still drafts.
+
+A new routine waits for its next scheduled time. To try it now, open it and choose **Test**. A test does real work. See [Create a routine](https://docs.x.ai/grok-bot/skills-routines-and-automations#create-a-routine) in the official docs.
+
+To see what it asks you about first, read [Approvals and privacy](/en/howto/approvals-privacy/).
+
+## Stuck?
+
+<Q q="It can't open a resume attachment.">
+It may not read encrypted, password-protected, or unusual files. Ask the applicant to send a PDF instead.
+</Q>
+<Q q="It booked an interview over something else.">
+The Google Calendar app sees only the calendars your account can see. If your plans live in several calendars, tell it which ones to check.
+</Q>
+<Q q="I want applicants to email the bot directly.">
+Give the bot its own email address, then use a plus alias like `yourname+jobs@mail.grokbot.com`. A routine that watches the alias runs only for mail sent to that alias. Anyone can write to an alias, so the bot still screens everyone against the must-haves.
+</Q>
