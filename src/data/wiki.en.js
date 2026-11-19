@@ -31,7 +31,7 @@ export const WIKI_EN = {
     like: "Like a new teammate who owns one area. You explain it once, it remembers, and it keeps going.",
     here: [
       "After you sign in, the app makes your first bot, named **Grok Bot**. To add another, choose **+** (**New Bot**) at the top of the sidebar, or press `Cmd/Ctrl+N`. Type a name and choose **Create**. Any name works. The author suggests Potato if you're stuck, and letting it rename itself later.",
-      "A bot has its own computer. It can use apps, browse the web and work with files to finish the job. When you step away, it keeps working in the cloud. ==A bot works best with one job.==",
+      "A bot works on a computer in the cloud. It can use apps, browse the web and work with files to finish the job. When you step away, it keeps working in the cloud. ==Most bots work best with one job.==",
     ],
     myths: [
       "\"One bot should handle everything\": new work can start with your [primary bot](/en/wiki/primary-bot/). When the same kind of request keeps coming back with its own sources and rules, give it its own bot.",
@@ -97,7 +97,7 @@ export const WIKI_EN = {
       "Every bot you run can use a connected app. It can only do what your account in that service can already do. The app's sign-in stays on Cursor's servers, and bots use the app without receiving it.",
     ],
     myths: [
-      "\"**Added** means it's connected\": **Added** only means installed. You still have to sign in, until the status reads **Connected**.",
+      "\"**Added** means it's connected\": **Added** only means installed. You still have to sign in. If the app shows **Needs auth** or **Disconnected**, open it and choose **Authenticate**.",
       "\"No app means my bot can't use the service\": it can use the website in its browser. If the service has an MCP server, your bot can add that too. MCP is a standard way AI tools connect to services.",
     ],
   },
@@ -213,7 +213,7 @@ export const WIKI_EN = {
     one: "A Team Bot is a bot shared with your whole team. It needs a Team or Enterprise plan.",
     like: "Like an internal tool. One person builds it, and the whole team uses it.",
     here: [
-      "Anyone on the team can make one. Choose **+** in the sidebar, then **Create a Bot**, and tell it what it does for the team. Follow its setup for apps, secrets, skills and files, then choose **Publish**. Teammates find it under **Browse Team Bots**, and it works in Slack and Microsoft Teams too.",
+      "Anyone on the team can make one by default (an admin can limit this). Choose **+** in the sidebar, then **Create a Bot**, and tell it what it does for the team. Follow its setup for apps, secrets, skills and files, then choose **Publish**. Teammates find it under **Browse Team Bots**, and once it's connected, it works in Slack and Microsoft Teams too.",
       "Everyone uses the same bot, with one set of apps and secrets. Each person's chat with it is private. What a regular teammate teaches it needs the owner's or a Manager's approval before it applies to everyone.",
     ],
     myths: [
@@ -224,7 +224,7 @@ export const WIKI_EN = {
   },
   "handoff": {
     title: "Handoffs between bots",
-    one: "One bot can message another to hand off work. The other picks it up and replies when it's done.",
+    one: "One bot can message another to hand off work. The other picks it up and can reply later.",
     like: "Like a relay race. Each runner covers one leg and says what comes next when passing the baton.",
     here: [
       "For example, one bot pulls the week's numbers and another drafts from them. A third checks the draft, then it comes to you. You can see each handoff in the conversation. To get several bots working together, choose **New chat** and start a group of two to six bots. Use `@` to say who owns which step.",

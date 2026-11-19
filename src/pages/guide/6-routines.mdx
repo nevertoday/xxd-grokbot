@@ -13,7 +13,7 @@ import Q from "../../components/Q.astro";
 
 ## 先在聊天里做顺一次
 
-没有 <Term k="routine" />，bot 只在你开口时干活。刚开始这样没问题。想省心，就让它自己开工，你就不再是卡住进度的那个人。这是[原文](https://x.com/poteto/status/2123159537016533493)最后一步的意思。
+没有 <Term k="routine" />，bot 只在你开口时干活。刚开始这样没问题。想省心，就让它自己开工，你就不再是卡住进度的那个人。这是[原文](https://x.com/poteto/status/2123159537016533493)「让 bot 自动干活」一节的意思。
 
 <mark>顺序是：先在聊天里做顺一次，再存成技能，最后才设 routine。</mark>
 
@@ -24,7 +24,7 @@ import Q from "../../components/Q.astro";
 <Copy id="skill" code="把我们刚才的做法存成一个技能，叫「每日预约确认」。写清楚：什么时候用、要用哪些应用、一步一步怎么做、怎么检查做对了、最后交给我什么。再加一条规矩：联系顾客之前一定先问我。" />
 
 - **所有 bot 都能用。** 你的技能放在同一个库里。技能要用的应用或登录，得先备好。
-- **用的时候点名。** 直接说技能的名字，或者在聊天框里打 `@` 选。
+- **用的时候点名。** 直接说技能的名字。
 
 官方说明见[存技能](https://docs.x.ai/grok-bot/skills-routines-and-automations#save-a-skill)。
 
@@ -140,19 +140,19 @@ routine 每跑一次都花用量。这几种最费：每小时跑一次、间隔
 ## 卡住了？
 
 <Q q="routine 到点没跑。">
-<p>一条条看：没有显示 <strong>Paused</strong>（手机上 <strong>Active</strong> 是开着的）；<strong>When to run</strong> 的时间和时区对；新建的要等下一个时间点。Slack 触发的，消息要是新的，在它盯的频道里，并且对上了那句话。webhook 触发的，调用要返回 <code>200</code>，用的是现在的密钥。</p>
+<p>一条条看：没有显示 <strong>已暂停</strong>（手机上 <strong>Active</strong> 是开着的）；<strong>何时运行</strong> 的时间和时区对；新建的要等下一个时间点。Slack 触发的，消息要是新的，在它盯的频道里，并且对上了那句话。webhook 触发的，调用要返回 <code>200</code>，用的是现在的密钥。</p>
 </Q>
 <Q q="报错 Automation run rate limit exceeded。">
-<p>超过了每小时的次数上限。让它把条件写窄一点，或者把间隔拉长。官方说有时是所有人共用的上限造成的，正在修。这种失败不会自动重跑，你点 <strong>Test</strong> 再跑一次。</p>
+<p>超过了每小时的次数上限。让它把条件写窄一点，或者把间隔拉长。官方说有时是所有人共用的上限造成的，正在修。这种失败不会自动重跑，你点 <strong>测试</strong> 再跑一次。</p>
 </Q>
 <Q q="用量掉得特别快。">
 <p>先暂停用不着的 routine。再让它把间隔拉长、把 Slack 条件写窄。都做了还不够，再考虑换套餐。</p>
 </Q>
 <Q q="别的 bot 找不到我存的技能。">
-<p>打开 <strong>Connect apps</strong>，点标题旁边的已连接数量，在 <strong>Private skills</strong> 下给这个 bot 打开它。</p>
+<p>打开 <strong>连接应用</strong>（Connect apps），点标题旁边的已连接数量，在 <strong>私有技能</strong>（Private skills） 下给这个 bot 打开它。</p>
 </Q>
 <Q q="出去一阵回来，routine 都暂停了。">
-<p>你很久没回复时，Grok Bot 可能会先暂停 routine。检查一遍，要用的点 <strong>Resume</strong>（恢复）。</p>
+<p>你很久没回复时，Grok Bot 可能会先暂停 routine。检查一遍，要用的点 <strong>恢复</strong>（Resume）。</p>
 </Q>
 
-<Checkpoint id="s6" items={["我先在聊天里把这件事做顺了一次", "做法存成了技能，里面写了哪一步要先问我", "routine 的 <strong>When to run</strong> 和我想的一样，时区也对", "我用 <strong>Test</strong> 或一次安全的试跑看过结果", "我知道删掉 routine 不能撤销，只想停就用 <strong>Pause</strong>"]} />
+<Checkpoint id="s6" items={["我先在聊天里把这件事做顺了一次", "做法存成了技能，里面写了哪一步要先问我", "routine 的 <strong>何时运行</strong> 和我想的一样，时区也对", "我用 <strong>测试</strong> 或一次安全的试跑看过结果", "我知道删掉 routine 不能撤销，只想停就用 <strong>暂停</strong>"]} />

@@ -3,7 +3,7 @@
 对照的是本机 `/Applications/Grok Bot.app`，版本 1.0.3，和当天抓的官方文档。
 
 - **只有桌面版。** macOS（Apple 芯片和 Intel）、Windows（x64、Arm64）、Linux（x64、Arm64）。从 https://x.ai/bot 下载。手机上另有 iPhone 和 Android 版（官方 mobile 页）。
-- **没有网页版。** 浏览器里登录后打开 https://cursor.com/bot/onboarding，页面只写「You're all set」，给一个「Download Grok Bot for macOS」按钮。
+- **浏览器里。** 没有能管理 bot 的网页版：浏览器里登录后打开 https://cursor.com/bot/onboarding，页面只写「You're all set」，给一个「Download Grok Bot for macOS」按钮。但能在 x.com 的 X Chat 里跟同一批 bot 聊天，逐步开放中，从 X Chat 连账号只支持个人账号（官方 chat-and-collaboration 的 Chat in X Chat）。所以别写「没有网页版」，写「浏览器里能在 X Chat 聊天」。
 - **登录用 Cursor 账号。** 欢迎页点 **Sign in**，在浏览器里完成。
 - **哪些套餐能用。** The X Subscription 的 Premium、Super、Ultra；Plus 不行。旧的 Cursor 付费个人套餐和自助 Teams 也能用。SuperGrok 系列和 X Premium+ 可以绑定（get-started、x-subscription-grok-bot）。
 - **界面语言。** 桌面版和手机版各有 38 种界面语言，默认「跟随系统」（Follow System），在 **设置**（Settings）→ **通用**（General）→ **外观**（Appearance）里的 **语言**（Language）改（官方 faq）。app 里带着简体中文的消息表，约 6100 条，按钮、菜单、设置页都有中文。

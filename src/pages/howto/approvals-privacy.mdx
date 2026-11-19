@@ -4,8 +4,8 @@ slug: approvals-privacy
 time: 读 5 分钟，设置 5 分钟
 for: 想先管住 bot：能做什么，在哪停下来问你
 step: 4
-tldr: 请求里写明它停在哪；撤不回的事设成 Ask first；用完的登录和文件及时清掉。
-description: 在请求里给 bot 划界限；审批卡片上的按钮怎么选；用 Custom Rules 把发消息、付款、删除设成先问你；管住它碰你自己的电脑；所有 bot 共用一台电脑；数据和隐私；不用了怎么收回。
+tldr: 请求里写明它停在哪；撤不回的事设成先询问；用完的登录和文件及时清掉。
+description: 在请求里给 bot 划界限；审批卡片上的按钮怎么选；用自定义规则把发消息、付款、删除设成先询问；管住它碰你自己的电脑；所有 bot 共用一台电脑；数据和隐私；不用了怎么收回。
 ---
 import Callout from "../../components/Callout.astro";
 import Term from "../../components/Term.astro";
@@ -53,9 +53,11 @@ import Copy from "../../components/Copy.astro";
 
 你在聊的对话里，卡片会一直等你。routine、别的 bot 发来的消息这类后台的活，卡片大约 30 分钟后过期，动作不会做。常跑 routine 的 bot，打开它的 **通知**（Notifications），免得错过。
 
-## 撤不回的事，设成 Ask first
+## 撤不回的事，设成先询问
 
-<mark>发消息、付款、删数据这类撤不回的事，一律设成 Ask first。</mark>审批只管这一步做不做，做完的事撤不回来。
+<mark>发消息、付款、删数据这类撤不回的事，一律设成先询问。</mark>审批只管这一步做不做，做完的事撤不回来。
+
+自定义规则只在 **自动审核**（Auto-review）开着时起作用。它默认是开的，开关在 **设置 → 通用** 的 **Bot** 下面。关掉以后，bot 做事前不再检查，你的规则会藏起来、不生效，但不会删掉，再打开就回来了。见官方的 [Configure Auto Review](https://docs.x.ai/grok-bot/approvals-security-and-privacy#configure-auto-review)。
 
 1. 打开 **设置 → 通用**（Settings → General），在 **Bot** 下面找到 **自定义规则**（Custom Rules）。手机上在 **设置**（Settings） 的 **Bot** 一组里。
 2. 在 **When Grok Bot wants to:**（当 Grok Bot 想要）下面，用大白话写一个动作。

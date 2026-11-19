@@ -61,7 +61,7 @@ Some steps need you, so it hands you the computer. That includes single sign-on,
 The signed-in session stays on the computer for next time, and all your bots can use it.
 
 <Callout type="warn" title="Fingerprint and face sign-in don't work on its computer">
-Fingerprint, Face ID, Windows Hello and passkeys saved on your laptop or phone don't work on the bot's computer. For a work app with single sign-on, take over and use another method your company allows. A password with a code is one. On Mac and Windows, you can also turn on **Use hardware security keys** under **Security Key** in **Settings → General**.
+Fingerprint, Face ID, Windows Hello and passkeys saved on your laptop or phone don't work on the bot's computer. For a work app with single sign-on, take over and use another method your company allows. A password with a code is one. On Mac and Windows, you can also use a hardware security key: check that **Use hardware security keys** is on under **Security Key** in **Settings → General**. It is on by default on Mac and Windows, isn't supported on Linux yet, and every use asks you to approve it first.
 </Callout>
 
 ## API keys go in the secure secret card
@@ -72,7 +72,7 @@ Also keep passwords, codes and API keys out of commands and files on the compute
 
 ## Payments: to approve each one, don't save the card
 
-<mark>A card saved in Vault fills in at checkout without asking you each time.</mark> No setting makes it ask before each payment. To approve every payment yourself:
+<mark>A card saved in Vault fills in at checkout without asking you each time.</mark> No setting requires your approval for each use of the card. (The official Vault page also says that when a bot buys through an order card, it types the card in after you tap the pay button.) To approve every payment yourself:
 
 - **Don't save the card.** When the bot asks for a card with a Secure Form, leave **Securely save to Bot's vault** unchecked. The card is used in that chat only, and the bot asks you to approve the exact total there.
 - **Remove a card you already saved.** In **Settings → Vault**, select it and choose **Remove**.

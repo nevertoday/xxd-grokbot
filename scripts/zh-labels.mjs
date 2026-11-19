@@ -1,5 +1,6 @@
 // 把中文页里加粗的英文按钮名换成 app 的简体中文：第一次出现写成 **新建 Bot**（New Bot），之后只写 **新建 Bot**。
 // 中文的数据文件（wiki.js、faq.js）也改：每个 Wiki 条目、每条问答各算一页，各自从「第一次出现」算起。
+// <strong>Test</strong> 这种 HTML 加粗（在 Q、Checkpoint 里）一样处理。
 // 菜单路径 **Settings → General** 逐段翻：**设置 → 通用**（Settings → General）。
 // 旧写法 **New Bot**（新建 bot）括号里的自译会被换掉。app 里查不到中文的标签不动。重复跑结果一样。
 //
@@ -31,19 +32,21 @@ const zhLabel = (label) => {
   return zh.every(Boolean) ? zh.join(" → ") : null;
 };
 const BOLD = new RegExp(`\\*\\*(${EN})\\*\\*(（[^）\\n]{1,24}）)?`, "g");
+const STRONG = new RegExp(`<strong>(${EN})</strong>(（[^）\\n]{1,24}）)?`, "g");
 
 const fixUnit = (unit, changes) => {
   const seen = new Set();
   for (const m of unit.matchAll(new RegExp(`\\*\\*([^*\\n]{1,40}?)\\*\\*（(${EN})）`, "g"))) if (zhLabel(m[2]) === m[1]) seen.add(m[2]);
-  return unit.split(/(```[\s\S]*?```)/).map((part, i) => i % 2 ? part : part.replace(BOLD, (all, label, paren) => {
+  const swap = (open, close) => (all, label) => {
     const zh = zhLabel(label);
     if (!zh || zh === label) return all;
     const first = !seen.has(label);
     seen.add(label);
-    const next = first ? `**${zh}**（${label}）` : `**${zh}**`;
+    const next = first ? `${open}${zh}${close}（${label}）` : `${open}${zh}${close}`;
     if (next !== all) changes.push(`${all} → ${next}`);
     return next;
-  })).join("");
+  };
+  return unit.split(/(```[\s\S]*?```)/).map((part, i) => i % 2 ? part : part.replace(BOLD, swap("**", "**")).replace(STRONG, swap("<strong>", "</strong>"))).join("");
 };
 
 const DATA = { "src/data/wiki.js": /(?=\n  \{\n)/, "src/data/faq.js": /(?=\n)/ };

@@ -84,19 +84,19 @@ Before each action, an automatic check called Auto Review runs. It is on by defa
 
 | You choose | This time | Similar actions later |
 | --- | --- | --- |
-| **Allow once** | It goes ahead | It asks again |
-| **Always allow** | It goes ahead | Saved as a rule, no asking |
+| **Allow once** | It goes ahead | No rule is saved |
+| **Always allow** | It goes ahead | Saved as a rule; similar actions run on their own |
 | **Deny** | It doesn't | Not raised until you write |
 
 <mark>If you can't tell what a card would do, don't approve it. Ask the bot to explain it plainly, or to make a draft first.</mark>
 
-It always stops in these cases:
+It stops to ask in these cases:
 
 - **You wrote an "ask first" rule.** Rules live in **Custom Rules** under **Settings → General**; choose **Ask first**. When both kinds of rule match, Ask first wins.
 - **It would send mail from its own address, and you didn't ask for that email in chat.** Mail written by a routine, for example, waits as a draft until you press **Send**.
-- **It would run a command on your own computer**, per the setting above.
+- **It would run a command on your own computer.** By default it asks every time; see the setting above.
 
-Auto Review counts only your own messages as requests. Text in an email or on a web page doesn't count. This lowers the risk but doesn't remove it. An approval covers what hasn't happened yet; it can't undo finished work.
+Auto Review counts only your own messages as requests. Text in an email or on a web page doesn't count. Auto Review is model-based, so don't treat it as your only safeguard. An approval covers what hasn't happened yet; it can't undo finished work.
 
 Set the boundary in your first message:
 

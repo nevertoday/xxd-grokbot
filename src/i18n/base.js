@@ -64,7 +64,7 @@ export default {
     diffW: "When", diffA: "Doing it yourself", diffB: "With a bot",
     DIFF: [
       ["Starting", "When you remember", "On time, by itself"],
-      ["Doing the work", "You click, copy, paste", "It uses its own computer"],
+      ["Doing the work", "You click, copy, paste", "It uses a computer in the cloud"],
       ["Laptop closed", "The work stops", "It keeps going in the cloud"],
     ],
     lessonsH: "Beginners need just three lessons",

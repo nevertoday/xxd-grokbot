@@ -61,7 +61,7 @@ import Q from "../../components/Q.astro";
 登录好的状态会留在电脑上，下次接着用，你所有的 bot 都能用。
 
 <Callout type="warn" title="指纹和面容在它的电脑上用不了">
-你笔记本或手机上的指纹、面容 ID、Windows Hello 和通行密钥，在它的电脑上用不了。公司应用用单点登录的，接管后换一种公司允许的方式。比如密码加验证码。在 Mac 和 Windows 上，也可以到 **设置 → 通用**（Settings → General） 的 **安全密钥**（Security Key） 下打开 **使用硬件安全密钥**（Use hardware security keys），用硬件安全密钥。
+你笔记本或手机上的指纹、面容 ID、Windows Hello 和通行密钥，在它的电脑上用不了。公司应用用单点登录的，接管后换一种公司允许的方式。比如密码加验证码。在 Mac 和 Windows 上，也可以用硬件安全密钥：到 **设置 → 通用**（Settings → General） 的 **安全密钥**（Security Key） 下，确认 **使用硬件安全密钥**（Use hardware security keys） 开着。这项在 Mac 和 Windows 上默认开着，Linux 暂不支持，每次用都要你先批准。
 </Callout>
 
 ## API 密钥用安全卡片
@@ -72,7 +72,7 @@ API 密钥这类东西，等 bot 发来 **secure secret card**（安全密钥卡
 
 ## 付款：想每笔都自己批，就别存卡
 
-<mark>存在 Vault 里的卡，结账时会直接填，不会每次问你。</mark>没有哪个设置能让它每笔都先问。想每笔都自己批：
+<mark>存在 Vault 里的卡，结账时会直接填，不会每次问你。</mark>没有哪个设置要求每次用卡都经你批准。（官方的 Vault 页另写到：通过订单卡买东西时，bot 在你点付款按钮之后才把卡号填进去。）想每笔都自己批：
 
 - **不存卡。** 结账时 bot 用安全表单要卡，别勾 **安全保存到 Bot 的保险库**。这张卡只在这段对话里用，它会在对话里请你确认准确的金额。
 - **已经存了就删掉。** 在 **设置 → 保险库** 里选中这张卡，点 **移除**（Remove）。

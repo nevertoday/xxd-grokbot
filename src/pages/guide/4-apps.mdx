@@ -3,7 +3,7 @@ layout: ../../layouts/Guide.astro
 step: 4
 need: 一个讲清了目标和做法的 bot（第 1 到 3 步）
 tldr: 连上它要用的应用，认识它的云端电脑，弄清哪些事它会先问你。
-description: 让 bot 连上它要用的应用；没有应用的网站，它用云端电脑去开；登录放进 Vault；看懂审批卡片上的 Allow once 和 Always allow。
+description: 让 bot 连上它要用的应用；没有应用的网站，它用云端电脑去开；登录放进 Vault；看懂审批卡片上的允许一次和始终允许。
 ---
 import Callout from "../../components/Callout.astro";
 import Checkpoint from "../../components/Checkpoint.astro";
@@ -80,23 +80,23 @@ Vault 里的密码和表单里填的值，直接填进网页，bot 看不到。
 
 ## 哪些事它会先问你
 
-它每要做一件事，都会先过一遍自动检查（Auto Review，默认开着）。大多数事直接做。要你点头的，它发一张<Term k="审批" />卡片，写明要做什么、用什么值。然后它停下来等你。
+它每要做一件事，都会先过一遍**自动审核**（Auto Review，默认开着）。大多数事直接做。要你点头的，它发一张<Term k="审批" />卡片，写明要做什么、用什么值。然后它停下来等你。
 
 | 你点 | 这一次 | 以后同类的事 |
 | --- | --- | --- |
-| **允许一次**（Allow once） | 去做 | 还会问你 |
-| **始终允许** | 去做 | 存成规则，不再问 |
+| **允许一次**（Allow once） | 去做 | 不存规则 |
+| **始终允许** | 去做 | 存成规则，同类的事自己做 |
 | **拒绝**（Deny） | 不做 | 你再发消息前不提 |
 
 <mark>看不懂的卡片先别批。让它用大白话讲一遍，或者先出个草稿。</mark>
 
-这些情况它一定会停下来：
+这些情况它会停下来问你：
 
 - **你写过「先问我」的规则。** 规则在 **设置 → 通用**（Settings → General） 的 **自定义规则**（Custom Rules）里，选 **先询问**（Ask first）。两种规则都对上时，「先问」优先。
 - **从它自己的邮箱发信，又不是你在聊天里要它发的。** 比如 routine 写的信，会存成草稿，等你点 **发送**（Send）。
-- **在你自己的电脑上跑命令**，按上一节的设置。
+- **在你自己的电脑上跑命令**，默认每次问，按上一节的设置。
 
-自动检查只把你自己发的消息当成要求，邮件、网页里写的话不算。这能降低风险，但不能消除。审批只管还没做的事，做完的不会撤回。
+自动审核只把你自己发的消息当成要求，邮件、网页里写的话不算。它靠模型判断，别当成唯一的防线。审批只管还没做的事，做完的不会撤回。
 
 给它定规矩，在第一句就说清楚边界：
 
@@ -109,10 +109,10 @@ Vault 里的密码和表单里填的值，直接填进网页，bot 看不到。
 ## 卡住了？
 
 <Q q="它说某个应用没连上。">
-<p>应用显示 <strong>Added</strong>（已添加）只说明装上了，不代表登录了。到 <strong>Connect apps</strong> 打开它，显示 <strong>Needs auth</strong> 或 <strong>Disconnected</strong> 的话，点 <strong>Authenticate</strong>。</p>
+<p>应用显示 <strong>已添加</strong>（Added）只说明装上了，不代表登录了。到 <strong>连接应用</strong> 打开它，显示 <strong>需要认证</strong>（Needs auth） 或 <strong>已断开连接</strong>（Disconnected） 的话，点 <strong>身份验证</strong>。</p>
 </Q>
 <Q q="登录页面关掉了，没登完。">
-<p>在应用上点 <strong>Reconnect</strong>，或在聊天卡片上点 <strong>Reopen</strong>，登录页会重新打开。大约 10 分钟内要登完，过了就从卡片重新来。</p>
+<p>在应用上点 <strong>重新连接</strong>（Reconnect），或在聊天卡片上点 <strong>重新打开</strong>（Reopen），登录页会重新打开。大约 10 分钟内要登完，过了就从卡片重新来。</p>
 </Q>
 <Q q="公司的 Google 账号说要管理员审核。">
 <p>页面写着 <strong>Your admin needs to review Grok</strong>，说明公司还没批准。请管理员在 Google 管理后台把 Grok 设为信任，再回来授权。换浏览器、重连都没用。步骤见<a href="https://docs.x.ai/grok-bot/computer-and-apps#if-google-says-an-admin-needs-to-review-grok">官方说明</a>。</p>
@@ -120,8 +120,8 @@ Vault 里的密码和表单里填的值，直接填进网页，bot 看不到。
 <Q q="网站老是让它重新登录。">
 <p>有的网站登录会很快过期。让它停下来通知你，别让它想办法绕过网站的检查。</p>
 </Q>
-<Q q="我点了 Always allow，后悔了。">
-<p>那条规则存在 <strong>Settings → General</strong> 的 <strong>Custom Rules</strong> 里。电脑上点规则旁边的删除按钮，就删掉了。</p>
+<Q q="我点了始终允许，后悔了。">
+<p>那条规则存在 <strong>设置 → 通用</strong> 的 <strong>自定义规则</strong> 里。电脑上点规则旁边的删除按钮，就删掉了。</p>
 </Q>
 
-<Checkpoint id="s4" items={["它要用的应用都在 <strong>Installed</strong> 下面", "我知道所有 bot 共用一台云端电脑，登录和文件都共用", "我分得清 <strong>Allow once</strong> 和 <strong>Always allow</strong>", "密码和银行卡放进 Vault，不贴进聊天", "发消息、付钱、删除这类事，我加了 <strong>Ask first</strong> 规则"]} />
+<Checkpoint id="s4" items={["它要用的应用都在 <strong>已安装</strong> 下面", "我知道所有 bot 共用一台云端电脑，登录和文件都共用", "我分得清 <strong>允许一次</strong> 和 <strong>始终允许</strong>", "密码和银行卡放进 Vault，不贴进聊天", "发消息、付钱、删除这类事，我加了 <strong>先询问</strong> 规则"]} />

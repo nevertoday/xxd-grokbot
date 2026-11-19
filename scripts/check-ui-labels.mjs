@@ -24,7 +24,7 @@ const walk = (dir) => readdirSync(dir).flatMap((f) => {
 
 const app = existsSync(ASAR) ? readFileSync(ASAR) : null;
 const catalog = loadCatalog(ASAR);
-const docs = existsSync(RAW) ? readdirSync(RAW).filter((f) => f.endsWith(".md")).map((f) => readFileSync(join(RAW, f), "utf8")).join("\n") : "";
+const docs = existsSync(RAW) ? readdirSync(RAW).filter((f) => f.endsWith(".md")).map((f) => readFileSync(join(RAW, f), "utf8")).join("\n").replace(/\s+/g, " ") : "";
 if (!app) console.log(`没找到 ${ASAR}，只对照官方文档副本`);
 if (!docs) console.log("没找到 docs/sources/raw/official/，先跑 node scripts/sync-docs.mjs");
 
