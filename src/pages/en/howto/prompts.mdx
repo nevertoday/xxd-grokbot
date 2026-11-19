@@ -1,6 +1,123 @@
 ---
 layout: ../../../layouts/HowTo.astro
 slug: prompts
+time: Look up as you go
+for: You want a prompt you can copy, tweak and send
+step: 1
+tldr: In the article's order, from setting the goal to running on its own, one prompt you can send for each step.
+description: The prompts from poteto's article, grouped by its sections. Start with the goal, the process, teach it how you think, let it improve itself, make it run on its own, install Dr Eggbot. Each one copies in one click, with a line on when to use it.
 ---
+import Term from "../../../components/Term.astro";
+import Q from "../../../components/Q.astro";
+import Copy from "../../../components/Copy.astro";
 
-This page is still being written.
+These prompts come from poteto's article [Automate Anything with Grok Bot](https://x.com/poteto/status/2123159537016533493). The first is quoted as written; the rest are in our own words. Replace what's in angle brackets with your own details, and Potato with your bot's name.
+
+## Start with the goal
+
+**Give it the goal and let it name itself**
+
+<Copy id="p-goal" code={`Hi Potato, this is the goal I want you to be responsible for: <goal>. Pick out a name and picture for yourself based on it.`} />
+
+Send this first, right after you make a new bot. Describe the result you want at the end. Filling in a form or sending an email is only a step.
+
+**Can't describe the goal? Let it interview you**
+
+<Copy id="p-interview" code="Hi Potato, I want you to own a goal, but I can't describe it well yet. Ask me questions and interview me until we land on a goal I'm happy with." />
+
+Use this when you only have a rough direction in mind.
+
+## The process
+
+**Tell it how you do it, have it restate, and hold off**
+
+<Copy id="p-process" code={`Potato, here's how I do this myself today: <your process>
+
+Think about how you could take this over from me completely. Before you start, restate my goal and process in plain words so I can correct and confirm them. Don't start doing the work yet. Let's get the process planned first.`} />
+
+Use it once the goal is set. Voice dictation works best: talk for a while without organizing your thoughts. In `<your process>`, cover the steps you take, what you watch out for, and the apps and tools you use. Add how you check the work, where your information comes from, and where feedback comes from.
+
+<mark>Have it restate first, and let it start only after you confirm.</mark> The first pass doesn't need to be right. Read its summary, correct it, and go a few rounds.
+
+**Summary right? Tell it to start**
+
+<Copy id="p-proceed" code="Good, go with this process. Go ahead and start by connecting the apps and tools you need for the job." />
+
+Send it once you're happy with its summary.
+
+**Check the process against the goal**
+
+<Copy id="p-review" code="Check our process against my original goal. If you see a better or simpler way to do it, tell me." />
+
+Use it when you want it to look for a better way.
+
+## Teach it how you think
+
+**Have it find what you left out**
+
+<Copy id="p-gaps" code="Potato, help me find what I haven't told you about this process yet. Ask how I make decisions, where my information comes from, how I check the work, and when you should come to me. One question at a time. Then walk me through a few examples so I can give feedback before we automate it." />
+
+Use it after you've explained the process and before it starts for real. The calls you make from experience come out here.
+
+**Test it on real examples**
+
+<Copy id="p-examples" code={`Here are a few real examples, including some that went wrong: <examples>. How would you handle each one? Walk me through it and I'll give you feedback.`} />
+
+You don't need to cover every case up front. Pick a few real ones, especially the ones you had to handle differently.
+
+## Let it improve itself
+
+**Have it look for feedback itself**
+
+<Copy id="p-feedback" code={`From now on, watch <reviews, inbox or social media> for customer feedback. When you see a problem, check that day's records to see what went wrong, then suggest how to improve the process.`} />
+
+Use it once it's doing the job. When it can see feedback on its own, it can propose improvements.
+
+**Have it build a small tool to log data**
+
+<Copy id="p-log-app" code="Build me a small app I can use on my computer and phone to log each customer visit: when they arrived, when they spoke to someone, when we took their keys, when work started and when it finished." />
+
+This is the author's car repair example, so swap in the moments that matter in your business. The more data it has, the better it can see where things go wrong.
+
+**Tie data together with one ID**
+
+<Copy id="p-ids" code={`I keep customer records in <app A> and <app B>. Check whether they can be matched with one ID, like an email or order number. List anything that doesn't match.`} />
+
+Use it when your data is spread across several apps. For why this matters, see [Consistent IDs](/en/wiki/ids/).
+
+## Make it run on its own
+
+**Start on a schedule**
+
+<Copy id="p-schedule" code="From now on, do this automatically every Monday at 9:00 AM without waiting for me. Once it's set up, tell me when it will run and in which time zone." />
+
+Set it up once the job runs reliably. Without a <Term k="routine" />, it only works when you ask.
+
+**Start when something happens**
+
+<Copy id="p-trigger" code={`From now on, whenever <a message like this> arrives in <this inbox or Slack channel>, start this job. Keep the trigger narrow, not every message.`} />
+
+Use it when the work starts with an email or a message.
+
+## Install Dr Eggbot
+
+**Have it design a team of bots**
+
+<Copy id="p-eggbot" code={`I want to automate <this job or my business>. Ask me a few questions, then design some bots for me, one job each.`} />
+
+First add it to your Grok Bot from [Dr Eggbot's page](https://x.ai/bot/marketplace/bots/dr-eggbot-v2), then send it this.
+
+## Stuck?
+
+<Q q="It started working before I confirmed.">
+Send "Stop now." Then ask it to restate the goal and process and wait for you. When you hand over new work, end the prompt with "Don't start yet."
+</Q>
+<Q q="Its summary is wrong.">
+That's normal. Point out what's wrong, add what it's missing, and ask it to restate again. A few rounds usually does it.
+</Q>
+<Q q="Can I send these prompts in another language?">
+Yes. Bots reply in the language you write to them in.
+</Q>
+<Q q="I can't think of a name for it.">
+Call it Potato. Once the goal is set, use the first prompt to have it name itself.
+</Q>
