@@ -1,76 +1,76 @@
 ---
 layout: ../../../layouts/Lesson.astro
-tldr: "Automating isn't the hard part. Knowing what you actually want is. This lesson does one thing: it puts that into one sentence."
+tldr: "Автоматизировать не трудно. Трудно понять, чего вы на самом деле хотите. Этот урок делает одно: укладывает это в одно предложение."
 lesson: 1
 ---
 import Callout from "../../../components/Callout.astro";
 import Term from "../../../components/Term.astro";
 import Q from "../../../components/Q.astro";
 
-The first time a lot of people open Grok Bot, they start with "send this email for me" or "fill in this form for me." It will, of course. But once it's done, next time you have to ask again and keep an eye on it again. Used like that, it's just an errand runner.
+Многие, впервые открыв Grok Bot, начинают с «отправь за меня это письмо» или «заполни за меня эту форму». Он, конечно, сделает. Но в следующий раз придётся снова просить и снова за ним присматривать. Если пользоваться им так, он у вас просто на побегушках.
 
-The author, poteto, builds Grok Bot at SpaceX. At the start of a [long article](https://x.com/poteto/status/2123159537016533493), the author makes a plain point: automation is really a way of thinking, and anyone can learn it. It has just two parts, a goal and a process.
+Автор, poteto, делает Grok Bot в SpaceX. В начале [длинной статьи](https://x.com/poteto/status/2123159537016533493) автор говорит простую вещь: автоматизация на самом деле способ думать, и научиться ему может каждый. У неё всего две части: цель и процесс.
 
-## An apple pie says it all
+## Всё объясняет яблочный пирог
 
-Think about baking an apple pie. What you want is the pie, and that's the goal. Buying apples, making the dough, putting it together, baking it and letting it cool are the process. Changing a flat tire works the same way. What you want is a wheel you can drive on again. Jacking up the car, taking the old tire off and putting the new one on are only the process.
+Представьте, что вы печёте яблочный пирог. Вам нужен пирог, это и есть цель. Купить яблоки, замесить тесто, собрать пирог, испечь его и дать остыть — это процесс. С проколотым колесом то же самое. Вам нужно колесо, на котором снова можно ехать. А поднять машину домкратом, снять старое колесо и поставить новое — всего лишь процесс.
 
-The goal is what you want at the end, and the process is how you get there. Automation means handing the process to a machine, so all you ask for is the result.
+Цель — то, что вы хотите получить в конце, а процесс — то, как вы к этому приходите. Автоматизировать значит отдать процесс машине, чтобы самому просить только результат.
 
-Grok Bot can take a lot of process off your hands, because a <Term k="bot" /> there has a computer in the cloud. It can click around, open apps and look things up online, so most of what you can do on a computer, it can do too. That leaves you just one thing to think through:
+Grok Bot может снять с вас много процесса, потому что у <Term k="bot" text="бота" /> там есть компьютер в облаке. Он умеет кликать, открывать приложения и искать в интернете, так что почти всё, что вы делаете на компьютере, может и он. Вам остаётся продумать только одно:
 
-<mark><strong>Before you hand anything to a bot, get clear on the result you want.</strong></mark>
+<mark><strong>Прежде чем что-то поручать боту, поймите, какой результат вам нужен.</strong></mark>
 
-## Why "send an email" isn't enough
+## Почему «отправь письмо» мало
 
-Because sending an email is only one step in the process. The author says the most common mistake is taking the process for the goal.
+Потому что отправить письмо — лишь один шаг процесса. По словам автора, самая частая ошибка в том, чтобы принять процесс за цель.
 
-If all you say is "send an email," all the bot does is send an email. But tell it what the email is actually for, say, getting every new customer's booking scheduled, and it can work from that goal: where the information comes from, what counts as done, which steps it could skip. The author also says not to get too attached to the way you do it now. The bot may find an easier way.
+Если сказать только «отправь письмо», бот только письмо и отправит. Но объясните ему, зачем это письмо на самом деле, например чтобы у каждого нового клиента была назначена запись, и он сможет исходить из цели: откуда берутся сведения, что считать готовым, какие шаги можно пропустить. Ещё автор советует не держаться слишком крепко за то, как вы делаете это сейчас. Возможно, бот найдёт способ проще.
 
-## Now write your sentence
+## Теперь напишите своё предложение
 
-Get a sheet of paper, or open the notes app on your phone. Think of something you do on a computer every few days. In one sentence, write the result you really want, then add the other half: what it's for.
+Возьмите лист бумаги или откройте заметки в телефоне. Вспомните дело, которое вы делаете на компьютере раз в несколько дней. Одним предложением напишите, какой результат вам на самом деле нужен, а потом допишите вторую половину: зачем.
 
-For the weekly meeting slides, you could write:
+Для еженедельных слайдов к планёрке можно написать так:
 
-> I want everyone to have slides that show this week's progress before Monday's meeting, so that we spend less of the meeting reading numbers aloud and more of it making decisions.
+> Я хочу к каждой понедельничной планёрке готовые слайды с итогами недели для всех, чтобы на встрече мы меньше зачитывали цифры вслух и больше принимали решения.
 
-Read it back. If your sentence is about an action like fill in, send, copy or click, it's still just a step. Ask yourself what doing that is for, and put the answer in. If you can't think of the second half, think about what the job does for your work, whether it brings in money or saves money. Or just ask a colleague.
+Перечитайте. Если в предложении стоит действие вроде «заполнить», «отправить», «скопировать» или «нажать», это всё ещё только шаг. Спросите себя, зачем вы это делаете, и впишите ответ. Если вторая половина не придумывается, подумайте, что это дело даёт вашей работе: приносит деньги или экономит их. Или просто спросите коллегу.
 
-If no job comes to mind, the author gives these examples in the article. Pick the one most like yours: saving toward a car or a house, booking customers for a small business, giving customers an experience good enough that they leave good reviews, hiring for a small business, collecting feedback on a product, preparing slides for a weekly meeting, building new features for a product.
+Если никакое дело не приходит в голову, вот примеры, которые автор приводит в статье. Выберите самый похожий на ваш: накопить на машину или дом, записывать клиентов в небольшом бизнесе, дать клиентам такой хороший опыт, чтобы они оставляли хорошие отзывы, нанимать людей в небольшой бизнес, собирать отзывы о продукте, готовить слайды к еженедельной планёрке, делать новые функции для продукта.
 
-## Two things you'll need for the next lesson
+## Две вещи, которые понадобятся в следующем уроке
 
-A computer. Mac, Windows and Linux all work, and you install the Grok Bot desktop app on it first. And a plan that includes Grok Bot. On The X Subscription, Premium, Super and Ultra include it, and Plus doesn't. For details, see the official [Grok Bot on The X Subscription](https://docs.x.ai/x-subscription/grok-bot).
+Компьютер. Подойдут Mac, Windows и Linux, и сначала на него ставится настольное приложение Grok Bot. И тариф, в который входит Grok Bot. В The X Subscription он есть в Premium, Super и Ultra, а в Plus его нет. Подробности в официальной статье [Grok Bot on The X Subscription](https://docs.x.ai/x-subscription/grok-bot).
 
-<Callout type="tip" title="Three lessons are enough">
-Once you have this sentence, the rest follows. In lesson 2 you install Grok Bot, make a bot and hand it this sentence. In lesson 3 you tell it how you usually do the job and let it do it once, and when it gets it right, you have it do the job on a schedule by itself. After these three lessons you can put it to work. Everything else on the site is there to look up when you need it.
+<Callout type="tip" title="Трёх уроков достаточно">
+Когда это предложение у вас есть, остальное пойдёт само. Во втором уроке вы установите Grok Bot, создадите бота и передадите ему это предложение. В третьем расскажете, как обычно делаете эту работу, и дадите ему сделать её один раз, а когда получится, он будет делать её сам по расписанию. После этих трёх уроков вы уже сможете поручить ему работу. Всё остальное на сайте можно посмотреть, когда понадобится.
 </Callout>
 
-## If something's off
+## Если что-то не так
 
-<Q q="I've thought about it, and I can't come up with a goal.">
+<Q q="Сколько ни думаю, цель не получается сформулировать.">
 
-Then leave it blank for now and go straight to lesson 2. Once your bot exists, you can have it interview you, one question at a time, until the goal is clear. The message for that is in lesson 2, under "[If something's off](/ru/start/2-first-bot/#interview)."
-
-</Q>
-<Q q="I have several jobs I want to hand off.">
-
-Pick one first. A bot looks after one job, so everything it remembers is about that job, and you only explain it once. Give each of the other jobs its own bot later.
+Тогда пока оставьте её пустой и сразу переходите ко второму уроку. Когда бот появится, он сможет расспросить вас, по одному вопросу за раз, пока цель не станет ясной. Сообщение для этого есть во втором уроке, в разделе «[Если что-то не так](/ru/start/2-first-bot/#interview)».
 
 </Q>
-<Q q="I have Grok on my phone. Is that it?">
+<Q q="Я хочу передать несколько дел.">
 
-No. Grok is an app for chatting. Grok Bot is a different app that you install separately, and lesson 2 walks you through it.
-
-</Q>
-<Q q="I'm not sure my plan includes it.">
-
-On The X Subscription, Premium, Super and Ultra do, and Plus doesn't. Older paid Cursor individual plans and self-serve Cursor Teams include it too, and on one of those older Cursor accounts you can link a SuperGrok or X Premium+ subscription. If you're still unsure, see the official [pricing answer](https://docs.x.ai/grok-bot/faq#how-much-does-grok-bot-cost).
+Сначала выберите одно. Бот ведёт одно дело, поэтому всё, что он помнит, касается этого дела, и объяснять вам нужно только один раз. Для каждого из остальных дел потом заведите своего бота.
 
 </Q>
-<Q q="I only have a phone, no computer.">
+<Q q="У меня в телефоне есть Grok. Это оно?">
 
-These three lessons use the desktop app on a computer. The phone app (iPhone or Android) goes alongside it. Sign in there with the same account, and you can keep chatting with the same bots and approve what they want to do.
+Нет. Grok — приложение для общения. Grok Bot — другое приложение, его ставят отдельно, и второй урок проведёт вас через установку.
+
+</Q>
+<Q q="Не знаю, входит ли он в мой тариф.">
+
+В The X Subscription он есть в Premium, Super и Ultra, а в Plus его нет. Ещё он входит в старые платные индивидуальные тарифы Cursor и в Cursor Teams, оформленные самостоятельно, а к такому старому аккаунту Cursor можно привязать подписку SuperGrok или X Premium+. Если всё ещё сомневаетесь, загляните в официальный [ответ о цене](https://docs.x.ai/grok-bot/faq#how-much-does-grok-bot-cost).
+
+</Q>
+<Q q="У меня только телефон, компьютера нет.">
+
+В этих трёх уроках нужно настольное приложение на компьютере. Приложение для телефона (iPhone или Android) работает в паре с ним. Войдите там в тот же аккаунт, и вы сможете продолжать переписку с теми же ботами и одобрять то, что они собираются сделать.
 
 </Q>
