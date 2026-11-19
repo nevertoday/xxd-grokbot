@@ -50,7 +50,16 @@ node scripts/check-i18n.mjs
 
 ## 同步
 
-TODO：写一个同步脚本，重新抓官方文档到 `docs/sources/raw/official/`，列出和上次相比改了哪些页，再对照本站用到的地方。
+官方文档会变。每隔一阵、或者 Grok Bot 出新版以后：
+
+```bash
+node scripts/sync-docs.mjs          # 重新抓官方文档，列出新增、删除、改动的页，更新 docs/sources/official.json
+node scripts/check-ui-labels.mjs    # 页面里加粗的英文界面名，到本机装的 Grok Bot 和官方文档里找
+```
+
+- `sync-docs` 列出的改动页，对照 `docs/sources/README.md` 的「和本站的对应」表，改掉本站用到的地方，再提交 `official.json`。只想看有没有变：加 `--check`（有变化时退出码 1）。
+- `check-ui-labels` 分三档：app 里有；只在官方文档里（照文档写，在 `docs/sources/ui-notes.md` 记一笔待核对）；两边都没有（改掉或删掉）。它默认读 `/Applications/Grok Bot.app`，没装就只对照文档。
+- 当前核对到：官方文档 2026-11-19，Grok Bot 桌面版 1.0.3。
 
 ## 写作规矩
 
