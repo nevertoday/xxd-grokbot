@@ -1,6 +1,87 @@
 ---
 layout: ../../../layouts/Guide.astro
 step: 2
+need: "The bot you gave a goal in step 1"
+tldr: "Tell it how you do the work in one go, have it restate it, correct it a few times, then let it start."
+description: "Explain your process: say it all out loud with dictation, cover six things, have the bot restate it before it starts, correct it over a few rounds, then let it start and ask it to look for a better way."
 ---
+import Checkpoint from "../../../components/Checkpoint.astro";
+import Copy from "../../../components/Copy.astro";
+import Term from "../../../components/Term.astro";
+import Q from "../../../components/Q.astro";
 
-This page is still being written.
+## Say it all out loud first
+
+Think about it: if you did this work yourself, how would you do it?
+
+The best way to tell the bot is out loud. In the composer, choose **Start voice input** or press `Cmd/Ctrl+D`, then talk for a while. Say things as they come to you. You don't need to organize them first. On your phone, use **Start dictation**.
+
+When you stop, your words sit in the composer as text. Read them, fix what you want, and send. See [Dictate a message](https://docs.x.ai/grok-bot/chat-and-collaboration#dictate-a-message) in the official docs.
+
+## Cover these six things
+
+In [the article](https://x.com/poteto/status/2123159537016533493), poteto lists what to tell it:
+
+- **The steps you usually take.** What you do first, and what comes next.
+- **What you watch out for.** Where things go wrong, and what you keep an eye on.
+- **The apps and tools you use.** Your email, a spreadsheet, a booking system.
+- **How you check the work.** How you make sure it was done right.
+- **Where the information comes from.** Email, Slack or Teams, a ticket, an app, or a website.
+- **Where the feedback comes from.** Customer reviews, or what colleagues tell you.
+
+## Have it restate the plan before it starts
+
+Put what you said into this message and send it:
+
+<Copy id="process" title="Swap in your own process" code={`Potato, this is how I usually do this myself: <your process>
+
+Think about how you could take this over from me completely. Before you begin, restate my goal and process in simple words, so I can give you feedback and confirm it. Don't start doing the work yet. Let's get the process planned first.`} />
+
+The last part matters most. Asking it to restate shows you what it understood. Telling it not to start yet keeps it planning instead of acting.
+
+If you want it to follow your process exactly, say so too. For example, "Do it exactly my way, in this order."
+
+## Read its restatement and correct it
+
+<mark><strong>You don't have to get it right the first time. Read its restatement, fill in what's wrong, and go a few rounds.</strong></mark>
+
+- **Fix one thing at a time.** If your note is about one reply, reply to that message and say it there.
+- **Name the lasting ones.** If something should hold every time, tell it "from now on, always do it this way."
+
+Once you're happy with it, tell it to start:
+
+<Copy id="proceed" code="That looks right. Go ahead with this plan. Start by connecting the apps and tools this job needs." />
+
+When an action needs your OK, it shows you an <Term k="审批" /> card and waits. [Step 4](/en/guide/4-apps/) covers connecting apps and signing in to sites.
+
+## Step in while it works
+
+- **Changed your mind?** Send a new message. Your message takes priority and can redirect the work in progress.
+- **Need it to stop?** Send "Stop now." Actions it already finished are not undone.
+
+See [Redirect work in progress](https://docs.x.ai/grok-bot/chat-and-collaboration#redirect-work-in-progress).
+
+## Have it check the process against the goal
+
+Once the process is set, ask it to look back for a better way:
+
+<Copy id="review" code="Check our process against my original goal. If you see a way to make it better or simpler, tell me." />
+
+This is what [step 1](/en/guide/1-goal/) meant: the process can change, the goal stays.
+
+## Stuck?
+
+<Q q="I can't find voice input.">
+<p>On desktop, click into the composer, then press <code>Cmd/Ctrl+D</code>. You can also hold the keys while you talk. On your phone, use <strong>Start dictation</strong>. If it says microphone access was denied, allow it in your system settings.</p>
+</Q>
+<Q q="I'd rather just call it.">
+<p>With the composer empty, choose <strong>Start voice chat</strong>, the waveform button. After you hang up, the chat has a card for the call. Open it to read the full transcript.</p>
+</Q>
+<Q q="It started without waiting for me.">
+<p>Send "Stop now." Then send the prompt above again, and check that it still says not to start the work yet.</p>
+</Q>
+<Q q="I rambled, and its restatement rambles too.">
+<p>Correct one thing per round. You can also ask it to restate the six things above one at a time.</p>
+</Q>
+
+<Checkpoint id="s2" items={["I told it how I do the work and covered all six things", "It restated the goal and process before doing anything", "I corrected it at least once and let it start only when I was happy"]} />
