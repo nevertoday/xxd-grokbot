@@ -149,7 +149,7 @@ Cloudflare Workers 静态资源，配置在 `wrangler.jsonc`。更新：`npm run
 
 ## README 插画和分享大图
 
-TODO：分享大图还没有。xxd-pstack 的 `og.png` / `og-en.png` 写的是 pstack，没有带过来。做好以后放 `public/og.png`（中文页用）和 `public/og-en.png`（英文页用），1280×640；`Site.astro` 看到文件在才输出 `og:image`。README 插画和分享图可以照 xxd-pstack 的 `tools/build_assets.py` 生成，再用 Chrome 转成 PNG（命令见 xxd-pstack 的 `docs/MAINTAINING.md`）。
+分享大图：`python3 tools/build_og.py` 生成 `assets/social.svg`、`assets/en/social.svg`，再用 Chrome 转成 `public/og.png`（中文页用）和 `public/og-en.png`（英文页用），1280×640。改了文字重跑一次，看一眼两张图有没有字顶到边。GitHub 仓库的 Social preview 用英文那张，要在仓库 Settings → General 手动上传。
 
 本站标志（`Site.astro` 里的 `site-mark` 和 `public/favicon.svg`）是一张极简的 bot 脸：两只方眼睛、一道嘴。故意不像 Grok Bot 官方的图标，本站是非官方的。
 
