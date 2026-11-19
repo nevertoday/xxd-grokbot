@@ -51,7 +51,8 @@
   .site-mark__bar { fill: var(--on-ink); }
   .site-menu, .site-brand { flex: none; }
   .site-top__spacer { flex: 1; }
-  .site-tools { display: flex; flex: none; align-items: center; gap: var(--space-2); }
+  /* 间隔 6px：十种语言里最长的名字（Português）在目录栏里也能放下，不被省略 */
+  .site-tools { display: flex; flex: none; align-items: center; gap: 6px; }
   /* 图标按钮不被挤窄：挤窄了图标就离开对齐线，触屏上也小于 44px 的点按区。放不下时只有语言名收成省略号（标签才省略，设计原则 §6） */
   .site-tools > :not(.site-lang) { flex-shrink: 0; }
   .site-lang { min-width: 0; }
@@ -544,7 +545,7 @@
 
 /* ---------- 多语言：语言菜单、从右往左的语言（以后加阿拉伯语这类语言时用） ---------- */
 @layer site {
-  .site-lang { gap: 6px; }
+  .site-lang { gap: 4px; }
   .site-lang__name { font-size: var(--text-sm); }
   .site-lang-menu { min-width: 160px; }
   @media (max-width: 820px) {

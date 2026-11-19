@@ -40,6 +40,7 @@ export default {
     hintOther: "بالإنجليزية",
     section: "قسم",
     // {docs}、{article} 和 {github} 会换成链接
+    docsLink: "docs.x.ai",
     foot: "دليل غير رسمي إلى Grok Bot، لا علاقة له بـ xAI ولا بـ Cursor. المرجع الأول في الميزات وطريقة العمل هو التوثيق الرسمي ({docs}). ويسير المسار الرئيسي مع مقال poteto {article}. الملفات المصدرية لهذا الدليل والملاحظات عليه موجودة على {github}.",
     // 顶栏「外观」面板（UI Kit 的外观设置组）
     appearance: {

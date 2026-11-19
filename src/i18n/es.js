@@ -38,6 +38,7 @@ export default {
     hintOther: "En inglés",
     section: "Sección",
     // {docs}、{article} 和 {github} 会换成链接（{docs} 的链接文字是英文的 docs）
+    docsLink: "docs.x.ai",
     foot: "Una guía no oficial de Grok Bot, sin relación con xAI ni con Cursor. Para funciones y comportamiento, la referencia es la documentación oficial ({docs}). El camino principal sigue el artículo {article}, de poteto. El código de esta guía y los comentarios están en {github}.",
     // 顶栏「外观」面板（UI Kit 的外观设置组）
     appearance: {

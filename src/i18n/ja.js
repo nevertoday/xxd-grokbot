@@ -40,6 +40,7 @@ export default {
     hintOther: "英語",
     section: "セクション",
     // {docs}、{article} 和 {github} 会换成链接
+    docsLink: "ドキュメント",
     foot: "Grok Bot の非公式ガイドで、xAI とも Cursor とも関係ありません。機能や動作については、公式の {docs} が正です。メインの流れは poteto の記事 {article} に沿っています。このガイドのソースとご意見は {github} へ。",
     // 顶栏「外观」面板（UI Kit 的外观设置组）
     appearance: {

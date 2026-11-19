@@ -40,7 +40,7 @@ const en = fl === "en";
 const L = x
   ? { ...UI.en, ...x.ui, html: info.html,
       repos: UI.en.repos.map((r, i) => [r[0], x.ui.repos?.[i]?.[0] ?? r[1], r[2], x.ui.repos?.[i]?.[1] ?? r[3]]),
-      foot: fmt(x.ui.foot, { docs: `<a href="${DOCS}">docs</a>`, article: `<a href="${ARTICLE}">Automate Anything with Grok Bot</a>`, github: `<a href="${REPO}">GitHub</a>` }) }
+      foot: fmt(x.ui.foot, { docs: `<a href="${DOCS}">${x.ui.docsLink}</a>`, article: `<a href="${ARTICLE}">Automate Anything with Grok Bot</a>`, github: `<a href="${REPO}">GitHub</a>` }) }
   : UI[lang];
 // 语言菜单：每种语言里的同一页；那种语言没有这一页就去它的首页
 const langLinks = LANGS.map((l) => ({ ...l, href: langHref(Astro.url.pathname, l.code) }));
