@@ -10,7 +10,7 @@ SpaceX で Grok Bot を作っている poteto が、bot に仕事を任せる方
 
 **[レッスン 1 から始める →](https://grokbot.xiaoxiaodong.ai/ja/start/1-goal/)**　·　**[もう使っている方へ：完全ガイド（英語）→](https://grokbot.xiaoxiaodong.ai/en/guide/0-what/)**
 
-<sub>非公式 · 無料 · オープンソース · 中国語と英語（入門コースは日本語でも読めます）</sub>
+<sub>非公式 · 無料 · オープンソース · 10 言語</sub>
 
 </div>
 

@@ -10,7 +10,7 @@ poteto, who builds Grok Bot at SpaceX, wrote a long post on handing work to bots
 
 **[Start with lesson 1 →](https://grokbot.xiaoxiaodong.ai/en/start/1-goal/)**　·　**[Already using it? The full guide →](https://grokbot.xiaoxiaodong.ai/en/guide/0-what/)**
 
-<sub>Unofficial · free · open source · English and Chinese</sub>
+<sub>Unofficial · free · open source · 10 languages</sub>
 
 </div>
 
@@ -70,7 +70,7 @@ Swap the middle line for your own job. To walk it through how you do the work, s
 
 ## Where this comes from
 
-The guide follows [poteto](https://x.com/poteto)'s post [Automate Anything with Grok Bot](https://x.com/poteto/status/2123159537016533493). The author builds Grok Bot at SpaceX, previously worked at Cursor, and is on the React Compiler core team. Every feature, button and plan is checked against the [official Grok Bot docs](https://docs.x.ai/grok-bot); button names on the Chinese pages match the app's Chinese interface.
+The guide follows [poteto](https://x.com/poteto)'s post [Automate Anything with Grok Bot](https://x.com/poteto/status/2123159537016533493). The author builds Grok Bot at SpaceX, previously worked at Cursor, and is on the React Compiler core team. Every feature, button and plan is checked against the [official Grok Bot docs](https://docs.x.ai/grok-bot); on every language's pages, button names match the app's interface in that language.
 
 This is an unofficial guide with no connection to xAI, SpaceX or Cursor, and it doesn't speak for them. Grok Bot is a trademark of its owner. Features and plans change, so the official docs are the reference.
 

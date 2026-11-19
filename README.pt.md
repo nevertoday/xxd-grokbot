@@ -10,7 +10,7 @@ poteto, que desenvolve o Grok Bot na SpaceX, escreveu um artigo longo sobre como
 
 **[Comece pela lição 1 →](https://grokbot.xiaoxiaodong.ai/pt/start/1-goal/)**　·　**[Já usa? O guia completo (em inglês) →](https://grokbot.xiaoxiaodong.ai/en/guide/0-what/)**
 
-<sub>Não oficial · gratuito · código aberto · guia completo em inglês e chinês</sub>
+<sub>Não oficial · gratuito · código aberto · 10 idiomas</sub>
 
 </div>
 
