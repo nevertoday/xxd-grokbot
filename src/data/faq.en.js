@@ -3,7 +3,7 @@
 export const FAQ_EN = [
   { id: "site", title: "About this site", items: [
     ["Is this an official Grok Bot site?", "No. It's an unofficial guide with no ties to xAI or Cursor, so for features and how things work, go by the [official docs](https://docs.x.ai/grok-bot)."],
-    ["Where does all this come from?", "The main path follows poteto's article [Automate Anything with Grok Bot](https://x.com/poteto/status/2123159537016533493), and the details go by the official docs. We've rewritten everything in our own words and linked the source each time."],
+    ["Where does all this come from?", "The main path follows poteto's article [Automate Anything with Grok Bot](https://x.com/poteto/status/2123159537016533493), and the details go by the official docs. We've rewritten everything in our own words and link to the source where we can."],
   ]},
   { id: "before", title: "Before you start", items: [
     ["Does my plan include Grok Bot?", "On The X Subscription, **Premium**, **Super** and **Ultra** include it, and **Plus** and Free don't. Legacy paid Cursor individual plans and self-serve Cursor Teams include it too, and a legacy Cursor account can also link SuperGrok, SuperGrok Plus, SuperGrok Heavy or X Premium+. There's no separate Grok Bot subscription to buy. See [Plans and how usage works](/en/howto/plans-usage/)."],

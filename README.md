@@ -6,7 +6,7 @@
 
 ### 如何爽用 Grok Bot：思路决定出路
 
-在 SpaceX 做 Grok Bot 的工程师 poteto 写过一篇长文，讲自己怎么把事情交给 bot。<br>这个教程把它讲成三节课，你跟着做一遍，就有一个每周替你干活的 bot。
+在 SpaceX 做 Grok Bot 的 poteto 写过一篇长文，讲自己怎么把事情交给 bot。<br>这个教程把它讲成三节课，你跟着做一遍，就有一个每周替你干活的 bot。
 
 **[从第 1 课开始 →](https://grokbot.xiaoxiaodong.ai/start/1-goal/)**　·　**[已经在用了，看完整教程 →](https://grokbot.xiaoxiaodong.ai/guide/0-what/)**
 

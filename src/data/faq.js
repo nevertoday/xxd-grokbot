@@ -4,7 +4,7 @@
 export const FAQ = [
   { id: "site", title: "关于本站", items: [
     ["这个网站是 Grok Bot 官方的吗？", "不是。这是一个非官方的学习站，和 xAI、Cursor 都没有关系，功能和用法都以[官方文档](https://docs.x.ai/grok-bot)为准。"],
-    ["你们写的这些，是从哪来的？", "主线跟着 poteto 的文章 [Automate Anything with Grok Bot](https://x.com/poteto/status/2123159537016533493) 走，细节以官方文档为准。所有内容我们都用自己的话重新写过，每处都附了原文链接。"],
+    ["你们写的这些，是从哪来的？", "主线跟着 poteto 的文章 [Automate Anything with Grok Bot](https://x.com/poteto/status/2123159537016533493) 走，细节以官方文档为准。所有内容我们都用自己的话重新写过，并尽量附上原文链接。"],
   ]},
   { id: "before", title: "上手之前", items: [
     ["我的套餐能用 Grok Bot 吗？", "The X Subscription 的 **Premium**、**Super**、**Ultra** 都包含它，**Plus** 和免费版不包含。以前的 Cursor 付费个人套餐、自助开通的 Cursor Teams 也能用，旧的 Cursor 账号还能绑定 SuperGrok、SuperGrok Plus、SuperGrok Heavy 或 X Premium+。不用另外再买 Grok Bot 的订阅，详细的看[套餐和用量怎么算](/howto/plans-usage/)。"],

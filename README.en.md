@@ -6,7 +6,7 @@
 
 ### Get the most out of Grok Bot. It starts with how you think.
 
-poteto, an engineer who builds Grok Bot at SpaceX, wrote a long post on handing work to bots.<br>This guide turns it into three short lessons. Follow along once, and you'll have a bot doing a job for you every week.
+poteto, who builds Grok Bot at SpaceX, wrote a long post on handing work to bots.<br>This guide turns it into three short lessons. Follow along once, and you'll have a bot doing a job for you every week.
 
 **[Start with lesson 1 →](https://grokbot.xiaoxiaodong.ai/en/start/1-goal/)**　·　**[Already using it? The full guide →](https://grokbot.xiaoxiaodong.ai/en/guide/0-what/)**
 

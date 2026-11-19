@@ -57,6 +57,7 @@ node scripts/sync-docs.mjs          # 重新抓官方文档，列出新增、删
 node scripts/check-ui-labels.mjs    # 页面里加粗的界面名，到本机装的 Grok Bot 和官方文档里找
 node scripts/zh-labels.mjs          # 中文页里漏写成英文的按钮名，换成 app 的中文（--dry 先看）
 npm run check                       # 构建以后：多语言检查 + 整站检查（<mark>、站内链接和锚点、示意标题、占位字）
+node scripts/check-doc-links.mjs    # 联网查官方文档链接打得开、#锚点在线上页面里真的有（锚点别从本地 .md 标题猜）
 node scripts/app-labels.mjs "New Bot"  # 查一个英文标签在 app 里的简体中文写法
 ```
 

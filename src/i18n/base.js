@@ -74,7 +74,7 @@ export default {
     YES: ["You have a job you repeat on a computer and want to hand off", "You have Premium, Super or Ultra on The X Subscription", "You can explain in plain words how you do the job"],
     NO: ["You're on Plus, which doesn't include Grok Bot", "You don't have a computer, since you install the desktop app on one first", "You only want to ask a question, and a regular AI chat is enough for that"],
     devH: "Once you're comfortable",
-    devP: "The full guide goes deeper, following poteto's article. Here are its four ideas, one line each:",
+    devP: "The full guide goes deeper, following poteto's article. Here are four of its ideas, one line each:",
     // 完整教程目前只有英文和中文
     devNote: "The full guide is in English (and Chinese) for now.",
     // FLOW：每个是 [标题, 说明]，图标和顺序固定
