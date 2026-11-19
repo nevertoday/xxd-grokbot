@@ -1,6 +1,6 @@
 ---
 layout: ../../../layouts/Lesson.astro
-tldr: "One bot, one job. In this lesson you install Grok Bot, make a bot called Potato and hand it the sentence you wrote in lesson 1."
+tldr: "Un bot, une tâche. Dans cette leçon, vous installez Grok Bot, vous créez un bot appelé Potato et vous lui confiez la phrase écrite dans la leçon 1."
 lesson: 2
 ---
 import Callout from "../../../components/Callout.astro";
@@ -9,118 +9,118 @@ import Copy from "../../../components/Copy.astro";
 import Reply from "../../../components/Reply.astro";
 import Q from "../../../components/Q.astro";
 
-You already have the sentence you wrote in lesson 1. In this lesson you hand it over: you install Grok Bot, make a <Term k="bot" /> just for this job, and send it that sentence.
+Vous avez déjà la phrase écrite dans la leçon 1. Dans cette leçon, vous la transmettez : vous installez Grok Bot, vous créez un <Term k="bot" text="bot" /> rien que pour cette tâche, et vous lui envoyez cette phrase.
 
-Why a bot just for this job? Think about how you'd brief a new colleague. You wouldn't say "from now on, everything's yours." You'd say: this job is yours, and here's what it's for. A bot works the same way. When it looks after one job, everything it remembers is about that job, and you only have to explain it once. So this whole lesson comes down to one thing:
+Pourquoi un bot rien que pour cette tâche ? Pensez à la façon dont vous mettriez au courant quelqu'un qui arrive dans l'équipe. Vous ne lui diriez pas « à partir de maintenant, tout est à vous ». Vous lui diriez plutôt que cette tâche est la sienne, et à quoi elle sert. Un bot, c'est pareil. Quand il s'occupe d'une seule tâche, tout ce qu'il retient porte sur elle, et vous n'avez à l'expliquer qu'une fois. Toute cette leçon revient donc à une seule chose :
 
-<mark><strong>Make a bot just for this job, and tell it the goal in your very first message.</strong></mark>
+<mark><strong>Créez un bot rien que pour cette tâche, et donnez-lui l'objectif dès votre tout premier message.</strong></mark>
 
-<Callout type="tip" title="Write to it in your own language">
-Button names below are written exactly as they appear in the app. When you talk to your bot, use whatever language you like. If you write to it in a language, it answers in that language.
+<Callout type="tip" title="Les boutons suivent la langue de votre ordinateur">
+Si votre système est en français, les boutons de Grok Bot sont en français. Les noms de boutons ci-dessous sont écrits comme dans l'interface française, avec l'anglais entre parenthèses : si votre interface est en anglais, cherchez ce qui est entre parenthèses. Pour parler à votre bot, écrivez en français. Si vous lui écrivez en français, il vous répond en français.
 </Callout>
 
-## Step 1: Download and open Grok Bot
+## Étape 1 : télécharger et ouvrir Grok Bot
 
-In your browser, open [x.ai/bot](https://x.ai/bot), download the version for your computer, install it and open it. You'll see the Grok Bot welcome screen, with **Sign in** on it.
+Dans votre navigateur, ouvrez [x.ai/bot](https://x.ai/bot), téléchargez la version pour votre ordinateur, installez-la et ouvrez-la. Vous voyez l'écran d'accueil de Grok Bot, avec un bouton **Se connecter** (Sign in).
 
-## Step 2: Sign in
+## Étape 2 : se connecter
 
-Choose **Sign in**. A sign-in page opens in your browser, and you just follow the steps there. It may show the Grok or xAI logo, and that's expected. Grok Bot has no account of its own. It uses your Cursor account, so if you have more than one, pick the one with a plan that includes Grok Bot.
+Cliquez sur **Se connecter**. Une page de connexion s'ouvre dans votre navigateur, et il suffit de suivre les étapes. Elle peut afficher le logo de Grok ou de xAI, et c'est normal. Grok Bot n'a pas de compte à lui. Il utilise votre compte Cursor, donc si vous en avez plusieurs, prenez celui dont l'abonnement inclut Grok Bot.
 
 <Callout type="ok">
-The browser says you're signed in.
+Le navigateur confirme la connexion.
 </Callout>
 
-Now go back to Grok Bot. If it doesn't come back to the front by itself, switch to it yourself.
+Revenez maintenant dans Grok Bot. Si sa fenêtre ne repasse pas au premier plan toute seule, allez-y vous-même.
 
-## Step 3: Wait while it gets ready
+## Étape 3 : attendre qu'il soit prêt
 
-The first time you sign in, it has to set up the <Term k="云端电脑" /> that your bots share, which can take a few minutes. Keep the window open and let it finish.
+À la première connexion, il doit préparer l'<Term k="云端电脑" text="ordinateur dans le cloud" /> que vos bots partagent, ce qui peut prendre quelques minutes. Laissez la fenêtre ouverte et laissez-le finir.
 
 <Callout type="ok">
-First `Setting up your Grok Bot…`, then a short intro. Then a bot called **Grok Bot** appears in the sidebar, with a chat with it open.
+D'abord `Configuration de votre Grok Bot…` (Setting up your Grok Bot…), puis une courte présentation. Ensuite, un bot appelé **Grok Bot** apparaît dans la barre latérale, et une conversation avec lui s'ouvre.
 </Callout>
 
-The app made that bot called Grok Bot for you. Leave it alone for now. In the next step you make a separate bot for your job.
+Ce bot appelé Grok Bot, c'est l'application qui l'a créé pour vous. Laissez-le de côté pour l'instant. À l'étape suivante, vous créez un bot à part pour votre tâche.
 
-## Step 4: Make a bot called Potato
+## Étape 4 : créer un bot appelé Potato
 
-1. Choose the **+** at the top of the sidebar. That's **New Bot**, and its shortcut is `Cmd+N` (`Ctrl+N` on Windows and Linux).
-2. In **Create New Bot**, type `Potato` as the name.
-3. Pick any shape and color for its picture.
-4. Choose **Create**.
+1. Cliquez sur le **+** en haut de la barre latérale. C'est **Nouveau Bot** (New Bot), et son raccourci est `Cmd+N` (`Ctrl+N` sous Windows et Linux).
+2. Dans **Créer un nouveau Bot** (Create New Bot), tapez `Potato` comme nom.
+3. Choisissez la forme et la couleur que vous voulez pour son image.
+4. Cliquez sur **Créer** (Create).
 
 <Callout type="ok">
-**Potato** is now in the sidebar, with a chat with it open.
+**Potato** est maintenant dans la barre latérale, et une conversation avec lui est ouverte.
 </Callout>
 
-Why Potato? Because the author says that if you can't think of a name, call it Potato, and once it has heard the goal, let it name itself after it. That's what the next step does.
+Pourquoi Potato (« pomme de terre » en anglais) ? Parce que poteto conseille, quand on ne trouve pas de nom, de l'appeler Potato, puis, une fois qu'il connaît l'objectif, de le laisser se choisir un nom qui va avec. C'est justement ce que fait l'étape suivante.
 
-## Step 5: Hand it your goal
+## Étape 5 : lui confier votre objectif
 
-Copy the message below and paste it into the message box. Replace the "I want …, so that …" line with the sentence you wrote in lesson 1, then send it.
+Copiez le message ci-dessous et collez-le dans la zone de saisie. Remplacez la ligne « Je veux …, pour que … » par la phrase écrite dans la leçon 1, puis envoyez-le.
 
-<Copy id="goal" title="Copy, replace the middle line with your goal, then send" code={`Hi Potato, here's the goal I want you to be responsible for. Please remember it:
-I want …, so that …
-Based on this goal, choose a name and a picture for yourself.`} />
+<Copy id="goal" title="Copiez, remplacez la ligne du milieu par votre objectif, puis envoyez" code={`Bonjour Potato, voici l'objectif que je veux te confier. Retiens-le, s'il te plaît :
+Je veux …, pour que …
+À partir de cet objectif, choisis-toi un nom et une image.`} />
 
-<Reply title="Illustration: roughly what its reply looks like" code={`Got it. The goal I'm responsible for: before Monday's meeting,
-everyone has slides that show this week's progress,
-so that you spend less of the meeting reading numbers aloud
-and more of it making decisions.
+<Reply title="Illustration : à quoi ressemble à peu près sa réponse" code={`C'est noté. L'objectif dont je m'occupe : avant la réunion du lundi,
+tout le monde a des diapos qui montrent l'avancée de la semaine,
+pour que vous passiez moins de temps à lire des chiffres à voix haute
+et plus de temps à prendre des décisions.
 
-I'd like to be called "Monday," since Monday's meeting is mine to prepare.
-For my picture, I'd pick an open slide deck.`} />
+J'aimerais m'appeler « Lundi », puisque la réunion du lundi, c'est moi qui la prépare.
+Comme image, je prendrais une présentation ouverte.`} />
 
-Read its reply. First check that the goal it wrote down matches yours, and if it doesn't, just type a correction, like "Not Monday, Wednesday." Then look at the name it picked. If you like it, keep it. If the sidebar still says Potato, change it yourself as shown under "If something's off" below.
+Lisez sa réponse. Vérifiez d'abord que l'objectif qu'il a noté correspond au vôtre, et sinon, tapez simplement une correction, comme « Pas lundi, mercredi. » Regardez ensuite le nom qu'il a choisi. Si ce nom vous plaît, gardez-le. Si la barre latérale affiche toujours Potato, changez-le vous-même comme indiqué plus bas, dans « Si quelque chose cloche ».
 
-You now have a bot that does only this job, and it remembers what the job is for. In the next lesson, you tell it how you usually do it.
+Vous avez maintenant un bot qui ne s'occupe que de cette tâche, et qui se souvient de ce à quoi elle sert. Dans la leçon suivante, vous lui expliquez comment vous la faites d'habitude.
 
-## If something's off
+## Si quelque chose cloche
 
-<Q id="interview" q="I couldn't write a goal in lesson 1.">
+<Q id="interview" q="Je n'ai pas réussi à écrire d'objectif dans la leçon 1.">
 
-Then let Potato help. Send it this, and it interviews you, one question at a time:
+Alors laissez Potato vous aider. Envoyez-lui ceci, et il vous interviewera, une question à la fois :
 
-<Copy id="interview-me" code={`Hi Potato, I want you to be responsible for a goal, but I'm not sure how to put it into words. Could you interview me, one question at a time, until we have a goal I'm happy with?`} />
+<Copy id="interview-me" code={`Bonjour Potato, je veux te confier un objectif, mais je ne sais pas trop comment le formuler. Tu peux m'interviewer, une question à la fois, jusqu'à ce qu'on ait un objectif qui me convienne ?`} />
 
-Once the goal is settled, send the message from step 5.
-
-</Q>
-<Q q="I signed in in the browser, but Grok Bot is still on the welcome screen.">
-
-Check that the browser says you're signed in, then switch back to the Grok Bot window yourself. If it's still on the welcome screen, choose **Sign in** again. If that doesn't work, see the official [sign-in troubleshooting](https://docs.x.ai/grok-bot/troubleshooting#sign-in-does-not-complete).
+Une fois l'objectif fixé, envoyez le message de l'étape 5.
 
 </Q>
-<Q q="After signing in, it says I don't have access, or asks me to subscribe.">
+<Q q="La connexion a marché dans le navigateur, mais Grok Bot reste sur l'écran d'accueil.">
 
-That means your account doesn't have a plan that includes Grok Bot yet. You need Premium, Super or Ultra on The X Subscription. Plus doesn't include it.
-
-Some accounts see **Start Trial** here. The trial is a usage credit with a 7-day window, and it never turns into a paid plan.
+Vérifiez que le navigateur confirme bien la connexion, puis revenez vous-même dans la fenêtre de Grok Bot. S'il reste sur l'écran d'accueil, cliquez de nouveau sur **Se connecter**. Si ça ne marche toujours pas, voyez l'aide officielle [quand la connexion n'aboutit pas](https://docs.x.ai/grok-bot/troubleshooting#sign-in-does-not-complete).
 
 </Q>
-<Q q="It's been on Setting up your Grok Bot… for several minutes.">
+<Q q="Après la connexion, il me dit que je n'ai pas accès, ou me demande de m'abonner.">
 
-The first setup does take a few minutes. If the progress is still changing, keep the window open and keep waiting. If it stops changing or shows an error, see the official [computer cannot be reached](https://docs.x.ai/grok-bot/troubleshooting#the-computer-cannot-be-reached).
+Cela veut dire que votre compte n'a pas encore d'abonnement qui inclut Grok Bot. Il vous faut Premium, Super ou Ultra sur The X Subscription. Plus ne l'inclut pas.
 
-</Q>
-<Q q="Choosing + opens a menu.">
-
-That means you're on a team, so **+** opens a menu first. Choose **Create a Bot**, and the rest is the same.
+Certains comptes voient ici **Commencer l’essai** (Start Trial). L'essai est un crédit d'utilisation valable 7 jours, et il ne se transforme jamais en abonnement payant.
 
 </Q>
-<Q q="It picked a new name, but the sidebar still says Potato.">
+<Q q="Ça reste sur « Configuration de votre Grok Bot… » depuis plusieurs minutes.">
 
-Then change it yourself:
-
-1. Click the bot's name at the top of the chat to open its details.
-2. Click the name again, type the new name and press Enter.
-
-To change the picture, click the picture in its details and open the **Generate** tab. Describe the picture you want, choose **Generate**, then choose **Set avatar**.
+La première configuration prend vraiment quelques minutes. Si la progression bouge encore, laissez la fenêtre ouverte et continuez d'attendre. Si elle ne bouge plus ou affiche une erreur, voyez l'aide officielle [quand l'ordinateur est injoignable](https://docs.x.ai/grok-bot/troubleshooting#the-computer-cannot-be-reached).
 
 </Q>
-<Q q="It answers in a language I don't want.">
+<Q q="Quand je clique sur +, un menu s'ouvre.">
 
-Reply: "From now on, always answer me in English. Please remember this."
+Cela veut dire que vous faites partie d'une équipe, donc **+** ouvre d'abord un menu. Choisissez **Créer un Bot** (Create a Bot), et la suite est identique.
+
+</Q>
+<Q q="Il a choisi un nouveau nom, mais la barre latérale affiche toujours Potato.">
+
+Alors changez-le vous-même :
+
+1. Cliquez sur le nom du bot en haut de la conversation pour ouvrir ses détails.
+2. Cliquez de nouveau sur le nom, tapez le nouveau nom et appuyez sur Entrée.
+
+Pour changer l'image, cliquez sur l'image dans ses détails et ouvrez l'onglet **Générer** (Generate). Décrivez l'image que vous voulez, cliquez sur **Générer**, puis sur **Définir l’avatar** (Set avatar).
+
+</Q>
+<Q q="Il me répond en anglais.">
+
+Répondez-lui : « À partir de maintenant, réponds-moi toujours en français. Retiens-le, s'il te plaît. »
 
 </Q>
