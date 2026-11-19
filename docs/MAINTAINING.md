@@ -11,7 +11,13 @@
   - 正文：`src/pages/en/start/`、`src/pages/en/guide/`、`src/pages/en/howto/`（MDX，路径多一层 `../`；站内链接加 `/en`；`<Term k="中文键" />` 照原样，英文名在 `nav.js` 的 `GLOSSARY[k].en`）。
   - 数据：`nav.js` 各条目的 `en: {}`；`wiki.en.js`、`faq.en.js`（按 slug 叠加，结构和条数要和中文一致）；界面文字在各组件和 `views/` 里的 zh / en 两份。
   - 强调：每页最多一处 `<mark>`（这页最要紧的一句），`<u>` 只给照做会失败的坑；英文页放在对应的那句上。
-- v1 只有中英文；以后加语言照 xxd-pstack 的做法（`nav.js` 的 `LANGS`、`src/i18n/<语言>.js`、`src/pages/<语言>/start/`，改完跑 `node scripts/check-i18n.mjs`）。
+- **另外 8 种语言（日、韩、西、葡、法、德、俄、阿）**：网站只有首页和新手入门三课，其余页面链到英文版。
+  - 语言清单在 `nav.js` 的 `LANGS`；界面文字、首页、三课的标题在 `src/i18n/<语言>.js`，结构照 `src/i18n/base.js`（英文底稿，也是缺键时的兜底）。
+  - 三课正文在 `src/pages/<语言>/start/`，照英文版翻、对照中文版的意思；三课之间的链接指向本语言，其他站内链接指向 `/en/`。
+  - 按钮名照 app 在那种语言里的写法：`node scripts/app-labels.mjs --lang ja "New Bot"`，加粗写 app 的字，第一次出现括号里给英文。`check-ui-labels` 会按页面语言查。
+  - 改了中文 / 英文的新手入门或首页，同一次提交里把这 8 种也改了；改完跑 `node scripts/check-i18n.mjs`（查键、占位、编译、复制块 id、链接）。翻译的要求见 `docs/TRANSLATE.md`。
+  - 阿拉伯语从右往左：样式里的左右用逻辑属性，代码和命令保持从左往右。
+- README 有 10 种语言（`README.md` 中文，`README.<语言>.md` 其他），非中文版用 `assets/en/` 的英文配图。改 README 时 10 种一起改。
 
 ```bash
 npm install

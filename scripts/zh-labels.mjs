@@ -19,9 +19,12 @@ if (!catalog) {
   process.exit(1);
 }
 
+import { LANGS } from "../src/data/nav.js";
+// 只改中文页：跳过 /en/ 和其他语言的目录（它们的按钮名照各自语言的界面写）
+const OTHER = new Set(LANGS.map((l) => l.code).filter((c) => c !== "zh"));
 const walk = (dir) => readdirSync(dir).flatMap((f) => {
   const p = join(dir, f);
-  if (statSync(p).isDirectory()) return f === "en" ? [] : walk(p);
+  if (statSync(p).isDirectory()) return dir.endsWith("src/pages") && OTHER.has(f) ? [] : walk(p);
   return p.endsWith(".mdx") ? [p] : [];
 });
 
