@@ -77,7 +77,7 @@ export const HOWTO = [
   { group: "工作", en: { group: "Work" }, items: [
     { slug: "meeting-recap", title: "开完会出纪要和待办", en: { title: "Meeting recaps and follow-ups" } },
     { slug: "weekly-slides", title: "每周的汇报幻灯片", en: { title: "Weekly report slides" } },
-    { slug: "sales-leads", title: "找销售线索、跟进客户", en: { title: "Find and follow up sales leads" } },
+    { slug: "sales-leads", title: "筛选新线索、跟进客户", en: { title: "Screen new leads and follow up" } },
     { slug: "bug-repro", title: "复现用户报的 bug", en: { title: "Reproduce bugs users report" } },
   ]},
   { group: "安全和花费", en: { group: "Safety and cost" }, items: [

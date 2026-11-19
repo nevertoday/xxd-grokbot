@@ -16,4 +16,6 @@
 
 ## 待核对
 
-官方文档里写了、但 app 1.0.3 的消息表里按原文查不到的标签：Run history、Add to Grok Bot、Settings → Vault 这条路径。写的时候照文档，以后 app 更新再查。
+官方文档里写了、但 app 1.0.3 的消息表里按原文查不到的标签（`node scripts/check-ui-labels.mjs` 的「只在官方文档里」那一档）。页面上照文档写英文，中文页括号里给中文意思；以后 app 更新再查：
+
+Accepting legal terms、Add to Grok Bot、Bot's accounts、Deleting or overwriting data、Import from CSV…、Publishing content、Run history、Save securely、Sending messages or invitations、Settings → Computer → Your computer、Settings → Computer、Settings → Usage & Billing、Settings → Vault、Start dictation、Training opt-out、Weekly SuperGrok Limit、secure secret card
