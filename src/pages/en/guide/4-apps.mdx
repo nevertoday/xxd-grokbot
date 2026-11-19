@@ -1,6 +1,127 @@
 ---
 layout: ../../../layouts/Guide.astro
 step: 4
+need: A bot that knows your goal and process (steps 1 to 3)
+tldr: Connect the apps it needs, meet its cloud computer, and learn what it asks you about first.
+description: Have your bot connect the apps it needs, use its cloud computer for sites with no app, keep logins in Vault, and read approval cards, including Allow once versus Always allow.
 ---
+import Callout from "../../../components/Callout.astro";
+import Checkpoint from "../../../components/Checkpoint.astro";
+import Term from "../../../components/Term.astro";
+import Copy from "../../../components/Copy.astro";
+import Q from "../../../components/Q.astro";
 
-This page is still being written.
+## Have it connect the apps itself
+
+Once the process is planned, the author lets the bot start and [connect the apps and tools it needs](https://x.com/poteto/status/2123159537016533493).
+
+<Copy id="connect" code="Potato, based on the process we agreed on, list the apps you'll need and connect them one at a time. When one needs me to sign in, send me the connect card." />
+
+<Callout type="ok">
+A **Connect** card shows up in the chat. Open it and finish **Authorize** or **Authenticate** in your browser. From your next message, the bot can use that app.
+</Callout>
+
+An app connected this way is a <Term k="连接的应用" />. It is more reliable than clicking through the website.
+
+- **You can connect one yourself.** Open **Connect apps** in the sidebar, find the app, add it, and sign in. It then shows under **Installed**.
+- **Pick the app for this task.** Type `@` in the message box and choose it.
+- **It can only do what your account already can.** It can't raise your access or change sharing.
+- **Every bot can use it.** A connected app belongs to your account, not to one bot.
+
+See the official page on [connecting an app](https://docs.x.ai/grok-bot/computer-and-apps#connect-an-app).
+
+## No app for that site? It uses its own computer
+
+For a site with no app, the bot opens it in a browser on its <Term k="云端电脑" />. That computer has a browser, a command line and files. It keeps working after you close your laptop.
+
+To watch, click the computer preview on the right of the conversation. You see its clicks, typing and page changes.
+
+All the bots on your account share this one computer:
+
+- **Sign-ins are shared.** When one bot signs in to a site, the others are signed in too.
+- **Files are shared.** Every bot sees the files. Keep lasting ones in `/workspace`.
+- **Each bot has its own screen.** Several bots can use a browser at the same time.
+
+<u>If a login or file is meant for one bot only, keep it off this computer.</u> Separate bots are not a security boundary.
+
+See the official page [Use the computer and apps](https://docs.x.ai/grok-bot/computer-and-apps).
+
+## Your own computer: it asks every time by default
+
+The cloud computer is separate from the Mac or Windows machine in front of you. A bot runs commands on your machine only if you allow it.
+
+The setting is **Execution on this computer**, under **Settings → Computer → Your computer**. It has three choices:
+
+- **Ask every time**: the default.
+- **Always allow**: it stops asking.
+- **Never allow**: the docs recommend this unless a bot has a specific reason to touch your local files.
+
+The first time a bot wants to run a command on your machine, the chat asks you. Choosing **Always allow** or **Never** there applies to every bot. See [control access to your local computer](https://docs.x.ai/grok-bot/approvals-security-and-privacy#control-access-to-your-local-computer).
+
+## Logins go in Vault, never in chat
+
+<Term k="Vault" /> holds your logins, cards and contact info. Manage it in **Settings → Vault**.
+
+To sign in to a site, a bot looks in this order:
+
+1. A login saved in **Vault**.
+2. A connected password manager, such as 1Password.
+3. If neither has it, a **Secure Form** that asks you.
+
+Passwords from Vault and values from the form go straight into the page. The bot never sees them.
+
+Some steps no form can do, like single sign-on, a passkey, a CAPTCHA or a bank card check. The bot hands you the computer. Choose **Take over**, do that one step, choose **I'm done**, then tell it to continue.
+
+<Callout type="warn" title="Cards saved in Vault">
+They fill in at checkout without asking you each time. In chats in the app, a bot can also see a saved card's number and security code. To approve every payment yourself, don't save the card: leave **Securely save to Bot's vault** unchecked on the form.
+</Callout>
+
+<u>Never type a password, one-time code or API key into the chat.</u> For an API key, wait for the secure card. To save or remove items, see [logins and cards go in Vault](/en/howto/vault-logins/). The official page is [Vault and secure sign-in](https://docs.x.ai/grok-bot/vault).
+
+## What it asks you about first
+
+Before each action, an automatic check called Auto Review runs. It is on by default. Most actions go ahead. When one needs your OK, the bot shows an <Term k="审批" /> card with the action and its values, then waits.
+
+| You choose | This time | Similar actions later |
+| --- | --- | --- |
+| **Allow once** | It goes ahead | It asks again |
+| **Always allow** | It goes ahead | Saved as a rule, no asking |
+| **Deny** | It doesn't | Not raised until you write |
+
+<mark>If you can't tell what a card would do, don't approve it. Ask the bot to explain it plainly, or to make a draft first.</mark>
+
+It always stops in these cases:
+
+- **You wrote an "ask first" rule.** Rules live in **Custom Rules** under **Settings → General**; choose **Ask first**. When both kinds of rule match, Ask first wins.
+- **It would send mail from its own address, and you didn't ask for that email in chat.** Mail written by a routine, for example, waits as a draft until you press **Send**.
+- **It would run a command on your own computer**, per the setting above.
+
+Auto Review counts only your own messages as requests. Text in an email or on a web page doesn't count. This lowers the risk but doesn't remove it. An approval covers what hasn't happened yet; it can't undo finished work.
+
+Set the boundary in your first message:
+
+<Copy id="boundary" code="Remember this rule: before you send a message, publish anything, pay, delete anything, or change permissions, show me what you'll do and the new values, and wait for my OK." />
+
+Then add an **Ask first** rule in **Custom Rules**. Memory alone isn't enough; an **Ask first** rule always stops a matching action. Keep each rule to one action, like "Ask first before sending any external email."
+
+For more examples, see [what it asks you first: approvals and privacy](/en/howto/approvals-privacy/). The official page is [Approvals, security, and privacy](https://docs.x.ai/grok-bot/approvals-security-and-privacy).
+
+## Stuck?
+
+<Q q="It says an app isn't connected.">
+<p><strong>Added</strong> only means the app is installed, not that you're signed in. Open it in <strong>Connect apps</strong>. If it shows <strong>Needs auth</strong> or <strong>Disconnected</strong>, choose <strong>Authenticate</strong>.</p>
+</Q>
+<Q q="I closed the sign-in page before finishing.">
+<p>Choose <strong>Reconnect</strong> on the app, or <strong>Reopen</strong> on the chat card, to bring the page back. Finish within about 10 minutes, or start again from the card.</p>
+</Q>
+<Q q="My work Google account says an admin needs to review it.">
+<p>If the page says <strong>Your admin needs to review Grok</strong>, your company hasn't approved it yet. Ask your admin to trust Grok in the Google Admin console, then authorize again. Switching browsers or reconnecting won't help. The steps are on the <a href="https://docs.x.ai/grok-bot/computer-and-apps#if-google-says-an-admin-needs-to-review-grok">official page</a>.</p>
+</Q>
+<Q q="A site keeps asking it to sign in again.">
+<p>Some sites expire sessions quickly. Ask the bot to pause and tell you, rather than try to get around the site's check.</p>
+</Q>
+<Q q="I chose Always allow and regret it.">
+<p>That rule is in <strong>Custom Rules</strong> under <strong>Settings → General</strong>. On desktop, use the delete button next to the rule.</p>
+</Q>
+
+<Checkpoint id="s4" items={["Every app it needs is under <strong>Installed</strong>", "I know all my bots share one cloud computer, with shared sign-ins and files", "I can tell <strong>Allow once</strong> from <strong>Always allow</strong>", "Passwords and cards go in Vault, never in chat", "I added <strong>Ask first</strong> rules for sending, paying and deleting"]} />

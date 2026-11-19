@@ -1,6 +1,96 @@
 ---
 layout: ../../layouts/Guide.astro
 step: 7
+need: 一两个已经能自己干活的 bot
+tldr: 大目标拆给几个 bot，各管一份、互相交接；不会拆就找 Dr Eggbot。
+description: 一个 bot 只管一份活；大目标拆给几个 bot，由主 bot 替你张罗；分享给同事用模板或 Team Bot；最后装上作者教出来的 Dr Eggbot，让它帮你设计 bot。
 ---
+import Callout from "../../components/Callout.astro";
+import Checkpoint from "../../components/Checkpoint.astro";
+import Term from "../../components/Term.astro";
+import Copy from "../../components/Copy.astro";
+import Q from "../../components/Q.astro";
 
-这一页还在写。
+## 一个 bot 只管一份活
+
+大多数 bot 只管一件事时做得最好。它会为这件事攒下记忆，你讲一次就够了。
+
+新的事先交给你的<Term k="主 bot" />。同一类事反复出现，还有自己的数据来源、规矩或时间表？那就给它单独建一个 bot。
+
+<Copy id="newbot" code="「每日预约确认」这件事老是找你做，它有自己的应用、规矩和时间表。帮我建一个只管这件事的 bot，用它的活来起名字。把我们定好的做法和规矩告诉它。建之前，先说说你打算怎么分工。" />
+
+你的 bot 也会自己建议新建一个。想让名单短一点，就让它建之前先问你。官方说明见[主 bot 和只管一件事的 bot](https://docs.x.ai/grok-bot/how-grok-bot-works#your-primary-bot-and-bots-with-one-job)。
+
+## 大目标拆给几个 bot
+
+有的目标不止一份活，比如一次产品发布，或者月底对账。让主 bot 搭几个 bot，每个负责一部分。它们一个接一个往下传，你检查最后的结果。
+
+<Copy id="team" code="我想每月 1 号把账对完。帮我搭三个 bot，每个只管一部分：一个把财务邮箱里的发票和采购单对上；一个把报销单和收据对上；一个列出所有对不上的，交给我签字。先说说怎么分、谁交给谁，我确认了再建。不要批准或支付任何款项。" />
+
+<mark>每个 bot 只管一份活，每一段只有一个负责的 bot。</mark>两个 bot 同时接同一段，会重复干活，消息也乱。
+
+bot 之间怎么交接：
+
+- **直接发消息。** 一个 bot 给另一个发消息，对方醒来处理，过后回复。你在对话里看得到这次交接。
+- **拉一个群聊。** 点 **New chat**，在 **To:** 里加 2 到 6 个 bot。开头就分好谁做哪一步：
+
+<Copy id="group" code="@调研员 收集资料，每个说法都附上链接。@写手 把结果写成发布草稿。@审稿员 对照资料检查草稿，只列出必须改的问题。什么都不要发布。" />
+
+每条 bot 的回复都算用量，群里的回复和 bot 之间的消息也算。bot 越少，回复越少。这几个 bot 还共用一台电脑和同一个 Vault。分开不等于隔开，见[第 4 步](/guide/4-apps/)。
+
+官方说明见[一队 bot 完成大目标](https://docs.x.ai/grok-bot/use-cases#build-a-team-of-bots-for-a-bigger-goal)和[让 bot 互相交接](https://docs.x.ai/grok-bot/chat-and-collaboration)。
+
+## 你只管找主 bot
+
+主 bot 是你的总入口，侧边栏里带星号的那个。它会主动来问你，也会把活分给别的 bot。
+
+你把一件事交给主 bot，它可以转给专管这件事的 bot。这样你不用记哪件事归谁。
+
+- **还没有主 bot：** 会看到 **Introducing your primary Bot**，选 **Create primary Bot** 新建，或 **Choose an existing Bot** 挑一个。
+- **想换一个：** 右键点主 bot，选 **Replace with different Bot**。
+
+## 分享给同事
+
+有两种分法：
+
+| | 分享模板 | <Term k="team bot" text="Team Bot" /> |
+| --- | --- | --- |
+| 对方拿到 | 自己的一份副本 | 和你同一个 bot |
+| 你加的应用和密钥 | 拿不到 | 能用 |
+
+**分享模板。** 打开 bot 的详情，点 **Share**，再点 **Create a copy**。它在聊天里做好模板，你点 **Publish**（发布），再点 **Copy link**（复制链接）。对方打开链接，选 **Add to Grok Bot** 就加上了。对方拿不到你的电脑、登录和聊天记录。
+
+<u>公开的模板链接，拿到的人都能打开。他们看得到 bot 的名字、介绍、技能和 routine。分享前删掉 API key、内部网址和顾客数据。</u>
+
+**Team Bot。** 要 Team 或 Enterprise 套餐，团队里至少还有一个人。大家用同一个 bot，共用它的应用、密钥、技能和文件。每个人的聊天，别人看不到。在你自己的聊天里，它要用你的应用会先发 **Allow** 卡片问你。官方说明见 [Team Bot](https://docs.x.ai/grok-bot/team-bots)。
+
+## Dr Eggbot：帮你设计 bot 的 bot
+
+作者把自己会的自动化方法都教给了 <Term k="Dr Eggbot" />。它是设计 bot 的 bot，会帮你做出高质量的 bot。原文见 [Install Dr Eggbot](https://x.com/poteto/status/2123159537016533493) 一节。想同时搭好几个 bot，官方文档也建议从它开始。
+
+打开它的[市场页面](https://x.ai/bot/marketplace/bots/dr-eggbot-v2)，选 **Import Bot**，就加了一份你自己的。
+
+<Copy id="eggbot" code="Dr Eggbot，我想把这个目标交给几个 bot：<你的目标>。我平时是这样做的：<你的做法>。先一次一个地问我问题。然后用简单的话告诉我，你打算建哪几个 bot，每个管什么、不管什么。我确认了再建。" />
+
+<Callout type="ok">
+它先问你几个问题，再列出要建的 bot。每个只管一件事。
+</Callout>
+
+按市场页面上的介绍，它建的 bot 一个只管一份活，还写明不做什么。比如负责起草的 bot 不负责发出去。
+
+## 卡住了？
+
+<Q q="几个 bot 在做同一件事。">
+<p>每一段只留一个负责的。跟它们说：「不要给别的 bot 发消息，先问我。」想一直这样，让每个 bot 都记住这条。</p>
+</Q>
+<Q q="bot 太多了，侧边栏很乱。">
+<p>用 <strong>Hide from sidebar</strong>（从侧边栏隐藏）。它的记录还在，routine 照样跑。删除会抹掉它的对话、记忆和 routine，不能撤销。</p>
+</Q>
+<Q q="我没有 Team 套餐，能把 bot 给同事吗？">
+<p>能，分享模板。同事拿到一份自己的副本，拿不到你的电脑、登录和聊天记录。</p>
+</Q>
+<Q q="我想让某个登录只给一个 bot 用。">
+<p>做不到。你所有的 bot 共用一台电脑和同一个 Vault。用不着的网站就登出，敏感的文件用完就删。</p>
+</Q>
+
+<Checkpoint id="s7" items={["每个 bot 只管一份活，名字就是它的活", "每一段交接只有一个负责的 bot", "我知道主 bot 会替我把活转给别的 bot", "分享之前，我删掉了密钥、内部网址和顾客数据", "我装了 Dr Eggbot，让它先问我问题、讲清分工再建"]} />
