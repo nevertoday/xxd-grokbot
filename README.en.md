@@ -4,19 +4,13 @@
 
 [中文](./README.md) · **English**
 
-### Getting the most out of Grok Bot starts with how you think.
+### Get the most out of Grok Bot. It starts with how you think.
 
-A free, unofficial guide to handing the work you keep repeating to [Grok Bot](https://x.ai/bot), in plain words.<br>It follows the article [Automate Anything with Grok Bot](https://x.com/poteto/status/2123159537016533493) by poteto, who builds Grok Bot at SpaceX, and every fact is checked against the official docs.
+poteto, an engineer who builds Grok Bot at SpaceX, wrote a long post on handing work to bots.<br>This guide turns it into three short lessons. Follow along once, and you'll have a bot doing a job for you every week.
 
-**[New to it: 3 beginner lessons →](https://grokbot.xiaoxiaodong.ai/en/start/1-goal/)**　·　**[Already using it: the 8-step guide →](https://grokbot.xiaoxiaodong.ai/en/guide/0-what/)**
+**[Start with lesson 1 →](https://grokbot.xiaoxiaodong.ai/en/start/1-goal/)**　·　**[Already using it? The full guide →](https://grokbot.xiaoxiaodong.ai/en/guide/0-what/)**
 
 <sub>Unofficial · free · open source · English and Chinese</sub>
-
-![Beginner lessons](https://img.shields.io/badge/Beginner_lessons-3-8A9A8C?style=flat-square)
-![Guide](https://img.shields.io/badge/Guide-8_steps-8A9A8C?style=flat-square)
-![How-to](https://img.shields.io/badge/How--to-15_guides-C9A97A?style=flat-square)
-![Wiki](https://img.shields.io/badge/Wiki-17_entries-9AA8C4?style=flat-square)
-![FAQ](https://img.shields.io/badge/FAQ-15-9AA8C4?style=flat-square)
 
 </div>
 
@@ -24,51 +18,63 @@ A free, unofficial guide to handing the work you keep repeating to [Grok Bot](ht
   <img src="assets/en/hero.svg" width="100%" alt="Demo: you hand Potato a goal, it restates it before starting, you add one rule, it sets a Friday routine and hands back the finished slides. The four steps light up on the left: start with the goal, tell it your process, teach how you judge, let it run on its own">
 </p>
 
-## 😵 Why learn this
+## You've probably tried this already
 
-A bot in Grok Bot has a computer in the cloud. It can browse, click, connect to the apps you use, and start work on a schedule. So the hard part usually isn't whether it can do the job. It's whether you can explain the job well enough to hand it over.
+You installed Grok Bot, asked it to look something up or draft a few lines, and it did fine. Then Friday came, and you were still digging through email, copying numbers and building the slides yourself.
 
-The author, poteto, opens the article by saying automation can be surprisingly hard to get right, even for people who do it every day. And yet it's really a way of thinking that anyone can learn. You get clear on the goal first, then work out the process. This guide turns that way of thinking into steps you can follow.
+The bot isn't the problem. A chat AI hands you a reply and leaves the rest to you. A bot in Grok Bot has a computer in the cloud: it can open apps, browse, sort files and start on a schedule, so it can actually finish the job. The missing piece is knowing how to hand the job over.
 
-## ✨ How this guide helps
+<p align="center">
+  <img src="assets/en/readme/chat-vs-bot.svg" width="100%" alt="Left: you ask a chat AI to turn this week's progress into slides, and it replies with an outline; the rest is still on you. Right: your Grok Bot checks things off: reads this week's email and chat, checks numbers against the sheet, saves the slides to the shared folder, does it again every Friday at 4 PM.">
+</p>
 
-- **Plain words.** It talks you through things the way a friend who knows the app would, and explains new words as they come up.
-- **One path to the end.** After the three beginner lessons, you have a bot doing a job for you on a schedule.
-- **Sourced.** Every fact comes from the author's article or the [official docs](https://docs.x.ai/grok-bot), linked on the page.
-- **Button names match the app.** English pages use the English interface; Chinese pages use the app's own Chinese labels.
+## The trick fits in an apple pie
 
-## 🧭 How it works
+poteto opens the post by saying automation is really a way of thinking that anyone can learn. It has two parts: a goal and a process.
 
-The author breaks automation into four steps. The guide follows them in order:
+When you bake an apple pie, the pie is the goal. Buying apples, making the dough, assembling, baking and cooling are the process. Most people hand a bot one step of the process, like "send this email", so the bot only ever sends emails. Tell it about the pie first, and it can take over the whole process, and maybe find an easier way.
 
-1. **Start with the goal.** Get clear on what the work is for. Filling in a form or sending an email is a step, not the goal.
-2. **Tell it your process.** Talk through how you do it now. Have it restate what it heard before it starts.
-3. **Teach it how you judge.** The calls you make without thinking, like which source to trust or what "done" means.
-4. **Let it run on its own.** Once the result is right, make it a routine that runs on a schedule or when something happens.
+<p align="center">
+  <img src="assets/en/readme/pie.svg" width="100%" alt="Process: buy apples, make dough, assemble, bake, cool, leading to the goal: an apple pie. The goal is what you want at the end. The process is how you get there. Hand the process to a bot.">
+</p>
 
-## ⚡ Get started in three minutes
+## Three lessons, one thing at a time
 
-1. Download Grok Bot from [x.ai/bot](https://x.ai/bot), open it, and choose **Sign in**. You need a plan that includes Grok Bot, such as Premium, Super or Ultra on The X Subscription.
-2. Choose **+** (**New Bot**) at the top of the sidebar, name it `Potato`, and choose **Create**.
-3. Send it the message below, with the middle line replaced by your own goal, like "I want everyone to have slides that show this week's progress before Monday's meeting, so that we spend less of the meeting reading numbers aloud and more of it making decisions":
+You don't need to code or learn a pile of terms first. Each lesson does one thing, and you leave with something new.
+
+<p align="center">
+  <img src="assets/en/readme/lessons.svg" width="100%" alt="Lesson 1, write one sentence, 10 min: a goal that names the result. Lesson 2, make Potato, 15 min: a bot that remembers it. Lesson 3, hand over a job, 30 min: a bot that runs every week.">
+</p>
+
+1. **[Write one sentence](https://grokbot.xiaoxiaodong.ai/en/start/1-goal/)**: pick something you do often and write down the result you really want.
+2. **[Make Potato](https://grokbot.xiaoxiaodong.ai/en/start/2-first-bot/)**: install Grok Bot, make a bot and give it that sentence.
+3. **[Hand over a job](https://grokbot.xiaoxiaodong.ai/en/start/3-hand-over/)**: talk it through how you do the job, watch it get it right once, then let it run every week.
+
+## Can't wait? Try one message now
+
+Install Grok Bot from [x.ai/bot](https://x.ai/bot) (you need a plan that includes it, such as Premium, Super or Ultra on The X Subscription), choose **+** (**New Bot**) at the top of the sidebar, name it `Potato`, and send:
 
 ```text
 Hi Potato, here's the goal I want you to be responsible for. Please remember it:
-I want …, so that …
+I want everyone to have slides on this week's progress before Monday's meeting, so that we spend less time reading numbers aloud and more time deciding.
 Based on this goal, choose a name and a picture for yourself.
 ```
 
-To explain your process and put it on a schedule, see [beginner lesson 3](https://grokbot.xiaoxiaodong.ai/en/start/3-hand-over/).
+Swap the middle line for your own job. To walk it through how you do the work, see [lesson 3](https://grokbot.xiaoxiaodong.ai/en/start/3-hand-over/).
 
-## 📚 What's on the site
+## Already using it?
 
-- **[Beginner lessons](https://grokbot.xiaoxiaodong.ai/en/start/1-goal/)**: three lessons, from naming the goal to a bot doing one job for you on a schedule.
-- **[The guide](https://grokbot.xiaoxiaodong.ai/en/guide/0-what/)**: eight steps, from connecting apps and letting it improve itself to routines, a team of bots, and Dr Eggbot.
-- **[How-to](https://grokbot.xiaoxiaodong.ai/en/howto/)**: 15 guides for specific jobs (morning briefing, inbox, bookings, reviews, meeting recaps) plus approvals, logins and usage.
-- **[Wiki](https://grokbot.xiaoxiaodong.ai/en/wiki/)**: 17 concepts, each as one sentence, an analogy, how it works in Grok Bot, and common mistakes.
-- **[FAQ](https://grokbot.xiaoxiaodong.ai/en/faq/)**: plans, interface language, whether it spends money or sends messages for you, and what to do when it's stuck.
+- **[The full guide](https://grokbot.xiaoxiaodong.ai/en/guide/0-what/)**: eight steps that go deeper along poteto's post: teach it how you judge, connect your apps, let it learn from feedback, run on a schedule, and split work across a team of bots.
+- **[How-to](https://grokbot.xiaoxiaodong.ai/en/howto/)**: 15 real jobs, from a morning briefing, your inbox and customer bookings to reviews and meeting recaps, plus what it should ask you first, handing it your logins, and how usage works.
+- **[Wiki](https://grokbot.xiaoxiaodong.ai/en/wiki/)** and **[FAQ](https://grokbot.xiaoxiaodong.ai/en/faq/)**: for a word you don't know or a question you're unsure about.
 
-## 💻 Run it locally
+## Where this comes from
+
+The guide follows [poteto](https://x.com/poteto)'s post [Automate Anything with Grok Bot](https://x.com/poteto/status/2123159537016533493). The author builds Grok Bot at SpaceX, previously worked at Cursor, and is on the React Compiler core team. Every feature, button and plan is checked against the [official Grok Bot docs](https://docs.x.ai/grok-bot); button names on the Chinese pages match the app's Chinese interface.
+
+This is an unofficial guide with no connection to xAI, SpaceX or Cursor, and it doesn't speak for them. Grok Bot is a trademark of its owner. Features and plans change, so the official docs are the reference.
+
+## Run it locally
 
 ```bash
 npm install
@@ -76,18 +82,4 @@ npm run dev        # http://localhost:4430
 npm run build      # output in dist/
 ```
 
-Writing rules, sources, and the script that syncs the official docs are in [docs/MAINTAINING.md](docs/MAINTAINING.md).
-
-## 🙌 Thanks
-
-- [poteto](https://x.com/poteto)'s article [Automate Anything with Grok Bot](https://x.com/poteto/status/2123159537016533493), the source of the guide's approach and examples.
-- The [official Grok Bot docs](https://docs.x.ai/grok-bot), the reference for features, buttons and plans.
-- The site shell comes from the [pstack Beginner's Guide](https://github.com/nevertoday/xxd-pstack), with the Xiaoxiaodong UI Kit.
-
-## ⚠️ Unofficial
-
-This site has no connection to xAI or Cursor and does not speak for them. Grok Bot is a trademark of its owner. Features and plans change; the [official docs](https://docs.x.ai/grok-bot) are the reference.
-
-## 📄 License
-
-The code is MIT licensed. See [LICENSE](LICENSE).
+Writing rules, sources, and the script that syncs the official docs are in [docs/MAINTAINING.md](docs/MAINTAINING.md). The site shell comes from the [pstack Beginner's Guide](https://github.com/nevertoday/xxd-pstack), with the Xiaoxiaodong UI Kit. The code is MIT licensed; see [LICENSE](LICENSE).
