@@ -21,7 +21,7 @@
 </div>
 
 <p align="center">
-  <img src="assets/social.svg" width="100%" alt="Grok Bot 新手教程：先定目标、讲清做法、教它判断、让它自己开工">
+  <img src="assets/social.png" width="100%" alt="Grok Bot 新手教程：把一件事交给 bot。先定目标、讲清做法、教它判断、让它按时开工">
 </p>
 
 ## 😵 为什么要学

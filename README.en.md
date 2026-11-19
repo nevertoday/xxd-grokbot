@@ -21,7 +21,7 @@ A free, unofficial guide to handing the work you keep repeating to [Grok Bot](ht
 </div>
 
 <p align="center">
-  <img src="assets/en/social.svg" width="100%" alt="Grok Bot for beginners: start with the goal, tell it your process, teach how you judge, let it run on its own">
+  <img src="assets/en/social.png" width="100%" alt="Grok Bot for beginners: hand the job to a bot. Start with the goal, tell it your process, teach how you judge, let it run on its own">
 </p>
 
 ## 😵 Why learn this

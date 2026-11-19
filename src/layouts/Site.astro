@@ -89,8 +89,8 @@ const GITHUB_MARK = '<svg width="16" height="16" viewBox="0 0 16 16" fill="curre
     <meta property="og:description" content={description} />
     <meta property="og:url" content={new URL(Astro.url.pathname, Astro.site)} />
     {og && <meta property="og:image" content={og} />}
-    {og && <meta property="og:image:width" content="1280" />}
-    {og && <meta property="og:image:height" content="640" />}
+    {og && <meta property="og:image:width" content="2560" />}
+    {og && <meta property="og:image:height" content="1280" />}
     {alternates.map((l) => <link rel="alternate" hreflang={l.html} href={new URL(l.href, Astro.site)} />)}
     <meta name="twitter:card" content={og ? "summary_large_image" : "summary"} />
     {og && <meta name="twitter:image" content={og} />}
