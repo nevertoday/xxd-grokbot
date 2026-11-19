@@ -151,6 +151,6 @@ Cloudflare Workers 静态资源，配置在 `wrangler.jsonc`。更新：`npm run
 
 TODO：分享大图还没有。xxd-pstack 的 `og.png` / `og-en.png` 写的是 pstack，没有带过来。做好以后放 `public/og.png`（中文页用）和 `public/og-en.png`（英文页用），1280×640；`Site.astro` 看到文件在才输出 `og:image`。README 插画和分享图可以照 xxd-pstack 的 `tools/build_assets.py` 生成，再用 Chrome 转成 PNG（命令见 xxd-pstack 的 `docs/MAINTAINING.md`）。
 
-TODO：本站标志（`Site.astro` 里的 `site-mark` 和 `public/favicon.svg`）还是 xxd-pstack 的三根错开的横条（「一摞技能卡」），以后换一个 Grok Bot 站自己的。
+本站标志（`Site.astro` 里的 `site-mark` 和 `public/favicon.svg`）是一张极简的 bot 脸：两只方眼睛、一道嘴。故意不像 Grok Bot 官方的图标，本站是非官方的。
 
 配色要干净通透：画布接近白（`#FAFAF8`，一圈 `#E9E7E4` 淡边），卡片纯白，线和次要文字用 UI Kit 的 `--line`、`--muted`，浅色块用去掉灰调的浅色。不要灰米色底和偏棕的阴影。不用 xAI、Grok 或 Cursor 的标志。
