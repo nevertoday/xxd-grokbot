@@ -1,6 +1,6 @@
 ---
 layout: ../../../layouts/Lesson.astro
-tldr: "One bot, one job. In this lesson you install Grok Bot, make a bot called Potato and hand it the sentence you wrote in lesson 1."
+tldr: "bot 하나에 일 하나. 이 레슨에서는 Grok Bot을 설치하고, Potato라는 bot을 만들고, 레슨 1에서 쓴 문장을 건네요."
 lesson: 2
 ---
 import Callout from "../../../components/Callout.astro";
@@ -9,118 +9,118 @@ import Copy from "../../../components/Copy.astro";
 import Reply from "../../../components/Reply.astro";
 import Q from "../../../components/Q.astro";
 
-You already have the sentence you wrote in lesson 1. In this lesson you hand it over: you install Grok Bot, make a <Term k="bot" /> just for this job, and send it that sentence.
+레슨 1에서 쓴 문장이 이미 손에 있죠. 이 레슨에서는 그걸 건네요. Grok Bot을 설치하고, 이 일만을 위한 <Term k="bot" text="bot" />을 만들고, 그 문장을 보내요.
 
-Why a bot just for this job? Think about how you'd brief a new colleague. You wouldn't say "from now on, everything's yours." You'd say: this job is yours, and here's what it's for. A bot works the same way. When it looks after one job, everything it remembers is about that job, and you only have to explain it once. So this whole lesson comes down to one thing:
+왜 이 일만을 위한 bot일까요? 새로 온 동료에게 일을 맡길 때를 떠올려 보세요. “앞으로 다 알아서 해 주세요”라고 하지는 않잖아요. “이 일을 맡아 주세요. 이 일은 이런 걸 위해 하는 거예요” 하고 말하죠. bot도 똑같아요. 일 하나를 맡으면 기억하는 것도 모두 그 일에 관한 것이 되고, 설명도 한 번만 하면 돼요. 그래서 이 레슨은 결국 이 한 가지로 정리돼요.
 
-<mark><strong>Make a bot just for this job, and tell it the goal in your very first message.</strong></mark>
+<mark><strong>이 일만을 위한 bot을 만들고, 첫 메시지에서 목표를 알려 주세요.</strong></mark>
 
-<Callout type="tip" title="Write to it in your own language">
-Button names below are written exactly as they appear in the app. When you talk to your bot, use whatever language you like. If you write to it in a language, it answers in that language.
+<Callout type="tip" title="화면은 컴퓨터의 언어를 따라가요">
+컴퓨터의 시스템 언어가 한국어라면 Grok Bot의 버튼도 한국어로 나와요. 아래에는 한국어 화면에 나오는 버튼 이름을 쓰고, 괄호 안에 영어 원문을 적었어요. 화면이 영어라면 괄호 안의 이름을 찾으세요. bot에게는 한국어로 말하면 돼요. 한국어로 쓰면 한국어로 답해요.
 </Callout>
 
-## Step 1: Download and open Grok Bot
+## 1단계: Grok Bot 내려받고 열기
 
-In your browser, open [x.ai/bot](https://x.ai/bot), download the version for your computer, install it and open it. You'll see the Grok Bot welcome screen, with **Sign in** on it.
+브라우저에서 [x.ai/bot](https://x.ai/bot)을 열고, 내 컴퓨터에 맞는 버전을 내려받아 설치한 다음 열어요. Grok Bot 환영 화면이 나오고, 거기에 **로그인**(Sign in)이 있어요.
 
-## Step 2: Sign in
+## 2단계: 로그인하기
 
-Choose **Sign in**. A sign-in page opens in your browser, and you just follow the steps there. It may show the Grok or xAI logo, and that's expected. Grok Bot has no account of its own. It uses your Cursor account, so if you have more than one, pick the one with a plan that includes Grok Bot.
+**로그인**을 누르면 브라우저에 로그인 페이지가 열려요. 안내대로 따라 하면 돼요. Grok이나 xAI 로고가 보일 수 있는데, 정상이에요. Grok Bot에는 따로 계정이 없고 Cursor 계정을 써요. 그래서 계정이 여러 개라면, Grok Bot이 포함된 요금제가 있는 계정을 고르세요.
 
 <Callout type="ok">
-The browser says you're signed in.
+브라우저에 로그인됐다고 나와요.
 </Callout>
 
-Now go back to Grok Bot. If it doesn't come back to the front by itself, switch to it yourself.
+이제 Grok Bot으로 돌아가요. 저절로 앞으로 나오지 않으면 직접 전환하세요.
 
-## Step 3: Wait while it gets ready
+## 3단계: 준비가 끝날 때까지 기다리기
 
-The first time you sign in, it has to set up the <Term k="云端电脑" /> that your bots share, which can take a few minutes. Keep the window open and let it finish.
+처음 로그인하면 bot들이 함께 쓰는 <Term k="云端电脑" text="클라우드 컴퓨터" />를 준비해야 해서, 몇 분 걸릴 수 있어요. 창을 열어 둔 채로 끝날 때까지 기다리세요.
 
 <Callout type="ok">
-First `Setting up your Grok Bot…`, then a short intro. Then a bot called **Grok Bot** appears in the sidebar, with a chat with it open.
+먼저 `Grok Bot 설정 중…`(Setting up your Grok Bot…)이 나오고, 이어서 짧은 소개가 나와요. 그다음 사이드바에 **Grok Bot**이라는 bot이 나타나고, 그 bot과의 대화가 열려요.
 </Callout>
 
-The app made that bot called Grok Bot for you. Leave it alone for now. In the next step you make a separate bot for your job.
+Grok Bot이라는 이 bot은 앱이 알아서 만들어 준 거예요. 지금은 그냥 두세요. 내 일을 맡을 bot은 다음 단계에서 따로 만들어요.
 
-## Step 4: Make a bot called Potato
+## 4단계: Potato라는 bot 만들기
 
-1. Choose the **+** at the top of the sidebar. That's **New Bot**, and its shortcut is `Cmd+N` (`Ctrl+N` on Windows and Linux).
-2. In **Create New Bot**, type `Potato` as the name.
-3. Pick any shape and color for its picture.
-4. Choose **Create**.
+1. 사이드바 맨 위의 **+** 버튼을 눌러요. 이게 **새 Bot**(New Bot)이고, 단축키는 `Cmd+N`(Windows와 Linux에서는 `Ctrl+N`)이에요.
+2. **새 Bot 만들기**(Create New Bot)에서 이름에 `Potato`를 입력해요.
+3. 아바타의 모양과 색은 마음에 드는 걸로 골라요.
+4. **만들기**(Create)를 눌러요.
 
 <Callout type="ok">
-**Potato** is now in the sidebar, with a chat with it open.
+사이드바에 **Potato**가 생기고, Potato와의 대화가 열려요.
 </Callout>
 
-Why Potato? Because the author says that if you can't think of a name, call it Potato, and once it has heard the goal, let it name itself after it. That's what the next step does.
+왜 Potato(감자)일까요? 작성자가 이름이 떠오르지 않으면 일단 Potato라고 부르고, 목표를 들려준 다음 그 목표에 맞춰 스스로 이름을 짓게 하라고 했거든요. 다음 단계에서 바로 그렇게 해요.
 
-## Step 5: Hand it your goal
+## 5단계: 목표 건네기
 
-Copy the message below and paste it into the message box. Replace the "I want …, so that …" line with the sentence you wrote in lesson 1, then send it.
+아래 메시지를 복사해서 메시지 입력란에 붙여 넣어요. “…하고 싶어요. 그래야 …” 줄을 레슨 1에서 쓴 문장으로 바꾼 다음 보내세요.
 
-<Copy id="goal" title="Copy, replace the middle line with your goal, then send" code={`Hi Potato, here's the goal I want you to be responsible for. Please remember it:
-I want …, so that …
-Based on this goal, choose a name and a picture for yourself.`} />
+<Copy id="goal" title="복사해서 가운데 줄을 내 목표로 바꾼 다음 보내기" code={`안녕하세요, Potato. 맡아 줬으면 하는 목표를 알려 줄게요. 꼭 기억해 주세요.
+…하고 싶어요. 그래야 …
+이 목표에 맞춰서 스스로 이름과 아바타를 골라 주세요.`} />
 
-<Reply title="Illustration: roughly what its reply looks like" code={`Got it. The goal I'm responsible for: before Monday's meeting,
-everyone has slides that show this week's progress,
-so that you spend less of the meeting reading numbers aloud
-and more of it making decisions.
+<Reply title="예시: 답장은 대략 이런 모습이에요" code={`알겠어요. 제가 맡을 목표는 이거예요. 월요일 회의 전에
+모두가 이번 주 진행 상황을 보여 주는 슬라이드를 받아 보게 하는 것.
+그래야 회의 때 숫자를 소리 내어 읽는 시간은 줄이고,
+결정하는 데 더 많은 시간을 쓸 수 있으니까요.
 
-I'd like to be called "Monday," since Monday's meeting is mine to prepare.
-For my picture, I'd pick an open slide deck.`} />
+제 이름은 “먼데이”로 하고 싶어요. 월요일 회의 준비가 제 몫이니까요.
+아바타로는 펼쳐진 슬라이드를 고를게요.`} />
 
-Read its reply. First check that the goal it wrote down matches yours, and if it doesn't, just type a correction, like "Not Monday, Wednesday." Then look at the name it picked. If you like it, keep it. If the sidebar still says Potato, change it yourself as shown under "If something's off" below.
+답장을 읽어 보세요. 먼저 bot이 적어 둔 목표가 내 목표와 같은지 확인하고, 다르면 “월요일 말고 수요일이에요”처럼 바로 입력해서 고쳐 주세요. 그다음 bot이 고른 이름을 봐요. 마음에 들면 그대로 두면 돼요. 사이드바에 아직 Potato라고 나온다면, 아래 “잘 안 될 때”를 보고 직접 바꾸세요.
 
-You now have a bot that does only this job, and it remembers what the job is for. In the next lesson, you tell it how you usually do it.
+이제 이 일만 하는 bot이 생겼어요. 그 일이 무엇을 위한 건지도 기억하고 있고요. 다음 레슨에서는 내가 평소에 그 일을 어떻게 하는지 들려줘요.
 
-## If something's off
+## 잘 안 될 때
 
-<Q id="interview" q="I couldn't write a goal in lesson 1.">
+<Q id="interview" q="레슨 1에서 목표를 못 썼어요.">
 
-Then let Potato help. Send it this, and it interviews you, one question at a time:
+그럼 Potato에게 도와 달라고 해요. 이걸 보내면 한 번에 하나씩 질문하며 인터뷰해 줘요.
 
-<Copy id="interview-me" code={`Hi Potato, I want you to be responsible for a goal, but I'm not sure how to put it into words. Could you interview me, one question at a time, until we have a goal I'm happy with?`} />
+<Copy id="interview-me" code={`안녕하세요, Potato. 맡아 줬으면 하는 목표가 있는데, 말로 잘 정리가 안 돼요. 제가 만족할 만한 목표가 나올 때까지, 한 번에 하나씩 질문하면서 인터뷰해 줄래요?`} />
 
-Once the goal is settled, send the message from step 5.
-
-</Q>
-<Q q="I signed in in the browser, but Grok Bot is still on the welcome screen.">
-
-Check that the browser says you're signed in, then switch back to the Grok Bot window yourself. If it's still on the welcome screen, choose **Sign in** again. If that doesn't work, see the official [sign-in troubleshooting](https://docs.x.ai/grok-bot/troubleshooting#sign-in-does-not-complete).
+목표가 정해지면 5단계의 메시지를 보내세요.
 
 </Q>
-<Q q="After signing in, it says I don't have access, or asks me to subscribe.">
+<Q q="브라우저에서 로그인했는데, Grok Bot은 아직 환영 화면이에요.">
 
-That means your account doesn't have a plan that includes Grok Bot yet. You need Premium, Super or Ultra on The X Subscription. Plus doesn't include it.
-
-Some accounts see **Start Trial** here. The trial is a usage credit with a 7-day window, and it never turns into a paid plan.
+브라우저에 로그인됐다고 나와 있는지 확인한 다음, Grok Bot 창으로 직접 전환하세요. 그래도 환영 화면이라면 **로그인**을 한 번 더 눌러요. 그래도 안 되면 공식 [로그인 문제 해결](https://docs.x.ai/grok-bot/troubleshooting#sign-in-does-not-complete)을 보세요.
 
 </Q>
-<Q q="It's been on Setting up your Grok Bot… for several minutes.">
+<Q q="로그인했더니 권한이 없다거나, 구독하라고 나와요.">
 
-The first setup does take a few minutes. If the progress is still changing, keep the window open and keep waiting. If it stops changing or shows an error, see the official [computer cannot be reached](https://docs.x.ai/grok-bot/troubleshooting#the-computer-cannot-be-reached).
+내 계정에 아직 Grok Bot이 포함된 요금제가 없다는 뜻이에요. The X Subscription의 Premium, Super, Ultra 중 하나가 필요하고, Plus에는 포함되지 않아요.
 
-</Q>
-<Q q="Choosing + opens a menu.">
-
-That means you're on a team, so **+** opens a menu first. Choose **Create a Bot**, and the rest is the same.
+어떤 계정에는 여기에 **체험 시작**(Start Trial)이 보여요. 체험은 7일 기한이 있는 사용량 크레딧이고, 유료 요금제로 바뀌지는 않아요.
 
 </Q>
-<Q q="It picked a new name, but the sidebar still says Potato.">
+<Q q="“Grok Bot 설정 중…”에서 몇 분째 그대로예요.">
 
-Then change it yourself:
-
-1. Click the bot's name at the top of the chat to open its details.
-2. Click the name again, type the new name and press Enter.
-
-To change the picture, click the picture in its details and open the **Generate** tab. Describe the picture you want, choose **Generate**, then choose **Set avatar**.
+처음 준비는 정말로 몇 분 걸려요. 진행 표시가 아직 바뀌고 있다면 창을 열어 둔 채로 계속 기다리세요. 더 이상 바뀌지 않거나 오류가 나오면 공식 [컴퓨터에 연결할 수 없을 때](https://docs.x.ai/grok-bot/troubleshooting#the-computer-cannot-be-reached)를 보세요.
 
 </Q>
-<Q q="It answers in a language I don't want.">
+<Q q="+ 버튼을 눌렀더니 메뉴가 나와요.">
 
-Reply: "From now on, always answer me in English. Please remember this."
+팀에 속해 있다는 뜻이에요. 그러면 **+** 버튼이 먼저 메뉴를 열어요. **Bot 만들기**(Create a Bot)를 고르면 나머지는 똑같아요.
+
+</Q>
+<Q q="새 이름을 골랐는데, 사이드바에는 아직 Potato라고 나와요.">
+
+그럼 직접 바꿔요.
+
+1. 대화 맨 위에 있는 bot 이름을 클릭해서 세부 정보를 열어요.
+2. 이름을 한 번 더 클릭하고, 새 이름을 입력한 다음 Enter를 눌러요.
+
+아바타를 바꾸려면 세부 정보에서 아바타를 클릭하고 **생성**(Generate) 탭을 열어요. 원하는 아바타를 말로 설명하고 **생성**을 누른 다음, **아바타 설정**(Set avatar)을 눌러요.
+
+</Q>
+<Q q="원하지 않는 언어로 답해요.">
+
+이렇게 답장하세요. “지금부터는 항상 한국어로 답해 주세요. 꼭 기억해 주세요.”
 
 </Q>
