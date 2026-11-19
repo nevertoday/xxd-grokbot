@@ -2,7 +2,7 @@
 layout: ../../../layouts/Guide.astro
 step: 6
 need: A job it already does well in chat
-tldr: Save what works as a skill, then set a routine so it starts on time, or when something happens.
+tldr: Without a routine, a bot works only when you ask. Save what works as a skill, then have it start on time, or when something happens.
 description: Without a routine, a bot works only when you ask. Get the job right once, save it as a skill, then have the bot set a routine on a schedule or on an event like an email or a Slack message. Test it, and watch usage and limits.
 ---
 import Callout from "../../../components/Callout.astro";
@@ -11,26 +11,27 @@ import Term from "../../../components/Term.astro";
 import Copy from "../../../components/Copy.astro";
 import Q from "../../../components/Q.astro";
 
-## Get it right once in chat first
+Is the first thing you do every morning opening the chat and telling Potato "check today's bookings"? It does a great job every time, but every time it's waiting for you to say it. On a day you forget, or you're on the road early, nobody does it.
 
-Without a <Term k="routine" />, a bot works only when you ask. That's fine at the start. To save yourself the effort, have it start on its own, so you're no longer the bottleneck. That's the point of the [article's section on making bots work automatically](https://x.com/poteto/status/2123159537016533493).
+That's what the [article's section on making bots work automatically](https://x.com/poteto/status/2123159537016533493) is about. Without a <Term k="routine" />, a bot works only when you ask. That's fine at the start, but if you want to save yourself the effort, it has to start on its own.
 
-<mark>The order is: get it right once in chat, save it as a skill, and only then set a routine.</mark>
+<mark><strong>Once it starts on time, or when something happens, you're no longer the bottleneck.</strong></mark>
 
-## Save it as a skill for next time
+The author's question is, when should the bot do the work? When an email arrives, when someone sends a message, or on a regular schedule, like once a week or every other day? Whichever it is, the author says, ask your bot to set it up, and it will.
 
-A <Term k="技能" /> is a set of instructions for the bot. Once the job works, have it save one:
+There's an order to it, though, and the official docs recommend it too. Get the job right once in chat, save it as a skill, and only then set a routine. When it runs by itself, you probably won't be watching.
+
+## Get it right, then save it as a skill
+
+A <Term k="技能" /> is a set of instructions the bot follows next time. Once you've walked it through the job correctly in chat, have it save one:
 
 <Copy id="skill" code="Save the process we just used as a skill called &quot;Daily booking check.&quot; Include when to use it, which apps it needs, the steps in order, how to check the work, and what to hand back to me. Add one rule: always ask me before contacting a customer." />
 
-- **Every bot can use it.** Your skills live in one shared library. Have any apps or logins the skill needs ready.
-- **Ask for it by name.** Say the skill's name.
-
-See the official page on [saving a skill](https://docs.x.ai/grok-bot/skills-routines-and-automations#save-a-skill).
+Saved skills live in one shared library that every bot can use, though any apps or logins a skill needs have to be ready first. To use one later, just ask for it by name. See the official page on [saving a skill](https://docs.x.ai/grok-bot/skills-routines-and-automations#save-a-skill).
 
 ### Show it once
 
-If you see a **Teach a task** button, you can demonstrate the job once. The bot writes the steps up as a skill:
+If you see a **Teach a task** button, you don't have to describe every step. Do the job once the way you usually do, and the bot writes the steps up as a skill:
 
 1. Open your one-to-one chat with the bot, then its computer view.
 2. Choose **Teach a task** and describe the result you're about to show.
@@ -39,66 +40,45 @@ If you see a **Teach a task** button, you can demonstrate the job once. The bot 
 
 It records up to 10 minutes of what's on screen, with no microphone. <u>Don't show passwords during the demo; sign-ins go through the secure form.</u>
 
-What it records is a draft. Add what one example can't show: how to decide, what to do when it fails, and which steps need your OK.
-
-The button is rolling out gradually. If you don't see it, have the bot write the skill from your instructions and the task you just finished.
+What it records is a draft. You add what one example can't show, like how to decide, what to do when something fails, and which steps need your OK. The button is rolling out gradually. If you don't see it, have the bot write the skill from your instructions and the task you just finished.
 
 ## Tell it when to start
 
-A routine tells one bot when to start a job by itself. As the author says, ask your bot to set it up, and it will.
+With the skill saved, go to the bot that owns the job and tell it when to start, for example:
 
-<Copy id="schedule" code="Every weekday at 8:00 AM, use the Daily booking check skill on today's bookings. List anything that needs me in this conversation. Don't contact customers. If the booking system is unavailable, tell me what went wrong instead of using old data." />
+<Copy id="schedule" code="Every weekday at 8:00 AM, use the Daily booking check skill on today's bookings, and list anything that needs me in this conversation. Don't contact customers. If the booking system is unavailable, tell me what went wrong instead of using old data." />
+
+That message already covers what a routine needs: what time to start, where the data comes from, what to hand back, what not to do, and what to do when the data isn't there. The only thing missing is the time zone, which comes from **Settings**. More on that below.
 
 <Callout type="ok">
 Open the bot's details. A new row appears on the **Details** tab, with the routine's name and when it runs.
 </Callout>
 
-Ask the bot that should own the job. Before it's set, check these:
-
-- **What time**, and in which time zone
-- **Where the data comes from**
-- **What it hands back**
-- **Which step needs your OK**
-- **What to do when data is missing**
-
-A new routine doesn't run right away. It waits for its next time. Set "every day at 8:00 AM" at 8:05, and the first run is tomorrow at 8.
+A new routine doesn't run right away. It waits for its next time, so if you set "every day at 8:00 AM" at 8:05, the first run is tomorrow at 8. To see it work sooner, use **Test**, covered below.
 
 ### Start when something happens
 
-Instead of a schedule, it can wait for an event. That event is the <Term k="触发条件" />:
-
-- A Slack message
-- A GitHub, Linear, Sentry or PagerDuty event
-- An email to the bot's own address
-- A <Term k="webhook" /> call
+Instead of a schedule, it can wait for something to happen. That event is the <Term k="触发条件" />. It can be a Slack message, a GitHub, Linear, Sentry or PagerDuty event, an email to the bot's own address, or a <Term k="webhook" /> call. Say someone asks in Slack to move a booking:
 
 <Copy id="event" code="When a message in #bookings mentions &quot;reschedule,&quot; open it, handle it with the Daily booking check process, and tell me in this conversation what you changed. Never reply in Slack without my approval." />
 
-Keep the condition narrow. "Every new message" runs all the time. It spends usage and picks up things that don't need the bot. Only new activity counts, not messages from before the trigger existed.
+Keep the condition narrow. "Every new message" runs all the time, spends usage, and makes it more likely to act on things that don't need the bot. And only new activity counts, so messages from before the trigger existed won't start it.
 
-Good to know:
+A few more things you'll run into:
 
-- **Triggers connect separately.** They use integrations on your account, apart from the Slack app from step 4. You may need to connect again.
+- **Triggers connect separately.** They use integrations on your account, apart from the Slack app from step 4, so you may need to connect again.
 - **The bot's email address needs claiming.** Say "Get yourself an email address," then approve it. You get one, and you can't rename or delete it.
 - **Email filters go by sender only.** Filter by an address or a whole domain, not by subject.
-- **Mail from a routine waits for you.** From the bot's own address, it stays a draft until you press **Send**.
+- **Mail from a routine waits for you.** Mail from the bot's own address stays a draft until you press **Send**.
 - **The webhook address is in the routine.** Ask the bot to add a webhook trigger, then open the routine on desktop. The **Webhook** section has the URL and key.
 
 See the official page on [starting work from an event](https://docs.x.ai/grok-bot/skills-routines-and-automations#trigger-work-from-an-event).
 
 ## Open the routine and check it
 
-On desktop, click the bot's name at the top of the chat to open its details. Routines are on the **Details** tab. Each row shows the name and when it runs, or **Paused**. Use the switch on the row to pause or resume.
+Once it's set, check that what the bot saved matches what you meant. On desktop, click the bot's name at the top of the chat to open its details. Routines are on the **Details** tab. Each row shows the name and when it runs, or **Paused**, and the switch on the row pauses or resumes it.
 
-Open a routine:
-
-| What you see | What it is |
-| --- | --- |
-| **Instruction** | What each run does |
-| **When to run** | The time or event |
-| **Webhook** | Only with a webhook |
-
-**When to run** says the schedule in words. If it isn't what you meant, choose **Edit** and tell the bot what to fix. The time zone is **Timezone** under **Bot** in **Settings**. **Auto-detect** follows this computer.
+Open a routine, and **Instruction** says what each run does, **When to run** says the time or event in words, and a routine started by a webhook also shows **Webhook**. If **When to run** isn't what you meant, choose **Edit** and tell the bot what to fix. The time zone is **Timezone** under **Bot** in **Settings**, and **Auto-detect** follows this computer.
 
 On the phone, find **Routines** in the bot's profile. Tap one to see **Active**, **Schedule**, **Next run**, **Instruction** and **Run history**. **Run history** lists recent runs, with the reason for any that failed.
 
@@ -106,13 +86,13 @@ On the phone, find **Routines** in the bot's profile. Tap one to see **Active**,
 
 ## Test once, then let it run
 
-On desktop, open the routine and choose **Test**. The button says **Running…** until it finishes. The result shows up in the bot's chat.
+On desktop, open the routine and choose **Test**. The button says **Running…** until it finishes, and the result shows up in the bot's chat.
 
 <Callout type="warn" title="A test run does real work">
-It really opens websites, changes files and uses connected apps. Test with data that's safe to get wrong, and keep anything that writes behind approval.
+It really opens websites, changes files and uses connected apps. So test with data that's safe to get wrong, and keep anything that writes behind approval.
 </Callout>
 
-When you read the result, ask:
+When you read the result, ask yourself:
 
 - Did it use current data?
 - Is the format right?
@@ -120,13 +100,13 @@ When you read the result, ask:
 - Did it stop where it should ask you?
 - Did it say clearly when something failed?
 
-Some routines have no **Test** button. Have the bot do the same work once in chat with safe data, then check its first scheduled run.
+Some routines have no **Test** button, and they still run on their schedule or trigger. For those, have the bot do the same work once in chat with safe data, then check its first scheduled run.
 
-An approval card raised during a routine expires after 30 minutes if nobody answers, and the action isn't done. To finish it, ask the bot to try again.
+One more thing. An approval card raised during a routine expires after 30 minutes if nobody answers, and the action isn't done. To finish it, ask the bot to try again.
 
 ## Every run uses your usage
 
-Each run spends usage. These cost the most: an hourly schedule, a short interval, or a trigger on a busy Slack channel. Any of them can use a week of usage in a day. A routine that never runs spends nothing; **Test** does spend.
+Each run spends usage, so the more often a routine runs, the more it spends. The costliest are an hourly schedule, a short interval, or a trigger on a busy Slack channel. Any of them can use a week of usage in a day. A routine that never runs spends nothing, but **Test** does, because it does the real work.
 
 The limits the docs state:
 
@@ -136,6 +116,8 @@ The limits the docs state:
 - **The 20 most recent run records** are kept for each routine.
 
 If you're away a long time, Grok Bot may ask whether to keep routines running, and pause them if nobody answers. For plans and usage, see [plans and usage](/en/howto/plans-usage/); the limits are on the [official page](https://docs.x.ai/grok-bot/skills-routines-and-automations).
+
+Now it doesn't wait for you. It starts on time, or when something happens. In the last step, you split a bigger goal across a few bots, each with its own job.
 
 ## Stuck?
 
@@ -152,7 +134,7 @@ If you're away a long time, Grok Bot may ask whether to keep routines running, a
 <p>Open <strong>Connect apps</strong>, select the connected count next to the title, and turn the skill on for this bot under <strong>Private skills</strong>.</p>
 </Q>
 <Q q="I came back from a break and my routines are paused.">
-<p>When you don't answer for a long time, Grok Bot may pause routines. Look through them and choose <strong>Resume</strong> on the ones you need.</p>
+<p>When you don't answer for a long time, Grok Bot may pause routines. Look through them when you're back, and choose <strong>Resume</strong> on the ones you need.</p>
 </Q>
 
 <Checkpoint id="s6" items={["I got the job right once in chat first", "The process is saved as a skill, including which steps need my OK", "The routine's <strong>When to run</strong> matches what I meant, time zone included", "I checked a result from <strong>Test</strong> or a safe trial run", "I know deleting a routine can't be undone, and <strong>Pause</strong> stops it for a while"]} />
