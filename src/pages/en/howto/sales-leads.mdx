@@ -1,6 +1,87 @@
 ---
 layout: ../../../layouts/HowTo.astro
 slug: sales-leads
+time: A few rounds of chat to set the process, then it screens new leads every weekday morning
+for: Leads come in through your website and email, and a slow reply loses them
+tldr: Your bot screens new leads against your criteria each day and drafts replies that offer times. You send them.
+description: "Find and follow up sales leads with Grok Bot: say the result you want, explain what makes a good fit and how you follow up, then let it screen new leads every weekday. Replies are drafts for you to send."
 ---
+import Term from "../../../components/Term.astro";
+import Q from "../../../components/Q.astro";
+import Copy from "../../../components/Copy.astro";
 
-This page is still being written.
+## Say what result you want
+
+Replying to every inquiry is one step in the process. The result you want is that good-fit customers get a meeting soon, and you close more deals.
+
+The official docs call this Sales development. See [Use cases](https://docs.x.ai/grok-bot/use-cases#sales-outbound).
+
+Make a new <Term k="bot" />, call it Potato, and send it the goal:
+
+<Copy id="sl-goal" title="First message: the goal" code="Hi Potato. I want you to own this goal: every good-fit customer who reaches out gets a meeting soon, so we close more deals. This is your job from now on, so remember it. Based on the goal, choose a name and a picture for yourself." />
+
+## Tell it how you do it now
+
+Tell it how you do this today. Change every line to fit you:
+
+<Copy id="sl-process" title="Second message: your process" code={`Potato, this is how I usually do this myself:
+- Steps: each morning I read new inquiries and score them against our ideal customer. Good fits get a reply offering times. The rest get a polite no. If someone doesn't answer, I follow up once after three days.
+- What I watch for: company size, budget, and whether it's a competitor fishing for information.
+- Apps I use: Gmail and Google Calendar, with leads tracked in a Google Sheets list.
+- How I check it's right: every lead in the sheet has a status. The times in each reply are really free on my calendar.
+- Where the information comes from: emails from our website form, and the lead's company website.
+- Where feedback comes from: which leads turned into deals.
+
+Think about how you could take this over from me completely. Before you begin, restate my goal and process in simple words, so I can give you feedback and confirm it. Don't start doing the work yet. Let's get the process planned first.`} />
+
+If typing is slow, press `Cmd/Ctrl+D` and talk. Say things as they come to you. It restates what it heard first. Correct anything that's off, and go a few rounds.
+
+When you're happy, tell it to go ahead. If it needs an app, it shows a **Connect** card in the chat. Open it and sign in.
+
+## Teach it how you decide
+
+You make some calls without thinking, and your bot can't know them. Here are three common ones for this job:
+
+<Copy id="sl-judge" title="Third message: how you decide" code={`Potato, here are a few rules I use to decide:
+1. A good fit comes down to three things: industry, headcount, and budget. Missing one drops it a level.
+2. If there isn't enough to judge, check their company website first. If that doesn't settle it, mark it "unsure" and hand it to me.
+3. Follow up at most twice. After two follow-ups with no answer, stop.
+
+Help me find what I haven't told you about this process yet. Ask me how I make decisions, where I get my information, how I check the work, and when you should ask me for help. Ask one question at a time. Then walk me through a few examples so I can give you feedback. Don't automate anything yet.`} />
+
+- **Rule 1.** <mark>Turn "good fit" into things you can check, so you can read its scores.</mark>
+- **Rule 2.** It looks things up before asking, so you only get the truly unclear ones.
+- **Rule 3.** Follow-ups have a limit, so nobody gets chased.
+
+Include an example or two that went wrong, like the lead you almost turned away that became a big deal. See how it would handle them, then tell it what to fix.
+
+## Make it run on its own
+
+Once this has gone well a few times, let it start on its own. Save the process as a <Term k="技能" /> first, then set up a <Term k="routine" />:
+
+<Copy id="sl-routine" title="Fourth message: let it start on its own" code={`Save the process we just used as a skill called "Lead screening."
+Then set up a routine: every weekday at 9:00 AM, use that skill on leads that came in since yesterday, and update the lead sheet.
+Write every reply as a draft for me to send.
+Don't contact any customer.`} />
+
+After the first few runs, check these:
+
+- **Each score has reasons.** Every lead notes which things it checked.
+- **The offered times are free.** Compare them with your calendar.
+- **Nothing was sent.** Replies are still drafts.
+
+A new routine waits for its next scheduled time. To try it now, open it and choose **Test**. A test does real work. See [Create a routine](https://docs.x.ai/grok-bot/skills-routines-and-automations#create-a-routine) in the official docs.
+
+The official docs suggest keeping sending behind an approval. To see what it asks you about first, read [Approvals and privacy](/en/howto/approvals-privacy/).
+
+## Stuck?
+
+<Q q="It offered a customer a time when I'm busy.">
+The Google Calendar app sees only the calendars your account can see. If your plans live in several calendars, tell it which ones to check.
+</Q>
+<Q q="Our customer list lives in a system it can't connect to.">
+For a site with no app, it uses the browser on its <Term k="云端电脑" />. Save the login in <Term k="Vault" />, and it fills it in without seeing the password.
+</Q>
+<Q q="I want it to email a lot of people at once.">
+When it sends from the bot's own email address, a first-contact email goes to one person per message and includes a one-click unsubscribe link. There's also a limit on how many new people it can email. See [Give your bots an email address](https://docs.x.ai/grok-bot/computer-and-apps#give-your-bots-an-email-address) in the official docs.
+</Q>

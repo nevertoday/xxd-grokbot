@@ -1,6 +1,87 @@
 ---
 layout: ../../../layouts/HowTo.astro
 slug: morning-briefing
+time: A few rounds of chat to set the process, then it arrives every weekday morning
+for: Every morning you check email, calendar, and Slack just to see what your day holds
+tldr: Your bot sends a briefing each morning of what needs you, with a link to the source for every item.
+description: "A morning briefing with Grok Bot: say the result you want, explain where you look and what counts as needing you, then set it to run every weekday morning."
 ---
+import Term from "../../../components/Term.astro";
+import Q from "../../../components/Q.astro";
+import Copy from "../../../components/Copy.astro";
 
-This page is still being written.
+## Say what result you want
+
+Writing a briefing is one step in the process. The result you want is to know, before you start work, which things today need you personally.
+
+The official docs call this a Morning briefing. See [Use cases](https://docs.x.ai/grok-bot/use-cases#chief-of-staff).
+
+Make a new <Term k="bot" />, call it Potato, and send it the goal:
+
+<Copy id="mb-goal" title="First message: the goal" code="Hi Potato. I want you to own this goal: before I start work each day, I know which things today need me personally, and nothing slips. This is your job from now on, so remember it. Based on the goal, choose a name and a picture for yourself." />
+
+## Tell it how you do it now
+
+Tell it how you do this today. Change every line to fit you:
+
+<Copy id="mb-process" title="Second message: your process" code={`Potato, this is how I usually do this myself:
+- Steps: I go through my email and calendar, then my Slack mentions, then what changed in my Drive docs since yesterday. I pick out what needs me and make a list.
+- What I watch for: calendar clashes, anything due today, and messages from my manager or customers.
+- Apps I use: Gmail, Google Calendar, Slack, and Google Drive.
+- How I check it's right: every item links to the original email or message, and it matches when I open it.
+- Where the information comes from: my inbox, calendar, Slack, and Drive docs.
+- Where feedback comes from: after I read it each day, I'll tell you what was extra and what was missing.
+
+Think about how you could take this over from me completely. Before you begin, restate my goal and process in simple words, so I can give you feedback and confirm it. Don't start doing the work yet. Let's get the process planned first.`} />
+
+If typing is slow, press `Cmd/Ctrl+D` and talk. Say things as they come to you. It restates what it heard first. Correct anything that's off, and go a few rounds.
+
+When you're happy, tell it to go ahead. If it needs an app, it shows a **Connect** card in the chat. Open it and sign in.
+
+## Teach it how you decide
+
+You make some calls without thinking, and your bot can't know them. Here are three common ones for this job:
+
+<Copy id="mb-judge" title="Third message: how you decide" code={`Potato, here are a few rules I use to decide:
+1. Someone waiting on my reply, a decision I have to make today, or a calendar clash counts as "needs me." Emails where I'm only cc'd count as "good to know."
+2. If yesterday's briefing already had it and nothing new happened, leave it out.
+3. If you're not sure whether something needs me, put it at the top and ask. Don't drop it.
+
+Help me find what I haven't told you about this process yet. Ask me how I make decisions, where I get my information, how I check the work, and when you should ask me for help. Ask one question at a time. Then walk me through a few examples so I can give you feedback. Don't automate anything yet.`} />
+
+- **Rule 1.** <mark>Define "needs me" first, and the briefing stays short.</mark>
+- **Rule 2.** Nothing repeats without news, so each day you read only what's new.
+- **Rule 3.** Unclear items go to you. Missing one costs more than reading one extra line.
+
+Include an example or two that went wrong, like the customer email you almost missed. See how it would handle them, then tell it what to fix.
+
+## Make it run on its own
+
+Once this has gone well a few times, let it start on its own. Save the process as a <Term k="技能" /> first, then set up a <Term k="routine" />:
+
+<Copy id="mb-routine" title="Fourth message: let it start on its own" code={`Save the process we just used as a skill called "Morning briefing."
+Then set up a routine: every weekday at 7:30 AM, use that skill to write a briefing and post it in this chat.
+Don't post it to Slack for me.
+If you can't read one of the apps, say so at the top of the briefing. Don't fill in with old data.`} />
+
+After the first few runs, check these:
+
+- **The time is right.** Open the routine and read **When to run**. The time zone is under **Settings**, at **Timezone**.
+- **The links match.** Open two or three and check them against the original.
+- **It says what it couldn't read.** A missing app is named at the top.
+
+A new routine waits for its next scheduled time. To try it now, open it and choose **Test**. A test does real work. See [Create a routine](https://docs.x.ai/grok-bot/skills-routines-and-automations#create-a-routine) in the official docs.
+
+To post the briefing to a team channel, have it write a draft first, and send it after you read it. To see what it asks you about first, read [Approvals and privacy](/en/howto/approvals-privacy/).
+
+## Stuck?
+
+<Q q="The briefing didn't arrive on time.">
+Open the routine and check two things. It doesn't say **Paused**, and **When to run** shows the time you meant. A routine you just set up waits for its next time. If it still doesn't run, go through the official [checklist](https://docs.x.ai/grok-bot/troubleshooting#a-routine-did-not-run).
+</Q>
+<Q q="It says it can't read Gmail or Slack.">
+Open **Connect apps** in the sidebar and find the app. If it shows **Needs auth** or **Disconnected**, choose **Authenticate**.
+</Q>
+<Q q="The briefing is too long to read.">
+Tell it what to cut, like "skip Slack small talk." Then add "keep doing this from now on, remember it." Say outright when a preference should last, so it saves it.
+</Q>

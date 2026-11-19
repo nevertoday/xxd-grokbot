@@ -1,6 +1,87 @@
 ---
 layout: ../../../layouts/HowTo.astro
 slug: weekly-slides
+time: A few rounds of chat to set the process, then a new version every week
+for: Every week you build report slides and copy numbers over from several places
+tldr: Your bot builds this week's slides from your template, with a source for every number.
+description: "Weekly report slides with Grok Bot: say the result you want, explain where the numbers come from and which deck to follow, then let it build a new version in Google Drive every week. You change a few things and it's ready."
 ---
+import Term from "../../../components/Term.astro";
+import Q from "../../../components/Q.astro";
+import Copy from "../../../components/Copy.astro";
 
-This page is still being written.
+## Say what result you want
+
+Finishing the slides is one step in the process. The result you want is that the numbers people see in the weekly meeting are right, and the meeting is short and clear.
+
+Preparing slides for a weekly meeting is one of the goals the author, poteto, lists in the [article](https://x.com/poteto/status/2123159537016533493). The official docs have a similar example. The bot reads past decks in a folder, drafts the next one in your format, and leaves it in Drive for your edits. See [Use cases](https://docs.x.ai/grok-bot/use-cases#connect-your-apps-and-get-help-with-your-work).
+
+Make a new <Term k="bot" />, call it Potato, and send it the goal:
+
+<Copy id="ws-goal" title="First message: the goal" code="Hi Potato. I want you to own this goal: the numbers people see in Monday's meeting are always right, and the meeting is short and clear. This is your job from now on, so remember it. Based on the goal, choose a name and a picture for yourself." />
+
+## Tell it how you do it now
+
+Tell it how you do this today. Change every line to fit you:
+
+<Copy id="ws-process" title="Second message: your process" code={`Potato, this is how I usually do this myself:
+- Steps: on Friday I pull this week's numbers from the spreadsheets and build a new deck in the same format as last week's. I add speaker notes to each slide and review the deck before Monday.
+- What I watch for: the numbers match the spreadsheets. The number and order of slides stay the same as last week.
+- Apps I use: past decks in Google Drive, numbers in Google Sheets, and project updates in Slack.
+- How I check it's right: every number can be traced to a spreadsheet.
+- Where the information comes from: the "Weekly meeting" folder in Drive, the data sheets, and the project channels in Slack.
+- Where feedback comes from: what people asked in the meeting, and which slides I changed.
+
+Think about how you could take this over from me completely. Before you begin, restate my goal and process in simple words, so I can give you feedback and confirm it. Don't start doing the work yet. Let's get the process planned first.`} />
+
+If typing is slow, press `Cmd/Ctrl+D` and talk. Say things as they come to you. It restates what it heard first. Correct anything that's off, and go a few rounds.
+
+When you're happy, tell it to go ahead. If it needs an app, it shows a **Connect** card in the chat. Open it and sign in.
+
+## Teach it how you decide
+
+You make some calls without thinking, and your bot can't know them. Here are three common ones for this job:
+
+<Copy id="ws-judge" title="Third message: how you decide" code={`Potato, here are a few rules I use to decide:
+1. The spreadsheet is right about numbers. If someone in Slack quotes a different number, use the spreadsheet and flag it in the notes for me.
+2. Only something that changed a lot since last week gets its own slide. Combine the rest.
+3. If you couldn't get a number, leave it blank and mark it "missing." Never reuse last week's.
+
+Help me find what I haven't told you about this process yet. Ask me how I make decisions, where I get my information, how I check the work, and when you should ask me for help. Ask one question at a time. Then walk me through a few examples so I can give you feedback. Don't automate anything yet.`} />
+
+- **Rule 1.** When two numbers disagree, it knows which to trust and tells you.
+- **Rule 2.** Slides follow what matters, so the meeting stays short.
+- **Rule 3.** <mark>A number it couldn't get stays blank and marked "missing."</mark>
+
+Include an example or two that went wrong, like the week a slide didn't match the spreadsheet. See how it would handle them, then tell it what to fix.
+
+## Make it run on its own
+
+Once this has gone well a few times, let it start on its own. Save the process as a <Term k="技能" /> first, then set up a <Term k="routine" />:
+
+<Copy id="ws-routine" title="Fourth message: let it start on its own" code={`Save the process we just used as a skill called "Weekly slides."
+Then set up a routine: every Friday at 4:00 PM, use that skill to build Monday's deck. Save it in the "Weekly meeting" folder in Drive with the date in the file name, and send me the link.
+Don't send it to anyone else.
+If a spreadsheet won't open, flag it on that slide. Don't use old numbers.`} />
+
+After the first few runs, check these:
+
+- **Numbers have sources.** Pick three and compare them with the spreadsheet.
+- **The format matches last week.** Same slide count, order, and template.
+- **The file is in the right place.** The new file is in the folder, with the date in its name.
+
+A new routine waits for its next scheduled time. To try it now, open it and choose **Test**. A test does real work. See [Create a routine](https://docs.x.ai/grok-bot/skills-routines-and-automations#create-a-routine) in the official docs.
+
+To have it send the deck to colleagues, ask for a draft first. To see what it asks you about first, read [Approvals and privacy](/en/howto/approvals-privacy/).
+
+## Stuck?
+
+<Q q="The deck doesn't look like our template.">
+Point it to the template file or last week's deck, and say "always follow this one from now on." Then ask it to remember that.
+</Q>
+<Q q="Drive has several files with the same name.">
+Saving to Google Drive always creates a new file, even when one with that name exists. Ask it to put the date in the file name, so you can tell the weeks apart.
+</Q>
+<Q q="One of the numbers is wrong.">
+Ask it to keep three things apart: what it found in the spreadsheets, what it worked out itself, and what it couldn't check. Then ask for the source of each number, so you can see which step went wrong.
+</Q>
