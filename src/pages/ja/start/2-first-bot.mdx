@@ -1,6 +1,6 @@
 ---
 layout: ../../../layouts/Lesson.astro
-tldr: "One bot, one job. In this lesson you install Grok Bot, make a bot called Potato and hand it the sentence you wrote in lesson 1."
+tldr: "1 つの bot に、1 つの仕事。このレッスンでは Grok Bot を入れて、Potato という bot を作り、レッスン 1 で書いた一文を渡します。"
 lesson: 2
 ---
 import Callout from "../../../components/Callout.astro";
@@ -9,118 +9,118 @@ import Copy from "../../../components/Copy.astro";
 import Reply from "../../../components/Reply.astro";
 import Q from "../../../components/Q.astro";
 
-You already have the sentence you wrote in lesson 1. In this lesson you hand it over: you install Grok Bot, make a <Term k="bot" /> just for this job, and send it that sentence.
+レッスン 1 で書いた一文は、もう手元にありますね。このレッスンでは、それを渡します。Grok Bot を入れて、この仕事のためだけの <Term k="bot" text="bot" /> を作り、その一文を送ります。
 
-Why a bot just for this job? Think about how you'd brief a new colleague. You wouldn't say "from now on, everything's yours." You'd say: this job is yours, and here's what it's for. A bot works the same way. When it looks after one job, everything it remembers is about that job, and you only have to explain it once. So this whole lesson comes down to one thing:
+なぜ、この仕事専用の bot なのでしょう。新しく入った同僚に仕事を頼むときのことを考えてみてください。「これから全部お願いね」とは言いませんよね。「この仕事をお願いしたいんです。何のための仕事かというと……」と話すはずです。bot も同じです。1 つの仕事を受け持てば、覚えることはすべてその仕事のことになるので、説明も一度で済みます。だから、このレッスンでやることは、結局これに尽きます。
 
-<mark><strong>Make a bot just for this job, and tell it the goal in your very first message.</strong></mark>
+<mark><strong>この仕事のためだけの bot を作って、最初のメッセージでゴールを伝えましょう。</strong></mark>
 
-<Callout type="tip" title="Write to it in your own language">
-Button names below are written exactly as they appear in the app. When you talk to your bot, use whatever language you like. If you write to it in a language, it answers in that language.
+<Callout type="tip" title="画面はパソコンの言語に合わせて変わります">
+パソコンの表示言語が日本語なら、Grok Bot のボタンも日本語で表示されます。このページでは日本語の画面に出るボタン名を書いて、かっこの中に英語の表記を添えています。画面が英語なら、かっこの中の名前を探してください。bot には日本語で話しかけて大丈夫です。日本語で書けば、日本語で返事が来ます。
 </Callout>
 
-## Step 1: Download and open Grok Bot
+## ステップ 1：Grok Bot をダウンロードして開く
 
-In your browser, open [x.ai/bot](https://x.ai/bot), download the version for your computer, install it and open it. You'll see the Grok Bot welcome screen, with **Sign in** on it.
+ブラウザで [x.ai/bot](https://x.ai/bot) を開き、お使いのパソコン用をダウンロードしてインストールしたら、開いてください。Grok Bot のようこそ画面が出て、そこに**サインイン**（Sign in）があります。
 
-## Step 2: Sign in
+## ステップ 2：サインインする
 
-Choose **Sign in**. A sign-in page opens in your browser, and you just follow the steps there. It may show the Grok or xAI logo, and that's expected. Grok Bot has no account of its own. It uses your Cursor account, so if you have more than one, pick the one with a plan that includes Grok Bot.
+**サインイン**を押すと、ブラウザでサインインのページが開くので、案内どおりに進めてください。Grok や xAI のロゴが出ることがありますが、それで合っています。Grok Bot には専用のアカウントがなく、Cursor のアカウントを使います。なので、アカウントをいくつか持っているなら、Grok Bot が含まれるプランのものを選んでください。
 
 <Callout type="ok">
-The browser says you're signed in.
+ブラウザに、サインインできたと表示されます。
 </Callout>
 
-Now go back to Grok Bot. If it doesn't come back to the front by itself, switch to it yourself.
+では Grok Bot に戻りましょう。自動で前に出てこないときは、自分で切り替えてください。
 
-## Step 3: Wait while it gets ready
+## ステップ 3：準備が終わるのを待つ
 
-The first time you sign in, it has to set up the <Term k="云端电脑" /> that your bots share, which can take a few minutes. Keep the window open and let it finish.
+はじめてサインインしたときは、bot たちが共有する<Term k="云端电脑" text="クラウドのコンピューター" />を準備するので、数分かかることがあります。ウィンドウは開いたままにして、終わるまで待ちましょう。
 
 <Callout type="ok">
-First `Setting up your Grok Bot…`, then a short intro. Then a bot called **Grok Bot** appears in the sidebar, with a chat with it open.
+まず `Grok Botをセットアップ中…`（Setting up your Grok Bot…）と出て、そのあと短い紹介が流れます。最後に、サイドバーに **Grok Bot** という bot が現れて、その bot とのチャットが開きます。
 </Callout>
 
-The app made that bot called Grok Bot for you. Leave it alone for now. In the next step you make a separate bot for your job.
+この Grok Bot という bot は、アプリが自動で作ってくれたものです。いまはそのままにしておいてください。あなたの仕事のための bot は、次のステップで別に作ります。
 
-## Step 4: Make a bot called Potato
+## ステップ 4：Potato という bot を作る
 
-1. Choose the **+** at the top of the sidebar. That's **New Bot**, and its shortcut is `Cmd+N` (`Ctrl+N` on Windows and Linux).
-2. In **Create New Bot**, type `Potato` as the name.
-3. Pick any shape and color for its picture.
-4. Choose **Create**.
+1. サイドバーのいちばん上にある **+** を押します。これが**新しいBot**（New Bot）で、ショートカットは `Cmd+N`（Windows と Linux では `Ctrl+N`）です。
+2. **新しいBotを作成**（Create New Bot）が開いたら、名前に `Potato` と入力します。
+3. アバターの形と色は、好きなものを選んでください。
+4. **作成**（Create）を押します。
 
 <Callout type="ok">
-**Potato** is now in the sidebar, with a chat with it open.
+サイドバーに **Potato** が加わり、Potato とのチャットが開きます。
 </Callout>
 
-Why Potato? Because the author says that if you can't think of a name, call it Potato, and once it has heard the goal, let it name itself after it. That's what the next step does.
+なぜ Potato（じゃがいも）なのでしょう。作者が、名前が思いつかなければ Potato と呼んでおいて、ゴールを聞かせたあとで、それにちなんだ名前を自分でつけてもらえばいい、と言っているからです。次のステップで、まさにそれをやります。
 
-## Step 5: Hand it your goal
+## ステップ 5：ゴールを渡す
 
-Copy the message below and paste it into the message box. Replace the "I want …, so that …" line with the sentence you wrote in lesson 1, then send it.
+下のメッセージをコピーして、メッセージ欄に貼り付けてください。「……したい。そうすれば、……」の行をレッスン 1 で書いた一文に置き換えてから、送信します。
 
-<Copy id="goal" title="Copy, replace the middle line with your goal, then send" code={`Hi Potato, here's the goal I want you to be responsible for. Please remember it:
-I want …, so that …
-Based on this goal, choose a name and a picture for yourself.`} />
+<Copy id="goal" title="コピーして、真ん中の行をあなたのゴールに置き換えてから送信" code={`Potato、こんにちは。あなたに受け持ってほしいゴールを伝えます。覚えておいてください。
+……したい。そうすれば、……
+このゴールにちなんで、自分の名前とアバターを選んでください。`} />
 
-<Reply title="Illustration: roughly what its reply looks like" code={`Got it. The goal I'm responsible for: before Monday's meeting,
-everyone has slides that show this week's progress,
-so that you spend less of the meeting reading numbers aloud
-and more of it making decisions.
+<Reply title="イメージ：返事はだいたいこんな感じです" code={`わかりました。私が受け持つゴールは、月曜の会議の前に、
+今週の進み具合がわかるスライドがみんなの手元にあるようにすること。
+そうすれば、会議で数字を読み上げる時間を減らして、
+そのぶん決めることに時間を使えます。
 
-I'd like to be called "Monday," since Monday's meeting is mine to prepare.
-For my picture, I'd pick an open slide deck.`} />
+名前は「マンデー」にしたいです。月曜の会議の準備が私の担当なので。
+アバターには、開いたスライドを選びます。`} />
 
-Read its reply. First check that the goal it wrote down matches yours, and if it doesn't, just type a correction, like "Not Monday, Wednesday." Then look at the name it picked. If you like it, keep it. If the sidebar still says Potato, change it yourself as shown under "If something's off" below.
+返事を読んでみてください。まず、書き留めたゴールがあなたのものと合っているかを確かめます。違っていたら、「月曜じゃなくて水曜です」のように、そのまま打って直してください。次に、bot が選んだ名前を見てみましょう。気に入ったら、そのままで大丈夫です。サイドバーがまだ Potato のままなら、下の「うまくいかないときは」を見て、自分で変えてください。
 
-You now have a bot that does only this job, and it remembers what the job is for. In the next lesson, you tell it how you usually do it.
+これで、この仕事だけをする bot ができました。しかも、その仕事が何のためなのかも覚えています。次のレッスンでは、あなたがふだんどうやっているかを話します。
 
-## If something's off
+## うまくいかないときは
 
-<Q id="interview" q="I couldn't write a goal in lesson 1.">
+<Q id="interview" q="レッスン 1 でゴールが書けなかった。">
 
-Then let Potato help. Send it this, and it interviews you, one question at a time:
+それなら Potato に手伝ってもらいましょう。これを送ると、ひとつずつ質問して、インタビューしてくれます。
 
-<Copy id="interview-me" code={`Hi Potato, I want you to be responsible for a goal, but I'm not sure how to put it into words. Could you interview me, one question at a time, until we have a goal I'm happy with?`} />
+<Copy id="interview-me" code={`Potato、こんにちは。あなたにゴールを受け持ってほしいのですが、うまく言葉にできません。納得のいくゴールが決まるまで、ひとつずつ質問して、インタビューしてもらえますか？`} />
 
-Once the goal is settled, send the message from step 5.
-
-</Q>
-<Q q="I signed in in the browser, but Grok Bot is still on the welcome screen.">
-
-Check that the browser says you're signed in, then switch back to the Grok Bot window yourself. If it's still on the welcome screen, choose **Sign in** again. If that doesn't work, see the official [sign-in troubleshooting](https://docs.x.ai/grok-bot/troubleshooting#sign-in-does-not-complete).
+ゴールが決まったら、ステップ 5 のメッセージを送ってください。
 
 </Q>
-<Q q="After signing in, it says I don't have access, or asks me to subscribe.">
+<Q q="ブラウザでサインインしたのに、Grok Bot がようこそ画面のまま。">
 
-That means your account doesn't have a plan that includes Grok Bot yet. You need Premium, Super or Ultra on The X Subscription. Plus doesn't include it.
-
-Some accounts see **Start Trial** here. The trial is a usage credit with a 7-day window, and it never turns into a paid plan.
+ブラウザにサインインできたと出ているかを確かめてから、自分で Grok Bot のウィンドウに切り替えてください。それでもようこそ画面のままなら、もう一度**サインイン**を押します。それでもだめなときは、公式の[サインインのトラブルシューティング](https://docs.x.ai/grok-bot/troubleshooting#sign-in-does-not-complete)を見てください。
 
 </Q>
-<Q q="It's been on Setting up your Grok Bot… for several minutes.">
+<Q q="サインインしたら、アクセス権がない、または申し込むように言われた。">
 
-The first setup does take a few minutes. If the progress is still changing, keep the window open and keep waiting. If it stops changing or shows an error, see the official [computer cannot be reached](https://docs.x.ai/grok-bot/troubleshooting#the-computer-cannot-be-reached).
+あなたのアカウントに、まだ Grok Bot が含まれるプランがないということです。The X Subscription の Premium、Super、Ultra のどれかが必要で、Plus には含まれていません。
 
-</Q>
-<Q q="Choosing + opens a menu.">
-
-That means you're on a team, so **+** opens a menu first. Choose **Create a Bot**, and the rest is the same.
+アカウントによっては、ここに**トライアルを開始**（Start Trial）が出ます。トライアルは 7 日間の期限つきの利用枠で、有料プランに切り替わることはありません。
 
 </Q>
-<Q q="It picked a new name, but the sidebar still says Potato.">
+<Q q="「Grok Botをセットアップ中…」のまま、何分もたっている。">
 
-Then change it yourself:
-
-1. Click the bot's name at the top of the chat to open its details.
-2. Click the name again, type the new name and press Enter.
-
-To change the picture, click the picture in its details and open the **Generate** tab. Describe the picture you want, choose **Generate**, then choose **Set avatar**.
+はじめての準備には、本当に数分かかります。進み具合の表示がまだ変わっているなら、ウィンドウを開いたまま待ち続けてください。変わらなくなったり、エラーが出たりしたときは、公式の[コンピューターに接続できないとき](https://docs.x.ai/grok-bot/troubleshooting#the-computer-cannot-be-reached)を見てください。
 
 </Q>
-<Q q="It answers in a language I don't want.">
+<Q q="+ を押したら、メニューが出てきた。">
 
-Reply: "From now on, always answer me in English. Please remember this."
+それは、チームに入っているからです。その場合、**+** はまずメニューを開きます。**Botを作成**（Create a Bot）を選べば、あとは同じです。
+
+</Q>
+<Q q="新しい名前を選んだのに、サイドバーは Potato のまま。">
+
+それなら、自分で変えましょう。
+
+1. チャットのいちばん上にある bot の名前をクリックして、詳細を開きます。
+2. 名前をもう一度クリックして、新しい名前を入力し、Enter キーを押します。
+
+アバターを変えるときは、詳細でアバターをクリックして、**生成**（Generate）タブを開きます。ほしいアバターを言葉で書いて**生成**を押し、それから**アバターを設定**（Set avatar）を押します。
+
+</Q>
+<Q q="英語など、ほかの言語で返事が来る。">
+
+こう返してください。「これからは、いつも日本語で返事をしてください。覚えておいてください。」
 
 </Q>

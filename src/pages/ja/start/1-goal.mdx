@@ -1,76 +1,76 @@
 ---
 layout: ../../../layouts/Lesson.astro
-tldr: "Automating isn't the hard part. Knowing what you actually want is. This lesson does one thing: it puts that into one sentence."
+tldr: "自動化そのものは難しくありません。難しいのは、自分が本当は何をしたいのかをはっきりさせることです。このレッスンでやるのはひとつだけ。それを一文にまとめます。"
 lesson: 1
 ---
 import Callout from "../../../components/Callout.astro";
 import Term from "../../../components/Term.astro";
 import Q from "../../../components/Q.astro";
 
-The first time a lot of people open Grok Bot, they start with "send this email for me" or "fill in this form for me." It will, of course. But once it's done, next time you have to ask again and keep an eye on it again. Used like that, it's just an errand runner.
+はじめて Grok Bot を開いた人の多くは、「このメールを送っておいて」「このフォームに入力しておいて」から始めます。もちろん、そのとおりにやってくれます。でも終わったら、次もまた頼んで、また見守らなければなりません。そんな使い方だと、bot はただのお使い係です。
 
-The author, poteto, builds Grok Bot at SpaceX. At the start of a [long article](https://x.com/poteto/status/2123159537016533493), the author makes a plain point: automation is really a way of thinking, and anyone can learn it. It has just two parts, a goal and a process.
+作者の poteto は、SpaceX で Grok Bot を作っています。その[長い記事](https://x.com/poteto/status/2123159537016533493)の冒頭で、作者はとても素朴なことを言っています。自動化はじつは考え方のひとつで、誰でも身につけられる。そしてそれは、ゴールとプロセスのふたつだけでできている、と。
 
-## An apple pie says it all
+## アップルパイひとつで、全部わかります
 
-Think about baking an apple pie. What you want is the pie, and that's the goal. Buying apples, making the dough, putting it together, baking it and letting it cool are the process. Changing a flat tire works the same way. What you want is a wheel you can drive on again. Jacking up the car, taking the old tire off and putting the new one on are only the process.
+アップルパイを焼くところを想像してみてください。ほしいのはパイで、それがゴールです。りんごを買う、生地をこねる、包む、焼く、冷ます。これがプロセスです。パンクしたタイヤの交換も同じです。ほしいのは、また走れるタイヤ。車をジャッキで持ち上げて、古いタイヤを外し、新しいのをつけるのは、どれもプロセスにすぎません。
 
-The goal is what you want at the end, and the process is how you get there. Automation means handing the process to a machine, so all you ask for is the result.
+ゴールは最後にほしいもので、プロセスはそこへたどり着くまでの道のりです。自動化というのは、プロセスを機械に任せて、自分は結果だけを頼むことなんです。
 
-Grok Bot can take a lot of process off your hands, because a <Term k="bot" /> there has a computer in the cloud. It can click around, open apps and look things up online, so most of what you can do on a computer, it can do too. That leaves you just one thing to think through:
+Grok Bot は、そのプロセスの多くを引き受けてくれます。Grok Bot の <Term k="bot" text="bot" /> は、クラウドにコンピューターを 1 台持っているからです。クリックしたり、アプリを開いたり、ネットで調べものをしたりできるので、あなたがパソコンでできることの大半は、bot にもできます。だから、あなたが考えておくことはひとつだけになります。
 
-<mark><strong>Before you hand anything to a bot, get clear on the result you want.</strong></mark>
+<mark><strong>bot に任せる前に、ほしい結果をはっきりさせておきましょう。</strong></mark>
 
-## Why "send an email" isn't enough
+## 「メールを送って」では足りない理由
 
-Because sending an email is only one step in the process. The author says the most common mistake is taking the process for the goal.
+メールを送るのは、プロセスのなかの一歩にすぎないからです。作者によると、いちばんよくある失敗は、プロセスをゴールだと思いこんでしまうことです。
 
-If all you say is "send an email," all the bot does is send an email. But tell it what the email is actually for, say, getting every new customer's booking scheduled, and it can work from that goal: where the information comes from, what counts as done, which steps it could skip. The author also says not to get too attached to the way you do it now. The bot may find an easier way.
+「メールを送って」とだけ言えば、bot はメールを送るだけです。でも、そのメールが本当は何のためなのか、たとえば新しいお客さんの予約をきちんと全部入れるためだと伝えれば、bot はそのゴールから考えられます。情報はどこから来るのか、どうなったら完了なのか、じつは飛ばせる手順はないか。作者はこうも言っています。いまのやり方にこだわりすぎないこと。bot がもっと楽な方法を見つけるかもしれないから、と。
 
-## Now write your sentence
+## では、あなたの一文を書いてみましょう
 
-Get a sheet of paper, or open the notes app on your phone. Think of something you do on a computer every few days. In one sentence, write the result you really want, then add the other half: what it's for.
+紙を 1 枚用意するか、スマホのメモアプリを開いてください。数日おきにパソコンでやっている作業をひとつ思い浮かべて、本当にほしい結果を一文で書きます。そこに、もう半分を書き足してください。それが何のためなのか、です。
 
-For the weekly meeting slides, you could write:
+毎週の会議のスライドなら、こんなふうに書けます。
 
-> I want everyone to have slides that show this week's progress before Monday's meeting, so that we spend less of the meeting reading numbers aloud and more of it making decisions.
+> 月曜の会議の前に、今週の進み具合がわかるスライドがみんなの手元にあるようにしたい。そうすれば、会議で数字を読み上げる時間を減らして、そのぶん決めることに時間を使える。
 
-Read it back. If your sentence is about an action like fill in, send, copy or click, it's still just a step. Ask yourself what doing that is for, and put the answer in. If you can't think of the second half, think about what the job does for your work, whether it brings in money or saves money. Or just ask a colleague.
+書けたら読み返してみてください。一文が「入力する」「送る」「コピーする」「クリックする」のような動作の話なら、それはまだ一歩にすぎません。「これをやるのは何のため？」と自分に聞いて、その答えを書き入れましょう。後ろの半分が思いつかないときは、その作業が仕事にどう役立っているか、売り上げを増やすのか、お金を節約するのかを考えてみてください。同僚に聞いてみるのも手です。
 
-If no job comes to mind, the author gives these examples in the article. Pick the one most like yours: saving toward a car or a house, booking customers for a small business, giving customers an experience good enough that they leave good reviews, hiring for a small business, collecting feedback on a product, preparing slides for a weekly meeting, building new features for a product.
+思いつく作業がないときは、作者が記事で挙げている例から、自分にいちばん近いものを選べば大丈夫です。車や家のための貯金、小さなお店のお客さんの予約、いいレビューを書きたくなるほど満足してもらえるお客さん体験、小さなお店の採用、製品への意見集め、毎週の会議のスライド作り、製品の新しい機能づくり。
 
-## Two things you'll need for the next lesson
+## 次のレッスンで必要なもの、ふたつ
 
-A computer. Mac, Windows and Linux all work, and you install the Grok Bot desktop app on it first. And a plan that includes Grok Bot. On The X Subscription, Premium, Super and Ultra include it, and Plus doesn't. For details, see the official [Grok Bot on The X Subscription](https://docs.x.ai/x-subscription/grok-bot).
+まずパソコンが 1 台。Mac、Windows、Linux のどれでもよくて、最初にそこへ Grok Bot のデスクトップ版を入れます。それから、Grok Bot が含まれるプラン。The X Subscription なら Premium、Super、Ultra に含まれていて、Plus には含まれていません。くわしくは公式の [Grok Bot on The X Subscription](https://docs.x.ai/x-subscription/grok-bot) を見てください。
 
-<Callout type="tip" title="Three lessons are enough">
-Once you have this sentence, the rest follows. In lesson 2 you install Grok Bot, make a bot and hand it this sentence. In lesson 3 you tell it how you usually do the job and let it do it once, and when it gets it right, you have it do the job on a schedule by itself. After these three lessons you can put it to work. Everything else on the site is there to look up when you need it.
+<Callout type="tip" title="3 レッスンで十分です">
+この一文ができれば、あとは自然につながっていきます。レッスン 2 では Grok Bot を入れて bot を作り、この一文を渡します。レッスン 3 では、ふだんどうやっているかを話して一度やってもらい、うまくできたら、決まった時間に自分でやってもらうようにします。この 3 つを終えれば、もう仕事を任せられます。サイトのほかのページは、必要になったときに調べれば十分です。
 </Callout>
 
-## If something's off
+## うまくいかないときは
 
-<Q q="I've thought about it, and I can't come up with a goal.">
+<Q q="考えてみたけれど、ゴールが思いつかない。">
 
-Then leave it blank for now and go straight to lesson 2. Once your bot exists, you can have it interview you, one question at a time, until the goal is clear. The message for that is in lesson 2, under "[If something's off](/ja/start/2-first-bot/#interview)."
-
-</Q>
-<Q q="I have several jobs I want to hand off.">
-
-Pick one first. A bot looks after one job, so everything it remembers is about that job, and you only explain it once. Give each of the other jobs its own bot later.
+それなら、いまは空けたままで、そのままレッスン 2 へ進んでください。bot ができたら、ゴールがはっきりするまで、ひとつずつ質問してインタビューしてもらえます。そのためのメッセージは、レッスン 2 の「[うまくいかないときは](/ja/start/2-first-bot/#interview)」にあります。
 
 </Q>
-<Q q="I have Grok on my phone. Is that it?">
+<Q q="任せたい作業がいくつもある。">
 
-No. Grok is an app for chatting. Grok Bot is a different app that you install separately, and lesson 2 walks you through it.
-
-</Q>
-<Q q="I'm not sure my plan includes it.">
-
-On The X Subscription, Premium, Super and Ultra do, and Plus doesn't. Older paid Cursor individual plans and self-serve Cursor Teams include it too, and on one of those older Cursor accounts you can link a SuperGrok or X Premium+ subscription. If you're still unsure, see the official [pricing answer](https://docs.x.ai/grok-bot/faq#how-much-does-grok-bot-cost).
+まずはひとつ選びましょう。bot は 1 つの仕事を受け持つので、覚えることがすべてその仕事のことになり、説明も一度で済みます。ほかの作業は、あとでそれぞれ別の bot に任せてください。
 
 </Q>
-<Q q="I only have a phone, no computer.">
+<Q q="スマホに Grok が入っています。それのことですか？">
 
-These three lessons use the desktop app on a computer. The phone app (iPhone or Android) goes alongside it. Sign in there with the same account, and you can keep chatting with the same bots and approve what they want to do.
+違います。Grok はチャットのためのアプリです。Grok Bot は別のアプリで、別に入れる必要があります。入れ方はレッスン 2 で一緒にやりましょう。
+
+</Q>
+<Q q="自分のプランで使えるのかわからない。">
+
+The X Subscription なら Premium、Super、Ultra で使えて、Plus では使えません。以前の Cursor の有料個人プランと、自分で申し込んだ Cursor Teams にも含まれています。そうした以前の Cursor アカウントなら、SuperGrok や X Premium+ のサブスクリプションを連携することもできます。それでもわからないときは、公式の[料金についての回答](https://docs.x.ai/grok-bot/faq#how-much-does-grok-bot-cost)を見てください。
+
+</Q>
+<Q q="スマホしかなくて、パソコンがない。">
+
+この 3 レッスンでは、パソコンのデスクトップ版を使います。スマホのアプリ（iPhone または Android）は、それと一緒に使うものです。同じアカウントでサインインすれば、同じ bot たちとチャットを続けたり、bot がやりたいことを承認したりできます。
 
 </Q>
