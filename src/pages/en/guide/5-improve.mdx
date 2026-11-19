@@ -1,6 +1,107 @@
 ---
 layout: ../../../layouts/Guide.astro
 step: 5
+need: A bot that already does the job your way
+tldr: Let your bot get feedback and data on its own, spot what to improve, and bring it to you.
+description: Give your bot apps that show it feedback (email, social media, Google and Yelp reviews), have it build a small tool to log data, and use the same ID across apps so it can work out what to improve.
 ---
+import Callout from "../../../components/Callout.astro";
+import Checkpoint from "../../../components/Checkpoint.astro";
+import Term from "../../../components/Term.astro";
+import Copy from "../../../components/Copy.astro";
+import Q from "../../../components/Q.astro";
 
-This page is still being written.
+## Think about where you'd look for feedback
+
+Once the bot is doing the job, it needs feedback to get better. The author asks one question: if I were doing this and wanted to improve, where would I look?
+
+<mark>The best way is to give it the apps and tools to get that feedback for itself.</mark>
+
+Say it handles your bookings. It could watch these places:
+
+- **Your email**: complaints and thanks in customer replies.
+- **Social media**: what customers say about you online.
+- **Google and Yelp reviews**: ratings and comments.
+
+When it sees feedback, it can suggest changes to your process on its own.
+
+<Copy id="sources" code="Potato, you're handling my bookings now. I want you to find out for yourself where we're falling short. If you were me, where would you look for customer feedback? List each place, the app you'd connect or the site you'd open, and what you need from me. Restate your plan in simple English first so I can confirm it. Don't connect anything yet." />
+
+<Callout type="ok">
+It lists a few feedback sources, each with the app to connect or the site to open. Once you confirm, it connects them the way step 4 shows.
+</Callout>
+
+This comes from the article's section [Let your bots improve themselves](https://x.com/poteto/status/2123159537016533493).
+
+## One bad review, and it finds out why
+
+The author gives an example. A customer says on Yelp that they waited a long time before anyone helped them.
+
+Let the bot find that review and your records for that customer that day. Then it can see what may have gone wrong.
+
+<Copy id="yelp" code="A customer on Yelp says they waited a long time before anyone helped them. Find that review, then check our booking records for that customer that day. Tell me what probably went wrong and how to avoid it next time. Only look; don't change anything, and don't reply to the review yet." />
+
+For a site with no app, it uses the browser on its <Term k="云端电脑" /> (see step 4). Replying to a review is public, so have it show you a draft first. For sorting reviews and drafting replies, see [answer reviews and sort customer feedback](/en/howto/reviews-feedback/).
+
+## The more you keep on a computer, the more it can help
+
+How good its ideas are depends on how much data it can reach. So, as the author puts it, the more computerized your business, the better for bots.
+
+No data yet? Have it build you a tool to log some. The author's example is a car repair shop that logs these times for each customer:
+
+1. Arrived at the shop
+2. Spoke to a service rep
+3. Handed over the keys
+4. Service started
+5. Service finished
+
+With those times you can work out how long people waited, then look for why.
+
+<Copy id="logger" code="I run a car repair shop. Build me a small tool I can use on my computer and my phone. For each customer visit it logs: when they arrived, when they spoke to a service rep, when we took their keys, and when service started and finished. Tell me how you plan to build it first, and start once I confirm." />
+
+<Callout type="tip" title="Make it fit your business">
+Swap those five times for the moments that matter most in your line of work. Ask yourself: where do customers wait longest?
+</Callout>
+
+## Use the same ID to connect data across apps
+
+When your data sits in several apps, the bot needs an ID to match it up. An ID can be:
+
+- A customer ID or email address
+- An order number
+- A part number or barcode
+- An employee ID
+
+Use the same ID for the same customer or order in every app. Then it can bring the data together and see what's really going on.
+
+<Copy id="ids" code="Look at the apps we use: the booking system, email, and the repair log. How does the same customer match up across them? List where they don't match, and suggest one ID we should use everywhere. Suggestions only; don't change any data yet." />
+
+## It also comes to you on its own
+
+Your <Term k="主 bot" /> (the one with a star in the sidebar) doesn't only wait for instructions:
+
+- **It offers to take on work.** When it spots something it can do for you, it asks if you want to hand it over.
+- **It flags app problems.** If Gmail signs you out, for example, it tells you in its chat and offers to reconnect.
+
+It always offers first. It starts only when you say yes, and still asks before risky actions (the approvals from step 4).
+
+If it messages you too often, turn off that bot's **Notifications**. On the phone, the switch is in the bot's profile; on desktop, ask the bot to turn them off. This stops the alerts, not the check-ins. See the official page [When your bot takes initiative](https://docs.x.ai/grok-bot/initiative).
+
+To have it check reviews every week by itself, set up a <Term k="routine" /> in step 6.
+
+## Stuck?
+
+<Q q="Most of my business isn't on a computer, so there's little data.">
+<p>Start logging one thing. Have it build a small tool like the repair shop's. After a few weeks of records, ask it to look.</p>
+</Q>
+<Q q="The review site needs a login and it can't get in.">
+<p>Save the login in Vault, or fill in the secure form when it asks. Never type the password into chat. See <a href="/en/guide/4-apps/">step 4</a>.</p>
+</Q>
+<Q q="The same customer's name is spelled differently in different apps.">
+<p>Names aren't reliable. Match on an email or customer ID instead, and use the prompt above to list the mismatches first.</p>
+</Q>
+<Q q="It suggested a change I don't want.">
+<p>Tell it no, and say why. It won't act on a suggestion you haven't agreed to.</p>
+</Q>
+
+<Checkpoint id="s5" items={["I listed the feedback sources it can check for itself", "It can connect to or open each of them", "Where I had no data yet, it built me a tool to log some", "The same customer has the same ID in every app", "I know it only acts on its own suggestions after I agree"]} />

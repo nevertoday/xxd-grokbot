@@ -1,6 +1,127 @@
 ---
 layout: ../../layouts/Guide.astro
 step: 4
+need: 一个讲清了目标和做法的 bot（第 1 到 3 步）
+tldr: 连上它要用的应用，认识它的云端电脑，弄清哪些事它会先问你。
+description: 让 bot 连上它要用的应用；没有应用的网站，它用云端电脑去开；登录放进 Vault；看懂审批卡片上的 Allow once 和 Always allow。
 ---
+import Callout from "../../components/Callout.astro";
+import Checkpoint from "../../components/Checkpoint.astro";
+import Term from "../../components/Term.astro";
+import Copy from "../../components/Copy.astro";
+import Q from "../../components/Q.astro";
 
-这一页还在写。
+## 让它自己把应用连上
+
+做法定好以后，作者会让 bot 开工，[去连它要用的应用和工具](https://x.com/poteto/status/2123159537016533493)。
+
+<Copy id="connect" code="Potato，按我们定好的做法，列出你要用到的应用，一个一个帮我连上。哪个要我登录，就发连接卡片给我。" />
+
+<Callout type="ok">
+聊天里出现一张 **Connect**（连接）卡片。点开，在浏览器里完成 **Authorize**（授权）或 **Authenticate**（登录验证）。下一条消息起，它就能用这个应用了。
+</Callout>
+
+这样连上的叫<Term k="连接的应用" />。它比在网页上点来点去更可靠。
+
+- **自己连也行。** 侧边栏打开 **Connect apps**（连接应用），搜到应用，加上，登录。连好的会出现在 **Installed**（已安装）下面。
+- **指定这次用哪个。** 在聊天框里打 `@`，选上那个应用。
+- **它只能做你的账号本来能做的事。** 不能提升权限，也不能改共享设置。
+- **所有 bot 都能用。** 连上的应用属于你的账号，不属于某一个 bot。
+
+官方说明见[连接应用](https://docs.x.ai/grok-bot/computer-and-apps#connect-an-app)。
+
+## 没有应用的网站：它用自己的电脑去开
+
+没有对应应用的网站，bot 会在<Term k="云端电脑" />上用浏览器打开。这台电脑有浏览器、命令行和文件夹，你合上笔记本它也照样干活。
+
+想看它在做什么，点对话右侧的电脑预览。你会看到它的点击、打字和翻页。
+
+你账号下的所有 bot 共用这一台电脑：
+
+- **登录共用。** 一个 bot 登录了某个网站，别的 bot 也是登录状态。
+- **文件共用。** 每个 bot 都看得到电脑上的文件。长期要用的放在 `/workspace`。
+- **各有各的屏幕。** 几个 bot 可以同时用浏览器。
+
+<u>某个登录或文件只想给一个 bot 用，就别放到这台电脑上。</u>分开的 bot 不是安全隔离。
+
+官方说明见[电脑和应用](https://docs.x.ai/grok-bot/computer-and-apps)。
+
+## 你自己的电脑：默认每次都问
+
+云端电脑和你面前的 Mac、Windows 电脑是两台。bot 要在你自己的电脑上执行命令，得你允许。
+
+设置在 **Settings → Computer → Your computer** 里的 **Execution on this computer**，有三档：
+
+- **Ask every time**（每次都问）：默认就是这一档。
+- **Always allow**（总是允许）：不再问。
+- **Never allow**（从不允许）：官方推荐这一档。bot 有具体理由要动本机文件时再改。
+
+第一次它想在你电脑上跑命令时，对话里会直接问你。在那里选 **Always allow** 或 **Never**，会对所有 bot 生效。官方说明见[控制本机访问](https://docs.x.ai/grok-bot/approvals-security-and-privacy#control-access-to-your-local-computer)。
+
+## 登录交给 Vault，别在聊天里贴密码
+
+<Term k="Vault" /> 存你的登录、银行卡和联系信息，在 **Settings → Vault** 里管理。
+
+bot 要登录网站时，按这个顺序找：
+
+1. **Vault** 里存的登录。
+2. 连上的密码管理器，比如 1Password。
+3. 都没有，就发一张 **Secure Form**（安全表单）问你。
+
+Vault 里的密码和表单里填的值，直接填进网页，bot 看不到。
+
+有些步骤表单填不了，比如单点登录、通行密钥、人机验证。这时它把电脑交给你。点 **Take over**（接手），只做那一步。再点 **I'm done**（我做完了），告诉它继续。
+
+<Callout type="warn" title="存进 Vault 的银行卡">
+结账时会直接填上，不会每次问你。在 app 的聊天里，bot 还能看到存着的卡号和安全码。想每笔付款都自己点头，就别存卡。表单里不勾 **Securely save to Bot's vault**（存进 Vault）。
+</Callout>
+
+<u>密码、验证码、API key 都别打在聊天里。</u>API key 等它发安全卡片再填。怎么存、怎么删，看[登录和付款交给 Vault](/howto/vault-logins/)。官方说明见 [Vault 和安全登录](https://docs.x.ai/grok-bot/vault)。
+
+## 哪些事它会先问你
+
+它每要做一件事，都会先过一遍自动检查（Auto Review，默认开着）。大多数事直接做。要你点头的，它发一张<Term k="审批" />卡片，写明要做什么、用什么值。然后它停下来等你。
+
+| 你点 | 这一次 | 以后同类的事 |
+| --- | --- | --- |
+| **Allow once** | 去做 | 还会问你 |
+| **Always allow** | 去做 | 存成规则，不再问 |
+| **Deny** | 不做 | 你再发消息前不提 |
+
+<mark>看不懂的卡片先别批。让它用大白话讲一遍，或者先出个草稿。</mark>
+
+这些情况它一定会停下来：
+
+- **你写过「先问我」的规则。** 规则在 **Settings → General** 的 **Custom Rules**（自定义规则）里，选 **Ask first**（先问）。两种规则都对上时，「先问」优先。
+- **从它自己的邮箱发信，又不是你在聊天里要它发的。** 比如 routine 写的信，会存成草稿，等你点 **Send**（发送）。
+- **在你自己的电脑上跑命令**，按上一节的设置。
+
+自动检查只把你自己发的消息当成要求，邮件、网页里写的话不算。这能降低风险，但不能消除。审批只管还没做的事，做完的不会撤回。
+
+给它定规矩，在第一句就说清楚边界：
+
+<Copy id="boundary" code="记住这条规矩：发消息、发布内容、付钱、删除东西、改权限之前，先把你要做什么、改成什么给我看，等我同意。" />
+
+再在 **Custom Rules** 里加一条 **Ask first** 规则。光靠它记住不够，**Ask first** 规则一定会拦下对得上的事。每条规则只写一件事，比如「发任何外部邮件之前先问我」。
+
+更多例子看[哪些事要先问你：审批和隐私](/howto/approvals-privacy/)。官方说明见[审批、安全和隐私](https://docs.x.ai/grok-bot/approvals-security-and-privacy)。
+
+## 卡住了？
+
+<Q q="它说某个应用没连上。">
+<p>应用显示 <strong>Added</strong>（已添加）只说明装上了，不代表登录了。到 <strong>Connect apps</strong> 打开它，显示 <strong>Needs auth</strong> 或 <strong>Disconnected</strong> 的话，点 <strong>Authenticate</strong>。</p>
+</Q>
+<Q q="登录页面关掉了，没登完。">
+<p>在应用上点 <strong>Reconnect</strong>，或在聊天卡片上点 <strong>Reopen</strong>，登录页会重新打开。大约 10 分钟内要登完，过了就从卡片重新来。</p>
+</Q>
+<Q q="公司的 Google 账号说要管理员审核。">
+<p>页面写着 <strong>Your admin needs to review Grok</strong>，说明公司还没批准。请管理员在 Google 管理后台把 Grok 设为信任，再回来授权。换浏览器、重连都没用。步骤见<a href="https://docs.x.ai/grok-bot/computer-and-apps#if-google-says-an-admin-needs-to-review-grok">官方说明</a>。</p>
+</Q>
+<Q q="网站老是让它重新登录。">
+<p>有的网站登录会很快过期。让它停下来通知你，别让它想办法绕过网站的检查。</p>
+</Q>
+<Q q="我点了 Always allow，后悔了。">
+<p>那条规则存在 <strong>Settings → General</strong> 的 <strong>Custom Rules</strong> 里。电脑上点规则旁边的删除按钮，就删掉了。</p>
+</Q>
+
+<Checkpoint id="s4" items={["它要用的应用都在 <strong>Installed</strong> 下面", "我知道所有 bot 共用一台云端电脑，登录和文件都共用", "我分得清 <strong>Allow once</strong> 和 <strong>Always allow</strong>", "密码和银行卡放进 Vault，不贴进聊天", "发消息、付钱、删除这类事，我加了 <strong>Ask first</strong> 规则"]} />
