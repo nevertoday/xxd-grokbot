@@ -180,7 +180,7 @@ def lessons(lang):
     cw, gap, x0, y0 = 352, 32, 48, 48
     out.append(f'<rect x="{x0}" y="{y0 + 118}" width="{cw * 3 + gap * 2}" height="4" fill="{LINE}"/>')
     out.append(f'<rect class="bar" x="{x0}" y="{y0 + 118}" width="{cw * 3 + gap * 2}" height="4" fill="{HOT}"/>')
-    css.append(f"@keyframes bar{{0%{{transform:scaleX(0)}}70%,92%{{transform:scaleX(1)}}100%{{transform:scaleX(1);opacity:0}}}}.bar{{transform-origin:{x0}px 0;animation:bar {TOTAL}s infinite}}")
+    css.append(f"@keyframes bar{{0%{{transform:scaleX(0);opacity:1}}70%,92%{{transform:scaleX(1);opacity:1}}100%{{transform:scaleX(1);opacity:0}}}}.bar{{transform-origin:{x0}px 0;animation:bar {TOTAL}s infinite}}")
     for i, (num, title, mins, get) in enumerate(T["items"]):
         x = x0 + i * (cw + gap)
         name = f"l{i}"
