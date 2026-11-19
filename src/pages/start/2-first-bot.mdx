@@ -1,6 +1,141 @@
 ---
 layout: ../../layouts/Lesson.astro
+tldr: "装好 Grok Bot，建一个叫 Potato 的 bot，把第 1 课的目标交给它。"
 lesson: 2
 ---
+import Callout from "../../components/Callout.astro";
+import Term from "../../components/Term.astro";
+import Copy from "../../components/Copy.astro";
+import Reply from "../../components/Reply.astro";
+import Q from "../../components/Q.astro";
 
-这一页还在写。
+这一课在电脑上做，一共五步。做完，你会有一个叫 Potato 的 <Term k="bot" />，它记着你第 1 课写下的目标。
+
+<Callout type="warn" title="窗口里大多是英文">
+Grok Bot 窗口里的按钮大多是英文。下面照屏幕上的英文写按钮名，括号里是中文意思。跟 bot 说话用中文就行，你用中文写，它就用中文回。
+</Callout>
+
+## 第一步：下载并打开 Grok Bot
+
+1. 在浏览器里打开 [x.ai/bot](https://x.ai/bot)，下载你电脑对应的版本。
+2. 装好，打开。
+
+<Callout type="ok">
+Grok Bot 的欢迎页，上面有 **Sign in**（登录）。
+</Callout>
+
+## 第二步：登录
+
+1. 点 **Sign in**。浏览器会打开一个登录页。
+2. 在浏览器里照提示登录。页面上可能是 Grok 或 xAI 的标志，这是正常的。
+3. 登录好以后，回到 Grok Bot。它没有自己跳回来，就手动切回去。
+
+Grok Bot 没有单独的账号，用的是你的 Cursor 账号。你有好几个账号的话，选开通了 Grok Bot 套餐的那个。
+
+<Callout type="ok">
+浏览器里显示登录成功。
+</Callout>
+
+## 第三步：等它准备好
+
+第一次登录，它要先准备好 bot 们共用的那台<Term k="云端电脑" />，可能要几分钟。窗口一直开着，等它走完。
+
+<Callout type="ok">
+先看到 `Setting up your Grok Bot…`（正在准备你的 Grok Bot）。然后是一小段介绍。最后侧边栏里出现一个叫 **Grok Bot** 的 bot，并打开了和它的对话。
+</Callout>
+
+这个叫 Grok Bot 的先放着。下一步给你那件事单独建一个 bot。一个 bot 只管一件事，它记住的都是这件事的门道，你只用讲一遍。
+
+## 第四步：新建一个叫 Potato 的 bot
+
+1. 点侧边栏最上面的 **+**，就是 **New Bot**（新建 bot）。快捷键是 `Cmd+N`（Windows 和 Linux 上是 `Ctrl+N`）。
+2. 在弹出的 **Create New Bot**（新建 bot）里，名字填 `Potato`。
+3. 给它的头像随便挑一个形状和颜色。
+4. 点 **Create**（创建）。
+
+为什么叫 Potato（土豆）？作者说，想不出名字就先叫 Potato，以后让它自己起。
+
+<Callout type="ok">
+侧边栏里多了一个 **Potato**，并打开了和它的对话。
+</Callout>
+
+## 第五步：把目标交给它
+
+复制下面这段，粘贴进对话框。把【】这一段换成你第 1 课写的那句话，再发送。
+
+<Copy id="goal" title="复制，把【】换成你的目标，再发送" code={`你好 Potato，这是我想交给你负责的目标，请记住它：
+【最后要得到：……　这是为了：……】
+请根据这个目标，给自己起一个名字，再选一张头像。`} />
+
+<Reply title="示意：它的回复大概长这样" code={`记住了。我负责的目标是：
+每周一开会前，大家手里有一份讲清这周进展的幻灯片，
+好让会上多花时间做决定。
+
+我想叫自己「周一」，因为每周一的会靠我来准备。
+头像我选一张翻开的幻灯片。`} />
+
+看它的回复，只看两处：
+
+- **它记下的目标，和你写的一样吗？** 不一样，就直接打字纠正，比如「不是每周一，是每周三」。
+- **它起的名字你喜欢吗？** 喜欢就留着。侧边栏里还叫 Potato 的话，照下面「不对怎么办」自己改一下。
+
+<Callout type="ok">
+它用中文回了你一段话：说了它记下的目标，还给自己起了一个名字。
+</Callout>
+
+<Callout type="tip" title="这一课做完了">
+你有了一个只管这件事的 bot，它记住了目标。下一课，把你平时怎么做讲给它听。
+</Callout>
+
+## 不对怎么办
+
+<Q id="interview" q="第 1 课的目标，我写不出来。">
+
+把这段发给 Potato。它会像采访一样，一个一个地问你问题：
+
+<Copy id="interview-me" code={`你好 Potato，我想交给你负责一个目标，但我说不太清楚它是什么。你能一个一个地问我问题，像采访一样，一直问到我们定下一个我满意的目标吗？`} />
+
+目标定下来以后，再发第五步那段话。
+
+</Q>
+<Q q="浏览器里登录好了，Grok Bot 还停在欢迎页。">
+
+1. 看浏览器里是不是写着登录成功。
+2. 手动切回 Grok Bot 的窗口。
+3. 还停在欢迎页，就再点一次 **Sign in**。
+
+还是不行，看官方的[登录问题排查](https://docs.x.ai/grok-bot/troubleshooting#sign-in-does-not-complete)。
+
+</Q>
+<Q q="登录以后，它说我没有权限，或者让我开通。">
+
+你的账号还没有包含 Grok Bot 的套餐。要 The X Subscription 的 Premium、Super 或 Ultra；Plus 不包含。
+
+有的账号在这里能看到 **Start Trial**（开始试用）。试用是一笔用量额度，有 7 天期限，不会自动变成付费套餐。
+
+</Q>
+<Q q="一直停在 Setting up your Grok Bot…，好几分钟了。">
+
+第一次准备要几分钟。进度还在变，就开着窗口等。进度不动了，或者报错，看官方的[电脑连不上怎么办](https://docs.x.ai/grok-bot/troubleshooting#the-computer-cannot-be-reached)。
+
+</Q>
+<Q q="点了 +，弹出来的是一个菜单。">
+
+你在一个团队里，**+** 会先弹出菜单。选 **Create a Bot**（建一个 bot），后面的步骤一样。
+
+</Q>
+<Q q="它起了新名字，可侧边栏里还叫 Potato。">
+
+自己改一下：
+
+1. 点对话最上面的 bot 名字，打开它的详情。
+2. 再点一次名字，输入新名字，按回车。
+
+想换头像：在详情里点头像，选 **Generate**（生成）那一栏。写一句你想要的样子，点 **Generate**，再点 **Set avatar**（设为头像）。
+
+</Q>
+<Q q="它用英文回我。">
+
+回它一句：「从现在起都用中文回复我，请记住。」
+
+</Q>

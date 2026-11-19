@@ -1,7 +1,7 @@
 // 英文底稿：以后加的非全站语言，全部文字都照这个结构写（src/i18n/<语言>.js），缺的键显示这里的英文。
 // {名字} 是占位，由 fmt() 换成值，翻译时原样保留。
 // 这些语言只有首页和新手入门三课；完整教程、How-to、Wiki、常见问题链到英文版，所以导航里写明「英文」。
-// 首页文字和 views/Home.astro 的 EN 一样，现在是占位（TBD）。
+// 首页文字和 views/Home.astro 的 EN 一样（完整教程按钮多写了「English」）。
 export default {
   ui: {
     brand: "Grok Bot for beginners",
@@ -49,38 +49,42 @@ export default {
   },
 
   home: {
-    h1: "Grok Bot for beginners",
+    h1: "Hand a job you keep repeating to Grok Bot, in plain words",
     // lead：前半句、荧光笔那一句、后半句
-    lead: ["How to use Grok Bot, in plain words. The main path follows poteto's article “Automate Anything with Grok Bot”. ", "This is an unofficial guide", ", and it's still being written."],
+    lead: ["Tell it the result you want and how you do the job now, and a bot does it for you. Once it gets it right, it can start on its own, on time. You don't need to code. ", "This is an unofficial guide", ". The main path follows poteto's article “Automate Anything with Grok Bot”, and the official docs are the source of truth for features."],
     cta: ["Start here if you're new", "Used it already? The full guide (English)"],
-    ctaNote: "The beginner track is three lessons.",
+    ctaNote: "The beginner track is three lessons: decide on the goal, make a bot, hand it one job.",
     painH: "Has this happened to you?",
-    PAIN: ["TBD: a problem readers often hit (1).", "TBD: a problem readers often hit (2).", "TBD: a problem readers often hit (3)."],
+    PAIN: [
+      "Every week you lose an afternoon doing the same few steps again.",
+      "You'd hand it to an AI, but a chat AI only answers. You still do the clicking, copying and sending.",
+      "You heard about automation, saw it meant writing code, and gave up.",
+    ],
     diffH: "What changes when a bot does it",
     diffW: "When", diffA: "Doing it yourself", diffB: "With a bot",
     DIFF: [
-      ["TBD", "TBD", "TBD"],
-      ["TBD", "TBD", "TBD"],
-      ["TBD", "TBD", "TBD"],
+      ["Starting", "When you remember", "On time, by itself"],
+      ["Doing the work", "You click, copy, paste", "It uses its own computer"],
+      ["Laptop closed", "The work stops", "It keeps going in the cloud"],
     ],
     lessonsH: "Beginners need just three lessons",
     lessonsP: "Read them in order. After these three you can use it. Everything else on the site is for looking up later.",
     lessonsLabel: "Beginner track: 3 lessons",
     fitH: "Is it for you?", yesH: "Yes, if", noH: "Not yet, if",
-    YES: ["TBD", "TBD", "TBD"],
-    NO: ["TBD", "TBD", "TBD"],
+    YES: ["You have a job you repeat on a computer and want to hand off", "You have Premium, Super or Ultra on The X Subscription", "You can explain out loud how you do the job"],
+    NO: ["You're on Plus: it doesn't include Grok Bot", "You don't have a computer: you install the desktop app first", "You only want to ask a question: a regular AI chat is enough"],
     devH: "Once you're comfortable",
-    devP: "The full guide follows poteto's article: start with the goal, explain your process, then let your bots start work on their own.",
+    devP: "The full guide follows poteto's article. Its four ideas, one line each:",
     // 完整教程目前只有英文和中文
     devNote: "The full guide is in English (and Chinese) for now.",
     // FLOW：每个是 [标题, 说明]，图标和顺序固定
     FLOW: [
-      ["Set the goal", "TBD"],
-      ["Explain the process", "TBD"],
-      ["Save it as a skill", "TBD"],
-      ["Run it on a schedule", "TBD"],
+      ["Start with the goal", "Know the result you want. Filling in a form or sending an email is only one step."],
+      ["Explain your process", "Say how you do it now, all in one go. It restates it first, and you correct it a few times."],
+      ["Teach it how you decide", "Walk it through real examples of the calls you make without thinking."],
+      ["Let it start on its own", "A routine sets when it works: on a schedule, or when an email arrives."],
     ],
-    CONN: ["TBD", "TBD", "TBD"],
+    CONN: ["tell it", "try examples", "once it's right"],
     stepsLabel: "Full guide: {n} steps",
   },
 
