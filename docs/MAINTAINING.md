@@ -149,8 +149,8 @@ node scripts/app-labels.mjs "New Bot"  # 查一个英文标签在 app 里的简�
 
 ## 部署
 
-线上：<https://grokbot.xiaoxiaodong.ai>（还没部署）　仓库：<https://github.com/nevertoday/xxd-grokbot>（还没建）。
-Cloudflare Workers 静态资源，配置在 `wrangler.jsonc`。更新：`npm run release`（构建后 `wrangler deploy`，需要先 `npx wrangler login`）。
+线上：<https://grokbot.xiaoxiaodong.ai>　仓库：<https://github.com/nevertoday/xxd-grokbot>（2026-11-19 首次部署）。
+Cloudflare Workers 静态资源，配置在 `wrangler.jsonc`。更新：`npm run release`（构建、跑 `npm run check`，都过了才 `wrangler deploy`；需要先 `npx wrangler login`）。
 
 ## README 插画和分享大图
 
