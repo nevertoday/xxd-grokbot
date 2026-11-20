@@ -11,45 +11,47 @@ import Q from "../../../components/Q.astro";
 import Copy from "../../../components/Copy.astro";
 import Reply from "../../../components/Reply.astro";
 
+A problem report from a user is often a single line, like "I tapped it and nothing happened." Which page? Phone or computer? They didn't say. Whoever writes the code has to guess, then try one thing after another, and sometimes a whole afternoon goes by and they never see it. Maybe you built a small website yourself, maybe you pay someone to write the code, or maybe you're on a small team making an app. Either way, you've probably had reports like this.
+
 By the end of this page, when a user reports a problem, your bot tries it first. It takes a test account (one made just for trying things, with no real customer's details in it), follows what the user described step by step until the problem shows up again, and brings back every step, the screenshots, and which browser it used. Someone writes "needs repro" in your team's bug channel in Slack, and it starts.
 
-Maybe you built a small website yourself, maybe you pay someone to write the code, or maybe you're on a small team making an app. Either way, a problem report from a user is often a single line, like "I tapped it and nothing happened." Which page? Phone or computer? They didn't say. Whoever writes the code has to guess, then try one thing after another, and it takes ages before they see the problem. Sometimes a whole afternoon goes by and they never do. To reproduce a bug means to make it happen again, and you can only fix what you can see. Replying to the user is only one step in the process. What you want is for every problem to reach the person who writes the code with steps they can follow to see it. <mark>The steps it brings back should let someone else follow them and see the same bug.</mark>
+To reproduce a bug means to make it happen again, and you can only fix what you can see. Replying to the user is only one step in the process. What you want is for every problem to reach the person who writes the code with steps they can follow to see it. <mark>The steps it brings back should let someone else follow them and see the same bug.</mark>
 
 ## The goal is steps anyone can follow
 
 The official docs call this Bug reproduction. See [Use cases](https://docs.x.ai/grok-bot/use-cases#bug-reproduction).
 
-Make a new <Term k="bot" />, call it Potato, and send it the goal:
+Make a new <Term k="bot" /> and call it Potato for now. Once it understands the job, it can rename itself (see [Lesson 2](/en/start/2-first-bot/)). Send it the goal:
 
-<Copy id="br-goal" title="First message: the goal" code={`Hi Potato. When users report a problem it's always just "I tapped it and nothing happened," and the developers have to guess and try things for ages. That's your job from now on: every problem that gets reported reaches them with steps they can follow to see it. Remember that. Based on that job, pick a name and a picture for yourself.`} />
+<Copy id="br-goal" title="First message: the goal" code={`Hi Potato. When users report a problem it's always just "I tapped it and nothing happened," and the developers end up guessing for a whole afternoon. From now on, when a user reports something, you try it yourself first, write down exactly what to tap to make it happen, and then pass it on, so nobody has to guess. This one's yours now.`} />
 
 ## Tell it how you reproduce a bug
 
-Next, tell it how your team does this today. Pressing `Cmd/Ctrl+D` and talking is the easiest way, saying things as they come to you. Two words in the example first. Staging is a copy of your website or app that's only for trying things, so breaking it doesn't affect real users. A ticket is the record of one problem, kept here in Linear. Swap in your own environments and tools:
+Next, tell it how your team reproduces a bug today. There's a lot to say here, so pressing `Cmd/Ctrl+D` and talking is quicker than typing. Two words in the example first. Staging is a copy of your website or app that's only for trying things, so breaking it doesn't affect real users. A ticket is the record of one problem, kept here in Linear, and your team talks tickets over in a feedback channel in Slack. Swap in your own environments and tools:
 
-<Copy id="br-process" title="Second message: your process" code={`Potato, here's how I do it now. I read what the user sent, then open staging with a fresh test account and follow their steps one by one until the problem shows up again. I write down every step, take screenshots, and note which browser and version I used. If it just won't happen, I write down everything I tried. Two things matter most to me: never use a real customer's details, and never touch any setting on the live version. Tickets are in Linear, and we talk about them in the feedback channel in Slack. Just open staging in your own browser. The information comes from the ticket, the feedback channel, and screenshots from the user. How do I know it's right? Someone else can follow your steps and see the same problem. The developers will tell you whether the steps worked.
+<Copy id="br-process" title="Second message: your process" code={`When a new ticket comes in, I read what the user wrote and look at their screenshot a couple of times, then check the feedback channel in case someone else hit the same thing. Then I open staging, make a fresh test account, and follow their steps one by one, taking a screenshot at each step and noting the browser and version. Just open staging in your own browser. The usual snag is a step the user left out, like they actually signed out and back in first, so I try every order I can think of. If it just won't happen, I write down every way I tried. I never touch a real customer's details, and I don't change a single setting on the live version. When I'm done, I follow my own steps once more, and if I can see the bug, it's ready to hand over. The developers tell me afterward whether the steps worked for them.
 
-Have a think about how you'd take this off my hands completely. Don't start yet. Tell me back in plain words what you think the goal and the process are, I'll tell you what's off, and we'll get the process sorted first.`} />
+Don't go clicking around staging yet. First tell me how you'd reproduce one, and I'll tell you what's off.`} />
 
 The example asks for the browser because the same button can work fine on a computer and do nothing in a phone's browser, and whoever writes the code needs to know where it broke.
 
-It restates what it heard first. Correct anything that's off and go a few rounds, then tell it to go ahead when you're happy. If it needs an app, it shows a **Connect** card in the chat. Open it and sign in.
+It explains how it plans to go about it first. Correct whatever's off and go a few rounds, then let it start once it has it right. When it needs Linear or Slack, it shows a **Connect** card in the chat. Open it and sign in.
 
 ## Bring something back even when it won't reproduce
 
 Reproducing a bug tends to get stuck in two places: you try and try and it won't happen, or what the user says doesn't match their screenshot. You know what to do then, but your bot needs to be told. And there are a few kinds of steps you don't want it clicking through on its own, even in staging. So give it your rules:
 
-<Copy id="br-judge" title="Third message: how you decide" code={`Potato, a few rules for how I decide. Even if it won't happen, bring something back: where you tried, which account you used, and every way you tried it. If what the user says and their screenshot don't match, put both in. Don't pick one. Let the developers decide. If a step means paying, deleting something, or changing who can see or edit what, stop and ask me first.
+<Copy id="br-judge" title="Third message: how you decide" code={`There are a few situations I already know how to handle, and you should know them too. Even if it won't happen, don't come back empty-handed: say where you tried, which account you used, and every way you tried it. If what the user says and their screenshot don't match, write both down as they are. Don't pick one for them. Let the developers decide. If a step means paying, deleting something, or changing who can see or edit what, stop and ask me first, even in staging.
 
-What else haven't I told you? Ask me: how I make decisions, where things come from, how I check the work, and when you should come to me. One question at a time. Then walk me through a few examples and I'll tell you what I think. Don't automate anything yet.`} />
+I'm sure I've left things out. Ask me first about whatever you'd be least sure of while reproducing, one question at a time. After that, let's walk through that bug from last time that only showed up on phones, start to finish.`} />
 
-The first rule can look like wasted effort, but it really helps, because whoever writes the code sees right away which paths were already tried and doesn't repeat them. The last rule is there because staging can still touch real things, so those steps are your call. When you pick examples, include one or two that went wrong, like the problem that only showed up on a phone. See how it would handle them, then tell it what to fix.
+The first rule can look like wasted effort, but it really helps, because whoever writes the code sees right away which paths were already tried and doesn't repeat them. The last rule is there because staging can still touch real things, so those steps are your call. Swap that last line for a problem your team actually ran into, ideally one that went wrong at the time. Watch how it would handle it, and tell it on the spot where it goes off. Do these rounds in the chat, and don't set anything to run on its own yet. For a fuller way to ask, see [Have it find what you left out](/en/howto/prompts/#p-gaps) on the prompts page.
 
 ## When someone asks, it gets to work
 
-Once this has gone well a few times, it can start on its own. Save the process as a <Term k="技能" /> first, then set up a <Term k="routine" />. This job doesn't start on a schedule. It waits for a line in Slack. When someone writes "needs repro" in the channel, it starts.
+Once it has reproduced a few bugs this way and its steps have worked, let it start on its own. Save the process as a <Term k="技能" /> first, then set up a <Term k="routine" />. This job doesn't start on a schedule. It waits for a line in Slack. When someone writes "needs repro" in the channel, it starts.
 
-<Copy id="br-routine" title="Fourth message: let it start on its own" code={`Save what we just worked out as a skill called "Bug repro." Then set up a routine: when someone posts a message in #bug-reports with a ticket link and "needs repro," open that ticket, use the skill to reproduce it in staging, and post the steps, screenshots, and browser details here in our chat. Don't post anything in Slack until I approve it.`} />
+<Copy id="br-routine" title="Fourth message: let it start on its own" code={`Save the way we just worked out for reproducing bugs as a skill called "Bug repro." Then set up a routine: when someone posts a message in #bug-reports with a ticket link and "needs repro," open that ticket, use the skill to reproduce it in staging, and post the steps, screenshots, and browser details here in our chat. Don't post anything in Slack until I approve it.`} />
 
 Keep the <Term k="触发条件" /> narrow, with one channel and one phrase. Watching every message is noisy and spends a lot of usage. One more thing. A Slack trigger needs Slack connected on the Cursor account that owns the bot. See [Slack triggers](https://docs.x.ai/grok-bot/skills-routines-and-automations#slack-triggers) in the official docs.
 

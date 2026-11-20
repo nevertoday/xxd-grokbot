@@ -12,7 +12,7 @@ import Term from "../../../components/Term.astro";
 import Q from "../../../components/Q.astro";
 import Copy from "../../../components/Copy.astro";
 
-Grok Bot doesn't need its own subscription. It comes with your plan. What you do need to watch is usage: it's a weekly allowance that resets each week, and the thing that spends it fastest is a routine that runs often. Say you're looking for a place to rent and you're afraid the good ones will go, so you have it check the rental sites every hour. Or you have it watch a Slack channel where people talk from morning to night. <mark>A routine that runs hourly, or watches a busy Slack channel, can use a week's allowance in a day.</mark>
+Grok Bot doesn't need its own subscription. It comes with your plan. What you do need to watch is usage: it's a weekly allowance that resets each week, and the thing that spends it fastest is a routine that runs often. Say you're looking for a place to rent and you tell it, "The good ones go in hours, so check those two rental sites for me every hour." It will, twenty-four times a day. Or you have it watch a Slack channel where people talk from morning to night. <mark>A routine that runs hourly, or watches a busy Slack channel, can use a week's allowance in a day.</mark>
 
 Plans and allowances change, so the official [plan page](https://docs.x.ai/x-subscription/grok-bot) and [FAQ](https://docs.x.ai/grok-bot/faq) are the source of truth, and this page leaves prices out. First check whether your plan includes Grok Bot, then see how usage gets used, where to see it and how to use less, and last what to do when it runs out and how to set a limit.
 
@@ -50,7 +50,7 @@ Only the bot's owner can ask, though, and only in a private chat.
 
 The docs' advice is to rein in routines before moving to a bigger plan or raising a limit.
 
-Start by pausing routines you don't need. In the bot's details, on the **Details** tab, the switch on each row pauses it. For the ones you keep, you can widen schedules and narrow triggers, like checking rentals three times a day instead of every hour. The bot can go through them for you:
+Start by pausing routines you don't need. In the bot's details, on the **Details** tab, the switch on each row pauses it. For the ones you keep, you can widen schedules and narrow triggers. For the rental hunt, saying "From now on, just check at 8 AM and 7 PM" takes it from twenty-four runs a day to two. The bot can go through them for you:
 
 <Copy id="pu-routines" code="What routines have you got set up? List them for me, with how often each one runs and what starts it. If any run too often or start on too much, tell me how you'd change them, but don't touch anything yet." />
 
