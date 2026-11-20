@@ -2,15 +2,15 @@
 layout: ../../../layouts/HowTo.astro
 slug: hiring
 time: A few rounds of chat to set the process, then it screens new applicants every weekday
-for: Your shop is hiring, applications arrive by email, and interview times keep moving
+for: Your shop needs part-time help, applications arrive by email, and interview times keep moving
 tldr: Every weekday afternoon, your bot screens new applicants against your must-haves, updates the applicant list, and picks interview times. Invitations and rejections wait for you to send.
-description: "Hiring with Grok Bot: say who you want to hire, explain how you screen and schedule interviews, then let it sort new applications every weekday. Invitations and rejections are drafts for you to send."
+description: "Hire part-time help for a small shop with Grok Bot, following a pet grooming shop looking for weekend help. A phone repair counter or a tutoring center swaps in its own details. Say who you want to hire, explain how you screen and schedule interviews, then let it sort new applications every weekday. Invitations and rejections are drafts for you to send."
 ---
 import Term from "../../../components/Term.astro";
 import Q from "../../../components/Q.astro";
 import Copy from "../../../components/Copy.astro";
 
-Once your shop posts a job, applications trickle into your inbox. Some people can work weekends, some can't start until next month, and setting up interviews means moving times back and forth. When you finish this page, your bot will screen the day's new applications against your must-haves every weekday at 5:00 PM, add them to an applicant list, and pick interview times from the free slots on your calendar. Invitations and rejections are drafts that wait for you to send.
+Weekends are the busiest time at your pet grooming shop, and you want to hire some part-time help. Once the job is posted, applications trickle into your inbox. Some people can only do weekdays, some can't start until next month, and some don't say whether they're OK around dogs at all. Setting up interviews means moving times back and forth, and by the end of the week you're tired from the email alone. It's the same if you're hiring a weekend clerk for a phone repair counter or a part-time tutor. When you finish this page, your bot will screen the day's new applications against your must-haves every weekday at 5:00 PM, add them to an applicant list, and pick interview times from the free slots on your calendar. Invitations and rejections are drafts that wait for you to send.
 
 One rule matters more than the rest. <mark>Name the must-haves first, so one nice extra never lets someone through without them.</mark>
 
@@ -18,17 +18,19 @@ Hiring is one of the goals the author, poteto, lists in the [article](https://x.
 
 ## The goal isn't a job post, it's a hire
 
-Posting the job is only one step in the process. What you actually want is a hire who stays, with your own time spent only on interviews. Make a new <Term k="bot" />, call it Potato, and give it that goal:
+Posting the job is only one step in the process. What you actually want is a hire who stays, with your own time spent only on interviews. Make a new <Term k="bot" />, call it Potato, and tell it where you're at and what you want:
 
-<Copy id="hr-goal" title="First message: the goal" code="Hi Potato. There's a goal I'd like you to own. I want to hire someone for the shop who will stay for the long run, so that I only have to spend my own time on interviews. This is your job from now on, so please remember it. Then, based on the goal, choose a name and a picture for yourself." />
+<Copy id="hr-goal" title="First message: the goal" code="Hi Potato. I run a pet grooming shop, we're swamped on weekends, and I want to hire part-time help. Applications keep coming in, and I have to read every one, answer every one, and then keep moving interview times around. It's wearing me out. I'd like you to take this over: help me hire someone who'll stick around. That way my own time only goes to interviews. This is your job from now on, so remember it. Then pick a name and a picture for yourself that fit the job." />
 
 ## Tell it how you screen and schedule
 
 Now tell it how you do this today: how you screen, how you set up interviews, and how you keep track. Here's an example. Swap in your own shop's details:
 
-<Copy id="hr-process" title="Second message: your process" code={`Potato, this is how I usually do this myself. I collect applications and screen them against the must-haves. Good fits get an interview, and the rest get a polite no. After each interview I tell you the outcome, and you reply to the person. The must-haves are weekend shifts and a start date within a month, and everyone who applies hears back. I use Gmail, Google Calendar, and a Google Sheets list of applicants. Applications come into my email, and some people leave messages on the job site. It's right when everyone is on the list with a status, and interviews are on my calendar with the applicant confirmed. After each interview I'll give you my notes on the person.
+<Copy id="hr-process" title="Second message: your process" code={`Potato, here's how I do it now. When an application comes in, I check it against the must-haves. Good fits get an interview, and the rest get a polite no. After each interview I tell you how it went, and you write back to the person. There are three must-haves: free both weekend days, can start within a month, and fine around big dogs. And everyone who applies has to hear back. I use Gmail, Google Calendar, and a Google Sheets list of applicants. Applications come into my email, and some people leave messages on the job site. It's right when everyone is on the list with a status, and interviews are on my calendar with the applicant confirmed. After each interview I'll tell you what I thought of the person.
 
-Think about how you could take this over from me completely. Before you begin, restate my goal and process in simple words, so I can give you feedback and confirm it. Don't start doing the work yet. Let's get the process planned first.`} />
+Think about how you could take this off my plate completely. Before you start, tell me back in plain words what you think the goal is and how you'd go about it, and I'll tell you if you've got it. Don't do anything yet. Let's get the plan right first.`} />
+
+At a phone repair counter, the must-haves might be weekend availability and knowing how to put on a screen protector. For a tutoring center, it might be which subjects someone can teach and how late they're free in the evening. Use your own few.
 
 If typing is slow, press `Cmd/Ctrl+D` and just talk, saying things as they come to you. It restates what it heard first. Correct whatever's off and go a few rounds until it's right. When you're happy, tell it to go ahead. If it needs an app, it shows a **Connect** card in the chat. Open it and sign in.
 
@@ -36,19 +38,19 @@ If typing is slow, press `Cmd/Ctrl+D` and just talk, saying things as they come 
 
 When you read an application, you know exactly which things are deal-breakers and which are just a bonus. The bot can't tell them apart, so tell it:
 
-<Copy id="hr-judge" title="Third message: how you decide" code={`Potato, here are a few rules I use to decide. Keep must-haves and nice-to-haves apart. Anyone missing a must-have gets a draft rejection, and nice-to-haves only set the order. Book interviews only in free slots on my calendar, with 15 minutes between them. If something in an application is unclear, like a gap in work history, list it and ask me. Don't guess.
+<Copy id="hr-judge" title="Third message: how you decide" code={`Potato, here are a few rules I go by. Keep must-haves and nice-to-haves apart. Anyone missing a must-have gets a draft rejection. Nice-to-haves, like having owned a dog or done grooming before, only decide the order. Only book interviews in free slots on my calendar, with 15 minutes between them. If something in an application doesn't make sense, like a stretch of time with nothing listed, put it on a list and ask me. Don't guess.
 
-Help me find what I haven't told you about this process yet. Ask me how I make decisions, where I get my information, how I check the work, and when you should ask me for help. Ask one question at a time. Then walk me through a few examples so I can give you feedback. Don't automate anything yet.`} />
+Also, help me figure out what I haven't told you yet: how I make calls, where my info comes from, how I know it's done right, and when you should come to me. One question at a time. Then walk me through a few examples and I'll tell you what's off. Don't set anything to run on its own yet.`} />
 
 The first rule is the line from the top of this page. However good the extras look, a missing must-have still means no. The second has it book against your calendar, so interviews don't clash with your other plans. The third sends unclear cases to you, so it never makes calls about people for you.
 
-When it's done asking, try it on a real case or two that went wrong, like the applicant who said on interview day they couldn't do weekends. See how it would handle them, then tell it what to fix.
+When it's done asking, try it on a real case or two that went wrong, like the applicant who said on interview day that they couldn't do Sundays. See how it would handle them, then tell it what to fix.
 
 ## Every weekday at 5 PM, it screens the new ones
 
 Once this has gone well a few times, you can let it start on its own. First have it save the process as a <Term k="技能" />, written instructions it follows every time, then set up a <Term k="routine" /> that tells it when to start:
 
-<Copy id="hr-routine" title="Fourth message: let it start on its own" code={`Save the process we just used as a skill called "Hiring." Then set up a routine: every weekday at 5:00 PM, use that skill on today's new applications and update the applicant list. Write interview invitations and rejections as drafts for me to send. Don't contact anyone for me, and don't send calendar invitations.`} />
+<Copy id="hr-routine" title="Fourth message: let it start on its own" code={`Save what we just worked out as a skill called "Hiring." Then set up a routine: every weekday at 5:00 PM, use that skill on today's new applications and update the applicant list. Write interview invitations and rejections as drafts for me to send. Don't contact anyone for me, and don't send calendar invitations.`} />
 
 After the first few runs, first check that the list is complete, with every application from today in the sheet. Then compare the interview times it picked with your calendar to make sure they're really free. Last, make sure nothing was sent, and invitations and rejections are still drafts.
 
