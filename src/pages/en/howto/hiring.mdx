@@ -14,47 +14,49 @@ Weekends are the busiest time at your pet grooming shop, and you want to hire so
 
 One rule matters more than the rest. <mark>Name the must-haves first, so one nice extra never lets someone through without them.</mark>
 
-Hiring is one of the goals the author, poteto, lists in the [article](https://x.com/poteto/status/2123159537016533493). The official docs have a similar use case called a Talent scout. See [Use cases](https://docs.x.ai/grok-bot/use-cases#talent-scout). It takes four steps: give it the goal, explain how you do it now, teach it how you decide, then let it start on its own.
+Hiring is one of the goals the author, poteto, lists in the [article](https://x.com/poteto/status/2123159537016533493). The official docs have a similar use case called a Talent scout. See [Use cases](https://docs.x.ai/grok-bot/use-cases#talent-scout).
 
 ## The goal isn't a job post, it's a hire
 
-Posting the job is only one step in the process. What you actually want is a hire who stays, with your own time spent only on interviews. Make a new <Term k="bot" />, call it Potato, and tell it where you're at and what you want:
+Posting the job is only the first step. What you want is a hire who stays, with your own time spent only on interviews. Make a new <Term k="bot" />, call it Potato, and tell it why the shop needs someone:
 
-<Copy id="hr-goal" title="First message: the goal" code="Hi Potato. I run a pet grooming shop, we're swamped on weekends, and I want to hire part-time help. Applications keep coming in, and I have to read every one, answer every one, and then keep moving interview times around. It's wearing me out. I'd like you to take this over: help me hire someone who'll stick around. That way my own time only goes to interviews. This is your job from now on, so remember it. Then pick a name and a picture for yourself that fit the job." />
+<Copy id="hr-goal" title="First message: the goal" code="Potato, I run a pet grooming shop, we're swamped on weekends, and I need part-time help. Applications keep coming in, and I have to read every one, answer every one, and then keep moving interview times around. It's wearing me out. Hiring is yours to run now: find me someone who'll stick around, and I'll just show up for the interviews. Remember that this whole thing is on you from today." />
+
+If you want it to name itself after the job, tack a line onto the end. [Beginner lesson 2](/en/start/2-first-bot/) shows how.
 
 ## Tell it how you screen and schedule
 
-Now tell it how you do this today: how you screen, how you set up interviews, and how you keep track. Here's an example. Swap in your own shop's details:
+Now tell it how you screen, how you set up interviews, and how you keep track. Here's what the grooming shop owner might say. Swap in your own must-haves:
 
-<Copy id="hr-process" title="Second message: your process" code={`Potato, here's how I do it now. When an application comes in, I check it against the must-haves. Good fits get an interview, and the rest get a polite no. After each interview I tell you how it went, and you write back to the person. There are three must-haves: free both weekend days, can start within a month, and fine around big dogs. And everyone who applies has to hear back. I use Gmail, Google Calendar, and a Google Sheets list of applicants. Applications come into my email, and some people leave messages on the job site. It's right when everyone is on the list with a status, and interviews are on my calendar with the applicant confirmed. After each interview I'll tell you what I thought of the person.
+<Copy id="hr-process" title="Second message: your process" code={`When an application comes in, I check three must-haves first: free both weekend days, can start within a month, and fine around big dogs. If they pass, I set up an interview. If not, they get a polite no. Either way, everyone hears back. After each interview I'll tell you how it went and what I thought of the person, and you write back to them. Applications land in my email, and some people leave messages on the job site. I keep a sheet of who applied and how far they've got. Interviews go on my calendar, and one only counts as set when the applicant has confirmed.
 
-Think about how you could take this off my plate completely. Before you start, tell me back in plain words what you think the goal is and how you'd go about it, and I'll tell you if you've got it. Don't do anything yet. Let's get the plan right first.`} />
+Picture running this start to finish yourself. Don't write to anyone yet. Tell me how you'd screen and how you'd book interviews, and I'll listen for what's off.`} />
 
 At a phone repair counter, the must-haves might be weekend availability and knowing how to put on a screen protector. For a tutoring center, it might be which subjects someone can teach and how late they're free in the evening. Use your own few.
 
-If typing is slow, press `Cmd/Ctrl+D` and just talk, saying things as they come to you. It restates what it heard first. Correct whatever's off and go a few rounds until it's right. When you're happy, tell it to go ahead. If it needs an app, it shows a **Connect** card in the chat. Open it and sign in.
+The apps here are Gmail, Google Calendar, and a Google Sheets applicant list. If one isn't connected yet, it shows a **Connect** card in the chat. Open it and sign in. It reads the job site in the browser on its own computer. If its plan is off somewhere, say so, and a few rounds will get it right.
 
 ## Keep must-haves and nice-to-haves apart
 
 When you read an application, you know exactly which things are deal-breakers and which are just a bonus. The bot can't tell them apart, so tell it:
 
-<Copy id="hr-judge" title="Third message: how you decide" code={`Potato, here are a few rules I go by. Keep must-haves and nice-to-haves apart. Anyone missing a must-have gets a draft rejection. Nice-to-haves, like having owned a dog or done grooming before, only decide the order. Only book interviews in free slots on my calendar, with 15 minutes between them. If something in an application doesn't make sense, like a stretch of time with nothing listed, put it on a list and ask me. Don't guess.
+<Copy id="hr-judge" title="Third message: how you decide" code={`When you read applications, go by these. Keep must-haves and nice-to-haves apart. Anyone missing a must-have gets a draft rejection. Nice-to-haves, like having owned a dog or done grooming before, only decide the order. Only book interviews in free slots on my calendar, with 15 minutes between them. If something in an application doesn't make sense, like a stretch of time with nothing listed, put it on a list and ask me. Don't guess.
 
-Also, help me figure out what I haven't told you yet: how I make calls, where my info comes from, how I know it's done right, and when you should come to me. One question at a time. Then walk me through a few examples and I'll tell you what's off. Don't set anything to run on its own yet.`} />
+Whenever an application leaves you unsure, like someone who can only do half days, or a student who's only free during school breaks, save it up and ask me about them one by one.`} />
 
 The first rule is the line from the top of this page. However good the extras look, a missing must-have still means no. The second has it book against your calendar, so interviews don't clash with your other plans. The third sends unclear cases to you, so it never makes calls about people for you.
 
-When it's done asking, try it on a real case or two that went wrong, like the applicant who said on interview day that they couldn't do Sundays. See how it would handle them, then tell it what to fix.
+Then test it on the applicant who said on interview day that they couldn't do Sundays. In its place, would it have spotted the signs, and what would it do? Correct it where it's wrong. While the rules are still settling, don't set it to run on its own. To have it ask about whatever you left out, use [this prompt on the prompts page](/en/howto/prompts/#p-gaps).
 
 ## Every weekday at 5 PM, it screens the new ones
 
-Once this has gone well a few times, you can let it start on its own. First have it save the process as a <Term k="技能" />, written instructions it follows every time, then set up a <Term k="routine" /> that tells it when to start:
+Once you're happy with a few batches, let it do this on a schedule. First save the process as a <Term k="技能" />, the instructions it follows from now on, then set up a <Term k="routine" /> that says when it starts:
 
-<Copy id="hr-routine" title="Fourth message: let it start on its own" code={`Save what we just worked out as a skill called "Hiring." Then set up a routine: every weekday at 5:00 PM, use that skill on today's new applications and update the applicant list. Write interview invitations and rejections as drafts for me to send. Don't contact anyone for me, and don't send calendar invitations.`} />
+<Copy id="hr-routine" title="Fourth message: let it start on its own" code={`Save this process as a skill called "Hiring." Then add a routine: every weekday at 5:00 PM, use it on today's new applications and bring the applicant list up to date. Interview invitations and rejections are drafts until I send them. Don't get in touch with anyone for me, and no calendar invitations either.`} />
 
 After the first few runs, first check that the list is complete, with every application from today in the sheet. Then compare the interview times it picked with your calendar to make sure they're really free. Last, make sure nothing was sent, and invitations and rejections are still drafts.
 
-A new routine waits for its next scheduled time. If you'd rather not wait, open it and choose **Test**, but keep in mind that a test does real work. See [Create a routine](https://docs.x.ai/grok-bot/skills-routines-and-automations#create-a-routine) in the official docs. For what it stops to ask you about, see [Approvals and privacy](/en/howto/approvals-privacy/).
+Set it up after 5:00 PM, and its first run is the next weekday. Want to see it now? Open it and choose **Test**. A test really screens today's applications, and the invitations and rejections are still only drafts. See [Create a routine](https://docs.x.ai/grok-bot/skills-routines-and-automations#create-a-routine) in the official docs. For what it stops to ask you about, see [Approvals and privacy](/en/howto/approvals-privacy/).
 
 Get the must-haves straight, and your time goes only to the people worth meeting.
 

@@ -5,7 +5,7 @@ time: Look up as you go
 for: You want a prompt you can copy, tweak and send
 step: 1
 tldr: In the article's order, from setting the goal to running on its own, one prompt you can send for each step, written the way you'd text a friend.
-description: "The prompts from poteto's article (five follow its meaning in everyday words, the rest are written from its ideas, and all are marked), grouped by its sections. Start with the goal, the process, teach it how you think, let it improve itself, make it run on its own, install Dr Eggbot. Each one copies in one click, with a line on when to use it and how a student, an office worker, a parent, someone caring for their parents, a freelancer, or a shop owner might fill it in."
+description: "The prompts from poteto's article (five follow its meaning in everyday words, the rest are written from its ideas, and all are marked), grouped by its sections. Start with the goal, the process, teach it how you think, let it improve itself, make it run on its own, install Dr Eggbot. Each one copies in one click, with a line on when to use it and how a student, an office worker, someone caring for their parents, a freelancer, a content creator, a shop owner, or someone hunting for a flat might put it."
 ---
 import Term from "../../../components/Term.astro";
 import Q from "../../../components/Q.astro";
@@ -13,9 +13,9 @@ import Copy from "../../../components/Copy.astro";
 
 Want to hand a bot a job but not sure how to open? This page lines up prompts you can send as they are, in the order of poteto's article [Automate Anything with Grok Bot](https://x.com/poteto/status/2123159537016533493): start with the goal, explain the process, teach it how you think, let it improve itself, then make it run on its own. Only one habit really matters along the way: <mark>have it restate first, and let it start only after you confirm.</mark>
 
-The five marked "adapted from the article" come from prompts the author wrote in the article (the goal, the interview, the process, the review and the gaps), put into everyday words without changing what they ask. The ones marked "ours" are ideas the article describes without giving any wording, so we wrote them from what it describes. Replace what's in angle brackets with your own situation, and Potato with your bot's name.
+The five marked "adapted from the article" come from prompts the author wrote in the article (the goal, the interview, the process, the review and the gaps), put into everyday words. The goal and the interview also open with a line about your situation, which the article doesn't have. The ones marked "ours" are ideas the article describes without giving any wording, so we wrote them from what it describes. Replace what's in angle brackets with your own situation, and Potato with your bot's name.
 
-They're all written the way you'd text someone: first what's driving you crazy right now, then what you want, then what it gets you. Fill them in that order, and the bot gets why you're asking.
+They're all written the way you'd text someone: your situation first, then what you want. The examples below are how different people would say it, and yours doesn't need to match the template word for word.
 
 ## Start with the goal
 
@@ -23,28 +23,28 @@ Send this first, right after you make a new bot. Describe the result you want at
 
 <Copy id="p-goal" title="Give it the goal and let it name itself (adapted from the article)" code={`Hi Potato. <What's driving you crazy about this right now>. I'd like you to take this over: <the result you want at the end>. That way <what it gets you>. This is your job from now on, so remember it. Then pick a name and a picture for yourself that fit the job.`} />
 
-Here's roughly how different people might fill it in:
+Here's roughly how different people might say it:
 
-- A student: "My deadlines are spread across school email and three class websites, and I always remember the night before. I'd like you to take this over: every morning, tell me what's due in the next few days. That way I'm not up at 2 AM finishing things."
-- Someone with an office job: "Every month I dig through my camera roll for receipts and check the amounts one by one for my expenses. I'd like you to take this over: log each receipt as it comes in, and at the end of the month fill in the form for me to look over. That way it takes me ten minutes."
-- A parent: "Once the school and after-school classes start sending notices, I miss things. I forgot a parent meeting last month. I'd like you to take this over: when a notice mentions a date, note it down and remind me the day before. That way nothing slips."
-- Someone caring for their parents: "I'm the only one keeping track of my parents' checkups, prescriptions, and physicals, and the paperwork is all over the place. I'd like you to take this over: track the dates, remind me ahead of time, and put the test results in one table. That way I just bring it along to the doctor."
-- A freelancer: "I keep forgetting to invoice after I finish a job, and the money takes months to show up. I'd like you to take this over: draft an invoice when each job's done, remind me when one's overdue, and write the reminder email for me to send. That way I get paid on time."
-- A small shop owner: "Customers book by email and on our booking page, and I mix them up. I've double-booked before. I'd like you to take this over: handle the bookings, and ask me first when there's a clash. That way nothing slips."
+- A student: "My due dates are all over school email and three class sites, and I keep finding out the night before. Just tell me every morning what's due this week, so I stop pulling all-nighters."
+- Someone with an office job: "Every month I dig through my camera roll for receipts and check the amounts one by one for my expenses, and it eats a whole evening. Log each receipt as it comes in, and at the end of the month fill in the expense form for me to look over."
+- Someone caring for their parents: "I'm the only one keeping track of my parents' checkups, prescriptions, and physicals, and the paperwork is all over the place. Keep an eye on the dates and remind me two days ahead. Put the test results in one table too, so I can just grab it on the way to the doctor."
+- A freelancer: "I finish a job and forget to ask the client for the money, and it takes a month or two to come in. When a job's done, draft the invoice and the payment request email for me to check, and tell me if it isn't paid by the due date."
+- A content creator: "Every post gets hundreds of comments, my email's full of collab offers, and I've missed brand deals buried in there. Each evening, pull out the collab offers and the real questions, draft replies, and I'll send them."
+- A small shop owner: "Customers book by email and on our booking page, and I mix them up. I've double-booked once already. You handle the bookings from now on, and check with me when there's a clash, so nobody comes in for nothing."
 
 When you only have a rough direction in mind and can't put the goal into words, let it ask you:
 
-<Copy id="p-interview" title="Can't describe the goal? Let it interview you (adapted from the article)" code="Hi Potato. There's something I'd like you to take over, but I can't quite say what I want. I just know I'm getting chased around by a pile of little things every day. Can you interview me, one question at a time, until we land on a goal I'm happy with?" />
+<Copy id="p-interview" title="Can't describe the goal? Let it interview you (adapted from the article)" code="Hi Potato. There's something I'd like you to take over, but I can't quite say what I want. I just know I'm getting chased around by a pile of little things every day. Can you ask me some questions and interview me until we land on a goal I'm happy with?" />
 
 ## The process
 
 With the goal set, tell it how you do the job today. Voice dictation works best: talk for a while without organizing your thoughts first. In `<your process>`, cover the steps you take, what you watch out for, and the apps and tools you use. Add how you check the work, where your information comes from, and where feedback comes from.
 
-Say you write a weekly report every Friday at work. You might say something like: "Friday afternoon I scroll back through the week's Slack messages and the Drive docs that changed, pick out what I did, and write it up in the same format as last week's. What I'm most scared of missing is the favors other teams asked me for. Then I send it to my team lead, and whatever they say back is my feedback."
+You don't need to go down that list item by item. Just talk the way you would to a person. A teacher who writes to parents every week might say: "Friday after school, I export the week's homework records from the school system, pick out the kids who haven't turned things in, and write each of their parents an email saying what's missing and when it's due. My big worry is putting another kid's details in the wrong email. When a parent writes back that their kid did hand it in, I know the system didn't record it."
 
 <Copy id="p-process" title="Tell it how you do it, have it restate, and hold off (adapted from the article)" code={`Potato, here's how I do this now: <your process>
 
-Think about how you could take this off my plate completely. Before you start, tell me back in plain words what you think the goal is and how you'd go about it, and I'll tell you if you've got it. Don't do anything yet. Let's get the plan right first.`} />
+Think about how you could take this over from me completely. Before you begin, play back to me in plain words what you think my goal and my process are, so I can correct you and confirm. Hold off on the actual work, and let's get the process planned first.`} />
 
 The first pass doesn't need to be right. Read how it restates things, correct it and fill in what's missing, and go a few rounds. Once you're happy, send this to get it started:
 
@@ -56,23 +56,25 @@ If you'd like it to look for a better or simpler way, have it check the process 
 
 ## Teach it how you think
 
-You do a lot without thinking about it. The author's example is booking customers: you know which services take longer, who can do each job, and when to leave extra time between appointments. Parents are the same: you know which notices need a signature and which you can just skim. That's obvious to you, but your bot has to be told. After you've explained the process, and before it starts for real, have it ask you about these one by one:
+You do a lot without thinking about it. The author's example is booking customers: you know which services take longer, who can do each job, and when to leave extra time between appointments. If you run a weekend sports team, it's the same: you know whose sign-up needs a second check and who never needs chasing. That's obvious to you, but your bot has to be told. After you've explained the process, and before it starts for real, have it ask you about these one by one:
 
-<Copy id="p-gaps" title="Have it find what you left out (adapted from the article)" code="Potato, help me figure out what I haven't told you yet: how I make calls, where my info comes from, how I know it's done right, and when you should come to me. One question at a time. Then walk me through a few examples and I'll tell you what's off, and after that we'll set it to run on its own." />
+<Copy id="p-gaps" title="Have it find what you left out (adapted from the article)" code="Potato, help me figure out what I haven't told you yet: how I make calls, where my info comes from, how I know it's done right, and when you should come to me. Ask one question at a time. Then walk me through a few examples and I'll tell you what's off, and after that we'll set it to run on its own." />
 
-You don't need to cover every case up front, either. Pick a few real examples, especially the ones that went wrong or needed special handling, and ask what it would do. Think of the report you almost forgot to hand in, the booking that got moved twice, or the checkup that landed on the same afternoon as a parent meeting:
+You don't need to cover every case up front, either. Pick a few real examples, especially the ones that went wrong or needed special handling, and ask what it would do. Think of the interview you nearly missed, the booking that got moved twice, or the checkup that landed on the same afternoon as something else:
 
 <Copy id="p-examples" title="Test it on real examples (ours)" code={`Let me tell you about a few times this really happened, and a couple of them went badly: <examples>. If it were you, what would you do each time? Talk me through it and I'll tell you if you're right.`} />
 
 ## Let it improve itself
 
-Once it's doing the job, it's best to let it get feedback for itself. The author gives an example: a customer leaves a review online saying they waited a long time before anyone helped them. If the bot can look up that review on its own, and pull up that day's records, it can see what went wrong. Feedback can come from other places too: a freelancer has a client's replies, and someone with an office job has their team lead's comments on a report.
+Once it's doing the job, it's best to let it get feedback for itself. The author gives an example: a customer leaves a review online saying they waited a long time before anyone helped them. If the bot can look up that review on its own, and pull up that day's records, it can see what went wrong. Feedback can be somewhere else too: for a freelancer it's in client replies, for a content creator it's in the comments, and for a teacher it's in parents' replies.
 
 <Copy id="p-feedback" title="Have it look for feedback itself (ours)" code={`From now on, keep an eye on <where feedback shows up, like reviews online or client replies> yourself. When someone's unhappy, go through that day's records and find the step where it went wrong, then tell me what to change next time. Don't reply to anyone, and don't change anything yet.`} />
 
-That's why the more data it has, the better it can see where things go wrong. If the data isn't there, have it build you a small tool to log it, which is the author's idea too. At a phone repair counter, say, you'd log when each customer arrives, when someone helps them, when they hand over the phone, and when the repair starts and finishes. Then you can work out how long they waited and why. Swap in the moments that matter for your own work:
+That's why the more data it has, the better it can see where things go wrong. If the data isn't there, have it build you a small tool to log it, which is the author's idea too. The author's example is a shop logging the times of each step of a customer's visit. You don't need a shop to use it. If you look after your parents, say, you could have it build a blood pressure log:
 
-<Copy id="p-log-app" title="Have it build a small tool to log data (ours)" code="I run a phone repair counter. Customers keep saying they waited too long, but I can't tell where it gets stuck. Build me a small tool I can use on my computer and phone that logs a few times for every customer: when they arrived, when someone helped them, when they handed us the phone, when the repair started, and when it was done. Tell me how you plan to do it first, and start once I say OK." />
+<Copy id="p-log-app" title="Have it build a small tool to log data (ours)" code="My dad checks his blood pressure every morning and evening and writes the numbers in a little notebook, and whenever the doctor asks, I can never find them all. Make me a simple tool for my phone. Each time, it logs the date, morning or evening, the top and bottom numbers, and whether he took his pills. At the end of the month, give me a table to bring to his checkup. Just record things, and don't tell me whether the numbers are high. Tell me how you plan to do it first, and start once I say OK." />
+
+Swap in the numbers that matter for your own job.
 
 When your data is spread across several apps, you also need one ID to tie it together, like an email or order number. For why this matters, see [Consistent IDs](/en/wiki/ids/).
 
@@ -84,9 +86,17 @@ Without a <Term k="routine" />, it only works when you ask. With one, you're no 
 
 <Copy id="p-schedule" title="Start on a schedule (ours)" code="From now on, start this yourself every Monday at 9:00 AM. You don't need to wait for me. Once it's set up, tell me when it'll run and in which time zone." />
 
-If the work starts with an email or a message, like a notice from school or a customer emailing to move a booking, have it wait for that to happen:
+Hunting for a flat, say, where the good ones go in hours, you could have it check twice a day:
 
-<Copy id="p-trigger" title="Start when something happens (ours)" code={`From now on, whenever <a message like this> shows up in <this inbox or Slack channel>, start on this. Keep the trigger narrow. Don't jump on every message.`} />
+<Copy id="p-rent" title="Flat hunting: check the rental sites twice a day (ours)" code="I'm hunting for a flat and the good ones go in hours. Every day at 8 AM and 7 PM, check the two rental sites I use for two bedrooms, ten minutes' walk to a station, and rent under ... a month. Send me links to new ones only, nothing you've sent before. Don't contact any landlords. When it's set up, tell me what times it runs and in which time zone." />
+
+Twice a day is plenty. The more often it checks, the more usage it spends.
+
+If the work starts with an email or a message, have it wait for that to happen:
+
+<Copy id="p-trigger" title="Start when something happens (ours)" code={`From now on, whenever <a message like this> shows up in <your bot's own email address, or this Slack channel>, start on this. Keep the trigger narrow. Don't jump on every message.`} />
+
+One catch: the email that starts it has to arrive at the bot's own address. A notice from school or a customer emailing to move a booking lands in your own inbox, and mail there doesn't start a routine. To have mail like that start the work, forward it to the bot's address, the way the routine on [Plan a trip](/en/howto/travel/) waits for mail to the bot. Or check on a schedule instead, like the 8 PM routine in [Hand off the family admin](/en/howto/family-admin/).
 
 ## Install Dr Eggbot
 
