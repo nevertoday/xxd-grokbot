@@ -50,8 +50,8 @@ export const ARTICLE = "https://x.com/poteto/status/2123159537016533493";
 
 // 新手入门：给第一次用 Grok Bot 的人。三课，一条路走到底；做完这三课就够用了。
 export const LESSONS = [
-  { n: 1, slug: "1-goal", title: "先想清楚你要的结果", minutes: "10 分钟", sum: "挑一件常做的事，用一句话写下你要的结果，和它是为了什么", en: { title: "Know the result you want", minutes: "10 minutes", sum: "Pick a job you do often and write one sentence: the result you want, and what it's for" } },
-  { n: 2, slug: "2-first-bot", title: "建好你的第一个 bot", minutes: "15 分钟", sum: "装好 Grok Bot，建一个 bot，把你写的那句话交给它", en: { title: "Make your first bot", minutes: "15 minutes", sum: "Install Grok Bot, make a bot, and hand it the sentence you wrote" } },
+  { n: 1, slug: "1-goal", title: "先想清楚你要的结果", minutes: "10 分钟", sum: "挑一件常做的事，用几句大白话写下它烦在哪、你最后要什么", en: { title: "Know the result you want", minutes: "10 minutes", sum: "Pick a job you do often and write a few plain lines: what bugs you about it, and the result you want" } },
+  { n: 2, slug: "2-first-bot", title: "建好你的第一个 bot", minutes: "15 分钟", sum: "装好 Grok Bot，建一个 bot，把你写的那几句话交给它", en: { title: "Make your first bot", minutes: "15 minutes", sum: "Install Grok Bot, make a bot, and hand it what you wrote" } },
   { n: 3, slug: "3-hand-over", title: "把一件事交给它", minutes: "30 分钟", sum: "讲讲你平时怎么做，看它做一遍，再让它按时自己做", en: { title: "Hand it one job", minutes: "30 minutes", sum: "Tell it how you do the job, watch it do it once, then let it run on a schedule" } },
 ];
 // 以后加的语言：新手入门标题、时间、简介在 src/i18n/<语言>.js 的 lessons 里，按顺序叠到这里

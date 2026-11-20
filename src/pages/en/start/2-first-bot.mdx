@@ -1,6 +1,6 @@
 ---
 layout: ../../../layouts/Lesson.astro
-tldr: "One bot, one job. In this lesson you install Grok Bot, make a bot called Potato and hand it the sentence you wrote in lesson 1."
+tldr: "One bot, one job. In this lesson you install Grok Bot, make a bot called Potato and hand it the lines you wrote in lesson 1."
 lesson: 2
 ---
 import Callout from "../../../components/Callout.astro";
@@ -9,7 +9,7 @@ import Copy from "../../../components/Copy.astro";
 import Reply from "../../../components/Reply.astro";
 import Q from "../../../components/Q.astro";
 
-You already have the sentence you wrote in lesson 1. In this lesson you hand it over: you install Grok Bot, make a <Term k="bot" /> just for this job, and send it that sentence.
+You already have the lines you wrote in lesson 1. In this lesson you hand them over: you install Grok Bot, make a <Term k="bot" /> just for this job, and send it what you wrote.
 
 Why a bot just for this job? Think about how you'd brief a new colleague. You wouldn't say "from now on, everything's yours." You'd say: this job is yours, and here's what it's for. A bot works the same way. When it looks after one job, everything it remembers is about that job, and you only have to explain it once. So this whole lesson comes down to one thing:
 
@@ -58,21 +58,23 @@ Why Potato? Because the author says that if you can't think of a name, call it P
 
 ## Step 5: Hand it your goal
 
-Copy the message below and paste it into the message box. Replace the "I want …, so that …" line with the sentence you wrote in lesson 1, then send it.
+Copy the message below and paste it into the message box. Replace the line in square brackets with what you wrote in lesson 1, then send it.
 
-<Copy id="goal" title="Copy, replace the middle line with your goal, then send" code={`Hi Potato, here's the goal I want you to be responsible for. Please remember it:
-I want …, so that …
-Based on this goal, choose a name and a picture for yourself.`} />
+<Copy id="goal" title="Copy, replace the brackets with your lines, then send" code={`Hi Potato, from now on this job is yours. Remember it:
+[Paste what you wrote in lesson 1 here]
+Based on this, pick a name and a picture for yourself.`} />
 
-<Reply title="Illustration: roughly what its reply looks like" code={`Got it. The goal I'm responsible for: before Monday's meeting,
-everyone has slides that show this week's progress,
-so that you spend less of the meeting reading numbers aloud
-and more of it making decisions.
+With the parent's lines from lesson 1, its reply would look something like this:
 
-I'd like to be called "Monday," since Monday's meeting is mine to prepare.
-For my picture, I'd pick an open slide deck.`} />
+<Reply title="Illustration: roughly what its reply looks like" code={`Got it, this one's mine:
+whenever a school or activity notice mentions a date,
+I put it on your calendar and remind you the day before,
+so your kid doesn't get to school without what they need.
 
-Read its reply. First check that the goal it wrote down matches yours, and if it doesn't, just type a correction, like "Not Monday, Wednesday." Then look at the name it picked. If you like it, keep it. If the sidebar still says Potato, change it yourself as shown under "If something's off" below.
+I'd like to be called "Backpack," since what goes in it tomorrow is my job.
+For my picture, a little backpack.`} />
+
+Read its reply. First check that what it wrote down matches what you wrote, and if it doesn't, just type a correction, like "Not the day before, two days before. Some things I have to buy first." Then look at the name it picked. If you like it, keep it. If the sidebar still says Potato, change it yourself as shown under "If something's off" below.
 
 You now have a bot that does only this job, and it remembers what the job is for. In the next lesson, you tell it how you usually do it.
 
@@ -82,7 +84,7 @@ You now have a bot that does only this job, and it remembers what the job is for
 
 Then let Potato help. Send it this, and it interviews you, one question at a time:
 
-<Copy id="interview-me" code={`Hi Potato, I want you to be responsible for a goal, but I'm not sure how to put it into words. Could you interview me, one question at a time, until we have a goal I'm happy with?`} />
+<Copy id="interview-me" code={`Hi Potato, there's something I want to hand off to you, but I can't quite say what I want yet. Could you interview me, one question at a time, until it's clear?`} />
 
 Once the goal is settled, send the message from step 5.
 
@@ -121,6 +123,6 @@ To change the picture, click the picture in its details and open the **Generate*
 </Q>
 <Q q="It answers in a language I don't want.">
 
-Reply: "From now on, always answer me in English. Please remember this."
+Reply: "From now on, answer me in English. Remember that, OK?"
 
 </Q>

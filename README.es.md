@@ -35,7 +35,7 @@ poteto abre el artículo diciendo que la automatización es, en realidad, una fo
 Cuando horneas un pastel de manzana, el pastel es el objetivo. Comprar las manzanas, preparar la masa, armarlo, hornearlo y dejarlo enfriar son el proceso. La mayoría de la gente le pasa al bot un solo paso del proceso, como «envía este correo», así que el bot solo envía correos. Háblale primero del pastel, y podrá encargarse de todo el proceso, y quizá encontrar un camino más fácil.
 
 <p align="center">
-  <img src="assets/en/readme/pie.svg" width="100%" alt="Proceso: comprar manzanas, preparar la masa, armar, hornear y enfriar, que llevan al objetivo, un pastel de manzana. El objetivo es lo que quieres al final. El proceso es cómo llegas ahí. Pásale el proceso a un bot.">
+  <img src="assets/en/readme/goal.svg" width="100%" alt="Proceso: comprar manzanas, preparar la masa, armar, hornear y enfriar, que llevan al objetivo, un pastel de manzana. El objetivo es lo que quieres al final. El proceso es cómo llegas ahí. Pásale el proceso a un bot.">
 </p>
 
 ## Tres lecciones, una cosa a la vez

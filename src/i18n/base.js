@@ -58,7 +58,8 @@ export default {
     ctaNote: "The beginner track is three lessons: get clear on the goal, make a bot, then hand it one job.",
     painH: "Has this happened to you?",
     PAIN: [
-      "Every week you lose an afternoon doing the same few steps again.",
+      "It's Friday afternoon and you're digging through chat again for the weekly report, the same steps as every week.",
+      "School sends so many notices that something always slips: a parents' meeting, a payment, something your kid had to bring.",
       "You'd hand it to an AI, but a chat AI only answers. You still do the clicking, copying and sending.",
       "You heard about automation, saw it meant writing code, and gave up.",
     ],
@@ -92,7 +93,7 @@ export default {
 
   // 新手入门三课在导航、首页路线图里的标题、时间、简介（顺序：1 先想清楚、2 建第一个 bot、3 交给它一件事）
   lessons: [
-    { title: "Decide what you want done", minutes: "10 minutes", sum: "Pick something you do often and name the result you want" },
+    { title: "Decide what you want done", minutes: "10 minutes", sum: "Pick something you do often and write a few plain lines: what bugs you about it, and the result you want" },
     { title: "Make your first bot", minutes: "15 minutes", sum: "Make a new bot and give it a name" },
     { title: "Hand it one job", minutes: "30 minutes", sum: "Explain the job and watch it do it once" },
   ],
