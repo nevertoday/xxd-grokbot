@@ -2,31 +2,35 @@
 layout: ../../../layouts/Guide.astro
 step: 1
 need: "Something you do often; a new bot"
-tldr: "Keep asking what the work is for until you reach what it does for the business: earn money or save it. Then let the bot rethink the process, and give this goal a bot of its own."
-description: "Start with the goal: don't mistake one step for the goal, keep asking until you know whether the work earns money or saves it, don't cling to the current process, give the goal to a new bot with that one job, let it name itself, and let it interview you if you can't put the goal into words."
+tldr: "Keep asking what the work is for until you reach the result you actually care about. For work, that's often whether it earns money or saves it. Then let the bot rethink the process, and give this goal a bot of its own."
+description: "Start with the goal: don't mistake one step for the goal, keep asking what it's for (at work, until you know whether it earns money or saves it), don't cling to the current process, give the goal to a new bot with that one job, let it name itself, and let it interview you if you can't put the goal into words."
 ---
 import Checkpoint from "../../../components/Checkpoint.astro";
 import Copy from "../../../components/Copy.astro";
 import Term from "../../../components/Term.astro";
 import Q from "../../../components/Q.astro";
 
-The goal you hand a bot works best as one sentence: "I want …, so that …". The first half is easy. The hard part is the second half, because how far should "so that" go? In [the article](https://x.com/poteto/status/2123159537016533493), poteto's answer is to keep going until you reach what the work does for the business.
+A lot of people start a bot off with "check my kid's school emails" or "answer this confirmation email." It'll do that, and only that. In [the article](https://x.com/poteto/status/2123159537016533493), poteto points out a mistake that comes up often, which is treating the process as the goal. Filling out a form or sending an email is just one step in the process. The goal is something you have to dig for.
 
-<mark><strong>Keep asking "what is this for?" until you reach whether it earns you money or saves you money. That's your goal.</strong></mark>
+<mark><strong>Keep asking "what is this for?" until you reach the result you actually care about. That's your goal.</strong></mark>
 
-## Take bookings, and ask twice
+## Take school notices, and ask twice
 
-Say you run a small business and customers book ahead. Each time a new customer gets in touch, you read the email, check your schedule, and send a confirmation. Do that long enough and the job turns into "send confirmation emails" in your head. Hand it to a bot that way, and it will send emails and nothing more.
+Say you're a parent, and the school and your kid's after-school classes send several notices a week. Every evening you go through your inbox, and after a while the job in your head becomes "read the notices." Hand it to a bot that way, and it'll read them for you, and you're still the one who has to remember.
 
-That's a mistake the author sees often, treating the process as the goal. Filling out a form or sending an email is one step in the process. So ask one level up. What's the email for? So every new customer's booking is scheduled. Ask once more. What does a scheduled booking do for the business? A customer with a booking actually shows up, so it earns you money.
+Ask one level up. What's reading them for? So nothing slips. Ask once more. What slips? The parent-teacher meeting you forgot, the fee that's now overdue, the thing your kid was supposed to bring that you only remember on the way out the door. Now it's clear. You want none of that to slip, and reading the notices is just one step.
 
-The other side is saving money, and the author's example is stock. Say you fill in a stock sheet every week. Ask what it's for, and the answer is ordering just the right amount, not too much and not too little, so it saves you money. For earning money, the author's examples are closing a sale and building new features.
+## For work, ask whether it earns money or saves it
 
-If you can't work it out yourself, that's normal. Ask your manager or a colleague, or just ask the bot.
+Work goes the same way, and the author gives a very practical place to land. What does this do for the business? Does it earn you money or save you money?
+
+Take a small shop. Each time a new customer gets in touch, you read the email, check your schedule, and send a confirmation. Do that long enough and the job turns into "send confirmation emails." Ask what the email is for, and it's so every new customer's booking is scheduled. Ask again, and a customer with a booking actually shows up, so it earns you money. The other side is saving money, and the author's example is stock. You fill in a stock sheet every week, and it's really for ordering just the right amount, not too much and not too little. On the earning side, the author also mentions closing a sale and building new features.
+
+If you can't work it out yourself, that's normal. For work, ask your manager or a colleague. For home, ask the people you live with. Or just ask the bot.
 
 ## Once you know that, the process can change
 
-Why dig this deep? Because a bot that knows where the finish line is can help find the route. You may already have a well-worn process at work, but it's only one way to reach the goal. If the bot knows you want "every new customer's booking scheduled," not just "emails sent," it has room to find something simpler than what you do now. That's why the author warns against getting too attached to your current process. It's a means to an end.
+Why dig this deep? Because a bot that knows where the finish line is can help find the route. Think of dinner. What you want is to eat, and on a tired night ordering in gets you there just as well. If that parent only says "read the notices," the bot reads them. If it knows the goal is "nothing slips," it might find an easier way, like putting every date from a notice on your calendar and reminding you the day before. That's why the author warns against getting too attached to your current process. It's a means to an end.
 
 It's also why this step covers the goal and not the process. The process comes in step 2. If you'd rather the bot follow your process exactly, you can say so then.
 
@@ -34,37 +38,39 @@ It's also why this step covers the goal and not the process. The process comes i
 
 Once the goal is clear, give it a bot of its own. Make a new <Term k="bot" /> as in [beginner lesson 2](/en/start/2-first-bot/). Any name will do. If nothing comes to mind, call it Potato and let it pick a name in a minute.
 
-Why a new one? The official docs say a bot with one job builds more useful background than a catch-all helper. A bot that only handles bookings keeps what it learns about bookings, so you explain things once. If you have several jobs to hand off, give each one its own bot. See [Turn tasks you repeat into a Bot](https://docs.x.ai/grok-bot/use-cases#turn-tasks-you-repeat-into-a-bot) in the official docs.
+Why a new one? The official docs say a bot with one job builds more useful background than a catch-all helper. A bot that only handles school notices keeps what it learns about them, like which teacher sends what and how often fees come due, so you explain things once. If you have several jobs to hand off, give each one its own bot. See [Turn tasks you repeat into a Bot](https://docs.x.ai/grok-bot/use-cases#turn-tasks-you-repeat-into-a-bot) in the official docs.
 
 ## Hand it the goal
 
-Put your "I want …, so that …" sentence in your very first message. For bookings, it could look like this:
+Put the goal you dug out in your very first message. Say what's bugging you first, then what you want. For school notices, it could look like this:
 
-<Copy id="goal" title={`Swap in your own "I want …, so that …" sentence`} code="Hi Potato. There's a goal I'd like you to own: I want every new customer's booking scheduled, with none slipping through, so that every customer who reaches out turns into business. This is your job from now on, so please remember it. Then choose a name and a picture for yourself based on this goal." />
+<Copy id="goal" title="Swap in your own job" code="Hi Potato. My kid's school and after-school classes send so many notices that I always miss one or two. Either I forget to pay something, or I find out at breakfast that they were supposed to bring something. From now on this is your job, so remember it: don't let me miss anything those notices ask for. Then pick a name and a picture for yourself based on this job." />
 
 Asking it to remember follows the official advice. Give a bot its job in the first message and ask it to remember, because a bot usually decides on its own what to keep. Letting it pick a name and picture based on the goal comes from the author. See [Get started](https://docs.x.ai/grok-bot/get-started#3-meet-your-first-bot) in the official docs.
 
-If the sentence never comes out right, don't force it. Let the bot interview you:
+Other jobs work the same way. A student might say, "My deadlines are spread across school emails and the course site, and I always remember right before they're due. That's yours now. Don't let me miss another assignment." A freelancer might say, "I keep forgetting to send the invoice when a job's done, and the money takes forever to come in. Invoicing and chasing payment are yours now. Don't let any job go unpaid."
 
-<Copy id="interview" code="Hi Potato. I'd like you to own a goal, but I'm not sure how to describe it well. Could you ask me questions and interview me until we have a goal I'm happy with?" />
+If nothing you say sounds right, don't force it. Let the bot interview you:
 
-It asks, you answer, and you keep going until the goal sounds right to you.
+<Copy id="interview" code="Hi Potato. There's something I'd like you to take over, but I can't quite say what I want from it. Could you interview me? One question at a time, until we both think, yes, that's it." />
+
+It asks, you answer, and you keep going until you're nodding.
 
 With the goal handed over, the next step is telling it how you do the work.
 
 ## Stuck?
 
 <Q q="I don't know which job to hand over yet.">
-<p>The author suggests a few starter goals in the article. Pick whichever is closest to yours: saving up for a car, a house, or your kids' college; scheduling new customer bookings for your small business; making your customers' experience good enough that they leave good reviews; hiring someone new for your small business; gathering feedback so you can improve your product; preparing slides for a weekly meeting; or building new features for your product.</p>
+<p>The author suggests a few starter goals in the article: saving up for a car, a house, or your kids' college; scheduling new customer bookings for your small business; making your customers' experience good enough that they leave good reviews; hiring someone new for your small business; gathering feedback so you can improve your product; preparing slides for a weekly meeting; or building new features for your product. Everyday ones work too, like which assignments are due this week, your monthly expense report, your parents' checkups and prescriptions, or the job sites you check every day. Pick something you do every few days that bugs you.</p>
 </Q>
 <Q q="I don't like the name it picked.">
 <p>Click the bot's name at the top of the chat to open its details, then click the name again to edit it. Or just ask the bot to pick another one.</p>
 </Q>
 <Q q="My goal is too big for one bot.">
-<p>A product launch, for example, takes several jobs. Ask your <Term k="主 bot" /> to set up a few bots that each own one part. <a href="/en/guide/7-team/">Step 7</a> covers building a team of bots.</p>
+<p>The month-end close, for example, or taking the family away for a few days, takes several jobs. Ask your <Term k="主 bot" /> to set up a few bots that each own one part. <a href="/en/guide/7-team/">Step 7</a> covers building a team of bots.</p>
 </Q>
 <Q q="It started working right away.">
 <p>Send "Stop now." Your message takes priority over the work in progress, though actions it already finished are not undone. In the next step, the prompt tells it not to start yet.</p>
 </Q>
 
-<Checkpoint id="s1" items={["I can say what the work is for, not just one step of it", "I asked whether it earns me money or saves me money", "I made a new bot that owns only this job and gave it the goal"]} />
+<Checkpoint id="s1" items={["I can say what the work is for, not just one step of it", "I kept asking until I reached the result I care about, and for work, whether it earns or saves money", "I made a new bot that owns only this job and gave it the goal"]} />

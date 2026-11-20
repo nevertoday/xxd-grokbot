@@ -16,9 +16,9 @@ The goal is handed over, so now it's time to explain how you do the work. A lot 
 
 ## Say it all in one go
 
-Start by thinking about how you'd do the work yourself. For bookings, it might come out something like this:
+Start by thinking about how you'd do the work yourself. A freelancer talking through invoicing, for example, might say something like this:
 
-> New customers usually email to book. I check which day they want and what for, then find an open slot in the booking system, put them in, and email them back to say they're booked. Oh, and before I reply, I take another look at the system to make sure the booking actually saved. After they've been in, some of them leave a review online, so I read those too…
+> As soon as a job's done, I have to invoice it. I dig through my email for the price we agreed on, open the last invoice, change the date and the amount, save it as a PDF and send it. Oh, and before I send it, I check the client's name and address again, because I got it wrong once. Then I note it in my payments sheet. If the money still hasn't come in after two weeks, I have to grit my teeth and write a reminder…
 
 That's enough, and it's fine if it's messy. In [the article](https://x.com/poteto/status/2123159537016533493), poteto says the best way to do this is out loud. Talk for a while, dump everything the bot needs to know for the job, and don't worry about organizing your thoughts first.
 
@@ -30,10 +30,10 @@ The author lists six things to tell the bot. The example above already touches s
 
 - The steps you usually take, what comes first and what comes next
 - What you watch out for, like where things tend to go wrong
-- The apps and tools you use, like your email, a spreadsheet, or a booking system
+- The apps and tools you use, like your email, a spreadsheet, or a calendar
 - How you check that the work was done right
 - Where the information comes from, like email, Slack or Teams, a ticket, an app, or a website
-- Where the feedback comes from, like customer reviews or what colleagues tell you
+- Where the feedback comes from, like customer reviews, replies from clients, or what colleagues tell you
 
 If you miss one or two, don't worry. When the bot restates the plan, you'll see right away what's missing.
 
@@ -41,9 +41,9 @@ If you miss one or two, don't worry. When the bot restates the plan, you'll see 
 
 Put everything you said into this message and send it:
 
-<Copy id="process" title="Put everything you said in here" code={`Potato, this is how I usually do this myself: <your process>
+<Copy id="process" title="Put everything you said in here" code={`Potato, here's how I do this myself now: <your process>
 
-I want you to think about how you could take this over from me completely. Before you begin, restate my goal and process in simple words, so I can give you feedback and confirm it. Don't start doing the work yet. Let's get the process planned first.`} />
+Think about how you could take the whole thing off my hands. Before you do anything, tell me in plain words what you think the goal is and how you'd do it. That way I can spot what's off and fill it in. Don't start on the actual work until we've agreed on the plan.`} />
 
 The second half is the part that matters most. Asking it to restate shows you what it actually understood, and telling it not to start yet keeps this round to planning.
 
@@ -51,11 +51,11 @@ If you'd rather it follow your process exactly, put that in too. For example, "D
 
 ## Read its restatement and correct it, round by round
 
-It's normal not to get it right the first time, and the author says not to worry about that. When the bot restates the plan, fill in whatever's wrong. If your note is about one particular reply, reply to that message and say it there. If something should hold every time, tell it "from now on, always do it this way." A few rounds of this and you'll have a process you're happy with.
+It's normal not to get it right the first time, and the author says not to worry about that. When the bot restates the plan, fill in whatever's wrong. Say its version of your invoicing skips checking the client's name. Add, "Always check the client's name and address before you send. I got it wrong once." If your note is about one particular reply, reply to that message and say it there. If something should hold every time, tell it "from now on, always do it this way." A few rounds of this and you'll have a process you're happy with.
 
 Once you are, let it get started:
 
-<Copy id="proceed" code="That looks right. Go ahead with this plan. Start by connecting the apps and tools this job needs." />
+<Copy id="proceed" code="Yep, that's it. Go with this. Start by connecting the apps and tools you'll need." />
 
 When an action needs your OK, it shows you an <Term k="审批" /> card and waits. [Step 4](/en/guide/4-apps/) covers connecting apps and signing in to sites.
 
@@ -67,7 +67,7 @@ If you change your mind, just send a new message. Your message takes priority an
 
 Once the process is set, you can go one step further. Ask the bot to look back at your original goal and see whether there's a better or simpler way.
 
-<Copy id="review" code="Check the process we settled on against my original goal. If you see a way to make it better or simpler, tell me." />
+<Copy id="review" code="Look back at what I said I wanted at the start, and go over the plan we settled on again. If you can see a better or easier way, tell me." />
 
 This is what [step 1](/en/guide/1-goal/) meant. Your current process is only one route, and the goal is where you're headed. Next, you'll teach the bot the calls you make from experience.
 
@@ -80,7 +80,7 @@ This is what [step 1](/en/guide/1-goal/) meant. Your current process is only one
 <p>With the composer empty, choose <strong>Start voice chat</strong>, the waveform button. After you hang up, the chat has a card for the call, and you can open it to read the full transcript.</p>
 </Q>
 <Q q="It started without waiting for me.">
-<p>Send "Stop now." Then send the prompt above again, and check that it still says not to start the work yet.</p>
+<p>Send "Stop now." Then send the prompt above again, and check that it still tells the bot not to do anything yet.</p>
 </Q>
 <Q q="I rambled, and its restatement rambles too.">
 <p>Correct one thing per round. You can also ask it to restate the six things above one at a time.</p>
