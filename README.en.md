@@ -15,7 +15,7 @@ poteto, who builds Grok Bot at SpaceX, wrote a long post on handing work to bots
 </div>
 
 <p align="center">
-  <img src="assets/en/hero.svg" width="100%" alt="Demo: you tell Potato you keep missing school notices and ask it to put anything with a date on your calendar. It restates that before starting. You add two rules: tell you about payments instead of paying, and ask when a date is unclear. It sets a Sunday-evening routine, then tells you the parents' meeting and the old T-shirt are on your calendar. The four steps light up on the left: start with the goal, tell it your process, teach how you judge, let it run on its own">
+  <img src="assets/en/hero.svg" width="100%" alt="Demo: you tell Potato you keep missing school notices and ask it to put anything with a date on your calendar. It restates that before starting. You add two rules: tell you about payments instead of paying, and ask when a date is unclear. It sets a Sunday-evening routine, then tells you the parent-teacher meeting and the old T-shirt are on your calendar. The four steps light up on the left: start with the goal, tell it your process, teach how you judge, let it run on its own">
 </p>
 
 ## You've probably tried this already
@@ -56,7 +56,7 @@ Install Grok Bot from [x.ai/bot](https://x.ai/bot) (you need a plan that include
 
 ```text
 Hi Potato, from now on this job is yours. Remember it:
-Every Friday afternoon I'm digging through chat and docs to piece together my weekly report, and I hate it. Draft this week's in the same format as last week's, and I'll tweak it and hand it in. That way my Friday afternoon is free.
+Every Friday afternoon I'm digging through chat and docs to piece together my weekly report, and I hate it. Draft this week's in the same format as last week's, and I'll tweak it and send it off. That way my Friday afternoon is free.
 Based on this, pick a name and a picture for yourself.
 ```
 

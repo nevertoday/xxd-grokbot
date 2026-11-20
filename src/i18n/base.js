@@ -59,7 +59,8 @@ export default {
     painH: "Has this happened to you?",
     PAIN: [
       "It's Friday afternoon and you're digging through chat again for the weekly report, the same steps as every week.",
-      "School sends so many notices that something always slips: a parents' meeting, a payment, something your kid had to bring.",
+      "School sends so many notices that something always slips: a parent-teacher meeting, a payment, something your kid had to bring.",
+      "You're the only one who keeps track of when your parents see the doctor next and when their medicine runs out.",
       "You'd hand it to an AI, but a chat AI only answers. You still do the clicking, copying and sending.",
       "You heard about automation, saw it meant writing code, and gave up.",
     ],
