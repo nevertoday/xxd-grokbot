@@ -1,5 +1,6 @@
 // 查源码里的旧例子和旧句式（docs/EXAMPLES.md「不要用」）：苹果派、换爆胎、修车店、Yelp，各种语言的写法；
 // 中文提示词套的「我想……，好让……」，英文的 "I want …, so that …"。网站正文、数据、README 和生成插图的脚本都查。
+// 还查套话：同一句话出现在 3 个以上页面的提示词（Copy）里，就是照模板复制的，读者翻两页就看出来是填表。
 //
 //   node scripts/check-examples.mjs
 import { readFileSync, readdirSync, statSync } from "node:fs";
@@ -34,6 +35,19 @@ for (const file of files) {
       if (m) problems.push(`${relative(ROOT, file)}:${i + 1}  ${name}：「${m[0]}」`);
     }
   });
+}
+
+const MAX_PAGES = 3;
+const pages = files.filter((f) => f.endsWith(".mdx"));
+const seen = new Map();
+for (const file of pages) {
+  const text = readFileSync(file, "utf8");
+  const codes = [...text.matchAll(/<Copy\b[^>]*?\bcode=(?:"([^"]*)"|\{`([\s\S]*?)`\})/g)].map((m) => m[1] ?? m[2]);
+  const sentences = new Set(codes.flatMap((c) => c.split(/(?<=[。！？!?])|(?<=\.)\s+/)).map((x) => x.replace(/\s+/g, " ").trim()).filter((x) => x.length >= (/[\u3000-\u9fff\uac00-\ud7af]/.test(x) ? 12 : 30)));
+  for (const x of sentences) seen.set(x, [...(seen.get(x) ?? []), relative(ROOT, file)]);
+}
+for (const [x, where] of seen) {
+  if (where.length > MAX_PAGES) problems.push(`套话：${where.length} 个页面的提示词里都有「${x}」（${where.join("、")}）`);
 }
 
 if (problems.length) {
