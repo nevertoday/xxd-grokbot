@@ -56,7 +56,7 @@ Instala Grok Bot desde [x.ai/bot](https://x.ai/bot) (necesitas un plan que lo in
 
 ```text
 Hola, Potato. Desde ahora, este trabajo es tuyo. Tenlo presente:
-Todos los viernes por la tarde me toca rebuscar en el chat y en los documentos para armar el informe semanal, y lo odio. Hazme un borrador del de esta semana con el mismo formato que el de la semana pasada, y yo lo retoco y lo entrego. Así me queda libre la tarde del viernes.
+Todos los viernes por la tarde me toca rebuscar en el chat y en los documentos para armar el informe semanal, y lo odio. Hazme un borrador del de esta semana con el mismo formato que el de la semana pasada, y yo lo retoco y lo mando. Así me queda libre la tarde del viernes.
 Y a partir de esto, ponte un nombre y elige una imagen para ti.
 ```
 

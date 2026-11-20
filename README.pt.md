@@ -56,7 +56,7 @@ Instale o Grok Bot pelo [x.ai/bot](https://x.ai/bot) (você precisa de um plano 
 
 ```text
 Oi, Potato! De agora em diante, esse trabalho é seu. Guarda bem:
-Toda sexta à tarde eu fico garimpando o chat e os documentos para montar o relatório semanal, e odeio isso. Faz um rascunho do desta semana no mesmo formato do da semana passada, que eu dou uma ajeitada e entrego. Assim a minha sexta à tarde fica livre.
+Toda sexta à tarde eu fico garimpando o chat e os documentos para montar o relatório semanal, e odeio isso. Faz um rascunho do desta semana no mesmo formato do da semana passada, que eu dou uma ajeitada e mando. Assim a minha sexta à tarde fica livre.
 Com base nisso, escolhe um nome e uma imagem para você.
 ```
 

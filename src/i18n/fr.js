@@ -60,6 +60,7 @@ export default {
     PAIN: [
       "C'est vendredi après-midi et vous fouillez encore les messages pour votre rapport hebdo, les mêmes étapes que chaque semaine.",
       "L'école envoie tellement de messages qu'on finit toujours par en rater un : une réunion parents-profs, un paiement, ce que votre enfant devait apporter.",
+      "Le prochain rendez-vous de vos parents chez le médecin, le jour où leurs médicaments seront finis : il n'y a que vous pour y penser.",
       "Vous aimeriez confier ça à une IA, mais une IA de chat ne fait que répondre. Les clics, les copier-coller et les envois, c'est toujours vous.",
       "On vous a parlé d'automatisation, vous avez vu qu'il fallait écrire du code, et vous avez laissé tomber.",
     ],

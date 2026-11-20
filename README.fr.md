@@ -56,7 +56,7 @@ Installez Grok Bot depuis [x.ai/bot](https://x.ai/bot) (il vous faut un abonneme
 
 ```text
 Salut Potato, à partir de maintenant, c'est toi qui t'occupes de ça. Retiens-le bien :
-Tous les vendredis après-midi, je fouille les messages et les docs pour reconstituer mon rapport hebdo, et j'en ai marre. Prépare celui de cette semaine sur le modèle de celui de la semaine dernière, je le retouche et je le rends. Comme ça, mon vendredi après-midi est libre.
+Tous les vendredis après-midi, je fouille les messages et les docs pour reconstituer mon rapport hebdo, et j'en ai marre. Prépare celui de cette semaine sur le modèle de celui de la semaine dernière, je le retouche et je l'envoie. Comme ça, mon vendredi après-midi est libre.
 À partir de ça, choisis-toi un nom et une image.
 ```
 
