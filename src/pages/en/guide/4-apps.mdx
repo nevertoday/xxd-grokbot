@@ -11,7 +11,7 @@ import Term from "../../../components/Term.astro";
 import Copy from "../../../components/Copy.astro";
 import Q from "../../../components/Q.astro";
 
-By now Potato knows what you want, how you usually do it, and how you make the calls. But it still can't reach the things you use every day, like your email, your booking system, or the sites you sign in to. It's like a new helper at your shop who understands the job but hasn't been given the keys yet.
+By now Potato knows what you want, how you usually do it, and how you make the calls. But it still can't reach the things you use every day, like your email, your calendar, or the sites you sign in to. It's like a new helper, at home or on your team, who understands the job but hasn't been given the keys or the passwords yet.
 
 You may hesitate before handing them over. Will it send emails it shouldn't, or spend money? But think about what you'd tell a new helper anyway: handle the everyday stuff yourself, and check with me before you spend money, send anything out, or delete anything. Grok Bot works the same way, so this step does two things.
 
@@ -21,7 +21,7 @@ You may hesitate before handing them over. Will it send emails it shouldn't, or 
 
 Once the process is where you want it, the author lets the bot start and [connect the apps and tools it needs](https://x.com/poteto/status/2123159537016533493). You don't have to hunt for each one yourself. Just ask:
 
-<Copy id="connect" code="Potato, list the apps our process needs and connect them for me one at a time. When one needs me to sign in, send me the connect card." />
+<Copy id="connect" code="Potato, list the apps our plan needs, then connect them for me one at a time. If one needs me to sign in, send me the connect card." />
 
 When an app needs you to sign in, the bot shows a **Connect** card in the chat. Open it, sign in in your browser, and finish **Authorize** or **Authenticate**. From your next message on, the bot can use that app.
 
@@ -33,7 +33,7 @@ To connect one yourself, open **Connect apps** in the sidebar, find the app, add
 
 Not every site has an app. For those, the bot opens a browser on its <Term k="云端电脑" /> and clicks and types its way through. That computer lives in the cloud, with a browser, a command line and files, so it keeps working after you close your laptop. To watch, click the computer preview on the right of the conversation, and you'll see its clicks, typing and page changes.
 
-The thing to remember is that all the bots on your account share this one computer, a bit like the one computer everyone at the shop takes turns on. When one bot signs in to a site, the others are signed in too. Every bot can see the files on it, and lasting ones belong in `/workspace`. Each bot gets its own screen, so several bots can use a browser at the same time.
+The thing to remember is that all the bots on your account share this one computer, a bit like the one computer the whole family shares at home. When one bot signs in to a site, the others are signed in too. Every bot can see the files on it, and lasting ones belong in `/workspace`. Each bot gets its own screen, so several bots can use a browser at the same time.
 
 <u>If a login or file is meant for one bot only, keep it off this computer.</u> Separate screens and separate bots keep work apart, but they aren't a security boundary. See the official page [Use the computer and apps](https://docs.x.ai/grok-bot/computer-and-apps).
 
@@ -47,7 +47,7 @@ The first time a bot wants to run a command on your machine, the chat asks you. 
 
 ## Logins go in Vault, never in chat
 
-Think about how you'd give a new helper the password to your booking system. You probably wouldn't type it into a chat. In Grok Bot, the place for these things is <Term k="Vault" />. It holds your logins, cards and contact info, and you manage it in **Settings → Vault**.
+Think about how you'd give a new helper the password to a site. You probably wouldn't type it into a chat. In Grok Bot, the place for these things is <Term k="Vault" />. It holds your logins, cards and contact info, and you manage it in **Settings → Vault**.
 
 To sign in to a site, a bot first looks for a login saved in **Vault**. If there isn't one, it checks a connected password manager such as 1Password, and only if neither has it does it send you a **Secure Form**. Either way, passwords from Vault and values from the form go straight into the page, and the bot never sees them.
 
@@ -83,7 +83,7 @@ Auto Review counts only your own messages as requests, so text in an email or on
 
 So the safest approach is to do both. First, set the boundary when you hand over the job:
 
-<Copy id="boundary" code="Remember this rule: before you send a message, publish anything, pay, delete anything, or change permissions, show me what you'll do and the new values, and wait for my OK." />
+<Copy id="boundary" code="Remember this rule: before you send a message, post anything, pay, delete anything, or change permissions, show me what you're about to do and what it'll change, and wait for my OK." />
 
 Then add an **Ask first** rule in **Custom Rules**. Memory alone isn't enough, but an **Ask first** rule always stops a matching action. Keep each rule to one action, like "Ask first before sending any external email." For more examples, see [what it asks you first: approvals and privacy](/en/howto/approvals-privacy/). The official page is [Approvals, security, and privacy](https://docs.x.ai/grok-bot/approvals-security-and-privacy).
 
