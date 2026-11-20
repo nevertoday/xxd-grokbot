@@ -8,8 +8,8 @@ import { fileURLToPath } from "node:url";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const BANNED = [
-  ["苹果派", /苹果派|苹果馅饼|apple[ -]?pie|アップルパイ|애플\s?파이|tarta de manzana|pastel de manzana|torta de maçã|tarte aux pommes|apfelkuchen|яблочн\S* пирог|فطيرة التفاح/i],
-  ["换爆胎", /爆胎|换胎|备胎|flat tire|flat tyre|spare tire|パンク|타이어 펑크|pinchazo|pneu furado|crevaison|reifenpanne|reifen wechseln|проколот|спущенн\S* колес|إطار مثقوب/i],
+  ["苹果派", /苹果派|苹果馅饼|apple[ -]?pie|アップルパイ|애플\s?파이|사과\s?파이|tarta de manzana|pastel de manzana|torta de maçã|tarte aux pommes|apfelkuchen|яблочн\S* пирог|فطيرة (ال)?تفاح/i],
+  ["换爆胎", /爆胎|换胎|备胎|flat tire|flat tyre|spare tire|パンク|펑크|pinchazo|pinchad[ao]|pneu furado|crevaison|pneu crevé|reifenpanne|platte[nr]? reifen|reifen wechseln|проколот|спущенн\S* колес|إطار مثقوب/i],
   ["修车店", /修车|auto shop|repair shop|car shop|整備工場|정비소|taller mecánico|oficina mecânica|garagiste|autowerkstatt|автосервис|ورشة سيارات/i],
   ["Yelp", /yelp/i],
   ["「我想……，好让……」", /(?<!最)好让/],
