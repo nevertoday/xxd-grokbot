@@ -35,7 +35,7 @@ Gleich am Anfang des Beitrags steht bei poteto, dass Automatisierung eigentlich 
 Wenn du einen Apfelkuchen backst, ist der Kuchen das Ziel. Äpfel kaufen, den Teig machen, alles zusammensetzen, backen und abkühlen lassen, das ist der Ablauf. Die meisten geben einem Bot nur einen Schritt aus dem Ablauf, etwa „Schick diese E-Mail“, und dann schickt der Bot eben immer nur E-Mails. Erzähl ihm zuerst vom Kuchen, dann kann er den ganzen Ablauf übernehmen und findet vielleicht sogar einen einfacheren Weg.
 
 <p align="center">
-  <img src="assets/en/readme/pie.svg" width="100%" alt="Ablauf: Äpfel kaufen, Teig machen, zusammensetzen, backen, abkühlen lassen, und am Ende das Ziel, ein Apfelkuchen. Das Ziel ist, was du am Ende willst. Der Ablauf ist der Weg dorthin. Übergib den Ablauf einem Bot.">
+  <img src="assets/en/readme/goal.svg" width="100%" alt="Ablauf: Äpfel kaufen, Teig machen, zusammensetzen, backen, abkühlen lassen, und am Ende das Ziel, ein Apfelkuchen. Das Ziel ist, was du am Ende willst. Der Ablauf ist der Weg dorthin. Übergib den Ablauf einem Bot.">
 </p>
 
 ## Drei Lektionen, eine Sache nach der anderen

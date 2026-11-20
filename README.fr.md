@@ -35,7 +35,7 @@ poteto ouvre l'article en disant que l'automatisation est avant tout une façon 
 Quand vous faites une tarte aux pommes, la tarte est l'objectif. Acheter des pommes, faire la pâte, monter la tarte, la cuire et la laisser refroidir, c'est le processus. La plupart des gens confient à un bot une seule étape du processus, comme « envoie cet e-mail », et le bot ne fait jamais qu'envoyer des e-mails. Parlez-lui d'abord de la tarte, et il pourra reprendre tout le processus, et peut-être trouver plus simple.
 
 <p align="center">
-  <img src="assets/en/readme/pie.svg" width="100%" alt="Le processus : acheter des pommes, faire la pâte, monter, cuire, laisser refroidir, jusqu'à l'objectif, une tarte aux pommes. L'objectif, c'est ce que vous voulez à la fin. Le processus, c'est le chemin pour y arriver. Confiez le processus à un bot.">
+  <img src="assets/en/readme/goal.svg" width="100%" alt="Le processus : acheter des pommes, faire la pâte, monter, cuire, laisser refroidir, jusqu'à l'objectif, une tarte aux pommes. L'objectif, c'est ce que vous voulez à la fin. Le processus, c'est le chemin pour y arriver. Confiez le processus à un bot.">
 </p>
 
 ## Trois leçons, une chose à la fois

@@ -35,7 +35,7 @@ poteto abre o artigo dizendo que automação é, na verdade, um jeito de pensar 
 Quando você faz uma torta de maçã, a torta é o objetivo. Comprar as maçãs, preparar a massa, montar, assar e deixar esfriar são o processo. A maioria das pessoas passa para o bot um passo só do processo, como “envie este e-mail”, e aí o bot só envia e-mails. Fale primeiro da torta, e ele pode assumir o processo inteiro, e talvez encontrar um caminho mais fácil.
 
 <p align="center">
-  <img src="assets/en/readme/pie.svg" width="100%" alt="Processo: comprar maçãs, preparar a massa, montar, assar e esfriar, levando ao objetivo, uma torta de maçã. O objetivo é o que você quer no final. O processo é como você chega lá. Passe o processo para um bot.">
+  <img src="assets/en/readme/goal.svg" width="100%" alt="Processo: comprar maçãs, preparar a massa, montar, assar e esfriar, levando ao objetivo, uma torta de maçã. O objetivo é o que você quer no final. O processo é como você chega lá. Passe o processo para um bot.">
 </p>
 
 ## Três lições, uma coisa de cada vez

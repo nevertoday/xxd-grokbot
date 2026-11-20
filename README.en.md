@@ -15,7 +15,7 @@ poteto, who builds Grok Bot at SpaceX, wrote a long post on handing work to bots
 </div>
 
 <p align="center">
-  <img src="assets/en/hero.svg" width="100%" alt="Demo: you hand Potato a goal, it restates it before starting, you add one rule, it sets a Friday routine and hands back the finished slides. The four steps light up on the left: start with the goal, tell it your process, teach how you judge, let it run on its own">
+  <img src="assets/en/hero.svg" width="100%" alt="Demo: you tell Potato you keep missing school notices and ask it to put anything with a date on your calendar. It restates that before starting. You add two rules: tell you about payments instead of paying, and ask when a date is unclear. It sets a Sunday-evening routine, then tells you the parents' meeting and the old T-shirt are on your calendar. The four steps light up on the left: start with the goal, tell it your process, teach how you judge, let it run on its own">
 </p>
 
 ## You've probably tried this already
@@ -28,14 +28,14 @@ The bot isn't the problem. A chat AI hands you a reply and leaves the rest to yo
   <img src="assets/en/readme/chat-vs-bot.svg" width="100%" alt="Left: you ask a chat AI to turn this week's progress into slides, and it replies with an outline; the rest is still on you. Right: your Grok Bot checks things off: reads this week's email and chat, checks numbers against the sheet, saves the slides to the shared folder, does it again every Friday at 4 PM.">
 </p>
 
-## The trick fits in an apple pie
+## The trick, explained over dinner
 
 poteto opens the post by saying automation is really a way of thinking that anyone can learn. It has two parts: a goal and a process.
 
-When you bake an apple pie, the pie is the goal. Buying apples, making the dough, assembling, baking and cooling are the process. Most people hand a bot one step of the process, like "send this email", so the bot only ever sends emails. Tell it about the pie first, and it can take over the whole process, and maybe find an easier way.
+Take dinner. A meal on the table is the goal. Shopping, washing, chopping and cooking are the process. Most people hand a bot one step of the process, like "send this email", so the bot only ever sends emails. Tell it about the meal first, and it can take over the whole process, and maybe find an easier way, the way ordering in on a tired night still gets dinner on the table.
 
 <p align="center">
-  <img src="assets/en/readme/pie.svg" width="100%" alt="Process: buy apples, make dough, assemble, bake, cool, leading to the goal: an apple pie. The goal is what you want at the end. The process is how you get there. Hand the process to a bot.">
+  <img src="assets/en/readme/goal.svg" width="100%" alt="Process: shop, wash, chop, cook, leading to the goal: dinner on the table. Below, another route, ordering in on a tired night, reaches the same goal. The goal is what you want at the end. The process is how you get there, and it can change. Hand the process to a bot.">
 </p>
 
 ## Three lessons, one thing at a time
@@ -43,11 +43,11 @@ When you bake an apple pie, the pie is the goal. Buying apples, making the dough
 You don't need to code or learn a pile of terms first. Each lesson does one thing, and you leave with something new.
 
 <p align="center">
-  <img src="assets/en/readme/lessons.svg" width="100%" alt="Lesson 1, write one sentence, 10 min: a goal that names the result. Lesson 2, make Potato, 15 min: a bot that remembers it. Lesson 3, hand over a job, 30 min: a bot that runs every week.">
+  <img src="assets/en/readme/lessons.svg" width="100%" alt="Lesson 1, say what you want, 10 min: a goal in your own words. Lesson 2, make Potato, 15 min: a bot that remembers it. Lesson 3, hand over a job, 30 min: a bot that runs every week.">
 </p>
 
-1. **[Write one sentence](https://grokbot.xiaoxiaodong.ai/en/start/1-goal/)**: pick something you do often and write down the result you really want.
-2. **[Make Potato](https://grokbot.xiaoxiaodong.ai/en/start/2-first-bot/)**: install Grok Bot, make a bot and give it that sentence.
+1. **[Say what you want](https://grokbot.xiaoxiaodong.ai/en/start/1-goal/)**: pick something you do often and write a few plain lines about what bugs you and the result you want.
+2. **[Make Potato](https://grokbot.xiaoxiaodong.ai/en/start/2-first-bot/)**: install Grok Bot, make a bot and give it what you wrote.
 3. **[Hand over a job](https://grokbot.xiaoxiaodong.ai/en/start/3-hand-over/)**: talk it through how you do the job, watch it get it right once, then let it run every week.
 
 ## Can't wait? Try one message now
@@ -55,12 +55,12 @@ You don't need to code or learn a pile of terms first. Each lesson does one thin
 Install Grok Bot from [x.ai/bot](https://x.ai/bot) (you need a plan that includes it, such as Premium, Super or Ultra on The X Subscription), choose **+** (**New Bot**) at the top of the sidebar, name it `Potato`, and send:
 
 ```text
-Hi Potato, here's the goal I want you to be responsible for. Please remember it:
-I want everyone to have slides on this week's progress before Monday's meeting, so that we spend less time reading numbers aloud and more time deciding.
-Based on this goal, choose a name and a picture for yourself.
+Hi Potato, from now on this job is yours. Remember it:
+Every Friday afternoon I'm digging through chat and docs to piece together my weekly report, and I hate it. Draft this week's in the same format as last week's, and I'll tweak it and hand it in. That way my Friday afternoon is free.
+Based on this, pick a name and a picture for yourself.
 ```
 
-Swap the middle line for your own job. To walk it through how you do the work, see [lesson 3](https://grokbot.xiaoxiaodong.ai/en/start/3-hand-over/).
+Swap the middle lines for your own job. To walk it through how you do the work, see [lesson 3](https://grokbot.xiaoxiaodong.ai/en/start/3-hand-over/).
 
 ## Already using it?
 
