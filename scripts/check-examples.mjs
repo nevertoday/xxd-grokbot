@@ -12,7 +12,7 @@ const BANNED = [
   ["换爆胎", /爆胎|换胎|备胎|flat tire|flat tyre|spare tire|パンク|타이어 펑크|pinchazo|pneu furado|crevaison|reifenpanne|reifen wechseln|проколот|спущенн\S* колес|إطار مثقوب/i],
   ["修车店", /修车|auto shop|repair shop|car shop|整備工場|정비소|taller mecánico|oficina mecânica|garagiste|autowerkstatt|автосервис|ورشة سيارات/i],
   ["Yelp", /yelp/i],
-  ["「我想……，好让……」", /好让/],
+  ["「我想……，好让……」", /(?<!最)好让/],
   ['"I want …, so that …"', /\bI want\b[^.\n]{0,160}, so that\b/i],
 ];
 
