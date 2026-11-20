@@ -19,6 +19,16 @@
 - **交电费。** 你要的是家里一直有电、不交滞纳金。记日子、登录、找账单、付钱，都是过程。它离 bot 能做的事更近，适合接着讲「把过程交出去」。
   英文：the lights staying on and no late fee is the goal; remembering the date, logging in, finding the bill and paying are the process.
 
+## 写目标的那几句
+
+读者写给 bot 的目标，全站教同一个样子：先说这件事烦在哪，再说你最后要的是什么，「为了什么」用「这样……」「省得……」「免得……」顺口带出来。两三句话，不是一句填空。比如：「学校的通知太多了，家长会、交钱、要带的东西，总有一样我会漏。通知里一提到日子，你就帮我记进日历，前一天提醒我，免得孩子到了学校才发现没带。」
+英文：say what's bugging you, then what you want; a few plain lines, the reason in "so I'm not …" / "that way …".
+
+## 原文另外两个画面的替换
+
+- 小店里几个人分工（原文是修车店）：换成一家小饭馆，服务员接单、厨师做菜、收银的结账，主 bot 就像那个服务员。
+- 「新来的帮手拿着钥匙」：换成家里或团队里新来的帮手，第一次把事情和门路交代清楚。
+
 ## 场景库
 
 「交给 bot 以后」只写 Grok Bot 真能做的事，依据在最后一列（官方文档的 Use Cases 页，原文副本在 `docs/sources/raw/official/grok-bot-use-cases.md`；其他页见 `docs/sources/README.md`）。要发出去、付钱、预订的，一律写成「它起草好、你点头才发 / 才付」。
