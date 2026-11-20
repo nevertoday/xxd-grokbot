@@ -11,13 +11,15 @@ import Copy from "../../../components/Copy.astro";
 import Term from "../../../components/Term.astro";
 import Q from "../../../components/Q.astro";
 
-When you explain a process, the easiest things to leave out aren't the steps. They're the parts you know so well that you do them without thinking. The author, poteto, makes a point of this in [the article](https://x.com/poteto/status/2123159537016533493).
+You run a hair salon, and this week you let your bot book the appointments. On Saturday afternoon, a customer has just sat down for a color when the next one walks in. The bot left fifteen minutes for a color that takes over two hours. It didn't know, because you never told it.
+
+When you explain a process, the easiest things to leave out aren't the steps. They're the things you know so well that you do them without thinking. The author, poteto, makes a point of this in [the article](https://x.com/poteto/status/2123159537016533493).
 
 <mark><strong>The calls you make from experience, without thinking, are exactly what your bot is missing.</strong></mark>
 
 ## The things you do without thinking
 
-Say you run a hair salon. While you book customers, you're keeping track of a lot. A color takes over two hours, and a cut takes half an hour. Only one of your stylists does perms. Between two customers you need ten minutes to sweep up and swap the towels. To you this is obvious, which is why you probably didn't mention any of it in step 2. The bot doesn't know any of it.
+The color is only one of them. While you book customers, you're keeping track of a lot. A cut takes half an hour. Only one of your stylists does perms. Between two customers you need ten minutes to sweep up and swap the towels. To you this is obvious, which is why you probably didn't mention any of it in step 2. The bot doesn't know any of it.
 
 It's the same if you look after your parents. You know which pill goes before meals and which doctor has to be booked a week ahead, and you've never written any of it down.
 
@@ -53,7 +55,7 @@ You don't need to explain every case up front, and you couldn't anyway. Pick a f
 
 Even after a few rounds, you've probably left something out. So turn it around and let the bot ask you:
 
-<Copy id="ask-me" code="Potato, I'm sure there's stuff about this I haven't told you. Ask me. How I make decisions, where I get my information, how I check the work, and when you should come to me for help. One question at a time. When you're done, walk me through a few examples so I can tell you what's off. Don't automate anything yet." />
+<Copy id="ask-me" code="Potato, I'm sure there's plenty about bookings that I know and never told you. Ask me, starting with whatever you're least sure about, and wait for each answer before the next question. Things like how long each kind of job needs, which side wins when two records disagree, when a booking counts as done, and when you should stop and check with me. Once we've covered it, walk me through a few of last month's bookings so I can tell you what's off. And let's not put this on autopilot yet." />
 
 ## Turn each decision into a rule it remembers
 
