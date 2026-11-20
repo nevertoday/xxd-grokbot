@@ -12,15 +12,15 @@ import Q from "../../../components/Q.astro";
 import Copy from "../../../components/Copy.astro";
 import Reply from "../../../components/Reply.astro";
 
-By the end of this page you'll have a bot that wraps up your meetings. When the day's calls are over, it drafts a list of who has to finish what by when, and nothing goes to the team until you've read it and said yes.
+You've probably sat through this one. It might be a team meeting or a video call with a client. Everyone talks, everyone nods, and an hour later nobody can say who took which job. The notes were supposed to go out today, they still aren't written tomorrow, and they usually end up on your plate. Two weeks later someone asks "who's on that?" and the room goes quiet.
 
-You've probably sat through this one. It might be a team meeting or a call with a client. Everyone talks, everyone nods, and an hour later nobody can say who took which job. The notes were supposed to go out today, they still aren't written tomorrow, and they usually end up on your plate. Two weeks later someone asks "who's on that?" and the room goes quiet. But the notes were never really what you wanted. They're one step in the process. What you want is for everyone to walk out knowing what they have to finish and by when. <mark>So the goal you hand your bot is that everything the meeting decides has an owner and a date.</mark>
+By the end of this page you'll have a bot that wraps up your meetings. When the day's calls are over, it drafts a list of who has to finish what by when, and nothing goes to the team until you've read it and said yes. The notes were never really what you wanted. They're one step in the process. What you want is for everyone to walk out knowing what they have to finish and by when. <mark>So the goal you hand your bot is that everything the meeting decides has an owner and a date.</mark>
 
 ## Hand it the result, not the recap
 
 Make a new <Term k="bot" /> and give it any name. If nothing comes to mind, call it Potato and let it rename itself later. Then send it the goal:
 
-<Copy id="mr-goal" title="First message: the goal" code="Hi Potato. Every time we finish a meeting, nobody can say who took which job, the notes still aren't written the next day, and a couple of weeks later something's been dropped. That's your job from now on: after every meeting, everyone knows what they have to finish and by when. Remember that. Based on that job, pick a name and a picture for yourself." />
+<Copy id="mr-goal" title="First message: the goal" code="Hi Potato. Whenever our team finishes a meeting, nobody's sure who took what, the notes still aren't written the next day, and a couple of weeks later something has slipped through. From now on, after every meeting, you make sure everyone knows what they owe and by when. I'm handing this one to you." />
 
 <Callout type="warn" title="Joining meetings depends on your plan">
 A bot can join meetings on Team, Enterprise, Ultra, and Super plans. See [Meetings](https://docs.x.ai/grok-bot/meetings) in the official docs. If your plan doesn't have it, that's fine. Paste or upload your meeting notes instead, and the rest of this page still works.
@@ -28,31 +28,31 @@ A bot can join meetings on Team, Enterprise, Ultra, and Super plans. See [Meetin
 
 ## Tell it how you wrap up a meeting
 
-With the goal set, tell it how you do this yourself today. The easiest way is to press `Cmd/Ctrl+D` and talk, saying things as they come to you without tidying them first. Here's an example. Swap in your own apps and habits:
+With the goal set, tell it what you actually do once a meeting ends. Press `Cmd/Ctrl+D` and say it the way you'd grumble to a colleague on the way back to your desk, without tidying it first. In the example, the calendar is Google Calendar, the notes live in Notion, and the team chat is Slack. Swap in your own apps and habits:
 
-<Copy id="mr-process" title="Second message: your process" code={`Potato, here's how I do it now. I take notes while we talk, and afterward I go through what we decided, who's doing it and by when, and send that to everyone who was there. Before the next meeting I check in with each person. Two things matter most to me: every item has an owner and a date, and the notes only say what people actually said. Get one line wrong and nobody trusts them. Meetings are on Google Calendar, and the invite tells you who's coming. I send things to the team on Slack and keep the notes in Notion. I'll give you the meeting link and my own notes. How do I know it's right? Every item can be traced back to who said it in the meeting record. If something's wrong, a teammate tells me.
+<Copy id="mr-process" title="Second message: your process" code={`I take notes while people talk, and right after, while it's fresh, I go through what we decided: who's doing it and by when. Then I send that to everyone who was there. Before the next meeting I check in with each person. The tricky part is when someone says "I'll look into it." Did they just take it on or not? I have to think about that. I only write down what people actually said, because one wrong line and nobody trusts the notes. Meetings are on my calendar, and the invite tells you who's coming. The notes go in our team docs, and what we decided goes to the team chat. I'll give you the meeting link and my own notes. If every item can be traced to who said it in the meeting record, and nobody comes asking "whose is this?" two days later, I got it right.
 
-Have a think about how you'd take this off my hands completely. Don't start yet. Tell me back in plain words what you think the goal and the process are, I'll tell you what's off, and we'll get the process sorted first.`} />
+Don't join any meetings yet. Walk me through how you'd take notes and pull out the action items, and I'll pick holes in it.`} />
 
-It restates what it heard first. Getting it wrong the first time is normal, so correct whatever's off and go a few rounds until you're happy, then tell it to go ahead. If it needs an app, it shows a **Connect** card in the chat. Open it and sign in.
+It explains it back in its own words first. Getting it wrong the first time is normal, so correct whatever's off and go a few rounds until you're happy, then tell it to go ahead. When it needs Google Calendar, Notion, or Slack, it shows a **Connect** card in the chat. Open it and sign in.
 
 ## Where it shouldn't decide for you
 
 Some calls you make without thinking, like who gets the item nobody claimed in the meeting. You just know. Your bot doesn't, so it would have to guess, and one wrong owner is enough to make people stop trusting the recap. So tell it your rules too:
 
-<Copy id="mr-judge" title="Third message: how you decide" code={`Potato, a few rules for how I decide. If nobody clearly owned an item, mark it "owner TBD" and ask me. Don't hand it to anyone yourself. One wrong owner and people stop trusting the notes. Only write what was said in the meeting, and never make up a quote. If it was just us, draft it as a post for the team channel. If a client was there, send it only to me.
+<Copy id="mr-judge" title="Third message: how you decide" code={`Here are a few things I never have to think about but you'll need to know. If nobody clearly owned an item, mark it "owner TBD" and ask me. Don't hand it to anyone yourself. One wrong owner and people stop trusting the notes. Never make up a quote, and if you didn't catch something, say so. If it was just our team, draft it as a post for the team chat. If a client was there, send it only to me.
 
-What else haven't I told you? Ask me: how I make decisions, where things come from, how I check the work, and when you should come to me. One question at a time. Then walk me through a few examples and I'll tell you what I think. Don't automate anything yet.`} />
+That's all I can think of right now. Work out what you'd be most likely to get wrong in a recap and start your questions there, one at a time. Then let's go through that item from last month that ended up with the wrong owner.`} />
 
-When you pick examples, include one or two that went wrong, like the action item with the wrong owner. See how it would handle them, then tell it what to fix.
+Swap that last item for a mistake your own team has made. See how it would handle it, then tell it what to fix. Keep these rounds in the chat for now, and don't let it run on its own yet. For a fuller way to have it ask about what you haven't said, see [Have it find what you left out](/en/howto/prompts/#p-gaps) on the prompts page.
 
 ## Let it wrap up every day on its own
 
-Once this has gone well a few times, it can start on its own. First save the process as a <Term k="技能" />, then set up a <Term k="routine" />, which is a job it starts by itself on a schedule.
+Once it has wrapped up a few meetings in the chat and got the action items right, it can start on its own. First save the process as a <Term k="技能" />, then set up a <Term k="routine" />, which is a job it starts by itself on a schedule.
 
 A recurring meeting doesn't actually need a routine. Paste the meeting link and say "join every meeting in this series and take notes," and it schedules that itself. The routine is for the daily wrap-up:
 
-<Copy id="mr-routine" title="Fourth message: let it start on its own" code={`Save what we just worked out as a skill called "Meeting recap." Then set up a routine: every weekday at 6:00 PM, use that skill to list the action items from all of today's meetings and draft one Slack post for #team. Don't send it until I approve it. If a meeting has no record, tell me which one. Don't fill it in from memory.`} />
+<Copy id="mr-routine" title="Fourth message: let it start on its own" code={`Save this way of wrapping up meetings as a skill called "Meeting recap." Then set up a routine: every weekday at 6:00 PM, use it to list the action items from all of today's meetings and draft one post for the #team channel in our team chat. Don't send it until I say yes. If a meeting has no record, tell me which one. Don't fill it in from memory.`} />
 
 When it needs your approval, a card shows up in the chat. Approve it. Once the meeting starts, the host lets it in, and its name ends in "transcribing." When the call ends, it posts a summary and action items in its chat. At 6:00 PM, you'll get something like this:
 

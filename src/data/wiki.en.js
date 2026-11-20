@@ -122,7 +122,7 @@ export const WIKI_EN = {
     like: "Like a tracking number. You order in one system, the warehouse ships from another, and the courier marks it delivered in a third. All three record the same number, so one lookup follows the package from start to finish.",
     here: [
       "The author's examples are a customer ID or email, an order number, a part number, a barcode and an employee ID. The more apps you use, the more it matters that they share one set of IDs, because that's how the bot joins records from different places into one story.",
-      "The author makes this point in the article: log the time of each step a customer goes through, and you can work out how long they really waited. Take a phone-repair counter. Note when a customer walks in, when someone serves them, when they hand over the phone, and when the repair starts and finishes, and you can see where the time goes. The more data the bot has, the more it can find to improve. If you don't keep records like that yet, ask the bot to build you a small app to log them.",
+      "The author makes this point in the article: log when each step happens, and you can work out where the time goes. Take a job hunt. For every application, note the day you applied, the day they replied, and which round you reached, with the job posting's link on each row to tell them apart. After a month or two you can see which kinds of jobs answer quickly and which round you most often get stuck at. The more data the bot has, the more it can find to improve. If you don't keep records like that yet, ask the bot to build you a small app to log them.",
     ],
     myths: [
       "\"If the data's there, the bot will match it up.\" Not without a shared ID, because that's what joins data across apps. ==Use the same unique IDs in every tool.==",
@@ -170,7 +170,7 @@ export const WIKI_EN = {
     like: "Like a thoughtful housemate who notices a pile of your unopened mail by the door. Instead of opening it and answering for you, they ask, \"Want me to sort through that for you?\"",
     here: [
       "The one that reaches out is your [primary bot](/en/wiki/primary-bot/), the one with the star in the sidebar. It offers to take on tasks, and when an app like Gmail signs you out, it tells you and offers to reconnect.",
-      "The author also suggests letting a bot get feedback for itself. Say you run a hair salon. If it can read your online reviews and that day's bookings, then when someone writes that they waited too long, it can check the records for that day, see what went wrong on its own, and propose improvements.",
+      "The author also suggests giving a bot what it needs to get feedback for itself, so it can propose improvements on its own. For a freelancer, that could mean letting it see client emails and the sheet where you track payments. If one client pays late every time, it can spot that itself and suggest asking them for half up front next time.",
     ],
     myths: [
       "\"Taking initiative means acting without asking.\" It doesn't. It offers first, acts only when you say yes, and still asks before risky actions.",
@@ -226,7 +226,7 @@ export const WIKI_EN = {
   "handoff": {
     title: "Handoffs between bots",
     one: "One bot can message another to hand off work. The other bot picks it up and can reply later.",
-    like: "Like a relay race. Each runner covers one leg, and when they pass the baton, they say what the next leg needs.",
+    like: "Like a shift handover. Before leaving, the outgoing shift tells the next one what's still open and what to keep an eye on. The next shift carries on from there, and can check back with them if something's unclear.",
     here: [
       "For example, one bot pulls the week's numbers, another drafts from them, and a third checks the draft before it comes to you. Every handoff shows up in the conversation, so you can follow along. To put several bots in one room, choose **New chat** and start a group of two to six bots, then use `@` to say who owns which step.",
       "==Give each step to one bot.== That's the docs' advice, because when several bots take the same work at once, they duplicate it and flood you with updates.",

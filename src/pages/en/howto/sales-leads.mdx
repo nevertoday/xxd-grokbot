@@ -11,43 +11,43 @@ import Q from "../../../components/Q.astro";
 import Copy from "../../../components/Copy.astro";
 import Reply from "../../../components/Reply.astro";
 
-By the end of this page, you'll open your client sheet each weekday morning and find everyone who got in touch since yesterday already scored. For the good fits, replies offering times are drafted and waiting for you to read and send.
+When people reach out, a slow reply sends them somewhere else. A freelance designer gets three messages through the website form overnight. Someone who runs a class gets parents emailing to ask if there's still a spot. An insurance agent gets a note from someone who wants to look into cover for their family. But each morning you have to read them one by one, look each person up, and check your calendar before you can answer, and by the time you're done the job you most wanted may have gone cold.
 
-When people reach out, a slow reply sends them somewhere else. A freelance designer gets three messages through the website form overnight. Someone who runs a class gets parents emailing to ask if there's still a spot. An insurance agent gets a note from someone who wants to look into cover for their family. But each morning you have to read them one by one, look each person up, and check your calendar before you can answer, and by the time you're done the job you most wanted may have gone cold. Replying is only one step in the process. What you want is for the right people to get a time to talk soon, so more of them turn into work. <mark>Before a bot can screen for you, you have to turn "good fit" into a few things it can check, so you can read its scores.</mark>
+By the end of this page, you'll open your client sheet each weekday morning and find everyone who got in touch since yesterday already scored. For the good fits, replies offering times are drafted and waiting for you to read and send. Replying is only one step in the process. What you want is for the right people to get a time to talk soon, so more of them turn into work. <mark>Before a bot can screen for you, you have to turn "good fit" into a few things it can check, so you can read its scores.</mark>
 
 ## The goal is a time to talk, not a reply
 
 The official docs call this Sales development. See [Use cases](https://docs.x.ai/grok-bot/use-cases#sales-outbound). The example below is a freelance designer. If your work is something else, swap in your own kind of job and your own criteria.
 
-Make a new <Term k="bot" />, call it Potato, and send it the goal:
+Make a new <Term k="bot" /> and just call it Potato. Once it understands the job, let it pick a better name. Send it the goal:
 
-<Copy id="sl-goal" title="First message: the goal" code="Hi Potato. I do freelance design, and people get in touch every day through my website form and email. If I'm slow to answer, they go to someone else. That's your job from now on: every client who's a real fit gets a time to talk with me soon. Remember that. Based on that job, pick a name and a picture for yourself." />
+<Copy id="sl-goal" title="First message: the goal" code="Hi Potato. I do freelance design, and people get in touch every day through my website form and email. When I'm busy and answer late, they've already gone to someone else. From now on, you go through everyone who asks first, and the ones who are a real fit get a time to talk with me soon, before the good jobs go cold. You're in charge of this now." />
 
 ## Tell it how you screen each morning
 
-Next, tell it how you do this today. Pressing `Cmd/Ctrl+D` and talking is the easiest way, saying things as they come to you. Here's an example. Swap in your own criteria and tools:
+Next, tell it how you go through them each morning. Press `Cmd/Ctrl+D` and talk while you scroll your inbox, saying what you see. In the example, the inbox is Gmail, the calendar is Google Calendar, and the client list is a sheet in Google Sheets. Swap in your own criteria and tools:
 
-<Copy id="sl-process" title="Second message: your process" code={`Potato, here's how I do it now. Each morning I read the new inquiries and give each one a rough score in my head. Good fits get a reply offering a time to talk it through, and the rest get a polite no. If someone doesn't answer, I check in once more after three days. I mostly look at a few things: is it the kind of work I do, is the budget enough, and can I make the deadline. If someone wants a free concept up front, I usually pass. I use Gmail for email and Google Calendar for my schedule, and I keep everyone who's asked in a Google Sheets list. The information comes from emails sent by my website form, and sometimes I look at their website too. How do I know it's right? Everyone in the sheet has a status, and the times in each reply really are free on my calendar. To see how it went, I look at which ones turned into actual work.
+<Copy id="sl-process" title="Second message: your process" code={`Every morning before I start work, I go through the emails my website form forwards and the new inquiries in my inbox, one by one, and give each a rough score in my head. Is it the kind of work I do, is the budget enough, can I make the deadline? Those three usually tell me most of it. If I can't tell, I open their website and see what they do. Good fits get a reply suggesting a call to talk it through, with two or three times that really are free on my calendar. The rest get a polite no. If someone wants a free concept up front, I usually pass. If someone doesn't answer, I check in once more after three days. Everyone who's asked goes in one sheet, with a note on where things stand with them. At the end of the month I look at which ones turned into actual work, and that tells me whether I screened well.
 
-Have a think about how you'd take this off my hands completely. Don't start yet. Tell me back in plain words what you think the goal and the process are, I'll tell you what's off, and we'll get the process sorted first.`} />
+Don't reply to anyone yet. Tell me how you'd sort through them, and I'll say whether that matches what I'd do.`} />
 
-It restates what it heard first. Correct anything that's off and go a few rounds, then tell it to go ahead when you're happy. If it needs an app, it shows a **Connect** card in the chat. Open it and sign in.
+It tells you how it would screen them first. Correct anything that's off and go a few rounds, then tell it to go ahead when you're happy. When it needs Gmail, Google Calendar, or Google Sheets, it shows a **Connect** card in the chat. Open it and sign in.
 
 ## Turn "good fit" into something it can check
 
 You can tell in seconds whether an inquiry is worth answering, because you carry a yardstick in your head. Your bot doesn't have one, so it would have to guess, and you couldn't tell how it got its scores. So write the yardstick down. Everyone's is different. If you run a class, it's the child's age, which time slot they want, and whether that class still has room. If you sell insurance, it's what they want covered and whether that's something you can offer. For a freelance designer, it might look like this:
 
-<Copy id="sl-judge" title="Third message: how you decide" code={`Potato, a few rules for how I decide. A good fit comes down to three things: it's the kind of work I do, the budget meets my minimum, and I can make the deadline. Missing one drops it a level. If you can't tell, look at their website first. If you still can't tell, mark it "unsure" and hand it to me. Follow up at most twice. If there's no answer after two, let it go and leave them alone.
+<Copy id="sl-judge" title="Third message: how you decide" code={`Here's the yardstick I use in my head. A good fit comes down to three things: it's the kind of work I do, the budget meets my minimum, and I can make the deadline. Missing one drops it a level. If you can't tell, look at their website first. If you still can't tell, mark it "unsure" and hand it to me. Follow up at most twice. If there's no answer after two, let it go and leave them alone.
 
-What else haven't I told you? Ask me: how I make decisions, where things come from, how I check the work, and when you should come to me. One question at a time. Then walk me through a few examples and I'll tell you what I think. Don't automate anything yet.`} />
+That yardstick isn't complete. Ask me about the kind of inquiry you'd be least sure how to score, one at a time. Then try it on that client from last year whose budget looked too low and who became a regular, and tell me what score you'd have given them.`} />
 
-This way it looks things up before it asks, so you only get the truly unclear ones, and with a limit on follow-ups nobody gets chased. When you pick examples, include one or two that went wrong, like the person whose budget looked too low and who became a regular client. See how it would handle them, then tell it what to fix.
+This way it looks things up before it asks, so you only get the truly unclear ones, and with a limit on follow-ups nobody gets chased. Swap that last client for one you misjudged yourself. See how it scores them, then tell it what to fix. Go over its scoring in the chat a few times before you let it run every day. For a fuller way to have it ask what you haven't said, see [Have it find what you left out](/en/howto/prompts/#p-gaps) on the prompts page.
 
 ## Let it screen first thing every morning
 
-Once this has gone well a few times, it can start on its own. Save the process as a <Term k="技能" /> first, then set up a <Term k="routine" /> so it starts on time every weekday morning:
+Once it has screened a few batches in the chat and its scores match yours, it can start on its own. Save the process as a <Term k="技能" /> first, then set up a <Term k="routine" /> so it starts on time every weekday morning:
 
-<Copy id="sl-routine" title="Fourth message: let it start on its own" code={`Save what we just worked out as a skill called "Screen inquiries." Then set up a routine: every weekday at 9:00 AM, use that skill on everything that came in since yesterday, and update the sheet. Write every reply as a draft for me to send. Don't reach out to anyone yourself.`} />
+<Copy id="sl-routine" title="Fourth message: let it start on its own" code={`Save the way we just agreed to screen inquiries as a skill called "Screen inquiries." Then set up a routine: every weekday at 9:00 AM, use it on everything that came in since yesterday, and update the sheet. Write every reply as a draft for me to send. Don't reach out to anyone yourself.`} />
 
 When you open the chat in the morning, you'll see something like this:
 
