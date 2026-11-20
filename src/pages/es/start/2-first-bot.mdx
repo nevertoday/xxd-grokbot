@@ -1,6 +1,6 @@
 ---
 layout: ../../../layouts/Lesson.astro
-tldr: "Un bot, un trabajo. En esta lección instalas Grok Bot, creas un bot llamado Potato y le pasas la frase que escribiste en la lección 1."
+tldr: "Un bot, un trabajo. En esta lección instalas Grok Bot, creas un bot llamado Potato y le pasas lo que escribiste en la lección 1."
 lesson: 2
 ---
 import Callout from "../../../components/Callout.astro";
@@ -9,7 +9,7 @@ import Copy from "../../../components/Copy.astro";
 import Reply from "../../../components/Reply.astro";
 import Q from "../../../components/Q.astro";
 
-Ya tienes la frase que escribiste en la lección 1. En esta lección la entregas: instalas Grok Bot, creas un <Term k="bot" text="bot" /> solo para este trabajo y le envías esa frase.
+Ya tienes las frases que escribiste en la lección 1. En esta lección las entregas: instalas Grok Bot, creas un <Term k="bot" text="bot" /> solo para este trabajo y le envías lo que escribiste.
 
 ¿Por qué un bot solo para este trabajo? Piensa en cómo le explicarías una tarea a alguien que acaba de llegar a tu equipo. No le dirías «a partir de ahora, todo es tuyo». Le dirías que este trabajo es suyo y para qué sirve. Con un bot pasa lo mismo. Cuando se encarga de un solo trabajo, todo lo que recuerda tiene que ver con ese trabajo, y tú solo tienes que explicárselo una vez. Así que toda esta lección se reduce a una cosa:
 
@@ -58,21 +58,23 @@ La app creó ese bot llamado Grok Bot por ti. Por ahora déjalo como está. En e
 
 ## Paso 5: Pásale tu objetivo
 
-Copia el mensaje de abajo y pégalo en el cuadro de mensaje. Cambia la línea «Quiero …, para que …» por la frase que escribiste en la lección 1 y luego envíalo.
+Copia el mensaje de abajo y pégalo en el cuadro de mensaje. Cambia la línea entre corchetes por lo que escribiste en la lección 1 y luego envíalo.
 
-<Copy id="goal" title="Copia, cambia la línea del medio por tu objetivo y envía" code={`Hola, Potato. Este es el objetivo del que quiero que te encargues. Por favor, recuérdalo:
-Quiero …, para que …
-A partir de este objetivo, elige un nombre y una imagen para ti.`} />
+<Copy id="goal" title="Copia, cambia los corchetes por tus frases y envía" code={`Hola, Potato. Desde ahora, este trabajo es tuyo. Tenlo presente:
+[Pega aquí lo que escribiste en la lección 1]
+Y a partir de esto, ponte un nombre y elige una imagen para ti.`} />
 
-<Reply title="Ilustración: más o menos así se ve su respuesta" code={`Entendido. El objetivo del que me encargo: antes de la reunión del lunes,
-todos tienen unas diapositivas que muestran el avance de esta semana,
-para que pasen menos tiempo de la reunión leyendo números en voz alta
-y más tiempo tomando decisiones.
+Si le pasas las frases de la lección 1 sobre los avisos de la escuela, te respondería más o menos así:
 
-Me gustaría llamarme «Lunes», porque preparar la reunión del lunes es cosa mía.
-Para mi imagen, elegiría una presentación de diapositivas abierta.`} />
+<Reply title="Ilustración: más o menos así se ve su respuesta" code={`Entendido, esto queda a mi cargo:
+cada vez que un aviso de la escuela o de una actividad mencione una fecha,
+la pongo en tu calendario y te lo recuerdo el día antes,
+así tu hijo no llega a la escuela sin lo que necesita.
 
-Lee su respuesta. Primero comprueba que el objetivo que anotó coincide con el tuyo, y si no, escríbele una corrección, por ejemplo «No es el lunes, es el miércoles». Después mira el nombre que eligió. Si te gusta, quédatelo. Si en la barra lateral todavía dice Potato, cámbialo tú como se explica abajo, en «Si algo no sale bien».
+Me gustaría llamarme «Mochila», porque lo que va en ella mañana es cosa mía.
+De imagen, una mochilita.`} />
+
+Lee su respuesta. Primero comprueba que lo que anotó coincide con lo que escribiste, y si no, escríbele una corrección, por ejemplo «El día antes no, dos días antes, que algunas cosas las tengo que comprar primero». Después mira el nombre que eligió. Si te gusta, quédatelo. Si en la barra lateral todavía dice Potato, cámbialo tú como se explica abajo, en «Si algo no sale bien».
 
 Ya tienes un bot que solo hace este trabajo y que recuerda para qué sirve. En la próxima lección le cuentas cómo lo haces normalmente.
 
@@ -82,7 +84,7 @@ Ya tienes un bot que solo hace este trabajo y que recuerda para qué sirve. En l
 
 Entonces deja que Potato te ayude. Envíale esto y te entrevistará, una pregunta a la vez:
 
-<Copy id="interview-me" code={`Hola, Potato. Quiero que te encargues de un objetivo, pero no sé bien cómo ponerlo en palabras. ¿Podrías entrevistarme, una pregunta a la vez, hasta que tengamos un objetivo que me convenza?`} />
+<Copy id="interview-me" code={`Hola, Potato. Hay algo que quiero pasarte, pero todavía no sé decir bien qué quiero. ¿Me entrevistas, una pregunta a la vez, hasta que quede claro?`} />
 
 Cuando el objetivo esté definido, envía el mensaje del paso 5.
 
@@ -121,6 +123,6 @@ Para cambiar la imagen, haz clic en la imagen dentro de sus detalles y abre la p
 </Q>
 <Q q="Me responde en otro idioma.">
 
-Respóndele: «A partir de ahora, respóndeme siempre en español. Por favor, recuérdalo».
+Respóndele: «De ahora en adelante, contéstame en español. Que no se te olvide, ¿sí?».
 
 </Q>
