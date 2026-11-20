@@ -12,7 +12,7 @@ import Term from "../../../components/Term.astro";
 import Q from "../../../components/Q.astro";
 import Copy from "../../../components/Copy.astro";
 
-When you hand work to a bot, what you really need to control are the things that can't be taken back once they're done: a message that's been sent, money that's been paid, data that's been overwritten. An approval only decides whether one action runs. It can't undo work that's done. <mark>So anything you can't undo, like sending, paying or deleting, gets an Ask first rule.</mark>
+You've probably wondered about this. If you ask it to sort your inbox, will it go ahead and send the replies too? If you ask it to find flights, will it just book one? When you hand work to a bot, what you really need to control are exactly these things that can't be taken back once they're done: an email that's already gone to your landlord, money already paid for a flight, a spreadsheet already saved over with a new version. An approval only decides whether one action runs. It can't undo work that's done. <mark>So anything you can't undo, like sending, paying or deleting, gets an Ask first rule.</mark>
 
 This page covers the settings. First you set a boundary in the request, then you read the approval card, then you add an Ask first rule, and last come your own computer, the shared computer, privacy, and taking access back. For how approvals, apps and the computer fit together, see [Full guide step 4](/en/guide/4-apps/). The official page is [Approvals, security, and privacy](https://docs.x.ai/grok-bot/approvals-security-and-privacy).
 
@@ -20,9 +20,9 @@ This page covers the settings. First you set a boundary in the request, then you
 
 The simplest boundary goes right into the request: how far it may go, and where it waits for you. For example:
 
-<Copy id="ap-boundary" code="Go through next week's bookings, list the customers whose times need to change, and draft a text to each one. Don't send the texts or change the booking system. For each change, show the current time, the proposed time and why, and wait for my OK." />
+<Copy id="ap-boundary" code="I want to take my parents away for three days next month. Find me two or three options for flights plus a hotel. Don't book anything. For each one, tell me the total, what time we'd leave, and whether it can be changed or refunded, and I'll tell you which one I pick." />
 
-It hands back a draft for you to decide on. These kinds of actions always deserve a stated boundary:
+It hands back a few options. Once you've picked one, you decide how far it goes next. These kinds of actions always deserve a stated boundary:
 
 - Sending messages or invitations
 - Publishing content
@@ -33,13 +33,13 @@ It hands back a draft for you to decide on. These kinds of actions always deserv
 
 For a boundary that should last, ask it to remember:
 
-<Copy id="ap-remember" code="From now on, ask me before you send a message to anyone. Remember this." />
+<Copy id="ap-remember" code="From now on, check with me before you send a message to anyone. Remember that." />
 
 Memory is only the first layer, though. For boundaries that matter, also add a rule as shown below.
 
 ## Read the card before you choose
 
-When an action needs you, an <Term k="审批" text="approval" /> card shows what the bot wants to do and with what details. Check the target, scope and values, then choose:
+When an action needs you, an <Term k="审批" text="approval" /> card shows what the bot wants to do and with what details. Check the target, scope and values, meaning who it goes to, how many, and how much money, then choose:
 
 | Button | What happens |
 | --- | --- |
@@ -65,8 +65,9 @@ In the settings, that opening sentence becomes an **Ask first** rule. One thing 
 
 One rule per action, as narrow as you can make it. For example:
 
-- Ask me before emailing anyone outside the company.
-- Ask me before changing a live dashboard.
+- Ask me before emailing my kid's teacher.
+- Ask me before sending a client an invoice.
+- Ask me before deleting files in Google Drive.
 
 The docs advise against broad rules like "allow everything in the browser," because websites and tools change. When an action matches both kinds of rule, **Ask first** wins.
 
@@ -82,7 +83,7 @@ These settings only cover your own computer. Bots can still use the cloud comput
 
 ## Remember: all your bots share one computer
 
-There's one more thing to keep in mind. All your bots share the same cloud computer, so sites one bot signed in to, files it left, and command-line credentials are open to all your other bots. So:
+There's one more thing to keep in mind. All your bots share the same cloud computer, so sites one bot signed in to, files it left, and command-line credentials are open to all your other bots. If your homework bot signed in to the school's course site, your job-hunting bot opens the browser and finds that site still signed in. So:
 
 - Bots can't be walled off from each other, and separate bots are not a security measure.
 - When a site shouldn't be used anymore, sign out of it.
@@ -97,7 +98,7 @@ Grok Bot uses your Cursor account and follows that account's data settings. It r
 
 ## When you're done, take access back
 
-When a project or a login should no longer be available to your bots, work through this list:
+You found a place to rent, so it can stop checking rental sites. You changed jobs, so it shouldn't touch your old work account. When a project or a login should no longer be available to your bots, work through this list:
 
 1. Pause or delete the related <Term k="routine" text="routines" />.
 2. Sign out of those websites on the shared computer.

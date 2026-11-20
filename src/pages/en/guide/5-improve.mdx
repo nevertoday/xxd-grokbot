@@ -3,36 +3,36 @@ layout: ../../../layouts/Guide.astro
 step: 5
 need: A bot that already does the job your way
 tldr: When your bot can see feedback and data for itself, it can work out what to improve and bring it to you.
-description: Give your bot apps that show it feedback (email, social media, Google and Yelp reviews), have it build a small tool to log data, and use the same ID across apps so it can work out what to improve.
+description: Give your bot apps that show it feedback (email, social media, online reviews), have it build a small tool to log data, and use the same ID across apps so it can work out what to improve.
 ---
 import Checkpoint from "../../../components/Checkpoint.astro";
 import Term from "../../../components/Term.astro";
 import Copy from "../../../components/Copy.astro";
 import Q from "../../../components/Q.astro";
 
-Potato has been handling your bookings your way for a while, and it's doing fine. But how would it know what could go better? If it has to wait for you to spot a problem and come back to tell it, it can only improve as fast as you find the time.
+Your bot has been doing the job your way for a while, and it's doing fine. But how would it know what could go better? If it has to wait for you to spot a problem and come back to tell it, it can only improve as fast as you find the time.
 
-The author's approach is to switch places for a moment. If I were doing this job myself and wanted to keep getting better at it, where would I look? You'd probably read customer replies and check your online reviews. So let the bot look there too.
+The author's approach is to switch places for a moment. If I were doing this job myself and wanted to keep getting better at it, where would I look? A shop owner reads customer emails and online reviews. A freelancer checks what clients wrote back and which invoices are late again. A student reads the teacher's comments on returned work. So let the bot look there too.
 
 <mark><strong>When your bot can see feedback for itself, it can work out what to improve on its own.</strong></mark>
 
 ## One bad review, and it finds out why
 
-The author gives an example. A customer says on Yelp that they waited a long time before anyone helped them. If you saw that review, you'd probably pull up your records for that day and look for what held things up.
+The author's example is a customer complaining about a long wait, and we'll tell it with a small phone repair counter. A review online says, "I waited almost an hour before anyone even looked at me." If you saw that, you'd probably pull up your records for that day and look for what held things up.
 
-The bot can do the same. If it can look up that review on Yelp for itself, and also look up your records for that customer that day, it can see what may have gone wrong.
+The bot can do the same. If it can look up that review for itself, and also look up the records for that customer that day, it can see what may have gone wrong.
 
-<Copy id="yelp" code="A customer on Yelp says they waited a long time before anyone helped them. Find that review, then check our booking records for that customer that day. Tell me what probably went wrong and how to avoid it next time. Only look; don't change anything, and don't reply to the review yet." />
+<Copy id="bad-review" code="Someone left a review saying they waited almost an hour before anyone helped them. Find that review, then go through that customer's records for that day. Tell me where things got stuck and how to avoid it next time. Just look. Don't change anything, and don't reply to the review yet." />
 
 For a site with no app, it uses the browser on its <Term k="云端电脑" />, as in step 4. Replying to a review is speaking in public, so have it show you a draft first. For sorting reviews and drafting replies, see [answer reviews and sort customer feedback](/en/howto/reviews-feedback/).
 
 ## Give it places where it can see feedback
 
-One bad review is only the start. For the bot to keep spotting problems on its own, give it the apps and tools to get feedback for itself. If it handles your bookings, for example, let it watch your email, social media, and your Google and Yelp reviews. When it sees customer feedback there, it can suggest changes to your process on its own.
+One bad review is only the start. For the bot to keep spotting problems on its own, give it the apps and tools to get feedback for itself. Take that phone repair counter again. Let the bot watch the shop's email, social media, and online reviews. When it sees customer feedback there, it can suggest changes to your process on its own. Other jobs work the same way. If you teach and it writes your weekly practice sheet, the feedback is in your gradebook. Whichever question most of the class got wrong, next week's sheet has more like it.
 
 You don't have to work out every feedback source alone. Have the bot list them first:
 
-<Copy id="sources" code="Potato, you're handling my bookings now. I want you to see customer feedback for yourself, so that you can spot where we're falling short. If you were me, where would you look? List each place, the app you'd connect or the site you'd open, and what you need from me. Tell me your plan in simple English first, and connect things only after I confirm." />
+<Copy id="sources" code="Potato, you've had this job for a while now. I don't want to wait until something goes wrong to tell you. You should be able to see for yourself how it's going. If you were me, where would you look? List each place, whether you'd connect an app or open a site, and what you need from me. Show me the list first, and connect things only after I say yes." />
 
 Once you've confirmed the list, it connects them the way step 4 shows. The idea comes from the article's section [Let your bots improve themselves](https://x.com/poteto/status/2123159537016533493).
 
@@ -40,19 +40,21 @@ Once you've confirmed the list, it connects them the way step 4 shows. The idea 
 
 How good its ideas are depends on how much data it can reach. So, as the author puts it, the more computerized your business, the better for bots and automation.
 
-But a lot of useful data never gets written down. The good news is that Grok Bot can build you a tool to record it. The author's example is a car repair shop that has the bot build a small app for the computer and phone. For each customer visit, it logs when they arrived at the shop, when they spoke to a service rep, when the shop took their keys, and when service started and finished. With those times you can work out how long people waited, then look for why.
+But a lot of useful data never gets written down. The good news is that Grok Bot can build you a tool to record it. In the author's example, the bot builds a small app for the computer and phone that logs a few times for each customer visit: when they arrived, when they got to speak to someone, when the shop took their things, and when the work started and finished. With those times you can work out how long people waited, then look for why. A phone repair counter can use exactly that:
 
-<Copy id="logger" code="I run a car repair shop. I want to know how long each customer waits, so that I can find out what holds them up. Build me a small tool I can use on my computer and my phone. For each visit it logs a few times: when they arrived, when they spoke to a service rep, when we took their keys, and when service started and finished. Tell me how you plan to build it first, and start once I confirm." />
+<Copy id="logger" code="I run a little phone repair counter, and people keep saying they waited too long, but I can't tell where the time goes. Build me a small tool I can use on my computer and my phone. For each customer it logs a few times: when they walked in, when someone helped them, when they handed over the phone, and when the repair started and finished. Tell me how you'd build it first, and start once I say yes." />
 
-If you don't run a repair shop, swap those times for the moments that matter most in your line of work.
+If you don't fix phones, swap those times for the moments that matter most in your line of work. It helps outside a shop too. If you're job hunting, have it build a sheet that logs the day you sent each application, the day you heard back, and which round you're in. After a month you'll see which kinds of jobs answer you most.
 
 ## Use the same ID to connect data across apps
 
-Once you have more data, there's another snag. The same customer is a name in your booking system, an email address in your inbox, and just an order number in your repair log. All three are the same person, but to match them up, you need something all three records share.
+Once you have more data, there's another snag. The same customer is a name in your booking records, an email address in your inbox, and just a ticket number on the repair slip. All three are the same person, but to match them up, you need something all three records share.
 
 The author's suggestion is to give the data an identity, an ID. That could be a customer ID or email address, an order number, a part number, a barcode, or an employee ID. When the same customer or order has the same ID in every app you use, the bot can bring the data together and understand what's really going on.
 
-<Copy id="ids" code="I want the same customer to match up across the booking system, email, and the repair log, so that you can bring their records together. First look at how the same customer matches across those three apps today and where they don't match, then suggest one ID we should use everywhere. Suggestions only; don't change any data yet." />
+<Copy id="ids" code="The same customer shows up in my booking records, my email and my repair tickets, and it's written differently in all three, so I end up matching them by hand. First look at how the same customer matches across those three today and where they don't, then suggest one ID we should use everywhere from now on. That way you can pull one customer's records together in one go. Suggestions only. Don't change any data yet." />
+
+It's not just shops. When you're job hunting, a recruiter emails about "the position you applied for," and you're back on the job site trying to work out which one. Log each job's link or posting number in your sheet, and the emails and the jobs match up.
 
 ## It also comes to you on its own
 
@@ -64,8 +66,8 @@ Your bot now does the job your way, and it can read feedback and suggest improve
 
 ## Stuck?
 
-<Q q="Most of my business isn't on a computer, so there's little data.">
-<p>Start by logging one thing. Have it build a small tool like the repair shop's, record a few weeks, and then ask it to look.</p>
+<Q q="Most of what I do isn't on a computer, so there's little data.">
+<p>Start by logging one thing. Have it build a small tool like the phone repair counter's, record a few weeks, and then ask it to look.</p>
 </Q>
 <Q q="The review site needs a login and it can't get in.">
 <p>Save the login in Vault, or fill in the secure form when it sends one. Never type the password into chat. See <a href="/en/guide/4-apps/">step 4</a>.</p>

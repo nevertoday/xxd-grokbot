@@ -15,7 +15,7 @@ Bei SpaceX entwickelt poteto Grok Bot und hat einen langen Beitrag darüber gesc
 </div>
 
 <p align="center">
-  <img src="assets/en/hero.svg" width="100%" alt="Demo: Du gibst Potato ein Ziel, er gibt es wieder, bevor er anfängt, du ergänzt eine Regel, er richtet eine Routine für Freitag ein und gibt dir die fertigen Folien zurück. Links leuchten die vier Schritte auf: mit dem Ziel anfangen, deinen Ablauf erzählen, zeigen, wie du urteilst, ihn von selbst laufen lassen">
+  <img src="assets/en/hero.svg" width="100%" alt="Demo: Du erzählst Potato, dass dir ständig Nachrichten von der Schule durchrutschen, und bittest ihn, alles mit Datum in deinen Kalender einzutragen. Er gibt das wieder, bevor er anfängt. Du ergänzt zwei Regeln: bei Zahlungen Bescheid sagen statt zu zahlen, und fragen, wenn ein Datum unklar ist. Er richtet eine Routine für Sonntagabend ein und sagt dir dann, dass der Elternabend und das alte T-Shirt in deinem Kalender stehen. Links leuchten die vier Schritte auf: mit dem Ziel anfangen, deinen Ablauf erzählen, zeigen, wie du urteilst, ihn von selbst laufen lassen">
 </p>
 
 ## Das hast du wahrscheinlich schon probiert
@@ -28,14 +28,14 @@ Am Bot liegt es nicht. Eine Chat-KI gibt dir eine Antwort und überlässt dir de
   <img src="assets/en/readme/chat-vs-bot.svg" width="100%" alt="Links: Du bittest eine Chat-KI, aus dem Fortschritt der Woche Folien zu machen, und sie antwortet mit einer Gliederung; der Rest bleibt bei dir. Rechts: Dein Grok Bot hakt ab. Er liest die E-Mails und den Chat der Woche, gleicht die Zahlen mit der Tabelle ab, speichert die Folien im gemeinsamen Ordner und macht das jeden Freitag um 16 Uhr wieder.">
 </p>
 
-## Der Trick passt in einen Apfelkuchen
+## Der Trick, beim Abendessen erklärt
 
 Gleich am Anfang des Beitrags steht bei poteto, dass Automatisierung eigentlich eine Denkweise ist, die alle lernen können. Sie hat zwei Teile, ein Ziel und einen Ablauf.
 
-Wenn du einen Apfelkuchen backst, ist der Kuchen das Ziel. Äpfel kaufen, den Teig machen, alles zusammensetzen, backen und abkühlen lassen, das ist der Ablauf. Die meisten geben einem Bot nur einen Schritt aus dem Ablauf, etwa „Schick diese E-Mail“, und dann schickt der Bot eben immer nur E-Mails. Erzähl ihm zuerst vom Kuchen, dann kann er den ganzen Ablauf übernehmen und findet vielleicht sogar einen einfacheren Weg.
+Nimm das Abendessen. Ein Essen auf dem Tisch ist das Ziel. Einkaufen, waschen, schneiden und kochen, das ist der Ablauf. Die meisten geben einem Bot nur einen Schritt aus dem Ablauf, etwa „Schick diese E-Mail“, und dann schickt der Bot eben immer nur E-Mails. Erzähl ihm zuerst vom Essen, dann kann er den ganzen Ablauf übernehmen und findet vielleicht sogar einen einfacheren Weg, so wie an einem müden Abend, an dem du dir was bestellst und das Essen trotzdem auf dem Tisch steht.
 
 <p align="center">
-  <img src="assets/en/readme/pie.svg" width="100%" alt="Ablauf: Äpfel kaufen, Teig machen, zusammensetzen, backen, abkühlen lassen, und am Ende das Ziel, ein Apfelkuchen. Das Ziel ist, was du am Ende willst. Der Ablauf ist der Weg dorthin. Übergib den Ablauf einem Bot.">
+  <img src="assets/en/readme/goal.svg" width="100%" alt="Ablauf: einkaufen, waschen, schneiden, kochen, und am Ende das Ziel, ein Abendessen auf dem Tisch. Darunter ein zweiter Weg, an einem müden Abend etwas bestellen, der zum selben Ziel führt. Das Ziel ist, was du am Ende willst. Der Ablauf ist der Weg dorthin, und er kann sich ändern. Übergib den Ablauf einem Bot.">
 </p>
 
 ## Drei Lektionen, eine Sache nach der anderen
@@ -43,11 +43,11 @@ Wenn du einen Apfelkuchen backst, ist der Kuchen das Ziel. Äpfel kaufen, den Te
 Du musst nicht programmieren und vorher keinen Haufen Begriffe lernen. Jede Lektion macht genau eine Sache, und danach hast du etwas Neues in der Hand.
 
 <p align="center">
-  <img src="assets/en/readme/lessons.svg" width="100%" alt="Lektion 1, einen Satz schreiben, 10 Min.: ein Ziel, das das Ergebnis benennt. Lektion 2, Potato erstellen, 15 Min.: ein Bot, der es sich merkt. Lektion 3, eine Aufgabe übergeben, 30 Min.: ein Bot, der jede Woche läuft.">
+  <img src="assets/en/readme/lessons.svg" width="100%" alt="Lektion 1, sag, was du willst, 10 Min.: ein Ziel in deinen eigenen Worten. Lektion 2, Potato erstellen, 15 Min.: ein Bot, der es sich merkt. Lektion 3, eine Aufgabe übergeben, 30 Min.: ein Bot, der jede Woche läuft.">
 </p>
 
-1. **[Einen Satz schreiben](https://grokbot.xiaoxiaodong.ai/de/start/1-goal/)**: Such dir etwas aus, das du oft machst, und schreib das Ergebnis auf, das du wirklich willst.
-2. **[Potato erstellen](https://grokbot.xiaoxiaodong.ai/de/start/2-first-bot/)**: Installier Grok Bot, erstell einen Bot und gib ihm diesen Satz.
+1. **[Sag, was du willst](https://grokbot.xiaoxiaodong.ai/de/start/1-goal/)**: Such dir etwas aus, das du oft machst, und schreib ein paar einfache Zeilen dazu, was dich daran nervt und welches Ergebnis du willst.
+2. **[Potato erstellen](https://grokbot.xiaoxiaodong.ai/de/start/2-first-bot/)**: Installier Grok Bot, erstell einen Bot und gib ihm, was du geschrieben hast.
 3. **[Eine Aufgabe übergeben](https://grokbot.xiaoxiaodong.ai/de/start/3-hand-over/)**: Erzähl ihm, wie du die Arbeit machst, schau zu, wie er sie einmal richtig erledigt, und lass ihn dann jede Woche laufen.
 
 ## Keine Geduld? Probier jetzt gleich eine Nachricht
@@ -55,12 +55,12 @@ Du musst nicht programmieren und vorher keinen Haufen Begriffe lernen. Jede Lekt
 Installier Grok Bot von [x.ai/bot](https://x.ai/bot) (du brauchst ein Abo, das es enthält, etwa Premium, Super oder Ultra bei The X Subscription), klick oben in der Seitenleiste auf **+** (**Neuer Bot**), nenn ihn `Potato` und schick:
 
 ```text
-Hallo Potato, das ist das Ziel, um das du dich kümmern sollst. Bitte merk es dir:
-Ich möchte, dass vor dem Montagsmeeting alle Folien zum Fortschritt der Woche haben, damit wir weniger Zeit mit dem Vorlesen von Zahlen verbringen und mehr Zeit zum Entscheiden haben.
-Such dir passend zu diesem Ziel einen Namen und ein Bild aus.
+Hi Potato, ab jetzt ist das hier deine Aufgabe. Merk sie dir:
+Jeden Freitagnachmittag wühl ich mich durch Chats und Dokumente, um meinen Wochenbericht zusammenzustückeln, und das nervt total. Schreib einen Entwurf für diese Woche, im selben Format wie letzte Woche, ich feile noch kurz dran und schick ihn raus. Dann hab ich meinen Freitagnachmittag wieder frei.
+Such dir passend dazu einen Namen und ein Bild aus.
 ```
 
-Tausch die mittlere Zeile gegen deine eigene Aufgabe aus. Wie du ihm erzählst, wie du die Arbeit machst, steht in [Lektion 3](https://grokbot.xiaoxiaodong.ai/de/start/3-hand-over/).
+Tausch die mittleren Zeilen gegen deine eigene Aufgabe aus. Wie du ihm erzählst, wie du die Arbeit machst, steht in [Lektion 3](https://grokbot.xiaoxiaodong.ai/de/start/3-hand-over/).
 
 ## Du nutzt es schon?
 

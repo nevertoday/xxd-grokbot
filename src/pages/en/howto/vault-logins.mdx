@@ -11,17 +11,19 @@ import Callout from "../../../components/Callout.astro";
 import Term from "../../../components/Term.astro";
 import Q from "../../../components/Q.astro";
 
-When you want a bot to sign in, fill in details or check out for you, the quickest move seems to be sending it your password. Don't. <mark>Never send passwords, one-time codes or API keys in chat. Put logins and cards in <Term k="Vault" />, where bots can use them without seeing the password.</mark> The official page is [Vault and secure sign-in](https://docs.x.ai/grok-bot/vault).
+Maybe you want your bot to check this month's electricity bill on the power company's site, look for new homework on the school's course site, or see whether anyone answered the job applications you sent. When it has to sign in, fill in details or check out for you, the quickest move seems to be sending it your password. Don't. <mark>Never send passwords, one-time codes or API keys in chat. Put logins and cards in <Term k="Vault" />, where bots can use them without seeing the password.</mark> The official page is [Vault and secure sign-in](https://docs.x.ai/grok-bot/vault).
 
 Below, you'll save the logins you use often, then see where a bot looks when it signs in and how you take over for the step it can't do, and last come API keys and payments.
 
 ## Save the logins you use often
 
+Start with the sites it visits most: the power and water companies whose bills you check every month, the site your kid's school posts notices on, the job or rental sites you check every day. For work, it's the few systems it signs in to daily.
+
 1. Open **Settings → Vault** and choose **New item**.
 2. Pick **Login**, **Card** or **Contact info**.
 3. Fill it in and save. A login needs the **Website**, **Username or email** and **Password**, then **Save login**. For a card, **Scan with camera** or **Upload a photo** fills it in for you.
 
-Under **Hints**, write when to use an entry, like "Use for work purchases." When there's more than one to choose from, the bot follows the hint.
+Under **Hints**, write when to use an entry. Say you look after your parents' power bill too, so you've saved two logins for the power company's site. On theirs, write "Use this one for my parents' bill." When there's more than one to choose from, the bot follows the hint.
 
 <Callout type="ok">
 After saving, passwords stay hidden and cards show only their last four digits. Saved values are never shown to you again.
@@ -68,13 +70,13 @@ Fingerprint, Face ID, Windows Hello and passkeys saved on your laptop or phone d
 
 ## API keys go in the secure secret card
 
-For an API key or a similar secret, wait for the bot to send a **secure secret card**. The field is masked, and after you choose **Save securely**, the card shows **Saved**. The value never appears in the chat, and the bot never sees it.
+An API key is a long password some services give to programs, and you'll run into one when you build a website or connect tools. For an API key or a similar secret, wait for the bot to send a **secure secret card**. The field is masked, and after you choose **Save securely**, the card shows **Saved**. The value never appears in the chat, and the bot never sees it.
 
 Also keep passwords, codes and API keys out of commands and files on the computer. When you use **Teach a task**, don't type secrets during the demonstration.
 
 ## Payments: to approve each one, don't save the card
 
-A card saved in Vault fills in at checkout without asking you each time, and no setting requires your approval for each use of the card. (The official Vault page also says that when a bot buys through an order card, it types the card in after you tap the pay button.) So to approve every payment yourself:
+Take the electricity bill. You probably want to see the amount each month before it's paid. But a card saved in Vault fills in at checkout without asking you each time, and no setting requires your approval for each use of the card. (The official Vault page also says that when a bot buys through an order card, it types the card in after you tap the pay button.) So to approve every payment yourself:
 
 - **Don't save the card.** When the bot asks for a card with a Secure Form, leave **Securely save to Bot's vault** unchecked. The card is used in that chat only, and the bot asks you to approve the exact total there.
 - **Remove a card you already saved.** In **Settings → Vault**, select it and choose **Remove**.

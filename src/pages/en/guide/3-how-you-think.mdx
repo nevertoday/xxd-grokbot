@@ -11,53 +11,57 @@ import Copy from "../../../components/Copy.astro";
 import Term from "../../../components/Term.astro";
 import Q from "../../../components/Q.astro";
 
-When you explain a process, the easiest things to leave out aren't the steps. They're the parts you know so well that you do them without thinking. The author, poteto, makes a point of this in [the article](https://x.com/poteto/status/2123159537016533493).
+You run a hair salon, and this week you let your bot book the appointments. On Saturday afternoon, a customer has just sat down for a color when the next one walks in. The bot left fifteen minutes for a color that takes over two hours. It didn't know, because you never told it.
+
+When you explain a process, the easiest things to leave out aren't the steps. They're the things you know so well that you do them without thinking. The author, poteto, makes a point of this in [the article](https://x.com/poteto/status/2123159537016533493).
 
 <mark><strong>The calls you make from experience, without thinking, are exactly what your bot is missing.</strong></mark>
 
 ## The things you do without thinking
 
-Take bookings again. While you book customers, you're keeping track of a lot. Some services take longer and need a bigger slot. Some jobs only certain people can do. Some appointments need extra time between them. To you this is obvious, which is why you probably didn't mention any of it in step 2. The bot doesn't know any of it.
+The color is only one of them. While you book customers, you're keeping track of a lot. A cut takes half an hour. Only one of your stylists does perms. Between two customers you need ten minutes to sweep up and swap the towels. To you this is obvious, which is why you probably didn't mention any of it in step 2. The bot doesn't know any of it.
 
-Think back to doing the task yourself. What are you paying attention to? What makes you do something differently? That's what to tell it. The author points out two decisions in particular, below.
+It's the same if you look after your parents. You know which pill goes before meals and which doctor has to be booked a week ahead, and you've never written any of it down.
+
+Think back to doing the task yourself. What are you paying attention to? What makes you do something differently? That's what to tell it. The author points out two decisions in particular, and we'll stay at the salon for both.
 
 ## The email says 3 PM and the system says 4 PM. Which wins?
 
-Information often lives in more than one place. A customer's email says 3 PM, and your booking system says 4 PM. You'd know which one to trust. The bot won't, so tell it:
+Information often lives in more than one place. A customer emails to say they're coming in at 3 PM for a perm, and your booking system says 4 PM. You'd know which one to trust, or at least that you should ask. The bot won't, so tell it:
 
-<Copy id="trust" title="Swap in your own rule" code="From now on, when an email and the booking system show different appointment times, trust the booking system and tell me about that booking. Remember this rule." />
+<Copy id="trust" title="Swap in your own rule" code="From now on, if a customer's email and the booking system show different times, go with the booking system for now, and flag that booking for me so I can check with the customer myself. Remember this one." />
 
 For facts that change, like appointment times, have it check the source system each time instead of going from memory. The official docs say the same thing. Memory doesn't replace the real source, so before decisions that matter, ask the bot to reopen the current data. See [Memory is not a source of truth](https://docs.x.ai/grok-bot/bots#memory-is-not-a-source-of-truth).
 
 ## The email went out. Is the booking done?
 
-No. Once the bot sends the confirmation email, it's easy to think the booking is finished. But if the booking never saved, or saved with the wrong time, the customer turns up for a slot that isn't there. The author is clear that a sent email doesn't make a finished booking. The appointment has to be saved correctly and the customer has to get a confirmation, and only when both are true is it done.
+No. Once the bot sends the confirmation email, it's easy to think the booking is finished. But if the booking never saved, or saved with the wrong time, the customer shows up right on time to find there's no booking at all. The author is clear that a sent email doesn't make a finished booking. The appointment has to be saved correctly and the customer has to get a confirmation, and only when both are true is it done.
 
-So don't take "done" on faith. Each time, ask for something you can check, like a link to the booking record, a screenshot, or a short log of what it did.
+So don't take "done" on faith. Each time, ask for something you can check, like a link to the booking record, a screenshot, or a short log of what it did. At first, you can also have it check with you before it adds or changes a booking, and drop that line once you trust it.
 
-<Copy id="done" code="When you finish each booking, tell me what you checked, and include a link to the booking record or a screenshot." />
+<Copy id="done" code="Check with me before you add or change any booking. Each time you book someone, don't just tell me it's done. Tell me what you checked, and send me a link to the booking record or a screenshot." />
 
 ## Have it keep track of what's still missing
 
-Sometimes a booking stalls halfway. Say the customer hasn't replied with a day that works. Have the bot note that booking and what's missing, so it can pick it back up later. That way it won't forget the booking, and it won't create a second one by accident.
+Sometimes a booking stalls halfway. A customer replies "any day next week works, I'll let you know," and then nothing. Have the bot note that booking and what's missing, so it can pick it back up later. That way it won't forget the booking, and it won't book the same person twice by accident.
 
-<Copy id="pending" code="If a booking is missing details, keep track of it and note what's missing. Before you pick it back up, check what you tracked, so you don't create a duplicate booking." />
+<Copy id="pending" code="Some customers say &quot;I'll let you know&quot; and then go quiet. Keep track of those and note what's still missing. Before you pick one back up, check your notes first, so you don't book the same person twice." />
 
 ## Test it on real examples
 
-You don't need to explain every case up front, and you couldn't anyway. Pick a few real examples, ideally one where something went wrong or you had to do things differently. Ask the bot how it would handle each one, then tell it what it got right and what it got wrong.
+You don't need to explain every case up front, and you couldn't anyway. Pick a few real examples, ideally one where something went wrong or you had to do things differently. Say last month a customer asked to add a color halfway through a cut, and the next customer ended up waiting an extra hour. Ask the bot how it would handle each one, then tell it what it got right and what it got wrong.
 
-<Copy id="example" title="Swap in your own example" code="Here's a booking from last month: <what happened>. How would you handle it?" />
+<Copy id="example" title="Swap in your own example" code="Here's something from last month: <what happened>. What would you have done?" />
 
 Even after a few rounds, you've probably left something out. So turn it around and let the bot ask you:
 
-<Copy id="ask-me" code="Potato, help me find what I haven't told you about this process yet. Ask me how I make decisions, where I get my information, how I check the work, and when you should ask me for help. Ask one question at a time. Then walk me through a few examples so I can give you feedback. Don't automate anything yet." />
+<Copy id="ask-me" code="Potato, I'm sure there's plenty about bookings that I know and never told you. Ask me, starting with whatever you're least sure about, and wait for each answer before the next question. Things like how long each kind of job needs, which side wins when two records disagree, when a booking counts as done, and when you should stop and check with me. Once we've covered it, walk me through a few of last month's bookings so I can tell you what's off. And let's not put this on autopilot yet." />
 
 ## Turn each decision into a rule it remembers
 
-Every decision you've explained is a rule it will need every time, so ask it to remember, the way the "trust the booking system" message does. Other rules work the same way, for example:
+Every decision you've explained is a rule it will need every time, so ask it to remember, the way the "go with the booking system" message does. Other rules work the same way, for example:
 
-<Copy id="rule" code="Remember: from now on, never send messages to anyone outside without my approval." />
+<Copy id="rule" code="Remember this: nothing goes out to anyone without my OK." />
 
 Details that only apply to one task can just go in that message. They don't need to be remembered. See [Edit a Bot](https://docs.x.ai/grok-bot/bots#edit-a-bot) in the official docs.
 

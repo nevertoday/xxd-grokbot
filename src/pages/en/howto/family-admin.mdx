@@ -2,62 +2,72 @@
 layout: ../../../layouts/HowTo.astro
 slug: family-admin
 time: A few rounds of chat to set the process, then a list every evening
-for: School notices, bills, and party invitations land in your personal email, and some slip
-tldr: "Every evening, a list sorted by due date is waiting in the chat: school forms, bills, invitations to answer. Replies are drafts, and it pays nothing."
-description: "Hand off family admin to Grok Bot: school forms, bills, and invitations to answer. Say that what you want is for nothing to slip, explain your process and your rules, then let it list what's due every evening. Or start from the ready-made Tradbot."
+for: School notices, your parents' checkups, and the household bills all live in your head
+tldr: "Every evening, a list sorted by date is waiting in the chat: what's due for school, your parents' appointments, bills coming up. Replies are drafts, and it pays nothing."
+description: "Hand off family admin to Grok Bot: notices from school and after-school classes, your parents' checkups and prescriptions, the household bills. Say that what you want is for nothing to slip, explain your process and your rules, then let it list what's due every evening. It can also put your parents' test results into one table. Or start from the ready-made Tradbot."
 ---
 import Callout from "../../../components/Callout.astro";
 import Term from "../../../components/Term.astro";
 import Q from "../../../components/Q.astro";
 import Copy from "../../../components/Copy.astro";
 
-School forms, bills to pay, and party invitations to answer all land in your personal email, mixed in with promotions, and too often you remember one after its due date. When you finish this page, your bot will post a list in the chat every evening at 8:00 PM of what's due from tomorrow through next week, sorted by due date, each item linked to its email. Any replies it writes are drafts that wait for you to send.
+The kids' school sends a few notices a week, about parent-teacher meetings, fees to pay, and what to bring tomorrow, and the after-school classes send their own. Your parents have a follow-up appointment next month and a prescription to pick up every month, and you're the only one keeping track of the dates. Add when this month's electricity bill is due, and something always slips until it's too late. When you finish this page, your bot will post a list in the chat every evening at 8:00 PM of what's coming up from tomorrow through next week, sorted by date, each item linked to its email. Any replies it writes are drafts that wait for you to send.
 
-<mark>Remembering goes to the bot. Your calendar, your answers to invitations, and your payments stay your call.</mark>
-
-It takes four steps: give it the goal, explain how you do it now, teach it how you decide, then let it start on its own.
+<mark>Remembering goes to the bot. Your calendar, your replies, and your payments stay your call.</mark>
 
 ## The goal isn't answered email
 
-Answering email is only one step in the process. What you actually want is that no school form, bill, or invitation slips. Make a new <Term k="bot" />, call it Potato, and give it that goal:
+Answering email is just one piece of it. What you want is that nothing for the kids' school, your parents' health, or the household bills slips. Make a new <Term k="bot" />, call it Potato, and tell it what home looks like for you:
 
-<Copy id="fa-goal" title="First message: the goal" code="Hi Potato. There's a goal I'd like you to own. I want nothing at home to slip: school forms go in on time, bills are never late, and invitations get answered on time, so that I don't have to keep all of it in my head. This is your job from now on, so please remember it. Then, based on the goal, choose a name and a picture for yourself." />
+<Copy id="fa-goal" title="First message: the goal" code="I'm the one who keeps track of everything at home. The two kids' school and after-school classes send a few notices a week, my parents have checkups and prescriptions every month, and then there are all the bills. Last month I forgot a parent-teacher meeting, and I paid the electricity bill late too. From now on you keep track of all that for me, so nothing slips and I'm not waking up at midnight remembering something. This is a long-term job, so make a note of it." />
+
+It's still called Potato at this point. For a name that fits the job, end with one more line. [Beginner lesson 2](/en/start/2-first-bot/) has one you can use.
 
 <Callout type="tip" title="Want a shortcut? Use a ready-made bot">
 The official bot marketplace has [Tradbot](https://x.ai/bot/marketplace/bots/tradbot-2) for exactly this. It watches your personal email and calendar, drafts replies, and catches pickup clashes. Its listing says it never sends without you. The rest of this page teaches your own bot from scratch.
 </Callout>
 
-## Tell it how you go through your personal email
+## Tell it how you keep track today
 
-Now tell it how you do this today: which kinds of email you pick out, which calendar you check, and how you order the list. Here's an example. Swap in your own family's details:
+Now tell it how you pull all this together each evening. Here's what one parent might say. Swap in your own family's details:
 
-<Copy id="fa-process" title="Second message: your process" code={`Potato, this is how I usually do this myself. Every day I go through my personal email and pick out school, bills, and invitations. Then I check the family calendar for pickup clashes, and last I make a list sorted by due date. I watch especially for due dates, anything that needs a signature or a form, and pickup times. I use Gmail and Google Calendar, and the information comes from my personal email, the shared family calendar, and the school website. It's right when every item on the list has a due date and a link to the original email. My family tells me what I missed, and I'll pass that on to you.
+<Copy id="fa-process" title="Second message: your process" code={`Most nights, once the kids are asleep, I go through my personal email from the top and pull out anything from school, the after-school classes, the doctor's office, or a bill. Then I open the calendar the whole family shares to see if pickups, appointments, and everything else fit together, and I make a list sorted by date. What I'm scared of missing: anything that needs a signature or a form, anything that needs money, anything the kids have to bring, and the dates for my parents' checkups and prescriptions. Some notices only go up on the school website, and you have to log in to see them. Every item on my list has a date and the original email, which is how I double-check it. When someone in the family tells me I missed something, I'll pass it on to you.
 
-Think about how you could take this over from me completely. Before you begin, restate my goal and process in simple words, so I can give you feedback and confirm it. Don't start doing the work yet. Let's get the process planned first.`} />
+Figure out how you'd take all of it off my hands. Stay out of my calendar for now, and just walk me through your plan.`} />
 
-If typing is slow, press `Cmd/Ctrl+D` and just talk, saying things as they come to you. It restates what it heard first. Correct whatever's off and go a few rounds until it's right. When you're happy, tell it to go ahead. If it needs an app, it shows a **Connect** card in the chat. Open it and sign in.
+If you look after your parents and there are no kids at home, just leave out the school and after-school classes and keep the doctor, the pharmacy, and the bills.
+
+With Gmail and Google Calendar, a **Connect** card shows up in the chat the first time it needs each one. Open it and sign in. Too tired to type at night? Press `Cmd/Ctrl+D` and talk. When what it describes isn't what you meant, correct it on the spot, and after a few rounds it'll have it.
 
 ## What it can do, and what stays your call
 
 Some of this the bot can actually do. It can edit your calendar, and it can answer invitations. But family plans are yours to make, so spell out the rules first:
 
-<Copy id="fa-judge" title="Third message: how you decide" code={`Potato, here are a few rules I use to decide. Anything due within three days goes at the top. Sort the rest by date. If a pickup clashes with something, tell me first. Don't change the calendar for me, and don't answer anyone's invitation for me. Bills get a reminder, never a payment. I pay them myself.
+<Copy id="fa-judge" title="Third message: how you decide" code={`Here are the house rules. Anything due within three days goes at the top, with tomorrow's things marked on their own, and the rest goes by date. If a pickup or an appointment clashes with something, tell me first. Don't change the calendar for me, and don't answer anyone's invitation for me. Bills get a reminder, and I pay them myself.
 
-Help me find what I haven't told you about this process yet. Ask me how I make decisions, where I get my information, how I check the work, and when you should ask me for help. Ask one question at a time. Then walk me through a few examples so I can give you feedback. Don't automate anything yet.`} />
+I'm sure I haven't covered every kind of notice, like the school's photos from a field trip, or a clinic's ad for a health check. Whenever you're not sure something belongs on the list, check with me, a single notice at a time.`} />
 
-The first rule brings what's due soon to the top, so even a long list doesn't hide anything. The other two draw the line: it reminds, you decide. Keep in mind, though, that "bills get a reminder, never a payment" is only a rule in your prompt. To make sure it can't pay, don't save a card in <Term k="Vault" />, because a saved card fills in at checkout without asking you.
+The first rule brings what's due soon to the top, so you see tomorrow's things the night before and even a long list doesn't hide anything. The other two draw the line: it reminds, you decide. Keep in mind, though, that "bills get a reminder, and I pay them myself" is only a rule in your prompt. To make sure it can't pay, don't save a card in <Term k="Vault" />, because a saved card fills in at checkout without asking you.
 
-When it's done asking, try it on a real case or two that went wrong, like the permission slip that almost expired. See how it would handle them, then tell it what to fix.
+When it's done asking, test it on things that really went wrong: the reply slip that almost missed its date, or the afternoon a checkup landed on the same day as a parent-teacher meeting. Hear how it would handle them, and correct it right there. You're still watching each run here, so don't set it to run on its own yet. For house rules you haven't thought of, send [the one on the prompts page](/en/howto/prompts/#p-gaps) and let it ask you.
 
 ## A list every evening at 8
 
-Once this has gone well a few times, you can let it start on its own. First have it save the process as a <Term k="技能" />, written instructions it follows every time, then set up a <Term k="routine" /> that tells it when to start:
+Once it has sorted a few evenings without a slip, let it do this every night on its own. First have it save the process as a <Term k="技能" />, the instructions it works from, then set up a <Term k="routine" /> that says when to start:
 
-<Copy id="fa-routine" title="Fourth message: let it start on its own" code={`Save the process we just used as a skill called "Family admin." Then set up a routine: every evening at 8:00 PM, use that skill to list what's due from tomorrow through next week, and post it in this chat. Write any replies as drafts for me to send. Don't pay for anything, and don't accept or decline any invitation for me.`} />
+<Copy id="fa-routine" title="Fourth message: let it start on its own" code={`Make all that a skill and call it "Family admin." Next, a routine: every evening at 8:00 PM, use it to list what's coming up from tomorrow through next week, and post it here. Write any replies as drafts for me to send. Don't pay a cent for anything, and don't accept or turn down anyone's invitation for me.`} />
 
 After the first few runs, first check that no ads slipped in, since promotional email shouldn't count as a bill. Then pick two items and compare their dates with the original email. Last, make sure nothing was paid or answered, and the replies are still drafts.
 
-A new routine waits for its next scheduled time. If you'd rather not wait, open it and choose **Test**, but keep in mind that a test does real work. See [Create a routine](https://docs.x.ai/grok-bot/skills-routines-and-automations#create-a-routine) in the official docs. For what it stops to ask you about, see [Approvals and privacy](/en/howto/approvals-privacy/).
+A routine you just set up first runs at the next 8:00 PM. To see it work now, open it and choose **Test**. A test really goes through your email and makes the list, and any replies are still only drafts. See [Create a routine](https://docs.x.ai/grok-bot/skills-routines-and-automations#create-a-routine) in the official docs. For what it stops to ask you about, see [Approvals and privacy](/en/howto/approvals-privacy/).
+
+## Before a checkup, put the test results in one table
+
+At a follow-up, the doctor asks what a number was last time, and you're scrolling through your camera roll and can't find the sheet. The bot can do this one too. Take photos of the last few test results, or drag the PDFs the clinic sent into the chat, and have it put them in one table you bring along.
+
+<Copy id="fa-checkups" title="Put test results in a table" code={`These are my dad's last three test results, some photos and some PDFs. Put them in one table: one row per test, the three results side by side, and anything the sheet marks as out of range, mark the same way. Just organize them. Don't draw any conclusions for me. If a cell is hard to read, leave it blank and flag it for me. Don't change the original files, and send me the table when it's done.`} />
+
+The table shows up as a card in the chat, which you can open to preview and save. When you get it, check two or three numbers against the original sheets before you take it along.
 
 Hand it the remembering, keep the deciding, and the family stuff stops slipping.
 
@@ -71,4 +81,7 @@ Show it two real emails, one bill and one promotion. Explain how to tell them ap
 </Q>
 <Q q="The school website wants a login.">
 Save the login in <Term k="Vault" />, and the bot fills it in without seeing the password. If it isn't saved, the bot shows a Secure Form for you to fill in, and the values go straight into the page. Never paste a password into the chat.
+</Q>
+<Q q="It can't read a photo of a test result.">
+It may not read files that are large, encrypted, damaged, or in an unusual format. Take a clearer photo, or export the file as a PDF or an image.
 </Q>

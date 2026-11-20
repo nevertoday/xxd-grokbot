@@ -1,6 +1,6 @@
 ---
 layout: ../../../layouts/Lesson.astro
-tldr: "Un bot, une tâche. Dans cette leçon, vous installez Grok Bot, vous créez un bot appelé Potato et vous lui confiez la phrase écrite dans la leçon 1."
+tldr: "Un bot, une tâche. Dans cette leçon, vous installez Grok Bot, vous créez un bot appelé Potato et vous lui confiez les lignes écrites dans la leçon 1."
 lesson: 2
 ---
 import Callout from "../../../components/Callout.astro";
@@ -9,7 +9,7 @@ import Copy from "../../../components/Copy.astro";
 import Reply from "../../../components/Reply.astro";
 import Q from "../../../components/Q.astro";
 
-Vous avez déjà la phrase écrite dans la leçon 1. Dans cette leçon, vous la transmettez : vous installez Grok Bot, vous créez un <Term k="bot" text="bot" /> rien que pour cette tâche, et vous lui envoyez cette phrase.
+Vous avez déjà les lignes écrites dans la leçon 1. Dans cette leçon, vous les transmettez : vous installez Grok Bot, vous créez un <Term k="bot" text="bot" /> rien que pour cette tâche, et vous lui envoyez ce que vous avez écrit.
 
 Pourquoi un bot rien que pour cette tâche ? Pensez à la façon dont vous mettriez au courant quelqu'un qui arrive dans l'équipe. Vous ne lui diriez pas « à partir de maintenant, tout est à vous ». Vous lui diriez plutôt que cette tâche est la sienne, et à quoi elle sert. Un bot, c'est pareil. Quand il s'occupe d'une seule tâche, tout ce qu'il retient porte sur elle, et vous n'avez à l'expliquer qu'une fois. Toute cette leçon revient donc à une seule chose :
 
@@ -58,21 +58,25 @@ Pourquoi Potato (« pomme de terre » en anglais) ? Parce que poteto conseille, 
 
 ## Étape 5 : lui confier votre objectif
 
-Copiez le message ci-dessous et collez-le dans la zone de saisie. Remplacez la ligne « Je veux …, pour que … » par la phrase écrite dans la leçon 1, puis envoyez-le.
+Copiez le message ci-dessous et collez-le dans la zone de saisie. Remplacez la ligne entre crochets par ce que vous avez écrit dans la leçon 1, puis envoyez-le.
 
-<Copy id="goal" title="Copiez, remplacez la ligne du milieu par votre objectif, puis envoyez" code={`Bonjour Potato, voici l'objectif que je veux te confier. Retiens-le, s'il te plaît :
-Je veux …, pour que …
-À partir de cet objectif, choisis-toi un nom et une image.`} />
+<Copy id="goal" title="Copiez, remplacez les crochets par vos lignes, puis envoyez" code={`Salut Potato, à partir de maintenant, c'est toi qui t'occupes de ça. Retiens-le bien :
+[Collez ici ce que vous avez écrit dans la leçon 1]
+À partir de ça, choisis-toi un nom et une image.`} />
 
-<Reply title="Illustration : à quoi ressemble à peu près sa réponse" code={`C'est noté. L'objectif dont je m'occupe : avant la réunion du lundi,
-tout le monde a des diapos qui montrent l'avancée de la semaine,
-pour que vous passiez moins de temps à lire des chiffres à voix haute
-et plus de temps à prendre des décisions.
+Avec les lignes du parent de la leçon 1, sa réponse ressemblerait à peu près à ceci :
 
-J'aimerais m'appeler « Lundi », puisque la réunion du lundi, c'est moi qui la prépare.
-Comme image, je prendrais une présentation ouverte.`} />
+<Reply title="Illustration : à quoi ressemble à peu près sa réponse" code={`C'est noté, ça, c'est pour moi :
+dès qu'un message de l'école ou d'une activité parle d'une date,
+je la mets dans ton agenda et je te la rappelle la veille,
+comme ça ton enfant n'arrive pas à l'école sans ce qu'il lui faut.
 
-Lisez sa réponse. Vérifiez d'abord que l'objectif qu'il a noté correspond au vôtre, et sinon, tapez simplement une correction, comme « Pas lundi, mercredi. » Regardez ensuite le nom qu'il a choisi. Si ce nom vous plaît, gardez-le. Si la barre latérale affiche toujours Potato, changez-le vous-même comme indiqué plus bas, dans « Si quelque chose cloche ».
+J'aimerais m'appeler « Cartable », puisque ce qui va dedans demain, c'est mon rayon.
+Comme image, un petit cartable.`} />
+
+Avec les lignes sur le rapport hebdo, il noterait plutôt quelque chose comme « préparer le rapport hebdo sur le modèle de la semaine dernière, tu le retouches avant qu'il parte », et s'appellerait peut-être « Vendredi ». Avec celles de l'étudiante, il noterait « chaque matin, te dire ce qui reste à rendre et pour quand », et pourrait se faire appeler « Échéance ».
+
+Lisez sa réponse. Vérifiez d'abord que ce qu'il a noté correspond à ce que vous avez écrit, et sinon, tapez simplement une correction, comme « Pas la veille, deux jours avant. Il y a des trucs que je dois d'abord acheter. » Regardez ensuite le nom qu'il a choisi. Si ce nom vous plaît, gardez-le. Si la barre latérale affiche toujours Potato, changez-le vous-même comme indiqué plus bas, dans « Si quelque chose cloche ».
 
 Vous avez maintenant un bot qui ne s'occupe que de cette tâche, et qui se souvient de ce à quoi elle sert. Dans la leçon suivante, vous lui expliquez comment vous la faites d'habitude.
 
@@ -82,7 +86,7 @@ Vous avez maintenant un bot qui ne s'occupe que de cette tâche, et qui se souvi
 
 Alors laissez Potato vous aider. Envoyez-lui ceci, et il vous interviewera, une question à la fois :
 
-<Copy id="interview-me" code={`Bonjour Potato, je veux te confier un objectif, mais je ne sais pas trop comment le formuler. Tu peux m'interviewer, une question à la fois, jusqu'à ce qu'on ait un objectif qui me convienne ?`} />
+<Copy id="interview-me" code={`Salut Potato, il y a un truc que je voudrais te confier, mais je n'arrive pas encore bien à dire ce que je veux. Tu peux m'interviewer, une question à la fois, jusqu'à ce que ce soit clair ?`} />
 
 Une fois l'objectif fixé, envoyez le message de l'étape 5.
 
@@ -121,6 +125,6 @@ Pour changer l'image, cliquez sur l'image dans ses détails et ouvrez l'onglet *
 </Q>
 <Q q="Il me répond en anglais.">
 
-Répondez-lui : « À partir de maintenant, réponds-moi toujours en français. Retiens-le, s'il te plaît. »
+Répondez-lui : « À partir de maintenant, réponds-moi en français. Retiens-le, d'accord ? »
 
 </Q>

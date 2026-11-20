@@ -3,22 +3,22 @@ layout: ../../../layouts/Guide.astro
 step: 7
 need: One or two bots that already work on their own
 tldr: One job per bot, and one owner for each handoff. Split a bigger goal across a few bots, and let Dr Eggbot help with the split.
-description: One job per bot; your primary bot is the front desk that passes work along; split a bigger goal across bots; share with teammates as a template or a Team Bot; then install Dr Eggbot, the bot the author taught to design bots.
+description: One job per bot; your primary bot is like the server at a restaurant who passes your order along; split a bigger goal across bots; share with teammates as a template or a Team Bot; then install Dr Eggbot, the bot the author taught to design bots.
 ---
 import Checkpoint from "../../../components/Checkpoint.astro";
 import Term from "../../../components/Term.astro";
 import Copy from "../../../components/Copy.astro";
 import Q from "../../../components/Q.astro";
 
-Potato now handles your bookings, reads your reviews, and starts on its own every morning. You keep handing it more. With that much work, it's time to think about who does what.
+Potato now starts on its own every morning, and you keep handing it more. With that much work, it's time to think about who does what.
 
-Think about how a car repair shop runs. The front desk greets customers and writes down what needs fixing, a mechanic does the repair, and the cashier settles the bill. The car passes from one person to the next, and each stage has one person in charge. You don't chase down a mechanic for everything, either. You tell the front desk, and the front desk hands it to the right person. If two mechanics started on the same car, they'd duplicate the work and talk over each other.
+Think about how a small restaurant runs. The server greets you and takes your order, the cook makes the food, and the cashier settles the bill. Your order passes from one person to the next, and each stage has one person in charge. You don't walk into the kitchen to find the cook, either. You tell the server, and the server passes it to the right person. If two cooks started on the same dish for the same table, you'd get it twice and the kitchen would be chaos.
 
 A team of bots works the same way.
 
 <mark><strong>One job per bot, and one owner for each stage of a handoff.</strong></mark>
 
-## Your primary bot is the front desk
+## Your primary bot is like the server
 
 Your <Term k="主 bot" />, the one with a star in the sidebar, is your main point of contact. It checks in with you on its own and hands work to your other bots. Give it a request, and it can pass the work to the bot that owns that job, so you don't have to remember which job belongs to whom.
 
@@ -28,23 +28,23 @@ If you don't have a primary bot yet, you'll see **Introducing your primary Bot**
 
 Most bots work best with one clear job. A bot with one job builds up memory for it, so you only explain it once.
 
-So start new work with your primary bot. When the same kind of request keeps coming back, with its own sources, rules or schedule, give it a bot of its own, or ask your primary bot to create one:
+So start new work with your primary bot. When the same kind of request keeps coming back, with its own sources, rules or schedule, give it a bot of its own, or ask your primary bot to create one. Your monthly expense report, for example:
 
-<Copy id="newbot" code="The Daily booking check keeps coming to you, and it has its own apps, rules and schedule. Make me a bot that does only this job, name it after the job, and tell it the process and rules we agreed on. Before you create it, tell me how you'll split the work." />
+<Copy id="newbot" code="I keep coming to you for my monthly expense report. It has its own apps and rules, and it's due at the end of every month. Make me a bot that does only this, name it after the job, and pass on the process and rules we agreed on. Before you create it, tell me how you'll split things up." />
 
 Your bots can also suggest a bot with one job, or create one on their own. To keep your list short, have them ask you before they create one. See the official page on [your primary bot and bots with one job](https://docs.x.ai/grok-bot/how-grok-bot-works#your-primary-bot-and-bots-with-one-job).
 
 ## Split a bigger goal across bots
 
-Some goals take more than one job, like a product launch or the month-end close. For those, ask your primary bot to set up a few bots that each own one part. They pass the work along, and you check the result. The month-end close, for example, could split like this:
+Some goals take more than one job, like the month-end close or taking the family away for a few days. For those, ask your primary bot to set up a few bots that each own one part. They pass the work along, and you check the result. Shop owners do a month-end close, and so do people who keep the books at work. It could split like this:
 
-<Copy id="team" code="I want the books closed on the 1st of every month, so that I only have to look at the items that don't match. Set up three bots, each owning one part: one matches invoices in the finance inbox to purchase orders, one matches expense reports to receipts, and one lists every mismatch for my sign-off. Tell me how you'll split it and who hands to whom, and create them once I confirm. Don't approve or pay anything." />
+<Copy id="team" code="On the 1st of every month I have to close the books, and digging through invoices, purchase orders, expense reports and receipts eats half my day. Set up three bots, each owning one part: one matches invoices in the finance inbox to purchase orders, one matches expense reports to receipts, and one lists every mismatch for my sign-off. Then I only have to look at the ones that don't match. Tell me how you'll split it and who hands to whom, and create them once I say yes. Don't approve or pay anything." />
 
-Bots hand work to each other in two ways. One is a direct message. One bot messages another, that bot wakes up, handles it and replies later, and you can see the handoff in the conversation. The other is a group chat. Choose **New chat**, add two to six bots in **To:**, and give each stage an owner from the start:
+Bots hand work to each other in two ways. One is a direct message. One bot messages another, that bot wakes up, handles it and replies later, and you can see the handoff in the conversation. The other is a group chat. Choose **New chat**, add two to six bots in **To:**, and give each stage an owner from the start. Say you're taking the family away for a few days, and comparing flights, places to stay and routes means a dozen open tabs. A group chat could start like this:
 
-<Copy id="group" code="@Researcher gather the source material and link every claim. @Writer turn the findings into a launch draft. @Reviewer check the draft against the sources and list only blocking issues. Don't publish anything." />
+<Copy id="group" code="@Travel find two or three round-trip flights and places to stay, with prices. Don't book anything yet. @Itinerary plan where we go each day and how we get there, for each option. @Budget add up roughly what each option costs and put it in one table. None of you book or pay for anything." />
 
-Two bots on the same stage are like two mechanics on one car. They duplicate work and send noisy updates. Keep usage in mind too. Every bot reply counts, including group replies and messages between bots, so fewer bots means fewer replies. And these bots share one computer and one Vault, so separate bots aren't walled off (see [step 4](/en/guide/4-apps/)).
+Two bots on the same stage are like two cooks on the same dish. They duplicate work and send noisy updates. Keep usage in mind too. Every bot reply counts, including group replies and messages between bots, so fewer bots means fewer replies. And these bots share one computer and one Vault, so separate bots aren't walled off (see [step 4](/en/guide/4-apps/)).
 
 See the official pages on [a team of bots for a bigger goal](https://docs.x.ai/grok-bot/use-cases#build-a-team-of-bots-for-a-bigger-goal) and [handing work off](https://docs.x.ai/grok-bot/chat-and-collaboration).
 
@@ -69,9 +69,9 @@ By now you might think that splitting work across a team of bots means mastering
 
 As the official description puts it, Dr Eggbot asks you a few questions, then sets up the bots for you, one job each. Open its [marketplace page](https://x.ai/bot/marketplace/bots/dr-eggbot-v2) and choose **Import Bot** to add your own copy. Then hand it your goal and your process:
 
-<Copy id="eggbot" code="Dr Eggbot, I want to hand this goal to a few bots: <goal>. This is how I usually do it myself: <process>. Ask me questions one at a time first. Then tell me in simple English which bots you'd create, what each one does, and what it doesn't do. Create them once I confirm." />
+<Copy id="eggbot" code="Dr Eggbot, I'd like to split something across a few bots: <goal>. Here's how I do it now: <process>. Ask me questions first, one at a time. Then tell me in plain words which bots you'd create, what each one does, and what it doesn't. Create them once I say yes." />
 
-You started in step 1 with one sentence about a goal. Now you have a team of bots, each with its own job, starting on their own. That's the whole guide. For specific jobs from here, the [how-to guides](/en/howto/) have ready-made recipes.
+You started in step 1 with one goal you dug out. Now you have a team of bots, each with its own job, starting on their own. That's the whole guide. For specific jobs from here, the [how-to guides](/en/howto/) have ready-made recipes.
 
 ## Stuck?
 

@@ -10,43 +10,43 @@ import Term from "../../../components/Term.astro";
 import Q from "../../../components/Q.astro";
 import Copy from "../../../components/Copy.astro";
 
-Once this is set up, you'll get a link every Friday afternoon. Monday's deck is already built in the same shape as last week's, every number shows where it came from, and you change a few things and it's ready.
+Your Friday afternoons probably look the same every week. You open several spreadsheets, copy the numbers into slides one by one, scroll back through the chat to remember what actually happened this week, then fix the formatting against last week's deck. In sales it's how many deals closed, in marketing it's how many people showed up, and if you run the office it's what got spent. Whatever the job, the chore is about the same. The worst part is getting one number wrong, because then Monday's meeting spends ages arguing about it.
 
-Your Fridays probably look the same every week: open several spreadsheets, copy the numbers into slides one by one, then fix the formatting against last week's deck. Get one number wrong and Monday's meeting spends ages arguing about it. So finished slides aren't really the result you want. What you want is for the numbers people see in the meeting to be right, so the meeting can be short and clear. <mark>What matters most is that every number traces back to a spreadsheet, and a number it couldn't get stays blank instead of being filled in with an old one.</mark>
+Once this is set up, you'll get a link every Friday afternoon. Monday's deck is already built in the same shape as last week's, every number shows where it came from, and you change a few things and it's ready. Finished slides aren't really the result you want. What you want is for the numbers people see in the meeting to be right, so the meeting can be short and clear. <mark>What matters most is that every number traces back to a spreadsheet, and a number it couldn't get stays blank instead of being filled in with an old one.</mark>
 
 ## What you want is a number you can trust
 
 Preparing slides for a weekly meeting is one of the goals the author, poteto, lists in the [article](https://x.com/poteto/status/2123159537016533493). The official docs have a similar example. The bot reads past decks in a folder, drafts the next one in your format, and leaves it in Drive for your edits. See [Use cases](https://docs.x.ai/grok-bot/use-cases#connect-your-apps-and-get-help-with-your-work).
 
-Make a new <Term k="bot" />, call it Potato, and send it the goal:
+Make a new <Term k="bot" /> and call it Potato for now. If you'd like it to pick a name that fits the weekly meeting, add a line after the goal, as in [Lesson 2](/en/start/2-first-bot/). Send it the goal:
 
-<Copy id="ws-goal" title="First message: the goal" code="Hi Potato. I want the numbers people see in Monday's meeting to always be right, so that the meeting is short and clear and we spend the time making decisions. This is your job from now on, so remember it. Based on the goal, choose a name and a picture for yourself." />
+<Copy id="ws-goal" title="First message: the goal" code="Hi Potato. Every Friday afternoon I open five or six spreadsheets to copy numbers out, then scroll back through a whole week of chat to put together Monday's report slides. My worst fear is one number copied wrong, because then the meeting argues about it for twenty minutes. From now on, the numbers in Monday's meeting are yours to look after, and every one of them has to be right." />
 
 ## Tell it how you do it on a Friday
 
-Next, tell it how you do this today. Pressing `Cmd/Ctrl+D` and talking is the easiest way, saying things as they come to you. Here's an example. Swap in your own folders and spreadsheets:
+Next, tell it how you spend that Friday afternoon. Open last week's deck, press `Cmd/Ctrl+D`, and talk it through slide by slide. In the example, past decks are in Google Drive, the numbers are in Google Sheets, and project updates are in Slack's project channels. Swap in your own folders and spreadsheets:
 
-<Copy id="ws-process" title="Second message: your process" code={`Potato, here's how I usually do this myself. On Friday I pull this week's numbers from the spreadsheets and build a new deck in the same format as last week's. I add speaker notes to each slide and review the whole thing before Monday. Two things matter most to me: the numbers match the spreadsheets, and the number and order of slides stay the same as last week. Past decks are in Google Drive, the numbers are in Google Sheets, and project updates are in Slack. More specifically, the information comes from the "Weekly meeting" folder in Drive, the data sheets, and the project channels in Slack. How do I know it's right? Every number can be traced to a spreadsheet. For feedback, I look at what people asked in the meeting and which slides I changed.
+<Copy id="ws-process" title="Second message: your process" code={`I start right after lunch on Friday. First I make a copy of last week's deck, then I open the spreadsheets one at a time and copy this week's numbers in. Then I go through the project channels in our team chat to see what moved this week, and write two or three lines of speaker notes on each slide. The thing that goes wrong most is copying from the wrong row and putting last week's number in as this week's, so when I'm done I check a few against the spreadsheets again. I don't change the number or order of slides, because people are used to them. Past decks are all in the "Weekly meeting" folder on the shared drive. If nobody asks "where's this number from?" on Monday and I didn't have to fix many slides, it was a good week.
 
-Think about how you could take this over from me completely. Before you begin, restate my goal and process in simple words, so I can give you feedback and confirm it. Don't start doing the work yet. Let's get the process planned first.`} />
+Leave the "Weekly meeting" folder alone for now. Tell me how you'd put this week's deck together, and I'll see if it's what I want.`} />
 
-It restates what it heard first. Correct anything that's off and go a few rounds, then tell it to go ahead when you're happy. If it needs an app, it shows a **Connect** card in the chat. Open it and sign in.
+It tells you how it plans to build the deck first. Correct anything that's off and go a few rounds, then tell it to go ahead when you're happy. When it needs Google Drive, Google Sheets, or Slack, it shows a **Connect** card in the chat. Open it and sign in.
 
 ## When two numbers disagree, which one wins
 
-The author gives an example in the article. An email and your booking system show different appointment times, so which should the bot trust? You'd know without thinking, but it doesn't. Slides are the same. When someone in Slack quotes a number that doesn't match the spreadsheet, it has to know which one to trust and tell you about it. So give it your rules:
+The author makes a point about this in the article. When two places disagree, you have to tell the bot which one to trust. You'd know without thinking, but it doesn't. Say that on Wednesday someone mentions in the team chat that "we closed 12 deals this week," but the spreadsheet shows 10. You know to go with the spreadsheet and ask whether two deals haven't been entered yet. The bot doesn't. So give it your rules:
 
-<Copy id="ws-judge" title="Third message: how you decide" code={`Potato, here are a few rules I use to decide. The spreadsheet is right about numbers, so if someone in Slack quotes a different number, use the spreadsheet and flag it in the notes for me. Only something that changed a lot since last week gets its own slide. Combine the rest. If you couldn't get a number, leave it blank and mark it "missing." Never reuse last week's.
+<Copy id="ws-judge" title="Third message: how you decide" code={`I have a few hard rules about numbers. The spreadsheet wins. If someone in the chat quotes a different number, use the spreadsheet and flag it in the notes for me. Only something that changed a lot since last week gets its own slide. Put the rest together. If you couldn't get a number, leave it blank and mark it "missing." Never reuse last week's.
 
-Then help me find what I haven't told you about this process yet. Ask me how I make decisions, where I get my information, how I check the work, and when you should come to me. Ask one question at a time. Then walk me through a few examples so I can give you feedback. Don't automate anything yet.`} />
+Those are the ones I can think of. Whatever you're unsure about in this deck, ask me, one thing at a time. After that, let's go through that time last month when a number on a slide didn't match the spreadsheet.`} />
 
-The last rule matters most. A blank cell marked "missing" tells everyone at a glance to ask about it. A number borrowed from last week gets taken as real. When you pick examples, include one or two that went wrong, like the week a slide didn't match the spreadsheet. See how it would handle them, then tell it what to fix.
+The last rule matters most. A blank cell marked "missing" tells everyone at a glance to ask about it. A number borrowed from last week gets taken as real. Swap that last example for a mix-up you've actually had. See how it would handle it, then tell it what to fix. Build a few decks in the chat first, and don't set it to run every week yet. For a fuller way to have it ask what you haven't said, see [Have it find what you left out](/en/howto/prompts/#p-gaps) on the prompts page.
 
 ## Let it have the deck ready every Friday
 
-Once this has gone well a few times, it can start on its own. Save the process as a <Term k="技能" /> first, then set up a <Term k="routine" /> so it starts on time every Friday:
+Once it has built a few decks in the chat and you only changed a thing or two, it can start on its own. Save the process as a <Term k="技能" /> first, then set up a <Term k="routine" /> so it starts on time every Friday:
 
-<Copy id="ws-routine" title="Fourth message: let it start on its own" code={`Save the process we just worked out as a skill called "Weekly slides." Then set up a routine: every Friday at 4:00 PM, use that skill to build Monday's deck. Save it in the "Weekly meeting" folder in Drive with the date in the file name, and send me the link. Don't send it to anyone else. If a spreadsheet won't open, flag it on that slide. Don't use old numbers.`} />
+<Copy id="ws-routine" title="Fourth message: let it start on its own" code={`Save the way we agreed to build the deck as a skill called "Weekly slides." Then set up a routine: every Friday at 4:00 PM, use it to make Monday's deck. Put it in the "Weekly meeting" folder on the shared drive with the date in the file name, and send me the link when it's done. Don't send it to anyone else. If a spreadsheet won't open, flag it on that slide. Don't use old numbers.`} />
 
 After the first few runs, check its work. Pick three numbers and compare them with the spreadsheet. See that the slide count, order and template match last week's. Then make sure the new file is in the "Weekly meeting" folder with the date in its name.
 

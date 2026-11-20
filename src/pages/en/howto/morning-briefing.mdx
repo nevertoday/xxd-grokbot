@@ -1,60 +1,84 @@
 ---
 layout: ../../../layouts/HowTo.astro
 slug: morning-briefing
-time: A few rounds of chat to set the process, then it arrives every weekday morning
-for: Every morning you check email, calendar, and Slack just to see what your day holds
-tldr: Every weekday morning, a briefing is waiting in the chat with what needs you today, each item linked to its source.
-description: "A morning briefing with Grok Bot: say that what you want is to know your day before work starts, explain where you look and what counts as needing you, then set it to run every weekday morning."
+time: A few rounds of chat to set the process, then it shows up every weekday morning
+for: Every morning you check several places just to find out what's on and what's due
+tldr: Every weekday morning, a short list is waiting in the chat with what needs you today and over the next few days, each item linked to its source.
+description: "A morning briefing with Grok Bot: for a student, what's due this week; for an office worker, who's waiting on you today; for a job seeker, what's new on the job sites. Say that what you want is to know where you stand first thing, explain where you look and what counts as needing you, then set it to run every morning."
 ---
 import Term from "../../../components/Term.astro";
 import Q from "../../../components/Q.astro";
 import Copy from "../../../components/Copy.astro";
+import Reply from "../../../components/Reply.astro";
 
-Do you start every morning by going through your email, your calendar, and Slack, one after another, just to find out what your day holds? By the time you're done, a good part of the morning is gone, and the one email that mattered may still be buried under a pile of cc's. When you finish this page, your bot will post a briefing in the chat every weekday at 7:30 AM: the few things today that need you personally, each with a link to the original email or message.
+If you're a student, your deadlines are scattered across school email and the websites for each of your classes, and it's 11 PM before you notice a report is due in the morning. Office work isn't much different. You sit down and go through your email, your calendar, and Slack one after another just to find out what your day holds, and the one email that mattered may be buried under a pile of cc's. When you finish this page, your bot will post a short list in the chat every weekday at 7:30 AM with only the things that need you today and over the next few days, each with a link to the original email or page.
 
-What makes a briefing useful isn't how much it covers. It's whether the bot knows what "needs you" means. <mark>Spell out what "needs you" means, and the briefing stays short.</mark>
+What makes that list useful isn't how much it covers. It's whether the bot knows what "needs you" means. <mark>Spell out what "needs you" means, and the briefing stays short.</mark>
 
-It takes four steps: give it the goal, explain how you do it now, teach it how you decide, then let it start on its own. The official docs call this a Morning briefing. See [Use cases](https://docs.x.ai/grok-bot/use-cases#chief-of-staff).
+The example below follows a student. If you work in an office or you're looking for a job, you only need to swap a few things, and the page points them out as it goes. The official docs call this a Morning briefing. See [Use cases](https://docs.x.ai/grok-bot/use-cases#chief-of-staff).
 
 ## The goal isn't a briefing
 
-Writing a briefing is only one step in the process. What you actually want is to know, before you start work, which things today can't happen without you, so you can spend the rest of your time on the work itself. So make a new <Term k="bot" />, call it Potato, and give it that goal:
+A briefing is just the format. What you want is to wake up knowing which things today can't happen without you, so you're not scrambling the night before a deadline. Make a new <Term k="bot" />, call it Potato, and tell it what your mornings are like:
 
-<Copy id="mb-goal" title="First message: the goal" code="Hi Potato. There's a goal I'd like you to own. I want to know, before I start work each day, which things today need me personally, so that nothing important slips and my mornings don't go to digging through email. This is your job from now on, so please remember it. Then, based on the goal, choose a name and a picture for yourself." />
+<Copy id="mb-goal" title="First message: the goal" code="Hi Potato. Every morning I go through my school email, then click into the website for each of my classes, just to figure out what's due. More than once I've only remembered the night before and stayed up half the night finishing it. From now on, before class each day, tell me what I have to do myself today and over the next few days, so I'm not up at 2 AM anymore. Remember this. It's yours every school day." />
+
+To have it rename itself after the job, add a line at the end. [Beginner lesson 2](/en/start/2-first-bot/) has one.
 
 ## Walk it through your morning rounds
 
-Now tell it how you do this today. Don't worry about saying too much. It needs to know where you look first, where you look next, and what you keep an eye out for. Here's an example. Swap in your own apps and habits:
+Now tell it how you do this today. Don't worry about saying too much. It needs to know where you look first, where you look next, and what you keep an eye out for. If typing is slow, press `Cmd/Ctrl+D` and say it. Here's what that student might say. Swap in your own places and habits:
 
-<Copy id="mb-process" title="Second message: your process" code={`Potato, this is how I usually do this myself. Each morning I go through my email and calendar, then my Slack mentions, then what changed in my Drive docs since yesterday, and I pick out what needs me and make a list. I watch especially for calendar clashes, anything due today, and messages from my manager or customers. The apps are Gmail, Google Calendar, Slack, and Google Drive. It's right when every item links to the original email or message and matches when I open it. After I read it each day, I'll tell you what was extra and what was missing.
+<Copy id="mb-process" title="Second message: your process" code={`First thing, I check my school email, because that's where teachers announce new deadlines and room changes. Then I open each class website and look for new assignments and announcements. Last, I glance at my calendar for today's classes and any group meetings. The three things I'm scared of missing are anything due today, any test this week, and anything a teacher changed at the last minute. Every item on the list should have a link to the email or the class page it came from, and when I click it, it should match. After I read it each day, I'll tell you what was extra and what was missing.
 
-Think about how you could take this over from me completely. Before you begin, restate my goal and process in simple words, so I can give you feedback and confirm it. Don't start doing the work yet. Let's get the process planned first.`} />
+Think about how you'd do the whole thing for me. Hold off on making a list. Talk me through the order you'd check things in and how you'd pick, and I'll see if that's right.`} />
 
-If typing is slow, press `Cmd/Ctrl+D` and just talk, saying things as they come to you. It restates what it heard first. Correct whatever's off and go a few rounds until it's right. When you're happy, tell it to go ahead. If it needs an app, it shows a **Connect** card in the chat. Open it and sign in.
+Class websites don't have an app, so it opens them in the browser on its own computer. If you work in an office, swap the class websites for your Slack mentions and the Google Drive docs that changed since yesterday, so the apps are Gmail, Google Calendar, Slack, and Google Drive. What you're scared of missing becomes calendar clashes, anything due today, and messages from your manager or customers. If an app isn't connected yet, a **Connect** card shows up in the chat. Open it and sign in.
+
+If the order it describes isn't yours, tell it what's off, and a few rounds will line it up.
 
 ## What counts as "needs me"
 
-When you go through your inbox yourself, you can tell at a glance which emails need an answer and which are just FYI. But you've never said those calls out loud, so the bot has no way to know them. Send one more message with the rules you go by:
+When you go through it yourself, you can tell at a glance what needs doing and what's just FYI. But you've never said those calls out loud, so the bot has no way to know them. Send one more message with the rules you go by:
 
-<Copy id="mb-judge" title="Third message: how you decide" code={`Potato, here are a few rules I use to decide. If someone's waiting on my reply, if I have to make a decision today, or if there's a calendar clash, that counts as "needs me." Emails where I'm only cc'd count as "good to know." If yesterday's briefing already had something and nothing new has happened, leave it out. And if you're not sure whether something needs me, put it at the top and ask me. Don't drop it.
+<Copy id="mb-judge" title="Third message: how you decide" code={`Here's what counts as "needs me." Anything due today, anything due in the next three days that I haven't turned in, and anything a teacher moved to a new time or place. Mass emails about clubs and talks are "good to know," so put them in one line at the bottom. If yesterday's list already had something and nothing's changed, leave it out. And if you're not sure whether something needs me, put it at the top and ask me. Don't just drop it.
 
-Help me find what I haven't told you about this process yet. Ask me how I make decisions, where I get my information, how I check the work, and when you should ask me for help. Ask one question at a time. Then walk me through a few examples so I can give you feedback. Don't automate anything yet.`} />
+I sort this stuff at a glance, so I've probably left a few things out. Go through my email from this week and check with me on any you can't place, one email at a time.`} />
 
-The first rule matters most, because once "needs me" has clear edges, the briefing gets short on its own. The second means you only read what's new each day. The third might look fussy, but missing one item costs more than reading one extra line, so anything unclear goes to you.
+The first rule matters most, because once "needs me" has clear edges, the list gets short on its own. The second means you only read what's new each day. The third might look fussy, but missing one thing costs more than reading one extra line, so anything unclear goes to you. If you work in an office, make the first rule "someone's waiting on my reply, I have to make a call today, or there's a calendar clash," and emails where you're only cc'd count as good to know.
 
-When it's done asking, try it on a real case or two that went wrong, like the customer email you almost missed. See how it would handle them, then tell it what to fix.
+Then test it on the report you almost forgot to hand in. In its place, how many days ahead would it warn you, and where on the list would it go? Correct it where it's wrong. While you're still working this out in the chat, don't set it to run on its own. If you think you've missed some calls, send [the prompt on the prompts page](/en/howto/prompts/#p-gaps) and it will ask you about them.
 
 ## Every weekday at 7:30, it shows up on its own
 
-Once this has gone well a few times, you can let it start on its own. First have it save the process as a <Term k="技能" />, written instructions it follows every time, then set up a <Term k="routine" /> that tells it when to start:
+Once a few days of lists feel just right, let it bring one every morning on its own. First save the process as a <Term k="技能" />, the instructions it works from, then set up a <Term k="routine" /> that says when to start:
 
-<Copy id="mb-routine" title="Fourth message: let it start on its own" code={`Save the process we just used as a skill called "Morning briefing." Then set up a routine: every weekday at 7:30 AM, use that skill to write a briefing and post it in this chat. Don't post it to Slack for me. If you can't read one of the apps, say so at the top of the briefing. Don't fill in with old data.`} />
+<Copy id="mb-routine" title="Fourth message: let it start on its own" code={`Keep this as a skill called "Morning briefing." Then set a routine for every weekday at 7:30 AM: use it to make the list and post it right here in this chat, nowhere else. If you can't open or read one of the places, say so at the top of the list. Don't fill the gap with old stuff.`} />
 
-After the first few runs, open the routine and check that **When to run** shows the time you meant. The time zone is under **Settings**, at **Timezone**. Then open two or three links and check them against the original. If an app couldn't be read, the top of the briefing should say so.
+Once it's running, this is roughly what you'll see each morning:
 
-A new routine waits for its next scheduled time. If you'd rather not wait, open it and choose **Test**, but keep in mind that a test does real work. See [Create a routine](https://docs.x.ai/grok-bot/skills-routines-and-automations#create-a-routine) in the official docs.
+<Reply code={`One question first: the library emailed that your book is due back the day after tomorrow. Does that count as needing you?
 
-If you later want the briefing posted to a team channel, have it write a draft first, and send it after you've read it. For what it stops to ask you about, see [Approvals and privacy](/en/howto/approvals-privacy/).
+Needs you today and this week:
+1. Stats homework is due tonight at 11, and you haven't turned it in. (class site)
+2. Thursday's group meeting moved to 4 PM. Your teacher emailed last night. (email)
+3. Midterm is next Tuesday, and the review topics just went up. (class site)
+
+Good to know: sign-up for the guest talk closes next week.`} />
+
+After the first few runs, open the routine and check that **When to run** shows the time you meant. The time zone is under **Settings**, at **Timezone**. Then open two or three links and check them against the original. If a place couldn't be read, the top of the list should say so.
+
+Set it up in the evening, and the first list arrives at 7:30 the next morning. If you can't wait, open it and choose **Test**. It really goes through your email and class sites. See [Create a routine](https://docs.x.ai/grok-bot/skills-routines-and-automations#create-a-routine) in the official docs.
+
+If you work in an office and later want the briefing posted to a team channel, have it write a draft first, and send it after you've read it. For what it stops to ask you about, see [Approvals and privacy](/en/howto/approvals-privacy/).
+
+## Job hunting? Your morning rounds are the job sites
+
+If you're looking for work, what you check each morning is the few job sites you use, for new listings, and your email, for who wrote back. With that many sites, applying to the same job twice or losing track of who offered an interview happens all the time. Follow the steps above, swap the second and third messages for the one below, and change the routine to every day at 8:00 AM:
+
+<Copy id="mb-jobs" title="Job hunting: send this instead of the second and third messages" code={`I'm job hunting. Every morning I go through the same three job sites for new listings that fit what I want: admin or front desk work, under an hour's commute, and pay of at least ... a month. Then I check my email for anyone who wrote back or offered an interview. What drives me nuts is applying to the same job twice, and interview invites buried under a pile of alerts. Each morning, list the new listings that fit, and leave out anything I've already applied to. Log where I applied and when in my applications sheet, and mark the ones that replied. If you're not sure a listing fits, put it at the top and ask me. Don't apply anywhere for me, and don't answer recruiters for me. Before you start, walk me through how you'd check the sites and keep the log.`} />
+
+The applications sheet can be a Google Sheets file, and the first time it needs it, a Connect card shows up. If a job site wants a login, see "A class website wants a login" below.
 
 Spend a few rounds up front on what "needs you" means, and from then on your mornings start with one short list.
 
@@ -66,6 +90,9 @@ Open the routine and check two things: it doesn't say **Paused**, and **When to 
 <Q q="It says it can't read Gmail or Slack.">
 Open **Connect apps** in the sidebar and find the app. If it shows **Needs auth** or **Disconnected**, choose **Authenticate**.
 </Q>
+<Q q="A class website wants a login.">
+Save the login in <Term k="Vault" />, and the bot fills it in without seeing the password. If it isn't saved, the bot shows a Secure Form for you to fill in, and the values go straight into the page. If your school signs you in through single sign-on, a form can't do that step, so the bot hands you the computer. Choose **Take over**, sign in yourself, choose **I'm done**, then tell it to carry on. See [Logins and cards go in Vault](/en/howto/vault-logins/). Never paste a password into the chat.
+</Q>
 <Q q="The briefing is too long to read.">
-Tell it what to cut, like "skip Slack small talk," then add "keep doing this from now on, remember it." Say it outright when a preference should last, so it saves it.
+Tell it what to cut, like "skip the club and talk emails," then add "keep doing this from now on, remember it." Say it outright when a preference should last, so it saves it.
 </Q>

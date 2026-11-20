@@ -15,7 +15,7 @@ poteto, que desenvolve o Grok Bot na SpaceX, escreveu um artigo longo sobre como
 </div>
 
 <p align="center">
-  <img src="assets/en/hero.svg" width="100%" alt="Demonstração: você entrega um objetivo ao Potato, ele repete antes de começar, você acrescenta uma regra, ele configura uma rotina para as sextas e devolve os slides prontos. À esquerda, os quatro passos se acendem: comece pelo objetivo, conte o seu processo, ensine como você julga, deixe que ele trabalhe sozinho">
+  <img src="assets/en/hero.svg" width="100%" alt="Demonstração: você conta ao Potato que sempre deixa passar os avisos da escola e pede que ele coloque na sua agenda tudo o que tiver data. Ele repete isso antes de começar. Você acrescenta duas regras: avisar dos pagamentos em vez de pagar, e perguntar quando uma data não estiver clara. Ele configura uma rotina para domingo à noite e depois avisa que a reunião de pais e a camiseta velha já estão na sua agenda. À esquerda, os quatro passos se acendem: comece pelo objetivo, conte o seu processo, ensine como você julga, deixe que ele trabalhe sozinho">
 </p>
 
 ## Você provavelmente já tentou isto
@@ -28,14 +28,14 @@ O problema não é o bot. Uma IA de chat entrega uma resposta e deixa o resto co
   <img src="assets/en/readme/chat-vs-bot.svg" width="100%" alt="À esquerda: você pede a uma IA de chat que transforme o progresso desta semana em slides, e ela responde com um roteiro; o resto continua com você. À direita: o seu Grok Bot vai marcando as tarefas: lê os e-mails e o chat desta semana, confere os números com a planilha, salva os slides na pasta compartilhada e repete tudo toda sexta às 4 PM.">
 </p>
 
-## O truque cabe em uma torta de maçã
+## O truque cabe num jantar
 
 poteto abre o artigo dizendo que automação é, na verdade, um jeito de pensar que qualquer pessoa pode aprender. Ela tem duas partes, um objetivo e um processo.
 
-Quando você faz uma torta de maçã, a torta é o objetivo. Comprar as maçãs, preparar a massa, montar, assar e deixar esfriar são o processo. A maioria das pessoas passa para o bot um passo só do processo, como “envie este e-mail”, e aí o bot só envia e-mails. Fale primeiro da torta, e ele pode assumir o processo inteiro, e talvez encontrar um caminho mais fácil.
+Pense no jantar. A comida na mesa é o objetivo. Fazer as compras, lavar, picar e cozinhar são o processo. A maioria das pessoas passa para o bot um passo só do processo, como “envie este e-mail”, e aí o bot só envia e-mails. Fale primeiro do jantar, e ele pode assumir o processo inteiro, e talvez encontrar um caminho mais fácil, do mesmo jeito que, num dia puxado, pedir delivery também põe o jantar na mesa.
 
 <p align="center">
-  <img src="assets/en/readme/pie.svg" width="100%" alt="Processo: comprar maçãs, preparar a massa, montar, assar e esfriar, levando ao objetivo, uma torta de maçã. O objetivo é o que você quer no final. O processo é como você chega lá. Passe o processo para um bot.">
+  <img src="assets/en/readme/goal.svg" width="100%" alt="Processo: fazer as compras, lavar, picar e cozinhar, levando ao objetivo, o jantar na mesa. Embaixo, outro caminho, pedir delivery num dia puxado, chega ao mesmo objetivo. O objetivo é o que você quer no final. O processo é como você chega lá, e ele pode mudar. Passe o processo para um bot.">
 </p>
 
 ## Três lições, uma coisa de cada vez
@@ -43,11 +43,11 @@ Quando você faz uma torta de maçã, a torta é o objetivo. Comprar as maçãs,
 Você não precisa programar nem aprender um monte de termos antes. Cada lição faz uma coisa só, e você sai dela com algo novo.
 
 <p align="center">
-  <img src="assets/en/readme/lessons.svg" width="100%" alt="Lição 1, escreva uma frase, 10 min: um objetivo que diz qual é o resultado. Lição 2, crie o Potato, 15 min: um bot que lembra dele. Lição 3, passe um trabalho, 30 min: um bot que trabalha toda semana.">
+  <img src="assets/en/readme/lessons.svg" width="100%" alt="Lição 1, diga o que você quer, 10 min: um objetivo com as suas palavras. Lição 2, crie o Potato, 15 min: um bot que lembra dele. Lição 3, passe um trabalho, 30 min: um bot que trabalha toda semana.">
 </p>
 
-1. **[Escreva uma frase](https://grokbot.xiaoxiaodong.ai/pt/start/1-goal/)**: escolha algo que você faz com frequência e escreva o resultado que você quer de verdade.
-2. **[Crie o Potato](https://grokbot.xiaoxiaodong.ai/pt/start/2-first-bot/)**: instale o Grok Bot, crie um bot e entregue essa frase a ele.
+1. **[Diga o que você quer](https://grokbot.xiaoxiaodong.ai/pt/start/1-goal/)**: escolha algo que você faz com frequência e escreva umas frases simples sobre o que te incomoda e qual resultado você quer.
+2. **[Crie o Potato](https://grokbot.xiaoxiaodong.ai/pt/start/2-first-bot/)**: instale o Grok Bot, crie um bot e entregue a ele o que você escreveu.
 3. **[Passe um trabalho](https://grokbot.xiaoxiaodong.ai/pt/start/3-hand-over/)**: conte como você faz o trabalho, veja como ele acerta uma vez e depois deixe que ele faça toda semana.
 
 ## Não aguenta esperar? Teste uma mensagem agora
@@ -55,12 +55,12 @@ Você não precisa programar nem aprender um monte de termos antes. Cada lição
 Instale o Grok Bot pelo [x.ai/bot](https://x.ai/bot) (você precisa de um plano que o inclua, como Premium, Super ou Ultra na The X Subscription), clique em **+** (**Novo Bot**, ou New Bot se o seu app estiver em inglês) no alto da barra lateral, dê o nome `Potato` e envie:
 
 ```text
-Oi, Potato. Este é o objetivo pelo qual quero que você seja responsável. Por favor, guarde isso:
-Quero que todo mundo tenha slides com o progresso desta semana antes da reunião de segunda, para que a gente passe menos tempo lendo números em voz alta e mais tempo decidindo.
-Com base nesse objetivo, escolha um nome e uma imagem para você.
+Oi, Potato! De agora em diante, esse trabalho é seu. Guarda bem:
+Toda sexta à tarde eu fico garimpando o chat e os documentos para montar o relatório semanal, e odeio isso. Faz um rascunho do desta semana no mesmo formato do da semana passada, que eu dou uma ajeitada e mando. Assim a minha sexta à tarde fica livre.
+Com base nisso, escolhe um nome e uma imagem para você.
 ```
 
-Troque a linha do meio pelo seu próprio trabalho. Para explicar como você faz o trabalho, veja a [lição 3](https://grokbot.xiaoxiaodong.ai/pt/start/3-hand-over/).
+Troque o miolo da mensagem pelo seu próprio trabalho. Para explicar como você faz o trabalho, veja a [lição 3](https://grokbot.xiaoxiaodong.ai/pt/start/3-hand-over/).
 
 ## Já usa?
 

@@ -15,7 +15,7 @@ poteto, qui développe Grok Bot chez SpaceX, a écrit un long article sur la fa�
 </div>
 
 <p align="center">
-  <img src="assets/en/hero.svg" width="100%" alt="Démo : vous confiez un objectif à Potato, il le reformule avant de commencer, vous ajoutez une règle, il programme une routine le vendredi et vous rend les diapos terminées. À gauche, les quatre étapes s'allument : partir de l'objectif, expliquer votre façon de faire, lui apprendre comment vous jugez, le laisser travailler tout seul">
+  <img src="assets/en/hero.svg" width="100%" alt="Démo : vous dites à Potato que vous ratez sans arrêt des messages de l'école, et vous lui demandez de mettre dans votre agenda tout ce qui a une date. Il le reformule avant de commencer. Vous ajoutez deux règles : vous prévenir des paiements au lieu de payer, et demander quand une date n'est pas claire. Il programme une routine le dimanche soir, puis vous dit que la réunion parents-profs et le vieux t-shirt sont dans votre agenda. À gauche, les quatre étapes s'allument : partir de l'objectif, expliquer votre façon de faire, lui apprendre comment vous jugez, le laisser travailler tout seul">
 </p>
 
 ## Vous avez sans doute déjà essayé
@@ -28,14 +28,14 @@ Le problème ne vient pas du bot. Une IA de chat vous donne une réponse et vous
   <img src="assets/en/readme/chat-vs-bot.svg" width="100%" alt="À gauche : vous demandez à une IA de chat de transformer l'avancée de la semaine en diapos, et elle répond par un plan ; le reste est encore pour vous. À droite : votre Grok Bot coche les étapes. Il lit les e-mails et le chat de la semaine, vérifie les chiffres dans le tableur, enregistre les diapos dans le dossier partagé, et recommence chaque vendredi à 16 h.">
 </p>
 
-## Le truc tient dans une tarte aux pommes
+## Le truc, expliqué autour d'un repas
 
 poteto ouvre l'article en disant que l'automatisation est avant tout une façon de penser, et que tout le monde peut l'apprendre. Elle a deux parties, un objectif et un processus.
 
-Quand vous faites une tarte aux pommes, la tarte est l'objectif. Acheter des pommes, faire la pâte, monter la tarte, la cuire et la laisser refroidir, c'est le processus. La plupart des gens confient à un bot une seule étape du processus, comme « envoie cet e-mail », et le bot ne fait jamais qu'envoyer des e-mails. Parlez-lui d'abord de la tarte, et il pourra reprendre tout le processus, et peut-être trouver plus simple.
+Prenez le repas du soir. Un repas sur la table, c'est l'objectif. Faire les courses, laver, couper et cuisiner, c'est le processus. La plupart des gens confient à un bot une seule étape du processus, comme « envoie cet e-mail », et le bot ne fait jamais qu'envoyer des e-mails. Parlez-lui d'abord du repas, et il pourra reprendre tout le processus, et peut-être trouver plus simple, comme ces soirs de fatigue où vous vous faites livrer et où le repas est quand même sur la table.
 
 <p align="center">
-  <img src="assets/en/readme/pie.svg" width="100%" alt="Le processus : acheter des pommes, faire la pâte, monter, cuire, laisser refroidir, jusqu'à l'objectif, une tarte aux pommes. L'objectif, c'est ce que vous voulez à la fin. Le processus, c'est le chemin pour y arriver. Confiez le processus à un bot.">
+  <img src="assets/en/readme/goal.svg" width="100%" alt="Le processus : faire les courses, laver, couper, cuisiner, jusqu'à l'objectif, le repas sur la table. En dessous, un autre chemin, se faire livrer un soir de fatigue, mène au même objectif. L'objectif, c'est ce que vous voulez à la fin. Le processus, c'est le chemin pour y arriver, et il peut changer. Confiez le processus à un bot.">
 </p>
 
 ## Trois leçons, une chose à la fois
@@ -43,11 +43,11 @@ Quand vous faites une tarte aux pommes, la tarte est l'objectif. Acheter des pom
 Pas besoin de coder, ni d'apprendre une pile de termes avant de commencer. Chaque leçon fait une seule chose, et vous repartez avec quelque chose de nouveau.
 
 <p align="center">
-  <img src="assets/en/readme/lessons.svg" width="100%" alt="Leçon 1, écrire une phrase, 10 min : un objectif qui nomme le résultat. Leçon 2, créer Potato, 15 min : un bot qui s'en souvient. Leçon 3, confier une tâche, 30 min : un bot qui tourne chaque semaine.">
+  <img src="assets/en/readme/lessons.svg" width="100%" alt="Leçon 1, dire ce que vous voulez, 10 min : un objectif avec vos mots. Leçon 2, créer Potato, 15 min : un bot qui s'en souvient. Leçon 3, confier une tâche, 30 min : un bot qui tourne chaque semaine.">
 </p>
 
-1. **[Écrire une phrase](https://grokbot.xiaoxiaodong.ai/fr/start/1-goal/)** : choisissez une chose que vous faites souvent et notez le résultat que vous voulez vraiment.
-2. **[Créer Potato](https://grokbot.xiaoxiaodong.ai/fr/start/2-first-bot/)** : installez Grok Bot, créez un bot et donnez-lui cette phrase.
+1. **[Dire ce que vous voulez](https://grokbot.xiaoxiaodong.ai/fr/start/1-goal/)** : choisissez une chose que vous faites souvent et écrivez quelques lignes toutes simples sur ce qui vous agace et le résultat que vous voulez.
+2. **[Créer Potato](https://grokbot.xiaoxiaodong.ai/fr/start/2-first-bot/)** : installez Grok Bot, créez un bot et donnez-lui ce que vous avez écrit.
 3. **[Confier une tâche](https://grokbot.xiaoxiaodong.ai/fr/start/3-hand-over/)** : expliquez-lui comment vous faites, regardez-le réussir une fois, puis laissez-le tourner chaque semaine.
 
 ## Vous ne voulez pas attendre ? Essayez un message tout de suite
@@ -55,12 +55,12 @@ Pas besoin de coder, ni d'apprendre une pile de termes avant de commencer. Chaqu
 Installez Grok Bot depuis [x.ai/bot](https://x.ai/bot) (il vous faut un abonnement qui l'inclut, comme Premium, Super ou Ultra sur The X Subscription), cliquez sur **+** (**Nouveau Bot**) en haut de la barre latérale, appelez-le `Potato` et envoyez :
 
 ```text
-Bonjour Potato, voici l'objectif que je veux te confier. Retiens-le, s'il te plaît :
-Je veux que tout le monde ait des diapos sur l'avancée de la semaine avant la réunion du lundi, pour qu'on passe moins de temps à lire des chiffres à voix haute et plus de temps à décider.
-À partir de cet objectif, choisis-toi un nom et une image.
+Salut Potato, à partir de maintenant, c'est toi qui t'occupes de ça. Retiens-le bien :
+Tous les vendredis après-midi, je fouille les messages et les docs pour reconstituer mon rapport hebdo, et j'en ai marre. Prépare celui de cette semaine sur le modèle de celui de la semaine dernière, je le retouche et je l'envoie. Comme ça, mon vendredi après-midi est libre.
+À partir de ça, choisis-toi un nom et une image.
 ```
 
-Remplacez la ligne du milieu par votre propre tâche. Pour lui expliquer comment vous faites le travail, voyez la [leçon 3](https://grokbot.xiaoxiaodong.ai/fr/start/3-hand-over/).
+Remplacez les lignes du milieu par votre propre tâche. Pour lui expliquer comment vous faites le travail, voyez la [leçon 3](https://grokbot.xiaoxiaodong.ai/fr/start/3-hand-over/).
 
 ## Vous l'utilisez déjà ?
 

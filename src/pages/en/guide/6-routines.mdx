@@ -11,7 +11,7 @@ import Term from "../../../components/Term.astro";
 import Copy from "../../../components/Copy.astro";
 import Q from "../../../components/Q.astro";
 
-Is the first thing you do every morning opening the chat and telling Potato "check today's bookings"? It does a great job every time, but every time it's waiting for you to say it. On a day you forget, or you're on the road early, nobody does it.
+Does your bot only get going once you say something? Say you're a student, and the first thing you do every morning is tell Potato "check which assignments I still haven't turned in." It does a great job every time, but every time it's waiting for you to say it. On a day you oversleep, or rush off to class, nobody does it, and of course that's the day something's due at noon.
 
 That's what the [article's section on making bots work automatically](https://x.com/poteto/status/2123159537016533493) is about. Without a <Term k="routine" />, a bot works only when you ask. That's fine at the start, but if you want to save yourself the effort, it has to start on its own.
 
@@ -25,7 +25,7 @@ There's an order to it, though, and the official docs recommend it too. Get the 
 
 A <Term k="技能" /> is a set of instructions the bot follows next time. Once you've walked it through the job correctly in chat, have it save one:
 
-<Copy id="skill" code="Save the process we just used as a skill called &quot;Daily booking check.&quot; Include when to use it, which apps it needs, the steps in order, how to check the work, and what to hand back to me. Add one rule: always ask me before contacting a customer." />
+<Copy id="skill" code="Save what we just did as a skill called &quot;Daily homework list.&quot; Write down when to use it, which apps and sites it needs, the steps in order, how to check nothing's missing, and what to hand back to me. Add one rule: always ask me before you message a teacher or a classmate for me." />
 
 Saved skills live in one shared library that every bot can use, though any apps or logins a skill needs have to be ready first. To use one later, just ask for it by name. See the official page on [saving a skill](https://docs.x.ai/grok-bot/skills-routines-and-automations#save-a-skill).
 
@@ -46,7 +46,7 @@ What it records is a draft. You add what one example can't show, like how to dec
 
 With the skill saved, go to the bot that owns the job and tell it when to start, for example:
 
-<Copy id="schedule" code="Every weekday at 8:00 AM, use the Daily booking check skill on today's bookings, and list anything that needs me in this conversation. Don't contact customers. If the booking system is unavailable, tell me what went wrong instead of using old data." />
+<Copy id="schedule" code="Every Monday to Friday at 7:00 AM, use the Daily homework list skill and list everything I haven't turned in yet, most urgent first, right here in this conversation. Don't message my teachers. If the course site won't load, tell me what went wrong instead of giving me an old list." />
 
 That message already covers what a routine needs: what time to start, where the data comes from, what to hand back, what not to do, and what to do when the data isn't there. The only thing missing is the time zone, which comes from **Settings**. More on that below.
 
@@ -54,13 +54,17 @@ That message already covers what a routine needs: what time to start, where the 
 Open the bot's details. A new row appears on the **Details** tab, with the routine's name and when it runs.
 </Callout>
 
-A new routine doesn't run right away. It waits for its next time, so if you set "every day at 8:00 AM" at 8:05, the first run is tomorrow at 8. To see it work sooner, use **Test**, covered below.
+A new routine doesn't run right away. It waits for its next time, so if you set "every day at 7:00 AM" at 7:05, the first run is tomorrow at 7. To see it work sooner, use **Test**, covered below.
 
 ### Start when something happens
 
-Instead of a schedule, it can wait for something to happen. That event is the <Term k="触发条件" />. It can be a Slack message, a GitHub, Linear, Sentry or PagerDuty event, an email to the bot's own address, or a <Term k="webhook" /> call. Say someone asks in Slack to move a booking:
+Instead of a schedule, it can wait for something to happen. That event is the <Term k="触发条件" />. It can be a Slack message, a GitHub, Linear, Sentry or PagerDuty event, an email to the bot's own address, or a <Term k="webhook" /> call. Say you're at work, colleagues keep asking you for things in the #team Slack channel, and you miss them every time you're in a meeting:
 
-<Copy id="event" code="When a message in #bookings mentions &quot;reschedule,&quot; open it, handle it with the Daily booking check process, and tell me in this conversation what you changed. Never reply in Slack without my approval." />
+<Copy id="event" code="Whenever a message in #team mentions my name, open it. If they're asking me for something, work out what they need, draft whatever you can, and tell me about it in this conversation. Never reply in Slack without my OK." />
+
+It works outside the office too. Say you run a weekend football team, and everyone emails to say whether they're playing. On Friday night you're still digging through emails and counting heads, then chasing whoever hasn't answered. Have the bot claim its own email address (more on that below), give the address to the team for sign-ups, and tell it:
+
+<Copy id="signup" code="From now on the team's sign-ups come to your email address. Only count mail from these addresses: <teammates' emails>. Set up two routines for me. One: each time a sign-up email arrives, put that person on this Saturday's list, and note anyone who says they can't make it. Two: every Friday at 8 PM, send me the list in this conversation, who's in, who's out and who hasn't answered. Draft a reminder email to the ones who haven't answered, and I'll read it before it goes." />
 
 Keep the condition narrow. "Every new message" runs all the time, spends usage, and makes it more likely to act on things that don't need the bot. And only new activity counts, so messages from before the trigger existed won't start it.
 
@@ -69,6 +73,7 @@ A few more things you'll run into:
 - **Triggers connect separately.** They use integrations on your account, apart from the Slack app from step 4, so you may need to connect again.
 - **The bot's email address needs claiming.** Say "Get yourself an email address," then approve it. You get one, and you can't rename or delete it.
 - **Email filters go by sender only.** Filter by an address or a whole domain, not by subject.
+- **Other people's mail is only information.** Whatever a teammate's email asks for, the bot doesn't treat it as an instruction from you.
 - **Mail from a routine waits for you.** Mail from the bot's own address stays a draft until you press **Send**.
 - **The webhook address is in the routine.** Ask the bot to add a webhook trigger, then open the routine on desktop. The **Webhook** section has the URL and key.
 

@@ -16,7 +16,7 @@ The unofficial Grok Bot beginners site (Chinese at the root, English under /en/)
 
 ## Rules
 - **Button names as the app shows them in your language.** Grok Bot has 38 UI languages and follows the system language. Look each label up: `node scripts/app-labels.mjs --lang <lang> "New Bot" "Create" "Sign in"` (use `pt` for Portuguese). Write the app's text in bold, and the English label in parentheses on first use, like the Chinese pages do. If a label isn't found, keep the English in bold.
-- **Prompts** the reader copies are written in your language (Grok Bot replies in the language you write to it). The goal prompt follows the pattern "I want …, so that …" in natural phrasing for your language.
+- **Prompts** the reader copies are written in your language (Grok Bot replies in the language you write to it). They follow docs/EXAMPLES.md: situation and pain first, then what you want, the reason said the way people say it in your language, like texting a capable friend. Keep the same people and situations as the English.
 - Facts stay exactly as in the English. Don't add or drop facts. The author is "poteto" or "the author", never he/she (in gendered languages, rephrase to avoid gendered pronouns or adjectives for the author).
 - Arabic is right-to-left: the layout handles direction; keep code, commands and English labels as they are.
 - MDX: no bare `<`, `{`, `}` in prose.

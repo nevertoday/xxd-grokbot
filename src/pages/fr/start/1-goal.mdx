@@ -1,6 +1,6 @@
 ---
 layout: ../../../layouts/Lesson.astro
-tldr: "Automatiser n'est pas le plus dur. Le plus dur, c'est de savoir ce que vous voulez vraiment. Cette leçon ne fait qu'une chose : la mettre en une phrase."
+tldr: "Automatiser n'est pas le plus dur. Le plus dur, c'est de savoir ce que vous voulez vraiment. Cette leçon ne fait qu'une chose : le dire en quelques lignes toutes simples."
 lesson: 1
 ---
 import Callout from "../../../components/Callout.astro";
@@ -11,13 +11,13 @@ La première fois qu'on ouvre Grok Bot, on commence souvent par « envoie cet e-
 
 poteto, qui développe Grok Bot chez SpaceX, part d'une idée toute simple au début d'un [long article](https://x.com/poteto/status/2123159537016533493) : l'automatisation est avant tout une façon de penser, et tout le monde peut l'apprendre. Elle n'a que deux parties, un objectif et un processus.
 
-## Une tarte aux pommes suffit à tout expliquer
+## Pensez au repas du soir
 
-Pensez à une tarte aux pommes. Ce que vous voulez, c'est la tarte, et c'est l'objectif. Acheter des pommes, faire la pâte, monter la tarte, la cuire et la laisser refroidir, c'est le processus. Changer un pneu crevé, c'est pareil. Ce que vous voulez, c'est une roue avec laquelle vous pouvez reprendre la route. Soulever la voiture avec le cric, retirer l'ancien pneu et monter le nouveau, ce n'est que le processus.
+Prenez le repas du soir, un jour de semaine. Ce que vous voulez, c'est un repas sur la table, et c'est l'objectif. Faire les courses, laver, couper et cuisiner, c'est le processus. Payer la facture d'électricité, c'est pareil. Ce que vous voulez, c'est ne jamais avoir le courant coupé, et ne pas payer de frais de retard. Penser à la date, vous connecter, trouver la facture et la payer, ce n'est que le processus.
 
 L'objectif, c'est ce que vous voulez à la fin, et le processus, c'est le chemin pour y arriver. Automatiser, c'est confier le processus à une machine, pour n'avoir plus qu'à demander le résultat.
 
-Grok Bot peut vous enlever une bonne partie du processus, parce qu'un <Term k="bot" text="bot" /> y dispose d'un ordinateur dans le cloud. Il sait cliquer, ouvrir des applications et chercher des choses en ligne, donc la plupart de ce que vous faites sur un ordinateur, il peut le faire aussi. Il ne vous reste qu'une chose à bien réfléchir :
+Grok Bot peut vous enlever une bonne partie du processus, parce qu'un <Term k="bot" text="bot" /> y dispose d'un ordinateur dans le cloud. Il sait cliquer, ouvrir des applications et chercher des choses en ligne, donc la plupart de ce que vous faites sur un ordinateur, il peut le faire aussi, comme se connecter à un site et y retrouver une facture. Il ne vous reste qu'une chose à bien réfléchir :
 
 <mark><strong>Avant de confier quoi que ce soit à un bot, mettez au clair le résultat que vous voulez.</strong></mark>
 
@@ -25,26 +25,29 @@ Grok Bot peut vous enlever une bonne partie du processus, parce qu'un <Term k="b
 
 Parce qu'envoyer un e-mail n'est qu'une étape du processus. Selon poteto, l'erreur la plus courante, c'est justement de prendre le processus pour l'objectif.
 
-Si vous dites seulement « envoie un e-mail », le bot ne fera qu'envoyer un e-mail. Mais dites-lui à quoi sert vraiment cet e-mail, par exemple à ce que chaque nouveau client ait son rendez-vous fixé, et il pourra partir de cet objectif : d'où viennent les informations, à partir de quand c'est fini, quelles étapes il pourrait sauter. poteto conseille aussi de ne pas trop vous attacher à votre façon de faire actuelle, car le bot trouvera peut-être plus simple.
+Si vous dites seulement « envoie un e-mail », le bot ne fera qu'envoyer un e-mail. Mais dites-lui à quoi sert vraiment cet e-mail, par exemple à vous faire payer à temps un travail que vous avez terminé, et il pourra partir de cet objectif : quels travaux ne sont pas encore payés, quand envoyer une relance, si la facture n'aurait pas déjà dû partir, quelles étapes il pourrait sauter. poteto conseille aussi de ne pas trop vous attacher à votre façon de faire actuelle, car le bot trouvera peut-être plus simple. C'est comme le repas du soir. Les soirs où vous n'avez pas le courage de cuisiner, vous vous faites livrer, et le repas est quand même sur la table.
 
-## Maintenant, écrivez votre phrase
+## Maintenant, écrivez vos quelques lignes
 
-Prenez une feuille, ou ouvrez les notes de votre téléphone. Pensez à une chose que vous faites sur l'ordinateur tous les deux ou trois jours. En une phrase, écrivez le résultat que vous voulez vraiment, puis ajoutez l'autre moitié : à quoi ça sert.
+Prenez une feuille, ou ouvrez les notes de votre téléphone. Pensez à une chose que vous faites sur l'ordinateur tous les deux ou trois jours. Puis écrivez deux ou trois phrases, comme si vous vidiez votre sac auprès de quelqu'un qui s'y connaît. Dites ce qui vous agace là-dedans, puis le résultat que vous voulez vraiment, et laissez la raison venir toute seule, avec « comme ça … » ou « pour ne plus … ».
 
-Pour les diapos de la réunion de la semaine, vous pourriez écrire :
+Si vous ne savez pas par où commencer, voici comment quelques personnes très différentes pourraient le dire. Prenez celle qui vous ressemble le plus et adaptez-la à votre propre tâche :
 
-> Je veux que tout le monde ait, avant la réunion du lundi, des diapos qui montrent l'avancée de la semaine, pour qu'on passe moins de temps à lire des chiffres à voix haute et plus de temps à prendre des décisions.
+- Une étudiante : « Les dates limites de mes devoirs sont à moitié dans les mails de la fac, à moitié sur le site du cours, et je m'en souviens toujours la veille au soir. Chaque matin, dis-moi ce que je n'ai pas encore rendu et pour quand, histoire de ne plus y passer la nuit. »
+- Quelqu'un qui travaille dans un bureau : « Tous les vendredis après-midi, je fouille les messages et les docs pour reconstituer mon rapport hebdo, et j'en ai marre. Prépare celui de cette semaine sur le modèle de celui de la semaine dernière, je le retouche et je l'envoie. Comme ça, mon vendredi après-midi est libre. »
+- Un parent : « Entre l'école et les activités extrascolaires, il y a tellement de messages que j'oublie toujours un truc : une réunion parents-profs, un paiement, quelque chose que mon enfant doit apporter. Dès qu'un message parle d'une date, mets-la dans mon agenda et rappelle-la-moi la veille. Sinon, c'est mon enfant qui arrive à l'école sans ce qu'il fallait. »
+- Un freelance : « Je termine une mission et j'oublie d'envoyer la facture, et après, l'argent met un ou deux mois à arriver. Quand une mission est finie, prépare la facture et le mail, je regarde avant que ça parte, et préviens-moi si ce n'est pas payé à l'échéance, pour ne plus avoir à retenir de tête qui me doit quoi. »
+- Quelqu'un qui tient un salon de coiffure : « Mes clients réservent par mail ou sur ma page de réservation, et je retiens tout de tête. La semaine dernière, deux sont arrivés à la même heure. Mets tous les rendez-vous dans une seule liste, et si deux tombent en même temps, demande-moi d'abord. Comme ça, plus personne n'attend en arrivant. »
+- Quelqu'un qui anime un compte sur les réseaux sociaux : « Chaque publication m'apporte des centaines de commentaires, ma boîte mail déborde de propositions de collab, et je n'arrive pas à suivre. Deux fois déjà, une marque qui voulait bosser avec moi s'est retrouvée noyée là-dedans. Passe les commentaires et mes mails en revue chaque soir, sors-moi les propositions de marques et les questions qui méritent vraiment une réponse, et prépare-moi des brouillons de réponse. Je les envoie moi-même. Comme ça, plus aucune proposition ne me passe sous le nez. »
 
-Relisez-la. Si votre phrase parle d'une action comme remplir, envoyer, copier ou cliquer, ce n'est encore qu'une étape. Demandez-vous à quoi sert cette action, et mettez la réponse dans la phrase. Si la deuxième moitié ne vous vient pas, pensez à ce que cette tâche apporte à votre travail, si elle fait gagner de l'argent ou en économiser. Ou demandez tout simplement à quelqu'un de votre équipe.
-
-Si aucune tâche ne vous vient à l'esprit, poteto donne ces exemples dans l'article, et vous pouvez prendre celui qui ressemble le plus à votre cas : mettre de côté pour une voiture ou une maison, prendre les rendez-vous des clients d'un petit commerce, offrir aux clients une expérience assez bonne pour qu'ils laissent de bons avis, recruter pour une petite entreprise, recueillir des retours sur un produit, préparer les diapos d'une réunion hebdomadaire, développer de nouvelles fonctions pour un produit.
+Relisez ce que vous avez écrit. Si ce que vous demandez n'est qu'une action, comme remplir, envoyer, copier ou cliquer, ce n'est encore qu'une étape du processus. Demandez-vous à quoi elle sert, et ajoutez la réponse. Si rien ne vous vient, pensez à ce que vous y gagnez une fois que c'est fait : du temps, de l'argent, ou une chose de moins en tête. Ou demandez à quelqu'un au travail, ou à la maison.
 
 ## Deux choses dont vous aurez besoin pour la leçon suivante
 
 Un ordinateur. Mac, Windows et Linux conviennent tous, et vous commencez par y installer l'application de bureau Grok Bot. Et un abonnement qui inclut Grok Bot. Sur The X Subscription, Premium, Super et Ultra l'incluent, mais pas Plus. Pour les détails, voyez la page officielle [Grok Bot on The X Subscription](https://docs.x.ai/x-subscription/grok-bot).
 
 <Callout type="tip" title="Trois leçons suffisent">
-Une fois que vous avez cette phrase, le reste suit. Dans la leçon 2, vous installez Grok Bot, vous créez un bot et vous lui donnez cette phrase. Dans la leçon 3, vous lui expliquez comment vous faites d'habitude et vous le laissez faire la tâche une fois, et quand il fait juste, vous lui demandez de la faire tout seul, à heure fixe. Après ces trois leçons, vous pouvez le mettre au travail. Tout le reste du site est là pour être consulté le jour où vous en aurez besoin.
+Une fois que vous avez ces quelques lignes, le reste suit. Dans la leçon 2, vous installez Grok Bot, vous créez un bot et vous lui donnez ce que vous avez écrit. Dans la leçon 3, vous lui expliquez comment vous faites d'habitude et vous le laissez faire la tâche une fois, et quand il fait juste, vous lui demandez de la faire tout seul, à heure fixe. Après ces trois leçons, vous pouvez le mettre au travail. Tout le reste du site est là pour être consulté le jour où vous en aurez besoin.
 </Callout>
 
 ## Si quelque chose cloche
