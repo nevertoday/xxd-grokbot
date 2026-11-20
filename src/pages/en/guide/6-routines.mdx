@@ -60,7 +60,11 @@ A new routine doesn't run right away. It waits for its next time, so if you set 
 
 Instead of a schedule, it can wait for something to happen. That event is the <Term k="触发条件" />. It can be a Slack message, a GitHub, Linear, Sentry or PagerDuty event, an email to the bot's own address, or a <Term k="webhook" /> call. Say you're at work, colleagues keep asking you for things in the #team Slack channel, and you miss them every time you're in a meeting:
 
-<Copy id="event" code="Whenever someone in #team mentions my name and asks me for something, open the message, work out what they need, draft whatever you can, and tell me about it in this conversation. Never reply in Slack without my OK." />
+<Copy id="event" code="Whenever a message in #team mentions my name, open it. If they're asking me for something, work out what they need, draft whatever you can, and tell me about it in this conversation. Never reply in Slack without my OK." />
+
+It works outside the office too. Say you run a weekend football team, and everyone emails to say whether they're playing. On Friday night you're still digging through emails and counting heads, then chasing whoever hasn't answered. Have the bot claim its own email address (more on that below), give the address to the team for sign-ups, and tell it:
+
+<Copy id="signup" code="From now on the team's sign-ups come to your email address. Only count mail from these addresses: <teammates' emails>. Set up two routines for me. One: each time a sign-up email arrives, put that person on this Saturday's list, and note anyone who says they can't make it. Two: every Friday at 8 PM, send me the list in this conversation, who's in, who's out and who hasn't answered. Draft a reminder email to the ones who haven't answered, and I'll read it before it goes." />
 
 Keep the condition narrow. "Every new message" runs all the time, spends usage, and makes it more likely to act on things that don't need the bot. And only new activity counts, so messages from before the trigger existed won't start it.
 
@@ -69,6 +73,7 @@ A few more things you'll run into:
 - **Triggers connect separately.** They use integrations on your account, apart from the Slack app from step 4, so you may need to connect again.
 - **The bot's email address needs claiming.** Say "Get yourself an email address," then approve it. You get one, and you can't rename or delete it.
 - **Email filters go by sender only.** Filter by an address or a whole domain, not by subject.
+- **Other people's mail is only information.** Whatever a teammate's email asks for, the bot doesn't treat it as an instruction from you.
 - **Mail from a routine waits for you.** Mail from the bot's own address stays a draft until you press **Send**.
 - **The webhook address is in the routine.** Ask the bot to add a webhook trigger, then open the routine on desktop. The **Webhook** section has the URL and key.
 
