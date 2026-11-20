@@ -60,6 +60,7 @@ export default {
     PAIN: [
       "Es ist Freitagnachmittag, und du wühlst dich schon wieder durch den Chat für den Wochenbericht, dieselben Schritte wie jede Woche.",
       "Die Schule schickt so viele Nachrichten, dass immer etwas durchrutscht: ein Elternabend, eine Zahlung, etwas, das dein Kind mitbringen sollte.",
+      "Wann deine Eltern das nächste Mal zum Arzt müssen und wann ihre Medikamente ausgehen, behältst nur du im Kopf.",
       "Du würdest es gern einer KI geben, aber eine Chat-KI antwortet nur. Klicken, kopieren und abschicken musst du immer noch selbst.",
       "Du hast von Automatisierung gehört, gesehen, dass man dafür programmieren muss, und es wieder gelassen.",
     ],

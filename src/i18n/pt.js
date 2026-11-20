@@ -58,6 +58,7 @@ export default {
     PAIN: [
       "É sexta à tarde e lá está você de novo garimpando o chat para o relatório semanal, os mesmos passos de toda semana.",
       "A escola manda tanto aviso que sempre escapa alguma coisa: uma reunião de pais, um pagamento, algo que o seu filho tinha que levar.",
+      "Quem lembra quando é a próxima consulta dos seus pais e quando o remédio deles acaba é só você.",
       "Você passaria isso para uma IA, mas uma IA de chat só responde. Clicar, copiar e enviar continua sendo com você.",
       "Você ouviu falar de automação, viu que precisava programar e desistiu.",
     ],

@@ -56,7 +56,7 @@ Installier Grok Bot von [x.ai/bot](https://x.ai/bot) (du brauchst ein Abo, das e
 
 ```text
 Hi Potato, ab jetzt ist das hier deine Aufgabe. Merk sie dir:
-Jeden Freitagnachmittag wühl ich mich durch Chats und Dokumente, um meinen Wochenbericht zusammenzustückeln, und das nervt total. Schreib einen Entwurf für diese Woche, im selben Format wie letzte Woche, ich feile noch kurz dran und geb ihn ab. Dann hab ich meinen Freitagnachmittag wieder frei.
+Jeden Freitagnachmittag wühl ich mich durch Chats und Dokumente, um meinen Wochenbericht zusammenzustückeln, und das nervt total. Schreib einen Entwurf für diese Woche, im selben Format wie letzte Woche, ich feile noch kurz dran und schick ihn raus. Dann hab ich meinen Freitagnachmittag wieder frei.
 Such dir passend dazu einen Namen und ein Bild aus.
 ```
 
