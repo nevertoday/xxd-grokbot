@@ -1,6 +1,6 @@
 ---
 layout: ../../../layouts/Lesson.astro
-tldr: "Ein Bot, eine Aufgabe. In dieser Lektion installierst du Grok Bot, erstellst einen Bot namens Potato und gibst ihm den Satz, den du in Lektion 1 geschrieben hast."
+tldr: "Ein Bot, eine Aufgabe. In dieser Lektion installierst du Grok Bot, erstellst einen Bot namens Potato und gibst ihm die Zeilen, die du in Lektion 1 geschrieben hast."
 lesson: 2
 ---
 import Callout from "../../../components/Callout.astro";
@@ -9,7 +9,7 @@ import Copy from "../../../components/Copy.astro";
 import Reply from "../../../components/Reply.astro";
 import Q from "../../../components/Q.astro";
 
-Den Satz aus Lektion 1 hast du schon. In dieser Lektion gibst du ihn ab: Du installierst Grok Bot, erstellst einen <Term k="bot" text="Bot" /> nur für diese Aufgabe und schickst ihm den Satz.
+Die Zeilen aus Lektion 1 hast du schon. In dieser Lektion gibst du sie ab: Du installierst Grok Bot, erstellst einen <Term k="bot" text="Bot" /> nur für diese Aufgabe und schickst ihm, was du geschrieben hast.
 
 Warum ein eigener Bot nur für diese Aufgabe? Denk daran, wie du jemanden einarbeiten würdest, der neu im Team ist. Du würdest nicht sagen: „Ab jetzt gehört alles dir.“ Du würdest sagen: Diese Aufgabe gehört dir, und dafür ist sie da. Mit einem Bot ist es genauso. Wenn er sich um eine einzige Aufgabe kümmert, dreht sich alles, was er sich merkt, um diese Aufgabe, und du musst sie nur einmal erklären. Diese ganze Lektion läuft deshalb auf eine Sache hinaus:
 
@@ -58,21 +58,23 @@ Warum Potato (englisch für Kartoffel)? Weil poteto sagt: Wenn dir kein Name ein
 
 ## Schritt 5: Ihm dein Ziel geben
 
-Kopier die Nachricht unten und füg sie ins Nachrichtenfeld ein. Ersetze die Zeile „Ich möchte …, damit …“ durch deinen Satz aus Lektion 1 und schick sie dann ab.
+Kopier die Nachricht unten und füg sie ins Nachrichtenfeld ein. Ersetz die Zeile in eckigen Klammern durch das, was du in Lektion 1 geschrieben hast, und schick sie dann ab.
 
-<Copy id="goal" title="Kopieren, die mittlere Zeile durch dein Ziel ersetzen, abschicken" code={`Hallo Potato, das ist das Ziel, um das du dich kümmern sollst. Bitte merk es dir:
-Ich möchte …, damit …
-Such dir passend zu diesem Ziel einen Namen und ein Bild aus.`} />
+<Copy id="goal" title="Kopieren, die Klammern durch deine Zeilen ersetzen, abschicken" code={`Hi Potato, ab jetzt ist das hier deine Aufgabe. Merk sie dir:
+[Füg hier ein, was du in Lektion 1 geschrieben hast]
+Such dir passend dazu einen Namen und ein Bild aus.`} />
 
-<Reply title="Beispiel: So ungefähr sieht die Antwort aus" code={`Alles klar. Mein Ziel: Vor dem Montagsmeeting haben alle Folien,
-die den Fortschritt der Woche zeigen,
-damit ihr im Meeting weniger Zahlen vorlest
-und mehr Zeit für Entscheidungen habt.
+Mit den Zeilen zu den Schulnachrichten aus Lektion 1 sähe die Antwort ungefähr so aus:
 
-Ich würde gern „Montag“ heißen, weil das Montagsmeeting meine Sache ist.
-Als Bild nehme ich einen aufgeschlagenen Foliensatz.`} />
+<Reply title="Beispiel: So ungefähr sieht die Antwort aus" code={`Alles klar, das übernehm ich:
+Sobald in einer Nachricht von der Schule oder einem Kurs ein Datum steht,
+trag ich es in deinen Kalender ein und erinnere dich am Tag vorher,
+dann steht dein Kind nicht ohne das Nötige in der Schule.
 
-Lies die Antwort. Prüf zuerst, ob das Ziel, das er notiert hat, zu deinem passt. Wenn nicht, tipp einfach eine Korrektur ein, etwa „Nicht Montag, Mittwoch.“ Dann schau dir den Namen an, den er sich ausgesucht hat. Gefällt er dir, behalte ihn. Steht in der Seitenleiste noch Potato, ändere ihn selbst, wie unten unter „Wenn etwas nicht passt“ beschrieben.
+Ich würde gern „Ranzen“ heißen, weil ich dafür zuständig bin, was morgen mitmuss.
+Als Bild ein kleiner Schulranzen.`} />
+
+Lies die Antwort. Prüf zuerst, ob das, was er notiert hat, zu dem passt, was du geschrieben hast. Wenn nicht, tipp einfach eine Korrektur ein, etwa „Nicht am Tag vorher, zwei Tage vorher. Manches muss ich erst noch kaufen.“ Dann schau dir den Namen an, den er sich ausgesucht hat. Gefällt er dir, behalte ihn. Steht in der Seitenleiste noch Potato, ändere ihn selbst, wie unten unter „Wenn etwas nicht passt“ beschrieben.
 
 Jetzt hast du einen Bot, der nur diese Aufgabe macht und sich merkt, wofür sie da ist. In der nächsten Lektion erzählst du ihm, wie du sie normalerweise machst.
 
@@ -82,7 +84,7 @@ Jetzt hast du einen Bot, der nur diese Aufgabe macht und sich merkt, wofür sie 
 
 Dann lass dir von Potato helfen. Schick ihm das hier, und er interviewt dich, eine Frage nach der anderen:
 
-<Copy id="interview-me" code={`Hallo Potato, du sollst dich um ein Ziel kümmern, aber ich weiß nicht genau, wie ich es formulieren soll. Kannst du mich interviewen, eine Frage nach der anderen, bis wir ein Ziel haben, mit dem ich zufrieden bin?`} />
+<Copy id="interview-me" code={`Hi Potato, es gibt da was, das ich dir abgeben will, aber ich kann noch nicht richtig sagen, was ich eigentlich will. Kannst du mich interviewen, eine Frage nach der anderen, bis es klar ist?`} />
 
 Wenn das Ziel steht, schick die Nachricht aus Schritt 5.
 
@@ -121,6 +123,6 @@ Um das Bild zu ändern, klick in den Details auf das Bild und öffne den Tab **G
 </Q>
 <Q q="Er antwortet mir auf Englisch.">
 
-Antworte ihm: „Antworte mir ab jetzt immer auf Deutsch. Bitte merk dir das.“
+Antworte ihm: „Antworte mir ab jetzt auf Deutsch. Merk dir das, okay?“
 
 </Q>

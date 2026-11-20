@@ -58,7 +58,8 @@ export default {
     ctaNote: "Le parcours débutant tient en trois leçons : mettre l'objectif au clair, créer un bot, puis lui confier une tâche.",
     painH: "Ça vous est déjà arrivé ?",
     PAIN: [
-      "Chaque semaine, un après-midi entier part à refaire les mêmes quelques étapes.",
+      "C'est vendredi après-midi et vous fouillez encore les messages pour votre rapport hebdo, les mêmes étapes que chaque semaine.",
+      "L'école envoie tellement de messages qu'on finit toujours par en rater un : une réunion parents-profs, un paiement, ce que votre enfant devait apporter.",
       "Vous aimeriez confier ça à une IA, mais une IA de chat ne fait que répondre. Les clics, les copier-coller et les envois, c'est toujours vous.",
       "On vous a parlé d'automatisation, vous avez vu qu'il fallait écrire du code, et vous avez laissé tomber.",
     ],
@@ -92,7 +93,7 @@ export default {
 
   // 新手入门三课在导航、首页路线图里的标题、时间、简介（顺序：1 先想清楚、2 建第一个 bot、3 交给它一件事）
   lessons: [
-    { title: "Savoir ce que vous voulez", minutes: "10 minutes", sum: "Choisissez une tâche que vous faites souvent et nommez le résultat que vous voulez" },
+    { title: "Savoir ce que vous voulez", minutes: "10 minutes", sum: "Choisissez une tâche que vous faites souvent et écrivez quelques lignes toutes simples : ce qui vous agace, et le résultat que vous voulez" },
     { title: "Créer votre premier bot", minutes: "15 minutes", sum: "Créez un nouveau bot et donnez-lui un nom" },
     { title: "Lui confier une tâche", minutes: "30 minutes", sum: "Expliquez la tâche et regardez-le la faire une fois" },
   ],

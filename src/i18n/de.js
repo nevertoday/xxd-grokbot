@@ -58,7 +58,8 @@ export default {
     ctaNote: "Der Einsteigerkurs hat drei Lektionen: das Ziel klären, einen Bot erstellen und ihm dann eine Aufgabe übergeben.",
     painH: "Kennst du das?",
     PAIN: [
-      "Jede Woche geht ein Nachmittag dafür drauf, dieselben paar Schritte noch einmal zu machen.",
+      "Es ist Freitagnachmittag, und du wühlst dich schon wieder durch den Chat für den Wochenbericht, dieselben Schritte wie jede Woche.",
+      "Die Schule schickt so viele Nachrichten, dass immer etwas durchrutscht: ein Elternabend, eine Zahlung, etwas, das dein Kind mitbringen sollte.",
       "Du würdest es gern einer KI geben, aber eine Chat-KI antwortet nur. Klicken, kopieren und abschicken musst du immer noch selbst.",
       "Du hast von Automatisierung gehört, gesehen, dass man dafür programmieren muss, und es wieder gelassen.",
     ],
@@ -92,7 +93,7 @@ export default {
 
   // 新手入门三课在导航、首页路线图里的标题、时间、简介（顺序：1 先想清楚、2 建第一个 bot、3 交给它一件事）
   lessons: [
-    { title: "Klar werden, was du willst", minutes: "10 Minuten", sum: "Such dir etwas aus, das du oft machst, und benenne das Ergebnis, das du willst" },
+    { title: "Klar werden, was du willst", minutes: "10 Minuten", sum: "Such dir etwas aus, das du oft machst, und schreib ein paar einfache Zeilen: was dich daran nervt und welches Ergebnis du willst" },
     { title: "Deinen ersten Bot erstellen", minutes: "15 Minuten", sum: "Erstell einen neuen Bot und gib ihm einen Namen" },
     { title: "Ihm eine Aufgabe übergeben", minutes: "30 Minuten", sum: "Erklär die Aufgabe und schau zu, wie er sie einmal erledigt" },
   ],
