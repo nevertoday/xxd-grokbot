@@ -4,9 +4,8 @@ slug: reviews-feedback
 time: A few rounds of chat to set the process, then it reads new reviews every day
 for: You run a shop or a service, reviews are spread across several sites, and bad ones are hard to answer
 tldr: Every morning, your bot reads new reviews online, checks that day's records for the bad ones, and hands you reply drafts. It also finds what to fix in the complaints.
-description: "Answer online reviews and sort customer feedback with Grok Bot, following a phone repair counter. A salon, a pet groomer, or a tutor swaps in their own details. Say that what you want is happy customers, explain how you reply and how you look for causes, then let it check every day. The idea of checking that day's records before answering a bad review comes from poteto's article."
+description: "Answer online reviews and sort customer feedback with Grok Bot, following a phone repair counter. A salon, a pet groomer, or a tutor swaps in their own details. Say that what you want is happy customers, explain how you reply and how you look for causes, then let it check every day. The idea of checking that day's records to find what went wrong behind a bad review comes from poteto's article."
 ---
-import Callout from "../../../components/Callout.astro";
 import Term from "../../../components/Term.astro";
 import Q from "../../../components/Q.astro";
 import Copy from "../../../components/Copy.astro";
@@ -17,49 +16,47 @@ The author, poteto, describes an idea in the [article](https://x.com/poteto/stat
 
 When you finish this page, your bot will read new reviews every morning at 9:00 AM. It thanks people for good ones, checks that day's records for bad ones, and posts reply drafts in the chat for you to read before anything goes out. You can also have it group the complaints each week and tell you what to fix.
 
-It takes four steps: give it the goal, explain how you do it now, teach it how you decide, then let it start on its own.
-
 ## The goal isn't answering every review
 
-Answering every review is only one step in the process. What you actually want is customers happy enough to leave good reviews, and a clear cause for every bad one. It's also one of the goals the author lists in the article. Make a new <Term k="bot" />, call it Potato, and tell it where you're at and what you want:
+Answering every review is just a means. What you're after is customers happy enough to leave good reviews, and a clear cause for every bad one. It's also one of the goals the author lists in the article. Make a new <Term k="bot" />, call it Potato, and tell it about your counter:
 
-<Copy id="rf-goal" title="First message: the goal" code="Hi Potato. I run a phone repair counter. I only remember to check our reviews online every few days, the bad ones put me in a mood, and I feel like I should answer but I'm scared of saying the wrong thing. I'd like you to take this over: keep customers happy enough to leave good reviews, and for every bad one, figure out what went wrong. That way the same thing doesn't happen twice. This is your job from now on, so remember it. Then pick a name and a picture for yourself that fit the job." />
+<Copy id="rf-goal" title="First message: the goal" code="I run a phone repair counter. I only remember to check our reviews online every few days, the bad ones put me in a mood, and I feel like I should answer but I'm scared of saying the wrong thing. From now on, you keep an eye on reviews: thank people for the good ones, and for a bad one, find out what actually happened that day, so the same thing doesn't happen again. Make a note: this one's yours to keep." />
+
+To have it name itself after the job, add a line at the end, the same as in [beginner lesson 2](/en/start/2-first-bot/).
 
 ## Tell it how you handle reviews
 
-Now tell it how you do this today: where you look, how you reply, and how you find the problems behind complaints. Here's an example. Swap in your own shop's details:
+Now tell it how you do this today: where you look, how you reply, and how you find the problems behind complaints. Here's what the counter's owner might say. Swap in your own business:
 
-<Copy id="rf-process" title="Second message: your process" code={`Potato, here's how I do it now. Every day I read new reviews online. I say thanks for the good ones, and for bad ones I find out what happened that day before I reply. Each week I group the complaints and see which kind comes up most. What I care about most is bad reviews, complaints about waiting, and reviews that name someone on staff. I use Gmail. For review sites, use your own browser. The information comes from review sites, customer emails, posts that mention us on social media, and the counter's daily repair log. It's right when I've read every reply before it goes out and every suggested change links to the original review. Whether new reviews get better after we change something is our feedback.
+<Copy id="rf-process" title="Second message: your process" code={`Most days I find a minute to read the new reviews online. Good ones get a quick thanks. With a bad one, I don't rush to reply. I pull up the counter's repair log for that day and work out what happened first. Each week I group the complaints and see which kind comes up most. What I watch hardest is bad reviews, anyone saying they waited too long, and reviews that name someone on staff. Besides the review sites, customers email us too, and I look at posts that mention us on social media. Nothing goes up until I've read it, and every fix you suggest should link the review it came from. If we change something and the reviews pick up, that's how I know it worked.
 
-Think about how you could take this off my plate completely. Before you start, tell me back in plain words what you think the goal is and how you'd go about it, and I'll tell you if you've got it. Don't do anything yet. Let's get the plan right first.`} />
+Don't answer any reviews yet. Plan for doing all of this yourself, and tell me how you'd look into them and reply.`} />
 
-If typing is slow, press `Cmd/Ctrl+D` and just talk, saying things as they come to you. It restates what it heard first. Correct whatever's off and go a few rounds until it's right. When you're happy, tell it to go ahead. If it needs an app, it shows a **Connect** card in the chat. Open it and sign in.
+Review sites mostly don't have an app, so it reads them in the browser on its own computer. If customer email is in Gmail, the first time it needs it a **Connect** card shows up in the chat. Open it and sign in. Wherever its plan for checking and replying is off, fix it there and then, and a few rounds will smooth it out.
 
 ## Find out what happened that day, then reply
 
 Before you answer a bad review, you think back through that day, and you know what not to say in public. The bot knows none of this, so tell it:
 
-<Copy id="rf-judge" title="Third message: how you decide" code={`Potato, here are a few rules I go by. For a bad review, look up that customer's repair log for the day before you write anything. Replies start with an apology, then say what we'll change. Don't argue in public about who was right. Refunds, discounts, and promises like that wait for me. A complaint only counts as something to fix once the same kind shows up a second time. If it's a one-off, just make a note.
+<Copy id="rf-judge" title="Third message: how you decide" code={`Before you answer a bad review, keep these in mind. Look up that customer's repair log for the day before you write anything. Replies start with an apology, then say what we'll change. Don't argue in public about who was right. Refunds, discounts, and promises like that wait for me. A complaint only counts as something to fix once the same kind shows up a second time. If it's a one-off, just make a note.
 
-Also, help me figure out what I haven't told you yet: how I make calls, where my info comes from, how I know it's done right, and when you should come to me. One question at a time. Then walk me through a few examples and I'll tell you what's off. Don't set anything to run on its own yet.`} />
+I probably haven't covered everything that's OK to say in public and what isn't. Ask me, one question after another.`} />
 
 The first rule is what to do with a review like the one at the top of this page: check the records first, then reply. The second keeps promises that cost money with you, so a reply never commits you to anything. The third keeps you from chasing every single complaint. Only the ones that keep coming back are worth changing how you work.
 
-When it's done asking, try it on a real case or two that went wrong, like the reply that made a customer angrier. See how it would handle them, then tell it what to fix.
+Then test it on the reply that once made a customer angrier. What would it have written? Tell it where it's off. Until its replies sound right, don't let it run on its own. For whatever situations you haven't covered, [the prompt on the prompts page](/en/howto/prompts/#p-gaps) has it ask you, one by one.
 
-<Callout type="tip" title="Not enough data? Have it build a log">
-The author makes the point that the more data the bot has, the better it can see where things go wrong, and if you don't have the data, it can build you a tool to collect it. At a phone repair counter, you could ask the bot to build a small app for your computer and phone that logs when each customer reaches the counter, when someone helps them, when they hand over the phone, and when the repair starts and finishes. With those times you can work out how long people waited and where things got stuck. A salon might log when people arrive and when they get in the chair. Link records across apps with one shared ID, like a customer email or a ticket number.
-</Callout>
+If your counter has never written down when people arrive or how long they wait, there are no records for it to check. Have it build you a small tool to log them first. [Full guide step 5](/en/guide/5-improve/) shows how.
 
 ## Every morning at 9, it reads them first
 
-Once this has gone well a few times, you can let it start on its own. First have it save the process as a <Term k="技能" />, written instructions it follows every time, then set up a <Term k="routine" /> that tells it when to start:
+Once you're happy with a few batches of replies, let it check every day on its own. Save the process as a <Term k="技能" />, which it follows each time, and give it a <Term k="routine" /> that says when to start:
 
-<Copy id="rf-routine" title="Fourth message: let it start on its own" code={`Save what we just worked out as a skill called "Reviews." Then set up a routine: every day at 9:00 AM, use that skill to read new reviews and post the reply drafts in this chat. Don't post any reply online yourself. If a site won't open, tell me which one. Don't just quietly skip it.`} />
+<Copy id="rf-routine" title="Fourth message: let it start on its own" code={`Write that up as a skill called "Reviews," and set it on a routine: every day at 9:00 AM, use it to read new reviews and post the reply drafts here. Don't post a single reply online yourself. If a site won't open, tell me which one. Don't just quietly skip it.`} />
 
 After the first few runs, count the new reviews on the site yourself and check them against its list. Each draft for a bad review should note what it found for that day. Last, look at the site, which should have no replies from it.
 
-A new routine waits for its next scheduled time. If you'd rather not wait, open it and choose **Test**, but keep in mind that a test does real work. See [Create a routine](https://docs.x.ai/grok-bot/skills-routines-and-automations#create-a-routine) in the official docs.
+Set it up after 9:00 AM, and its first run is the next morning. To try it now, open it and choose **Test**. A test really goes and reads the sites, and the replies still only show up in the chat. See [Create a routine](https://docs.x.ai/grok-bot/skills-routines-and-automations#create-a-routine) in the official docs.
 
 For a weekly summary, set up a second routine the same way, like three suggested changes every Monday morning.
 
